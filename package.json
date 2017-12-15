@@ -4,8 +4,9 @@
   "description": "A curated collection of college radio stations in Canada.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack && nodemon src/server/index.js",
+    "start": "nodemon src/server/index.js",
     "webpack": "./node_modules/.bin/webpack",
+    "dev": "npm run webpack && npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +20,11 @@
   },
   "homepage": "https://github.com/RyukyuColin/odd-radio#readme",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "knex": "^0.14.2",
+    "knex-logger": "^0.1.0",
+    "pg": "^7.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
