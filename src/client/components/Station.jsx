@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Station extends Component {
 
   render() {
-      console.log('from station!!')
+      console.log('Rendering <Station>');
     return (
       <div className="container station-container">
         <div className="row station-row border">
