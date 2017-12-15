@@ -7,6 +7,7 @@ class StationList extends Component {
       return <Station
         key={ post.id }
         name={ post.name }
+        description={ post.description }
         audioFeed={ post.audio_feed }
         homePage={ post.home_page }
         city={ post.city } />
