@@ -240,7 +240,7 @@ exports.seed = function(knex, Promise) {
         province:'QC',
         description: 'test description test description test description',
         frequency: '' ,
-        language: 'English' ,
+        language: 'French' ,
         stream_type: 'audio/mpeg'
       },
       {
@@ -252,7 +252,7 @@ exports.seed = function(knex, Promise) {
         province:'QC',
         description: 'test description test description test description',
         frequency: '94.3 FM' ,
-        language: 'English' ,
+        language: 'French' ,
         stream_type: 'audio/mpeg'
       },
       {
