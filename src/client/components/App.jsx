@@ -25,6 +25,8 @@ class App extends Component {
         type: type
       }
     });
+    document.getElementById("player").load();
+    document.getElementById("player").play();
   }
 
   componentDidMount() {
