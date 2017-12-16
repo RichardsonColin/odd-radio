@@ -6,6 +6,7 @@ class StationList extends Component {
     const station = this.props.stations.map((post) => {
       return <Station
         key={ post.id }
+        id={ post.id }
         name={ post.name }
         description={ post.description }
         audioFeed={ post.audio_feed }

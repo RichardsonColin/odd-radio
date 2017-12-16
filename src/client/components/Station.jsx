@@ -5,6 +5,7 @@ class Station extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: this.props.id,
       name: this.props.name,
       stream: this.props.audioFeed,
       type: this.props.type
@@ -15,7 +16,7 @@ class Station extends Component {
   }
 
   onStationSelect(event) {
-    this.props.handleSelectedStation(this.state.name, this.state.stream, this.state.type);
+    this.props.handleSelectedStation(this.state.id, this.state.name, this.state.stream, this.state.type);
   }
 
   onInfoSelect(event) {
