@@ -14,11 +14,8 @@ class Station extends Component {
   }
 
   onStationSelect(event) {
-    console.log("Clicked on a station.");
-    console.log(this.state.name, this.state.stream, this.state.type);
     this.props.handleSelectedStation(this.state.name, this.state.stream, this.state.type);
   }
-
 
   render() {
     return (
