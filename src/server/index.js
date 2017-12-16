@@ -12,8 +12,8 @@ app.use(express.static(__dirname +'./../../')); //serves the index.html
 app.use(knexLogger(knex));
 
 app.get('/api/stations', (req, res) => {
-  knex.select().from('stations').then((station) => {
-    res.json(station);
+  knex.select().from('stations').then((stations) => {
+    res.json(stations);
   });
 })
 

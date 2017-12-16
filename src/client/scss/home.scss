@@ -1,8 +1,9 @@
 body {
   background-color: #b3e0da;
 }
-h1 {
-  margin-bottom: 50px;
+
+h3 {
+  margin-bottom: 150px;
 }
 .station-container {
   display: flex;
@@ -14,8 +15,11 @@ h1 {
   transform: skew(-21deg) rotate(-21deg);
   box-shadow: 1px 3px 30px rgba(0,0,0,0.4);
   align-items: center;
+}
+.content {
+  display: none;
+}
 
- }
 
 .border{
 
@@ -37,3 +41,13 @@ footer {
   margin-bottom: 25px;
   width: 100%;
 }
+
+.center {
+  text-align: center;
+}
+
+.center-align {
+  margin: 0 auto;
+  width: 80%;
+}
+
