@@ -57,7 +57,7 @@ export const handlePlayState = function() {
 
 // Function to take a station div selection and pass it to the app level as current player.
 export const onStationSelect = function(event) {
-    this.props.handleSelectedStation(this.state.name, this.state.stream, this.state.type);
+    this.props.handleSelectedStation(this.state.id, this.state.name, this.state.stream, this.state.type);
 }
 
 // Function to show more info for statios.
