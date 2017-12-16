@@ -1,18 +1,22 @@
 import React, {Component} from 'react';
 
+
 class AudioPlayer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentStationName: '',
-      stream: 'http://onair.cfcr.ca/hifi.mp3',
-      streamType: ''
+      stream: '',
+      streamType: '',
     }
     this.makeItPlay = this.makeItPlay.bind(this);
+    this.setVolume = this.setVolume.bind(this);
   }
 
   makeItPlay() {
     let player = document.getElementById("player")
+    console.log(player);
+    console.log(typeof player);
     if (player.paused) {
       player.play();
       pButton.className = "";
@@ -22,7 +26,11 @@ class AudioPlayer extends Component {
       pButton.className = "";
       pButton.className = "fa fa-play";
     }
+  }
 
+  setVolume(event) {
+    let player = document.getElementById("player");
+    player.volume = event.target.value / 100
   }
 
   render() {
@@ -35,7 +43,8 @@ class AudioPlayer extends Component {
         <div>
           <div className="player-station-name"> Current Station: { this.props.stationFeed.name } </div>
           <i id="pButton" className="fa fa-play" aria-hidden="true" onClick={ this.makeItPlay } ></i>
-          <div className="seek-button" onClick={ this.props.seekStation } ><button>seek</button></div>
+          <input id="vol-control" type="range" min={ 0 } max={ 100 } step={ 1 } onInput={ this.setVolume } onChange={ this.setVolume }></input>
+          <i class="fa fa-random seek-button" aria-hidden="true" onClick={this.props.seekStation} ></i>
         </div>
       </div>
     );
