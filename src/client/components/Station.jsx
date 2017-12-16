@@ -5,25 +5,21 @@ class Station extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: this.props.name
+      name: this.props.name,
+      stream: this.props.audioFeed,
+      type: this.props.type
     }
     this.onStationSelect = this.onStationSelect.bind(this)
 
   }
 
-  componentDidMount() {
-
-  }
-
-
   onStationSelect(event) {
     console.log("Clicked on a station.");
-    console.log(this.state.name);
-    this.props.handleSelectedStation(this.state.name);
-
+    console.log(this.state.name, this.state.stream, this.state.type);
+    this.props.handleSelectedStation(this.state.name, this.state.stream, this.state.type);
   }
 
-  
+
   render() {
     return (
       <div className="container station-container">

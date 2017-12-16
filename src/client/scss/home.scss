@@ -1,0 +1,27 @@
+body {
+  background-color: #b3e0da;
+}
+h1 {
+  margin-bottom: 150px;
+}
+.station-container {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.75;
+  height: 100px;
+  margin-top: 10px;
+  transform: skew(-21deg) rotate(-21deg);
+  box-shadow: 1px 3px 30px rgba(0,0,0,0.4);
+  align-items: center;
+
+ }
+
+.border{
+
+display: flex;
+justify-content: space-between;
+width: 100%;
+text-align: center;
+
+}
