@@ -125,3 +125,9 @@ export const loadStations = function() {
     const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
     return this.colors[colorIndex];
   }
+
+   export const scrollListener = window.addEventListener('scroll', () => {
+      const percent = window.scrollY / ( document.body.scrollHeight - window.innerHeight );
+      this.setState({ scrollPercent: percent });
+    });
+

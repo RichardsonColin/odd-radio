@@ -7,7 +7,10 @@ import StationList from './StationList.jsx';
 class App extends Component {
   constructor(props) {
     super(props);
+     this.colors = ['red', 'blue', 'green'];
     this.state = {
+      scrollPercent: 0,
+      color: '1',
       stations: [],
       selectedStation: {
         id: "",
@@ -21,11 +24,13 @@ class App extends Component {
     this.seekStation = seekStation.bind(this);
     this.generateRandomStationId = generateRandomStationId.bind(this);
     this.loadStations = loadStations.bind(this);
-    this.findColor = findColor.bind(this)
+    this.findColor = findColor.bind(this);
+    this.scrollListener = scrollListener.bind(this);
   }
 
   componentDidMount() {
     this.loadStations();
+    this.scrollListener();
   }
 
   render() {
