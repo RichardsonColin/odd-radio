@@ -4,17 +4,31 @@ class AudioPlayer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentStationName: "CILU",
-      stream: "http://luradio-server.lakeheadu.ca:8000/stereo128.mp3",
-      streamType: "audio/mp3"
+      currentStationName: '',
+      stream: '',
+      streamType: ''
     }
+    this.audioPlayer = this.audioPlayer.bind(this)
+  }
+
+  componentDidMount() {
+    this.setState({
+      currentStationName: this.props.stationFeed.name,
+      stream: this.props.stationFeed.stream,
+      streamType: this.props.stationFeed.type
+    })
+  }
+
+  audioPlayer(event) {
+    console.log(event);
   }
 
   render() {
+    console.log('inside AudioPlayer');
     return (
       <div>
-        <div className="player-station-name"> { this.state.currentStationName } </div>
-        <audio controls="controls">
+        <div className="player-station-name"> { this.props.currentStationName } </div>
+        <audio controls="controls" >
           <source src={ this.state.stream } type={ this.state.streamType } />
         </audio>
         <div className="seek-button"><button>seek</button></div>
