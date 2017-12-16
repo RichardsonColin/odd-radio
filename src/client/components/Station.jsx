@@ -9,12 +9,27 @@ class Station extends Component {
       stream: this.props.audioFeed,
       type: this.props.type
     }
-    this.onStationSelect = this.onStationSelect.bind(this)
+    this.onStationSelect = this.onStationSelect.bind(this);
+    this.onInfoSelect = this.onInfoSelect.bind(this);
 
   }
 
   onStationSelect(event) {
     this.props.handleSelectedStation(this.state.name, this.state.stream, this.state.type);
+  }
+
+  onInfoSelect(event) {
+    console.log('---- onInfoSelect ----', this);
+    let infoId = this.props.name
+    let info = document.getElementById(infoId);
+    console.log('info.className', info.className)
+    if (info.className === "station-info content") {
+      info.className = "";
+      info.className = "station-info";
+    } else {
+      info.className = "";
+      info.className = "station-info content";
+    }
   }
 
   render() {
@@ -27,8 +42,17 @@ class Station extends Component {
             <i className="fa fa-play" aria-hidden="true" onClick={ this.onStationSelect }></i>
           </div>
           <div className="one-third column station-info-button center">
-            <i className="fa fa-chevron-down" aria-hidden="true"></i>
+            <i className="fa fa-chevron-down" aria-hidden="true" onClick={ this.onInfoSelect }></i>
           </div>
+        </div>
+        <div className="row">
+          <div className="station-info content" id={ this.props.name }>
+            { this.props.description } { this.props.description }
+          </div>
+        </div>
+        <div className="row">
+          <div className="two columns">Two</div>
+          <div className="ten columns">Ten</div>
         </div>
       </div>
     );

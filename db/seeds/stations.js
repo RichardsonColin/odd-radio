@@ -346,7 +346,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'https://thex.ca/',
         city:'Kamloops' ,
         province:'BC',
-        description: 'test description test description test description',
+        description: 'test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description',
         frequency: '92.5 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'

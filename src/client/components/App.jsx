@@ -86,7 +86,7 @@ class App extends Component {
           <h1>oddrad.io</h1>
           <h3>A curated collection of the odd sounds of Canadian college radio.</h3>
         </header>
-          <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations } />
+          <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations }/>
         <footer>
            <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation } />
         </footer>
