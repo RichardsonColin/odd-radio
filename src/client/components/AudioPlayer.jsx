@@ -13,7 +13,7 @@ class AudioPlayer extends Component {
   render() {
     return (
       <div>
-        <div className="player-station-name"> { this.props.stationFeed.name } </div>
+        <div className="player-station-name"> Current Station: { this.props.stationFeed.name } </div>
         <audio id="player" controls="controls" >
           <source src={ this.props.stationFeed.stream } type={ this.props.stationFeed.type } />
         </audio>

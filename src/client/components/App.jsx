@@ -51,19 +51,6 @@ class App extends Component {
           <h3>A curated collection of the odd sounds of Canadian college radio.</h3>
         </header>
           <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations } />
-          <div className="station-container">
-            <header>
-              <span className="station-name">NAME</span>
-              <button className="station-play-button">play</button>
-              <button className="station-info-button">info</button>
-            </header>
-            <main>
-              <span className="station-location">Location:</span>
-              <span className="station-description">Description:</span>
-              <span className="station-link">Link:</span>
-              <span className="station-stream">Stream: http://onair.cfcr.ca/hifi.mp3</span>
-            </main>
-          </div>
         <footer>
            <AudioPlayer stationFeed={ this.state.selectedStation } />
         </footer>
