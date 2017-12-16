@@ -4,6 +4,11 @@ body {
 h1 {
   margin-bottom: 50px;
 }
+
+.app-container {
+  transition: background-color 1000ms linear;
+}
+
 .station-container {
   display: flex;
   width: 100%;

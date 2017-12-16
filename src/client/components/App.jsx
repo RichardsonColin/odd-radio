@@ -5,7 +5,12 @@ import StationList from './StationList.jsx';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.colors = [
+      'red', 'blue', 'green'
+    ];
     this.state = {
+      scrollPercent: 0,
+      color: '1',
       stations: [],
       selectedStation: {
         name: "",
@@ -17,6 +22,11 @@ class App extends Component {
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
     this.seekStation = this.seekStation.bind(this);
     this.generateRandomStationId = this.generateRandomStationId.bind(this);
+  }
+
+  findColor() {
+    const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
+    return this.colors[colorIndex];
   }
 
   handleSelectedStation(name, stream, type) {
@@ -75,6 +85,11 @@ class App extends Component {
 
   componentDidMount() {
 
+    window.addEventListener('scroll', () => {
+      const percent = window.scrollY / ( document.body.scrollHeight - window.innerHeight );
+      this.setState({ scrollPercent: percent });
+    });
+
     function shuffle(sourceArray) {
       for (var i = 0; i < sourceArray.length - 1; i++) {
         var j = i + Math.floor(Math.random() * (sourceArray.length - i));
@@ -99,8 +114,9 @@ class App extends Component {
   }
 
   render() {
+
     return (
-      <div>
+      <div className="app-container" style={{ backgroundColor: this.findColor() }}>
         <header>
           <h1>oddrad.io</h1>
           <h3>A curated collection of the odd sounds of Canadian college radio.</h3>
