@@ -23,36 +23,38 @@ class Station extends Component {
     let infoId = this.props.name
     let info = document.getElementById(infoId);
     console.log('info.className', info.className)
-    if (info.className === "station-info content") {
+    if (info.className === "container station-container content") {
       info.className = "";
-      info.className = "station-info";
+      info.className = "container station-container";
     } else {
       info.className = "";
-      info.className = "station-info content";
+      info.className = "container station-container content";
     }
   }
 
   render() {
       console.log('Rendering <Station>')
     return (
-      <div className="container station-container">
-        <div className="row station-row border">
-          <div className="one-third column station-name center"> {this.props.name} </div>
-          <div className="one-third column station-play-button center">
-            <i className="fa fa-play" aria-hidden="true" onClick={ this.onStationSelect }></i>
-          </div>
-          <div className="one-third column station-info-button center">
-            <i className="fa fa-chevron-down" aria-hidden="true" onClick={ this.onInfoSelect }></i>
-          </div>
-        </div>
-        <div className="row">
-          <div className="station-info content" id={ this.props.name }>
-            { this.props.description } { this.props.description }
+      <div>
+        <div className="container station-container">
+          <div className="row station-row border">
+            <div className="one-third column station-name center"> {this.props.name} </div>
+            <div className="one-third column station-play-button center">
+              <i className="fa fa-play" aria-hidden="true" onClick={ this.onStationSelect }></i>
+            </div>
+            <div className="one-third column station-info-button center">
+              <i className="fa fa-chevron-down" aria-hidden="true" onClick={ this.onInfoSelect }></i>
+            </div>
           </div>
         </div>
-        <div className="row">
-          <div className="two columns">Two</div>
-          <div className="ten columns">Ten</div>
+        <div className="container station-container content" id={ this.props.name }>
+          <div className="row center-align">
+            <div className="station-info center" >
+              <p>Location: { this.props.city } </p>
+              <p>Description: { this.props.description } </p>
+              <p>Home Page: { this.props.homePage } </p>
+            </div>
+          </div>
         </div>
       </div>
     );

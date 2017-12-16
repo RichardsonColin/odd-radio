@@ -15,11 +15,11 @@ h3 {
   transform: skew(-21deg) rotate(-21deg);
   box-shadow: 1px 3px 30px rgba(0,0,0,0.4);
   align-items: center;
-
-  .content {
-    display: none;
-  }
 }
+.content {
+  display: none;
+}
+
 
 .border{
 
@@ -36,5 +36,14 @@ footer {
   background-color: #b3e0da;
   margin-bottom: 25px;
   width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.center-align {
+  margin: 0 auto;
+  width: 80%;
 }
 
