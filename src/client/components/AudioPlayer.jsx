@@ -4,20 +4,17 @@ import React, {Component} from 'react';
 class AudioPlayer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentStationName: '',
-      stream: '',
-      streamType: '',
-    }
+    
     this.makeItPlay = this.makeItPlay.bind(this);
     this.setVolume = this.setVolume.bind(this);
   }
 
   makeItPlay() {
     let player = document.getElementById("player")
-    console.log(player);
-    console.log(typeof player);
-    if (player.paused) {
+
+    if (this.props.stationFeed.name == '') {
+      this.props.seekStation();
+    } else if (player.paused) {
       player.play();
       pButton.className = "";
       pButton.className = "fa fa-pause";
@@ -33,7 +30,6 @@ class AudioPlayer extends Component {
     let player = document.getElementById("player");
     player.volume = event.target.value / 100
   }
-
 
   render() {
     return (
