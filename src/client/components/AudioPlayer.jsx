@@ -31,7 +31,6 @@ class AudioPlayer extends Component {
   }
 
   render() {
-    console.log('inside AudioPlayer', this.state.stream);
     return (
       <div>
         <audio id="player">
@@ -41,12 +40,8 @@ class AudioPlayer extends Component {
           <div className="player-station-name"> Current Station: { this.props.stationFeed.name } </div>
           <i id="pButton" className="fa fa-play fa-2x" aria-hidden="true" onClick={ this.makeItPlay } ></i>
           <input id="vol-control" type="range" min={ 0 } max={ 100 } step={ 1 } onInput={ this.setVolume } onChange={ this.setVolume }></input>
-<<<<<<< HEAD
-          <i className="fa fa-random seek-button" aria-hidden="true" onClick={this.props.seekStation} ></i>
-=======
           <i className="fa fa-random fa-2x seek-button" aria-hidden="true" onClick={this.props.seekStation} ></i>
           <i id="loader" className="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
->>>>>>> 6038f41d3201f6fd8571f1381170044cf21f5b05
         </div>
       </div>
     );
