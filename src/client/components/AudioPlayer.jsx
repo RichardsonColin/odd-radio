@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 class AudioPlayer extends Component {
   constructor(props) {
     super(props);
-    
+
     this.makeItPlay = this.makeItPlay.bind(this);
     this.setVolume = this.setVolume.bind(this);
   }
@@ -23,7 +23,7 @@ class AudioPlayer extends Component {
       pButton.className = "";
       pButton.className = "fa fa-play";
     }
-  
+
   }
 
   setVolume(event) {
@@ -42,6 +42,7 @@ class AudioPlayer extends Component {
           <i id="pButton" className="fa fa-play" aria-hidden="true" onClick={ this.makeItPlay } ></i>
           <input id="vol-control" type="range" min={ 0 } max={ 100 } step={ 1 } onInput={ this.setVolume } onChange={ this.setVolume }></input>
           <i class="fa fa-random seek-button" aria-hidden="true" onClick={this.props.seekStation} ></i>
+          <i id="loader" className="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
         </div>
       </div>
     );
