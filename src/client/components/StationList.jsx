@@ -9,8 +9,11 @@ class StationList extends Component {
         name={ post.name }
         description={ post.description }
         audioFeed={ post.audio_feed }
+        type={ post.stream_type }
         homePage={ post.home_page }
-        city={ post.city } />
+        city={ post.city }
+        handleSelectedStation={ this.props.handleSelectedStation }
+         />
     });
 
     return (

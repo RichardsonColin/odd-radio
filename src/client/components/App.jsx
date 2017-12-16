@@ -6,8 +6,25 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      stations: []
-    };
+      stations: [],
+      selectedStation: {
+        name: "",
+        stream: "",
+        type: ""
+      }
+    },
+    this.handleSelectedStation = this.handleSelectedStation.bind(this);
+  }
+
+  handleSelectedStation(name, stream, type) {
+    console.log(name);
+    this.setState({
+      selectedStation: {
+        name: name,
+        stream: stream,
+        type: type
+      }
+    });
   }
 
   componentDidMount() {
@@ -30,7 +47,7 @@ class App extends Component {
         <header>
           <h1>Welcome to Odd Radio - Your link to curated, independent, Great, Canadian radio</h1>
         </header>
-          <StationList stations={ this.state.stations } />
+          <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations } />
           <div className="station-container">
             <header>
               <span className="station-name">NAME</span>
@@ -45,7 +62,7 @@ class App extends Component {
             </main>
           </div>
         <footer>
-           <AudioPlayer />
+           <AudioPlayer stationFeed={ this.state.selectedStation } />
         </footer>
       </div>
     );
