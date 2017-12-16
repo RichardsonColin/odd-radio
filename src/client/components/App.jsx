@@ -35,7 +35,7 @@ class App extends Component {
     const randomStationId = Math.floor(Math.random() * seekLength);
 
     for(const station of this.state.stations) {
-      if(randomStation === station.id) {
+      if(randomStationId === station.id) {
         this.handleSelectedStation(station.name, station.audio_feed, station.stream_type);
       }
     }
