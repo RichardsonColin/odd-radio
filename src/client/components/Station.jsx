@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { onStationSelect, onInfoSelect } from '../util/ClientFunctions.jsx';
 
 class Station extends Component {
 
@@ -10,27 +11,8 @@ class Station extends Component {
       stream: this.props.audioFeed,
       type: this.props.type
     }
-    this.onStationSelect = this.onStationSelect.bind(this);
-    this.onInfoSelect = this.onInfoSelect.bind(this);
-
-  }
-
-  onStationSelect(event) {
-    this.props.handleSelectedStation(this.state.id, this.state.name, this.state.stream, this.state.type);
-  }
-
-  onInfoSelect(event) {
-    console.log('---- onInfoSelect ----', this);
-    let infoId = this.props.name
-    let info = document.getElementById(infoId);
-    console.log('info.className', info.className)
-    if (info.className === "container station-container content") {
-      info.className = "";
-      info.className = "container station-container";
-    } else {
-      info.className = "";
-      info.className = "container station-container content";
-    }
+    this.onStationSelect = onStationSelect.bind(this);
+    this.onInfoSelect = onInfoSelect.bind(this);
   }
 
   render() {
@@ -61,4 +43,5 @@ class Station extends Component {
     );
   }
 }
+
 export default Station;
