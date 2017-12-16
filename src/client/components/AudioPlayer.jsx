@@ -8,16 +8,35 @@ class AudioPlayer extends Component {
       stream: '',
       streamType: ''
     }
+    this.makeItPlay = this.makeItPlay.bind(this);
   }
+
+  makeItPlay() {
+    let player = document.getElementById("player")
+    if (player.paused) {
+      player.play();
+      pButton.className = "";
+      pButton.className = "fa fa-pause";
+    } else {
+      player.pause();
+      pButton.className = "";
+      pButton.className = "fa fa-play";
+    }
+  
+  }
+
 
   render() {
     return (
       <div>
-        <div className="player-station-name"> Current Station: { this.props.stationFeed.name } </div>
-        <audio id="player" controls="controls" >
+        <audio id="player">
           <source src={ this.props.stationFeed.stream } type={ this.props.stationFeed.type } />
         </audio>
-        <div className="seek-button" onClick={ this.props.seekStation } ><button>seek</button></div>
+        <div>
+          <div className="player-station-name"> Current Station: { this.props.stationFeed.name } </div>
+          <i id="pButton" className="fa fa-play" aria-hidden="true" onClick={ this.makeItPlay } ></i>
+          <div className="seek-button" onClick={ this.props.seekStation } ><button>seek</button></div>
+        </div>
       </div>
     );
   }

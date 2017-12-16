@@ -28,6 +28,8 @@ class App extends Component {
     });
     document.getElementById("player").load();
     document.getElementById("player").play();
+    pButton.className = "";
+    pButton.className = "fa fa-pause";
   }
 
   seekStation() {
