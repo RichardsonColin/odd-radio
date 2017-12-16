@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { handleSelectedStation, handlePlayState, seekStation, generateRandomStationId, loadStations } from '../util/ClientFunctions.jsx';
+import { handleSelectedStation, handlePlayState, seekStation, generateRandomStationId, loadStations, findColor } from '../util/ClientFunctions.jsx';
 
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
@@ -21,6 +21,7 @@ class App extends Component {
     this.seekStation = seekStation.bind(this);
     this.generateRandomStationId = generateRandomStationId.bind(this);
     this.loadStations = loadStations.bind(this);
+    this.findColor = findColor.bind(this)
   }
 
   componentDidMount() {

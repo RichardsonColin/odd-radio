@@ -121,3 +121,7 @@ export const loadStations = function() {
         });
 }
 
+  export const findColor = function() {
+    const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
+    return this.colors[colorIndex];
+  }
