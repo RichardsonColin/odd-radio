@@ -13,13 +13,13 @@ class App extends Component {
         type: ""
       }
     },
+    this.handlePlayState = this.handlePlayState.bind(this);
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
     this.seekStation = this.seekStation.bind(this);
     this.generateRandomStationId = this.generateRandomStationId.bind(this);
   }
 
   handleSelectedStation(name, stream, type) {
-    console.log(name);
     this.setState({
       selectedStation: {
         name: name,
@@ -27,10 +27,28 @@ class App extends Component {
         type: type
       }
     });
+    this.handlePlayState();
+  }
+
+  handlePlayState() {
+    let player = document.getElementById("player");
     document.getElementById("player").load();
-    document.getElementById("player").play();
-    pButton.className = "";
-    pButton.className = "fa fa-pause";
+
+    // Displays the loading icon while the media is loading.
+    player.addEventListener("loadstart", function() {
+      pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";
+    });
+
+    // Plays the audio when it is ready.
+    player.addEventListener("canplaythrough", function() {
+      document.getElementById("player").play();
+    });
+
+    // Changes the loading icon to a pause icon.
+    player.addEventListener("playing", function() {
+      pButton.className = "";
+      pButton.className = "fa fa-pause fa-2x";
+    });
   }
 
   generateRandomStationId() {
@@ -49,6 +67,7 @@ class App extends Component {
 
       // Plays the seeked station.
       } else if(randomStationId === station.id) {
+          console.log('inside seek', station.name);
           this.handleSelectedStation(station.name, station.audio_feed, station.stream_type);
       }
     }
