@@ -11,8 +11,6 @@ class AudioPlayer extends Component {
     this.makeItPlay = this.makeItPlay.bind(this);
   }
 
-<<<<<<< HEAD
-=======
   makeItPlay() {
     let player = document.getElementById("player")
     if (player.paused) {
@@ -24,23 +22,15 @@ class AudioPlayer extends Component {
       pButton.className = "";
       pButton.className = "fa fa-play";
     }
-  
-  }
 
->>>>>>> 9066ce045fd7946a4e8b29d808eeabc0fd82ae48
+  }
 
   render() {
     console.log('inside AudioPlayer', this.state.stream);
     return (
       <div>
-<<<<<<< HEAD
-        <div className="player-station-name"> { this.props.currentStationName } </div>
-        <audio controls="controls" ref="audio" id="player">
-          <source src={ this.props.stationFeed.stream } type={ 'audio/mp3' } />
-=======
         <audio id="player">
           <source src={ this.props.stationFeed.stream } type={ this.props.stationFeed.type } />
->>>>>>> 9066ce045fd7946a4e8b29d808eeabc0fd82ae48
         </audio>
         <div>
           <div className="player-station-name"> Current Station: { this.props.stationFeed.name } </div>
