@@ -6,8 +6,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      stations: []
-    };
+      stations: [],
+      selectedStation: ""
+    },
+    this.handleSelectedStation = this.handleSelectedStation.bind(this);
+  }
+
+  handleSelectedStation(name) {
+    console.log(name);
+    this.setState({ selectedStation: name });
+
   }
 
   componentDidMount() {
@@ -30,7 +38,7 @@ class App extends Component {
         <header>
           <h1>Welcome to Odd Radio - Your link to curated, independent, Great, Canadian radio</h1>
         </header>
-          <StationList stations={ this.state.stations } />
+          <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations } />
           <div className="station-container">
             <header>
               <span className="station-name">NAME</span>
