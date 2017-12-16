@@ -8,6 +8,7 @@ class App extends Component {
     this.state = {
       stations: [],
       selectedStation: {
+        id: "",
         name: "",
         stream: "",
         type: ""
@@ -19,9 +20,10 @@ class App extends Component {
     this.generateRandomStationId = this.generateRandomStationId.bind(this);
   }
 
-  handleSelectedStation(name, stream, type) {
+  handleSelectedStation(id, name, stream, type) {
     this.setState({
       selectedStation: {
+        id: id,
         name: name,
         stream: stream,
         type: type
@@ -62,13 +64,13 @@ class App extends Component {
     for(const station of this.state.stations) {
 
       // Checks to see if the seek matches the currently playing station.
-      if(randomStationId === this.state.stations.id) {
-        seekStation();
+      if(randomStationId === this.state.selectedStation.id) {
+        this.seekStation();
+        return;
 
       // Plays the seeked station.
       } else if(randomStationId === station.id) {
-          console.log('inside seek', station.name);
-          this.handleSelectedStation(station.name, station.audio_feed, station.stream_type);
+          this.handleSelectedStation(station.id, station.name, station.audio_feed, station.stream_type);
       }
     }
   }
