@@ -25,7 +25,6 @@ class Station extends Component {
 
   
   render() {
-
     return (
       <div className="container station-container">
         <div className="row station-row border">
