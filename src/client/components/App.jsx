@@ -42,11 +42,23 @@ class App extends Component {
   }
 
   componentDidMount() {
+
+    function shuffle(sourceArray) {
+      for (var i = 0; i < sourceArray.length - 1; i++) {
+        var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+        var temp = sourceArray[j];
+        sourceArray[j] = sourceArray[i];
+        sourceArray[i] = temp;
+      }
+      return sourceArray;
+    }
+
     fetch('/api/stations')
       .then((response) => {
         return response.json()
       }).then((json) => {
-        this.setState({ stations: json })
+        this.setState({ stations: shuffle(json) })
         console.log('parsed json', json)
       }).catch((ex) => {
         console.log('parsing failed', ex)
