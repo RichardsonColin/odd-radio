@@ -20,7 +20,7 @@ class App extends Component {
     this.handleSelectedStation = handleSelectedStation.bind(this);
     this.seekStation = seekStation.bind(this);
     this.generateRandomStationId = generateRandomStationId.bind(this);
-    this.loadStations = loadStations.bind(this)
+    this.loadStations = loadStations.bind(this);
   }
 
   componentDidMount() {
