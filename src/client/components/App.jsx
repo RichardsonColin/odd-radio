@@ -7,15 +7,24 @@ class App extends Component {
     super(props);
     this.state = {
       stations: [],
-      selectedStation: ""
+      selectedStation: {
+        name: "",
+        stream: "",
+        type: ""
+      }
     },
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
   }
 
-  handleSelectedStation(name) {
+  handleSelectedStation(name, stream, type) {
     console.log(name);
-    this.setState({ selectedStation: name });
-
+    this.setState({
+      selectedStation: {
+        name: name,
+        stream: stream,
+        type: type
+      }
+    });
   }
 
   componentDidMount() {
