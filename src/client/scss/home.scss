@@ -2,7 +2,7 @@ body {
   background-color: #b3e0da;
 }
 h1 {
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 }
 .station-container {
   display: flex;
@@ -19,9 +19,14 @@ h1 {
 
 .border{
 
-display: flex;
-justify-content: space-between;
-width: 100%;
-text-align: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
 
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
 }
