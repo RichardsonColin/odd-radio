@@ -62,7 +62,7 @@ class App extends Component {
             </main>
           </div>
         <footer>
-           <AudioPlayer />
+           <AudioPlayer stationFeed={ this.state.selectedStation } />
         </footer>
       </div>
     );
