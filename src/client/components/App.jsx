@@ -15,6 +15,7 @@ class App extends Component {
     },
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
     this.seekStation = this.seekStation.bind(this);
+    this.generateRandomStationId = this.generateRandomStationId.bind(this);
   }
 
   handleSelectedStation(name, stream, type) {
@@ -30,13 +31,23 @@ class App extends Component {
     document.getElementById("player").play();
   }
 
-  seekStation() {
+  generateRandomStationId() {
     const seekLength = this.state.stations.length - 1;
-    const randomStationId = Math.floor(Math.random() * seekLength);
+    return Math.floor(Math.random() * seekLength);
+  }
+
+  seekStation() {
+    const randomStationId = this.generateRandomStationId();
 
     for(const station of this.state.stations) {
-      if(randomStation === station.id) {
-        this.handleSelectedStation(station.name, station.audio_feed, station.stream_type);
+
+      // Checks to see if the seek matches the currently playing station.
+      if(randomStationId === this.state.stations.id) {
+        seekStation();
+
+      // Plays the seeked station.
+      } else if(randomStationId === station.id) {
+          this.handleSelectedStation(station.name, station.audio_feed, station.stream_type);
       }
     }
   }
