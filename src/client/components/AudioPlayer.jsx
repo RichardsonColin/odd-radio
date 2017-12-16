@@ -8,19 +8,6 @@ class AudioPlayer extends Component {
       stream: 'http://onair.cfcr.ca/hifi.mp3',
       streamType: ''
     }
-    this.audioPlayer = this.audioPlayer.bind(this)
-  }
-
-  componentDidMount() {
-    this.setState({
-      currentStationName: this.props.stationFeed.name,
-      stream: this.props.stationFeed.stream,
-      streamType: this.props.stationFeed.type
-    })
-  }
-
-  audioPlayer(event) {
-    console.log(event);
   }
 
 

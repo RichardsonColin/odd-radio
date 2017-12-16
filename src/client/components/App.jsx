@@ -25,8 +25,8 @@ class App extends Component {
         type: type
       }
     });
-    document.getElementById("audioPlayer").load();
-    document.getElementById("audioPlayer").play();
+    document.getElementById("player").load();
+    document.getElementById("player").play();
   }
 
   componentDidMount() {
