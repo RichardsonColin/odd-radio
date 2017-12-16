@@ -47,7 +47,8 @@ class App extends Component {
     return (
       <div>
         <header>
-          <h1>Welcome to Odd Radio - Your link to curated, independent, Great, Canadian radio</h1>
+          <h1>oddrad.io</h1>
+          <h3>A curated collection of the odd sounds of Canadian college radio.</h3>
         </header>
           <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations } />
           <div className="station-container">
