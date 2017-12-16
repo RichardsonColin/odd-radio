@@ -14,6 +14,8 @@ class App extends Component {
       }
     },
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
+    this.seekStation = this.seekStation.bind(this);
+    this.generateRandomStationId = this.generateRandomStationId.bind(this);
   }
 
   handleSelectedStation(name, stream, type) {
@@ -27,21 +29,55 @@ class App extends Component {
     });
     document.getElementById("player").load();
     document.getElementById("player").play();
+    pButton.className = "";
+    pButton.className = "fa fa-pause";
+  }
+
+  generateRandomStationId() {
+    const seekLength = this.state.stations.length - 1;
+    return Math.floor(Math.random() * seekLength);
+  }
+
+  seekStation() {
+    const randomStationId = this.generateRandomStationId();
+
+    for(const station of this.state.stations) {
+
+      // Checks to see if the seek matches the currently playing station.
+      if(randomStationId === this.state.stations.id) {
+        seekStation();
+
+      // Plays the seeked station.
+      } else if(randomStationId === station.id) {
+          this.handleSelectedStation(station.name, station.audio_feed, station.stream_type);
+      }
+    }
   }
 
   componentDidMount() {
+
+    function shuffle(sourceArray) {
+      for (var i = 0; i < sourceArray.length - 1; i++) {
+        var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+        var temp = sourceArray[j];
+        sourceArray[j] = sourceArray[i];
+        sourceArray[i] = temp;
+      }
+      return sourceArray;
+    }
+
     fetch('/api/stations')
       .then((response) => {
         return response.json()
       }).then((json) => {
-        this.setState({ stations: json })
+        this.setState({ stations: shuffle(json) })
         console.log('parsed json', json)
       }).catch((ex) => {
         console.log('parsing failed', ex)
       });
     console.log("Mounted");
   }
-
 
   render() {
     return (
@@ -51,21 +87,8 @@ class App extends Component {
           <h3>A curated collection of the odd sounds of Canadian college radio.</h3>
         </header>
           <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations } />
-          <div className="station-container">
-            <header>
-              <span className="station-name">NAME</span>
-              <button className="station-play-button">play</button>
-              <button className="station-info-button">info</button>
-            </header>
-            <main>
-              <span className="station-location">Location:</span>
-              <span className="station-description">Description:</span>
-              <span className="station-link">Link:</span>
-              <span className="station-stream">Stream: http://onair.cfcr.ca/hifi.mp3</span>
-            </main>
-          </div>
         <footer>
-           <AudioPlayer stationFeed={ this.state.selectedStation } />
+           <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation } />
         </footer>
       </div>
     );
