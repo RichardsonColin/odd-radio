@@ -20,6 +20,7 @@ class AudioPlayer extends Component {
   }
 
   audioPlayer(event) {
+    console.log('audio function')
     console.log(event);
   }
 
@@ -28,7 +29,7 @@ class AudioPlayer extends Component {
     return (
       <div>
         <div className="player-station-name"> { this.props.currentStationName } </div>
-        <audio controls="controls" >
+        <audio controls="controls" onPlaying={ this.audioPlayer } >
           <source src={ this.state.stream } type={ this.state.streamType } />
         </audio>
         <div className="seek-button"><button>seek</button></div>
