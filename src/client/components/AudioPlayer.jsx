@@ -17,11 +17,11 @@ class AudioPlayer extends Component {
     } else if (player.paused) {
       player.play();
       pButton.className = "";
-      pButton.className = "fa fa-pause";
+      pButton.className = "fa fa-pause fa-2x";
     } else {
       player.pause();
       pButton.className = "";
-      pButton.className = "fa fa-play";
+      pButton.className = "fa fa-play fa-2x";
     }
 
   }
@@ -39,9 +39,9 @@ class AudioPlayer extends Component {
         </audio>
         <div>
           <div className="player-station-name"> Current Station: { this.props.stationFeed.name } </div>
-          <i id="pButton" className="fa fa-play" aria-hidden="true" onClick={ this.makeItPlay } ></i>
+          <i id="pButton" className="fa fa-play fa-2x" aria-hidden="true" onClick={ this.makeItPlay } ></i>
           <input id="vol-control" type="range" min={ 0 } max={ 100 } step={ 1 } onInput={ this.setVolume } onChange={ this.setVolume }></input>
-          <i className="fa fa-random seek-button" aria-hidden="true" onClick={this.props.seekStation} ></i>
+          <i className="fa fa-random fa-2x seek-button" aria-hidden="true" onClick={this.props.seekStation} ></i>
           <i id="loader" className="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
         </div>
       </div>

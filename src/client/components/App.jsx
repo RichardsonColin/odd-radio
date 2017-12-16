@@ -47,7 +47,7 @@ class App extends Component {
     // Changes the loading icon to a pause icon.
     player.addEventListener("playing", function() {
       pButton.className = "";
-      pButton.className = "fa fa-pause";
+      pButton.className = "fa fa-pause fa-2x";
     });
   }
 
