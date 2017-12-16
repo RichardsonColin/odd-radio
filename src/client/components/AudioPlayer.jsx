@@ -17,7 +17,7 @@ class AudioPlayer extends Component {
         <audio id="player" controls="controls" >
           <source src={ this.props.stationFeed.stream } type={ this.props.stationFeed.type } />
         </audio>
-        <div className="seek-button"><button>seek</button></div>
+        <div className="seek-button" onClick={ this.props.seekStation } ><button>seek</button></div>
       </div>
     );
   }
