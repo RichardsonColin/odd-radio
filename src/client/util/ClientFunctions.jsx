@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
 export const handleSelectedStation = function(id, name, stream, type) {
-    this.setState({
-        selectedStation: {
+    let station = {
             id: id,
             name: name,
             stream: stream,
             type: type
-        }
+        };
+    let test = { key: 'value', tester: 'test'};
+    localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
+    this.setState({
+        selectedStation: station
     });
     this.handlePlayState();
 }
@@ -81,6 +84,15 @@ export const setVolume = function(event) {
     player.volume = event.target.value / 100
 }
 
+//sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser
+export const setStateSelectedStation = function() {
+    if (JSON.parse(localStorage.getItem('key'))){
+        this.setState({
+            selectedStation: JSON.parse(localStorage.getItem('key'))
+        });
+    }
+}
+
 // Function for play button triggers.
 export const makeItPlay = function() {
     let player = document.getElementById("player");
@@ -121,6 +133,7 @@ export const loadStations = function() {
         });
 }
 
+
 export const findColor = function() {
   const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
   return this.colors[colorIndex];
@@ -128,7 +141,8 @@ export const findColor = function() {
 
 export const scrollListener = function() {
   const scrollListen = window.addEventListener('scroll', () => {
-  const percent = window.scrollY / ( document.body.scrollHeight - window.innerHeight );
-  this.setState({ scrollPercent: percent });
-});
+    const percent = window.scrollY / ( document.body.scrollHeight - window.innerHeight );
+    this.setState({ scrollPercent: percent });
+  });
 }
+

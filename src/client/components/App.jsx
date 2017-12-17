@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { handleSelectedStation, handlePlayState, seekStation, generateRandomStationId, loadStations, findColor, scrollListener } from '../util/ClientFunctions.jsx';
+import { handleSelectedStation, handlePlayState, seekStation, generateRandomStationId, loadStations, findColor, scrollListener, setStateSelectedStation } from '../util/ClientFunctions.jsx';
+
 
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
@@ -27,12 +28,14 @@ class App extends Component {
     this.loadStations = loadStations.bind(this);
     this.scrollListener = scrollListener.bind(this);
     this.findColor = findColor.bind(this);
+    this.setStateSelectedStation = setStateSelectedStation.bind(this);
+
   }
 
   componentDidMount() {
     this.loadStations();
     this.scrollListener();
-
+    this.setStateSelectedStation();
 
   }
 
