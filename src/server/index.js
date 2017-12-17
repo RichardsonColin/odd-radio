@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+var pg = require('pg');
 
 require('dotenv').config();
 
@@ -25,4 +26,4 @@ app.get('/api/stations/:id', (req, res) => {
 
 
 app.listen(process.env.PORT || 3000) //listens on port 3000 -> http://localhost:3000/
-console.log('listening on port 3000');
+console.log('listening on port env.PORT or 3000');
