@@ -3,7 +3,7 @@ const app = express();
 
 require('dotenv').config();
 
-const ENV         = process.env.ENV || 3000;
+const ENV         = process.env.ENV || 'development';
 const knexConfig  = require('../../knexfile');
 const knex        = require('knex')(knexConfig[ENV]);
 const knexLogger  = require('knex-logger');
