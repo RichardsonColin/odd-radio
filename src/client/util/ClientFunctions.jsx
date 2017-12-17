@@ -121,13 +121,14 @@ export const loadStations = function() {
         });
 }
 
-  export const findColor = function() {
-    const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
-    return this.colors[colorIndex];
-  }
+export const findColor = function() {
+  const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
+  return this.colors[colorIndex];
+}
 
-   export const scrollListener = window.addEventListener('scroll', () => {
-      const percent = window.scrollY / ( document.body.scrollHeight - window.innerHeight );
-      this.setState({ scrollPercent: percent });
-    });
-
+export const scrollListener = function() {
+  const scrollListen = window.addEventListener('scroll', () => {
+  const percent = window.scrollY / ( document.body.scrollHeight - window.innerHeight );
+  this.setState({ scrollPercent: percent });
+});
+}

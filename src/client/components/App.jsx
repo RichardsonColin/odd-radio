@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { handleSelectedStation, handlePlayState, seekStation, generateRandomStationId, loadStations, findColor } from '../util/ClientFunctions.jsx';
+import { handleSelectedStation, handlePlayState, seekStation, generateRandomStationId, loadStations, findColor, scrollListener } from '../util/ClientFunctions.jsx';
 
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
@@ -7,7 +7,7 @@ import StationList from './StationList.jsx';
 class App extends Component {
   constructor(props) {
     super(props);
-     this.colors = ['red', 'blue', 'green'];
+     this.colors = ['red', 'blue', 'green', 'yellow'];
     this.state = {
       scrollPercent: 0,
       color: '1',
@@ -19,23 +19,26 @@ class App extends Component {
         type: ""
       }
     },
+
     this.handlePlayState = handlePlayState.bind(this);
     this.handleSelectedStation = handleSelectedStation.bind(this);
     this.seekStation = seekStation.bind(this);
     this.generateRandomStationId = generateRandomStationId.bind(this);
     this.loadStations = loadStations.bind(this);
-    this.findColor = findColor.bind(this);
     this.scrollListener = scrollListener.bind(this);
+    this.findColor = findColor.bind(this);
   }
 
   componentDidMount() {
     this.loadStations();
     this.scrollListener();
+
+
   }
 
   render() {
     return (
-      <div>
+      <div className="app-container" style={{ backgroundColor: this.findColor() }}>
         <header>
           <h1>oddrad.io</h1>
           <h3>A curated collection of the odd sounds of Canadian college radio.</h3>
