@@ -4,7 +4,7 @@
   "description": "A curated collection of college radio stations in Canada.",
   "main": "index.js",
   "scripts": {
-    "start": "src/server/index.js ",
+    "start": "src/server/index.js",
     "webpack": "./node_modules/.bin/webpack",
     "dev": "npm run webpack && npm run start",
     "test": "jest"
@@ -43,5 +43,4 @@
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^2.0.1"
   }
-
 }
