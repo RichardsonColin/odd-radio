@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
 export const handleSelectedStation = function(id, name, stream, type) {
-    this.setState({
-        selectedStation: {
+    let station = {
             id: id,
             name: name,
             stream: stream,
             type: type
-        }
+        };
+    let test = { key: 'value', tester: 'test'};
+    localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
+    this.setState({
+        selectedStation: station
     });
     this.handlePlayState();
 }
@@ -81,6 +84,15 @@ export const setVolume = function(event) {
     player.volume = event.target.value / 100
 }
 
+//sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser
+export const setStateSelectedStation = function() {
+    if (JSON.parse(localStorage.getItem('key'))){
+        this.setState({
+            selectedStation: JSON.parse(localStorage.getItem('key'))
+        });
+    }
+}
+
 // Function for play button triggers.
 export const makeItPlay = function() {
     let player = document.getElementById("player");
@@ -121,3 +133,7 @@ export const loadStations = function() {
         });
 }
 
+// const cachedStation = localStorage.getItem('key');
+//         console.log('cachedStation', cachedStation);
+//         setStateSelectedStation(cachedStation);
+//         handlePlayState();
