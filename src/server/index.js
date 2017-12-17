@@ -4,7 +4,7 @@ var pg = require('pg');
 
 require('dotenv').config();
 
-const ENV         = process.env.ENV || 'development';
+const ENV         = process.env.ENV || 'production';
 const knexConfig  = require('../../knexfile');
 const knex        = require('knex')(knexConfig[ENV]);
 const knexLogger  = require('knex-logger');
