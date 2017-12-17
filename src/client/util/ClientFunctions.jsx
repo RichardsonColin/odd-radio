@@ -133,7 +133,16 @@ export const loadStations = function() {
         });
 }
 
-// const cachedStation = localStorage.getItem('key');
-//         console.log('cachedStation', cachedStation);
-//         setStateSelectedStation(cachedStation);
-//         handlePlayState();
+
+export const findColor = function() {
+  const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
+  return this.colors[colorIndex];
+}
+
+export const scrollListener = function() {
+  const scrollListen = window.addEventListener('scroll', () => {
+    const percent = window.scrollY / ( document.body.scrollHeight - window.innerHeight );
+    this.setState({ scrollPercent: percent });
+  });
+}
+
