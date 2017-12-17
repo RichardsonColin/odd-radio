@@ -18,7 +18,7 @@ class StationList extends Component {
     });
 
     return (
-      <section>
+      <section className="station-list-container">
         { station }
       </section>
     )

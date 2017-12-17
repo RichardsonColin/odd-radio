@@ -8,7 +8,7 @@ import StationList from './StationList.jsx';
 class App extends Component {
   constructor(props) {
     super(props);
-     this.colors = ['red', 'blue', 'green', 'yellow'];
+     this.colors = ['FF81AB', 'A07BE8', '66CBFF', '5CE886', 'F6FF71'];
     this.state = {
       scrollPercent: 0,
       color: '1',
@@ -44,7 +44,11 @@ class App extends Component {
       <div className="app-container" style={{ backgroundColor: this.findColor() }}>
         <header>
           <h1>oddrad.io</h1>
-          <h3>A curated collection of the odd sounds of Canadian college radio.</h3>
+          <h3>A curated collection of the </h3>
+          <h3>odd sounds </h3>
+          <h3>of Canadian college </h3>
+          <h3>radio.</h3>
+
         </header>
           <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations }/>
         <footer>
