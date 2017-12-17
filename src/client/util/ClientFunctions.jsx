@@ -69,12 +69,12 @@ export const onInfoSelect = function(event) {
     let infoId = this.props.name
     let info = document.getElementById(infoId);
     console.log('info.className', info.className);
-    if (info.className === "container station-container content") {
+    if (info.className === "container info-container content") {
         info.className = "";
-        info.className = "container station-container";
+        info.className = "container info-container";
     } else {
         info.className = "";
-        info.className = "container station-container content";
+        info.className = "container info-container content";
     }
 }
 

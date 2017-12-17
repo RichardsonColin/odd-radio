@@ -30,12 +30,15 @@ class Station extends Component {
             </div>
           </div>
         </div>
-        <div className="container station-container content" id={ this.props.name }>
+        <div className="container info-container content" id={ this.props.name }>
           <div className="row center-align">
-            <div className="station-info center" >
-              <p>Location: { this.props.city } </p>
-              <p>Description: { this.props.description } </p>
-              <p>Home Page: { this.props.homePage } </p>
+            <div className="station-info center">
+              <div className="station-branding one-third column"> { this.props.name } </div>
+              <div className="two-thirds column info">
+                <div>Location: { this.props.city } </div>
+                <div>Description: { this.props.description } </div>
+                <div>Home Page: { this.props.homePage } </div>
+              </div>
             </div>
           </div>
         </div>
