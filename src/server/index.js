@@ -9,6 +9,18 @@ const knexConfig  = require('../../knexfile');
 const knex        = require('knex')(knexConfig[ENV]);
 const knexLogger  = require('knex-logger');
 
+var config = {
+  user: 'labber',
+  database: 'odd_radio',
+  password: 'labber',
+  port: 5432,
+  max: 10,
+  idleTimeoutMillis: 30000,
+};
+
+
+const pool = new pg.Pool(config);
+
 app.use(express.static(__dirname +'./../../')); //serves the index.html
 app.use(knexLogger(knex));
 
@@ -25,7 +37,7 @@ app.get('/api/stations/:id', (req, res) => {
 })
 
 app.get('/db', function (request, response) {
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+  pool.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
       done();
       if (err)
