@@ -38,7 +38,7 @@ class Station extends Component {
               <div className="two-thirds column info">
                 <div>Location: { this.props.city } </div>
                 <div>Description: { this.props.description } </div>
-                <div>Home Page: { this.props.homePage } </div>
+                <div>Home Page: <a href={this.props.homePage} target='_blank'> { this.props.homePage } </a> </div>
               </div>
             </div>
           </div>
