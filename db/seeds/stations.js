@@ -10,7 +10,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://cfcr.ca/',
         city: 'Saskatoon',
         province: 'SK',
-        description: 'sjndfahfbasdfnas;na',
+        description: 'CFCR 90.5 FM Community Radio is a non-profit corporation owned by the Community Radio Society of Saskatoon. We are a volunteer powered, listener supported organization serving the alternative radio needs of Saskatoon and surrounding areas.',
         frequency: '90.5 FM',
         language: 'English',
         stream_type: 'audio/mp3'
@@ -22,7 +22,7 @@ exports.seed = function(knex, Promise) {
         home_page:'http://cfmu.ca/' ,
         city: 'Hamilton',
         province:'ON',
-        description:'ajndfbasdblfjsdfnja;',
+        description:'93.3 CFMU-FM, Canada’s third oldest campus / community radio station, has been redefining radio for over 25 years, delivering daily the most enlightening, innovative and entertaining programming in our broadcast area.',
         frequency: '93.3 FM',
         language:'English' ,
         stream_type: 'audio/mp3'
@@ -34,7 +34,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'https://ckuw.ca',
         city:'Winnipeg' ,
         province:'MB',
-        description: 'vbjsdalhasjv;ad',
+        description: 'Since the early 60′s CKUW has offered students and the community a unique chance to express ideas and be introduced to music heard nowhere else in Winnipeg. CKUW programmers have an outspoken passion for music and information.',
         frequency: '95.9 FM' ,
         language: 'English' ,
         stream_type: 'audio/mp3'
@@ -46,7 +46,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://cjsw.com',
         city:'Calgary' ,
         province:'AB',
-        description: 'test description test description test description',
+        description: 'CJSW 90.9FM is Calgary’s community radio station, based at the University of Calgary. CJSW broadcasts music, spoken word and multicultural programming on 90.9FM and streaming online.',
         frequency: '90.9 FM' ,
         language: 'English' ,
         stream_type: 'audio/mp3'
@@ -58,7 +58,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'https://www.ckcufm.com/',
         city:'Ottawa' ,
         province:'ON',
-        description: 'test description test description test description',
+        description: 'On November 14, 1975, Canadian radio history was made. When the strains of Joni Mitchell’s “You Turn Me On, I’m a Radio” transmitted over the airwaves at 93.1 FM, CKCU became the first campus-based community radio station in the country.',
         frequency: '93.1 FM' ,
         language: 'English' ,
         stream_type: 'audio/mp3'
@@ -70,7 +70,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://civl.ca/',
         city:'Abbotsford' ,
         province:'BC',
-        description: 'test description test description test description',
+        description: 'CIVL Radio is a campus and community radio station that serves the University of the Fraser Valley (UFV), Abbotsford, Mission and Chilliwack.',
         frequency: '101.7 FM' ,
         language: 'English' ,
         stream_type: 'audio/mp3'
@@ -82,7 +82,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.mun.ca/chmr/',
         city:'St. John\'s' ,
         province:'NF',
-        description: 'test description test description test description',
+        description: "Newfoundland's only alternative, broadcasting from the campus of Memorial University.",
         frequency: '93.5 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -94,7 +94,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://chuo.fm/',
         city:'Ottawa' ,
         province:'ON',
-        description: 'test description test description test description',
+        description: 'CHUO 89.1 FM is an independent, community-powered and listener - supported radio station.Since 1991, we’ve been proudly playing whatever we want.Not bound by a single genre of music, CHUO invites our listeners on a journey of discovery.',
         frequency: '90.9 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -106,7 +106,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.cjlo.com/',
         city:'Montreal' ,
         province:'QC',
-        description: 'test description test description test description',
+        description: "CJLO is Concordia University's one and only radio station. 100% non - profit, and run almost entirely by volunteers, the station is located in the heart of the Loyola campus in the NDG borough of Montreal.",
         frequency: '1690 AM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -118,7 +118,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.ckdu.ca',
         city:'Halifax' ,
         province:'NS',
-        description: 'test description test description test description',
+        description: "CKDU-FM is Halifax’s only FM campus-community radio station. We are a volunteer-run, 3200-watt station broadcasting from the Dalhousie campus to the metro Halifax area. CKDU-FM has been broadcasting as an FM station since 1985.",
         frequency: '88.1 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -130,7 +130,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://ckxu.com/',
         city:'Lethbridge' ,
         province:'AB',
-        description: 'test description test description test description',
+        description: "CKXU's mission is to showcase and promote cultural diversity in Southern Alberta. The team at CKXU creates and fosters an inclusive arts community that is accessible to everyone!",
         frequency: '88.3 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -142,7 +142,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'https://ckut.ca/en',
         city:'Montreal' ,
         province:'QC',
-        description: 'test description test description test description',
+        description: "CKUT is a non-profit, campus-community radio station based at McGill University. CKUT provides alternative music, news and spoken word programming to the city of Montreal and surrounding areas, 24 hours a day, 365 days a year.",
         frequency: '90.3 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -154,7 +154,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.citr.ca/',
         city:'Vancouver' ,
         province:'BC',
-        description: 'test description test description test description',
+        description: "CiTR 101.9 FM is the broadcasting voice of the University of British Columbia, situated on the unceded, traditional Coast Salish territory of the Hən̓q̓əmin̓əm̓ speaking Musqueam peoples.",
         frequency: '101.9 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -166,7 +166,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://localfm.ca/',
         city:'Saint John' ,
         province:'NB',
-        description: 'test description test description test description',
+        description: "Local 107.3 FM - Listener Supported Community And Campus Radio In Saint John",
         frequency: '107.3 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -178,7 +178,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.cfrc.ca/',
         city:'Kingston' ,
         province:'ON',
-        description: 'test description test description test description',
+        description: "CFRC 101.9FM is Kingston’s only campus & community radio station! We are a not-for-profit, volunteer-powered media outlet that fills the gap left by the mainstream.",
         frequency: '101.9 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -190,7 +190,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.cfru.ca/',
         city:'Guelph' ,
         province:'ON',
-        description: 'test description test description test description',
+        description: "CFRU aims to provide a complete service to the community. We provide access to the media to groups and individuals who would otherwise have little access through mainstream media outlets.",
         frequency: '93.3 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -202,7 +202,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.coopradio.org/',
         city:'Vancouver' ,
         province:'BC',
-        description: 'test description test description test description',
+        description: "Vancouver Co-operative Radio, CFRO, 100.5FM is a non-commercial, co-operatively-owned, listener-supported, community radio station.",
         frequency: '100.5 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -214,7 +214,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://cfur.ca/',
         city:'Prince George' ,
         province:'BC',
-        description: 'test description test description test description',
+        description: "The 'FUR' (as it is known colloquially) is governed by the CFUR Radio Society, a non-profit corporation consisting of students and other community members who promote CFUR via membership drives, fundraisers, and on-air broadcasting.",
         frequency: '88.7 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -226,7 +226,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'https://chmafm.wordpress.com/',
         city:'Sackville' ,
         province:'NB',
-        description: 'test description test description test description',
+        description: "CHMA 106.9 FM is owned and operated by the members of Attic Broadcasting Co. Ltd., a non-profit organization with its offices on the campus of Mount Allison University.",
         frequency: '106.9 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -238,7 +238,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.choq.ca/',
         city:'Saint Catherine' ,
         province:'QC',
-        description: 'test description test description test description',
+        description: "CHOQ's mission is to provide, through its radio activities, a voice to the University community of UQAM, in a spirit of discovery and diversity.",
         frequency: '' ,
         language: 'French' ,
         stream_type: 'audio/mpeg'
@@ -250,7 +250,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://chyz.ca/',
         city:'Saint-Foye' ,
         province:'QC',
-        description: 'test description test description test description',
+        description: "CHYZ 94,3 FM est, depuis 1997, la radio des étudiants de l’Université Laval de Québec.",
         frequency: '94.3 FM' ,
         language: 'French' ,
         stream_type: 'audio/mpeg'
@@ -262,7 +262,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.smithersradio.com/',
         city:'Smithers' ,
         province:'BC',
-        description: 'test description test description test description',
+        description: "The Smithers Community Radio Society is an incorporated non-profit that manages a locally supported, volunteer operated community radio station (93.9FM).",
         frequency: '' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -274,7 +274,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.luradio.ca/',
         city:'Thunder Bay' ,
         province:'ON',
-        description: 'test description test description test description',
+        description: "Our mandate is to provide our listeners with high quality content that is not already found on the airwaves in Thunder Bay.",
         frequency: '102.7 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -286,7 +286,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.kootenaycoopradio.com/',
         city:'Nelson' ,
         province:'BC',
-        description: 'test description test description test description',
+        description: "Kootenay Co-op Radio uses its facilities and the initiative and skills of its membership to create a medium for balanced expression of the varied perspectives of our community.",
         frequency: '93.5 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -298,7 +298,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://cjmp.ca/',
         city:'Powell River' ,
         province:'BC',
-        description: 'test description test description test description',
+        description: "CJMP-FM is a Canadian radio station, which broadcasts at 90.1 FM in Powell River, British Columbia.",
         frequency: '90.1 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -310,7 +310,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.thescopeatryerson.ca/',
         city:'Toronto' ,
         province:'ON',
-        description: 'test description test description test description',
+        description: "CJRU 1280AM is Ryerson University's new campus and community multi-media hub. Our station airs a variety of programming from the university, Ryerson students, the community at large and from the NCRA Program Exchange.",
         frequency: '1280 AM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
@@ -322,7 +322,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.cfuv.ca',
         city:'Victoria' ,
         province:'BC',
-        description: 'test description test description test description',
+        description: "CFUV provides a platform for marginalized voices in our community to represent themselves on-air. We highlight music genres you won’t hear anywhere else.",
         frequency: '101.9 FM' ,
         language: 'English' ,
         stream_type: 'audio/aac'
@@ -334,7 +334,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'http://www.cjsr.com/',
         city:'Edmonton' ,
         province:'AB',
-        description: 'test description test description test description',
+        description: "CJSR’s mission is to enlighten and entertain our audience through high quality and diverse programming that constantly challenges the status quo.",
         frequency: '88.5 FM' ,
         language: 'English' ,
         stream_type: 'audio/aac'
@@ -346,7 +346,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'https://thex.ca/',
         city:'Kamloops' ,
         province:'BC',
-        description: 'test description test description test description test description test description test description test description test description test description test description test description test description test description test description test description',
+        description: "The X – Campus & Community Radio serving Kamloops, BC",
         frequency: '92.5 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
