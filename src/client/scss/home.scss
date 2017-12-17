@@ -21,6 +21,26 @@ h3 {
   box-shadow: 1px 3px 30px rgba(0,0,0,0.4);
   align-items: center;
 }
+.info-container {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.75;
+  transform: skew(-21deg) rotate(-21deg);
+  box-shadow: 1px 3px 30px rgba(0,0,0,0.4);
+  align-items: center;
+  margin-top: -10px
+}
+
+.station-branding {
+  font-size: 4em;
+  text-align: right;
+}
+
+.info {
+  padding-top: 10;
+}
+
 .content {
   display: none;
 }
