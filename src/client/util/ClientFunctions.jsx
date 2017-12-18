@@ -98,15 +98,17 @@ export const muteAudio = function(event) {
   let lastVolume = this.lastClickedVolume();
   console.log("last clicked volume =", this.lastClickedVolume());
   let volumeSlider = document.getElementById("vol-control");
-  if (player.volume > 0) {
-    mute.className = "fa fa-volume-up";
+  if (mute.className === "fa fa-volume-off fa-2x" ){
+    mute.className = "";
+    mute.className = "fa fa-volume-up fa-2x";
     player.volume = 0;
     volumeSlider.value = 0;
   } else {
     console.log('Value in else:', lastVolume);
     // player.volume = this.lastClickedVolume() / 100);
     volumeSlider.value = this.lastClickedVolume();
-    mute.className = "fa fa-volume-off";
+    mute.className = "";
+    mute.className = "fa fa-volume-off fa-2x";
   }
 
 }

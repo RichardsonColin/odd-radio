@@ -684,6 +684,7 @@ var setVolume = exports.setVolume = function setVolume(event) {
     player.volume = event.target.value / 100;
 };
 
+//function to grab the last volume input selected on the volume slider
 var lastClickedVolume = exports.lastClickedVolume = function lastClickedVolume(event) {
     var volumeSliderValue = document.getElementById("vol-control");
     console.log("in lastClicked function", volumeSliderValue.value);
@@ -697,15 +698,17 @@ var muteAudio = exports.muteAudio = function muteAudio(event) {
     var lastVolume = this.lastClickedVolume();
     console.log("last clicked volume =", this.lastClickedVolume());
     var volumeSlider = document.getElementById("vol-control");
-    if (player.volume > 0) {
-        mute.className = "fa fa-volume-up";
+    if (mute.className === "fa fa-volume-off fa-2x") {
+        mute.className = "";
+        mute.className = "fa fa-volume-up fa-2x";
         player.volume = 0;
         volumeSlider.value = 0;
     } else {
         console.log('Value in else:', lastVolume);
         // player.volume = this.lastClickedVolume() / 100);
         volumeSlider.value = this.lastClickedVolume();
-        mute.className = "fa fa-volume-off";
+        mute.className = "";
+        mute.className = "fa fa-volume-off fa-2x";
     }
 };
 
