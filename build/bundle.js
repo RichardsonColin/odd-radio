@@ -684,11 +684,13 @@ var setVolume = exports.setVolume = function setVolume(event) {
     player.volume = event.target.value / 100;
 };
 
+// Function to toggle mute
 var muteAudio = exports.muteAudio = function muteAudio(event) {
     var player = document.getElementById("player");
     player.volume = 0;
     var volumeSlider = document.getElementById("vol-control");
     volumeSlider.value = 0;
+    mute.className = "fa fa-volume-up";
 };
 
 //sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser

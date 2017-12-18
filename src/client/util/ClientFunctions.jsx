@@ -84,11 +84,13 @@ export const setVolume = function(event) {
     player.volume = event.target.value / 100
 }
 
+// Function to toggle mute
 export const muteAudio = function(event) {
     let player = document.getElementById("player");
     player.volume = 0;
     let volumeSlider = document.getElementById("vol-control");
     volumeSlider.value = 0;
+    mute.className = "fa fa-volume-up"
 
 }
 

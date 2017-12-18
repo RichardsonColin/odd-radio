@@ -22,7 +22,7 @@ class AudioPlayer extends Component {
           <input id="vol-control" type="range" min={ 0 } max={ 100 } step={ 1 } onInput={ this.setVolume } onChange={ this.setVolume }></input>
           <i className="fa fa-random fa-2x seek-button" onClick={this.props.seekStation} ></i>
           <i id="loader" className="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
-          <i id="mute" className="fa fa-volume-off fa-2x" onClick= { this.muteAudio }></i>
+          <i id="mute" className="fa fa-volume-off fa-2x" onClick={ this.muteAudio }></i>
         </div>
       </div>
     );
