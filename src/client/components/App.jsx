@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { handleSelectedStation, handlePlayState, seekStation, generateRandomStationId, loadStations, findColor, scrollListener, setStateSelectedStation } from '../util/ClientFunctions.jsx';
+import { handleSelectedStation, handlePlayState, seekStation, generateRandomStationId, loadStations, findColor, scrollListener, setStateSelectedStation, muteAudio, lastClickedVolume } from '../util/ClientFunctions.jsx';
 
 
 import AudioPlayer from './AudioPlayer.jsx';
@@ -8,7 +8,7 @@ import StationList from './StationList.jsx';
 class App extends Component {
   constructor(props) {
     super(props);
-     this.colors = ['FF81AB', 'A07BE8', '66CBFF', '5CE886', 'F6FF71'];
+    this.colors = ['FF81AB', 'A07BE8', '66CBFF', '5CE886', 'F6FF71'];
     this.state = {
       scrollPercent: 0,
       color: '1',
@@ -29,6 +29,8 @@ class App extends Component {
     this.scrollListener = scrollListener.bind(this);
     this.findColor = findColor.bind(this);
     this.setStateSelectedStation = setStateSelectedStation.bind(this);
+    this.lastClickedVolume = lastClickedVolume.bind(this);
+    this.muteAudio = muteAudio.bind(this);
 
   }
 
@@ -36,6 +38,8 @@ class App extends Component {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
+    this.lastClickedVolume();
+    this.muteAudio();
 
   }
 
