@@ -122,7 +122,7 @@ export const shuffle = function (sourceArray) {
 }
 
 export const loadStations = function() {
-    fetch('/api/stations')
+    fetch('/api/stations', { mode: 'no-cors' })
         .then((response) => {
             return response.json()
         }).then((json) => {

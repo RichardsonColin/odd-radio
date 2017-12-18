@@ -724,7 +724,7 @@ var shuffle = exports.shuffle = function shuffle(sourceArray) {
 var loadStations = exports.loadStations = function loadStations() {
     var _this = this;
 
-    fetch('/api/stations').then(function (response) {
+    fetch('/api/stations', { mode: 'no-cors' }).then(function (response) {
         return response.json();
     }).then(function (json) {
         _this.setState({ stations: shuffle(json) });
