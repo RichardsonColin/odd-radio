@@ -4,7 +4,7 @@
   "description": "A curated collection of college radio stations in Canada.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server/index.js",
+    "start": "node src/server/index.js",
     "webpack": "./node_modules/.bin/webpack",
     "dev": "npm run webpack && npm run start",
     "test": "NODE_PATH=./src mocha --reporter nyan ./test/*test.js --compilers js:babel-core/register --recursive"
