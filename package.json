@@ -7,7 +7,7 @@
     "start": "nodemon src/server/index.js",
     "webpack": "./node_modules/.bin/webpack",
     "dev": "npm run webpack && npm run start",
-    "test": "NODE_PATH=./src mocha ./test/*test.js --compilers js:babel-core/register --recursive"
+    "test": "NODE_PATH=./src mocha --reporter nyan ./test/*test.js --compilers js:babel-core/register --recursive"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
     "chai": "^4.1.2",
     "css-loader": "^0.28.7",
     "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "jest": "^21.2.1",
     "jest-cli": "^21.2.1",
     "jsdom": "^11.5.1",
