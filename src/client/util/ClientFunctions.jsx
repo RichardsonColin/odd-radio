@@ -84,6 +84,15 @@ export const setVolume = function(event) {
     player.volume = event.target.value / 100
 }
 
+export const muteAudio = function(event) {
+    let player = document.getElementById("player");
+    player.volume = 0;
+    let volumeSlider = document.getElementById("vol-control");
+    volumeSlider.value = 0;
+
+}
+
+
 //sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser
 export const setStateSelectedStation = function() {
     if (JSON.parse(localStorage.getItem('key'))){

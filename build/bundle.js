@@ -571,7 +571,7 @@ module.exports = warning;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.scrollListener = exports.findColor = exports.loadStations = exports.shuffle = exports.makeItPlay = exports.setStateSelectedStation = exports.setVolume = exports.onInfoSelect = exports.onStationSelect = exports.handlePlayState = exports.seekStation = exports.generateRandomStationId = exports.handleSelectedStation = undefined;
+exports.scrollListener = exports.findColor = exports.loadStations = exports.shuffle = exports.makeItPlay = exports.setStateSelectedStation = exports.muteAudio = exports.setVolume = exports.onInfoSelect = exports.onStationSelect = exports.handlePlayState = exports.seekStation = exports.generateRandomStationId = exports.handleSelectedStation = undefined;
 
 var _react = __webpack_require__(1);
 
@@ -682,6 +682,13 @@ var onInfoSelect = exports.onInfoSelect = function onInfoSelect(event) {
 var setVolume = exports.setVolume = function setVolume(event) {
     var player = document.getElementById("player");
     player.volume = event.target.value / 100;
+};
+
+var muteAudio = exports.muteAudio = function muteAudio(event) {
+    var player = document.getElementById("player");
+    player.volume = 0;
+    var volumeSlider = document.getElementById("vol-control");
+    volumeSlider.value = 0;
 };
 
 //sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser
@@ -8055,6 +8062,7 @@ var AudioPlayer = function (_Component) {
 
     _this.makeItPlay = _ClientFunctions.makeItPlay.bind(_this);
     _this.setVolume = _ClientFunctions.setVolume.bind(_this);
+    _this.muteAudio = _ClientFunctions.muteAudio.bind(_this);
     return _this;
   }
 
@@ -8079,10 +8087,11 @@ var AudioPlayer = function (_Component) {
             this.props.stationFeed.name,
             ' '
           ),
-          _react2.default.createElement('i', { id: 'pButton', className: 'fa fa-play fa-2x', 'aria-hidden': 'true', onClick: this.makeItPlay }),
+          _react2.default.createElement('i', { id: 'pButton', className: 'fa fa-play fa-2x', onClick: this.makeItPlay }),
           _react2.default.createElement('input', { id: 'vol-control', type: 'range', min: 0, max: 100, step: 1, onInput: this.setVolume, onChange: this.setVolume }),
-          _react2.default.createElement('i', { className: 'fa fa-random fa-2x seek-button', 'aria-hidden': 'true', onClick: this.props.seekStation }),
-          _react2.default.createElement('i', { id: 'loader', className: 'fa fa-spinner fa-pulse fa-2x fa-fw' })
+          _react2.default.createElement('i', { className: 'fa fa-random fa-2x seek-button', onClick: this.props.seekStation }),
+          _react2.default.createElement('i', { id: 'loader', className: 'fa fa-spinner fa-pulse fa-2x fa-fw' }),
+          _react2.default.createElement('i', { id: 'mute', className: 'fa fa-volume-off fa-2x', onClick: this.muteAudio })
         )
       );
     }
