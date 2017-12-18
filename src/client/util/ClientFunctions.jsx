@@ -65,11 +65,9 @@ export const onStationSelect = function(event) {
 
 // Function to show more info for statios.
 export const onInfoSelect = function(event) {
-    // console.log('---- onInfoSelect ----', this);
     let infoId = this.props.name
     let info = document.getElementById(infoId);
     let station = document.getElementById(infoId).previousSibling;
-    // console.log('info.className', info.className);
     if (info.className === "container info-container hide-class") {
         info.className = "";
         info.className = "container info-container";
@@ -77,9 +75,8 @@ export const onInfoSelect = function(event) {
     } else {
         info.className = "";
         info.className = "container info-container hide-class";
-        station.className.slice(35,40);
+        station.className = `container station-container${this.props.stationType}`;
     }
-        console.log('station.className ->', station.className)
 }
 
 // Function for volume control.

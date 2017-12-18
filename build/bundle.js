@@ -563,9 +563,223 @@ module.exports = warning;
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token (80:26)\n\n\u001b[0m \u001b[90m 78 | \u001b[39m        info\u001b[33m.\u001b[39mclassName \u001b[33m=\u001b[39m \u001b[32m\"\"\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 79 | \u001b[39m        info\u001b[33m.\u001b[39mclassName \u001b[33m=\u001b[39m \u001b[32m\"container info-container hide-class\"\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 80 | \u001b[39m        station\u001b[33m.\u001b[39mclassName\u001b[33m.\u001b[39m\u001b[33m.\u001b[39mslice(\u001b[35m35\u001b[39m\u001b[33m,\u001b[39m\u001b[35m40\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    | \u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 81 | \u001b[39m    }\n \u001b[90m 82 | \u001b[39m        console\u001b[33m.\u001b[39mlog(\u001b[32m'station.className ->'\u001b[39m\u001b[33m,\u001b[39m station\u001b[33m.\u001b[39mclassName)\n \u001b[90m 83 | \u001b[39m}\u001b[0m\n");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.scrollListener = exports.findColor = exports.loadStations = exports.shuffle = exports.makeItPlay = exports.setStateSelectedStation = exports.muteAudio = exports.lastClickedVolume = exports.setVolume = exports.onInfoSelect = exports.onStationSelect = exports.handlePlayState = exports.seekStation = exports.generateRandomStationId = exports.handleSelectedStation = undefined;
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var handleSelectedStation = exports.handleSelectedStation = function handleSelectedStation(id, name, stream, type) {
+    var station = {
+        id: id,
+        name: name,
+        stream: stream,
+        type: type
+    };
+    var test = { key: 'value', tester: 'test' };
+    localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
+    this.setState({
+        selectedStation: station
+    });
+    this.handlePlayState();
+};
+
+var generateRandomStationId = exports.generateRandomStationId = function generateRandomStationId() {
+    var seekLength = this.state.stations.length - 1;
+    return Math.floor(Math.random() * seekLength);
+};
+
+var seekStation = exports.seekStation = function seekStation() {
+    var randomStationId = this.generateRandomStationId();
+
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = this.state.stations[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var station = _step.value;
+
+
+            // Checks to see if the seek matches the currently playing station.
+            if (randomStationId === this.state.selectedStation.id) {
+                this.seekStation();
+                return;
+
+                // Plays the seeked station.
+            } else if (randomStationId === station.id) {
+                this.handleSelectedStation(station.id, station.name, station.audio_feed, station.stream_type);
+            }
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+};
+
+var handlePlayState = exports.handlePlayState = function handlePlayState() {
+    var player = document.getElementById("player");
+    document.getElementById("player").load();
+
+    // Displays the loading icon while the media is loading.
+    player.addEventListener("loadstart", function () {
+        pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";
+    });
+
+    // Plays the audio when it is ready.
+    player.addEventListener("canplaythrough", function () {
+        document.getElementById("player").play();
+    });
+
+    // Changes the loading icon to a pause icon.
+    player.addEventListener("playing", function () {
+        pButton.className = "";
+        pButton.className = "fa fa-pause fa-2x";
+    });
+};
+
+// Function to take a station div selection and pass it to the app level as current player.
+var onStationSelect = exports.onStationSelect = function onStationSelect(event) {
+    this.props.handleSelectedStation(this.state.id, this.state.name, this.state.stream, this.state.type);
+};
+
+// Function to show more info for statios.
+var onInfoSelect = exports.onInfoSelect = function onInfoSelect(event) {
+    var infoId = this.props.name;
+    var info = document.getElementById(infoId);
+    var station = document.getElementById(infoId).previousSibling;
+    if (info.className === "container info-container hide-class") {
+        info.className = "";
+        info.className = "container info-container";
+        station.className += " test";
+    } else {
+        info.className = "";
+        info.className = "container info-container hide-class";
+        station.className = 'container station-container' + this.props.stationType;
+    }
+};
+
+// Function for volume control.
+var setVolume = exports.setVolume = function setVolume(event) {
+    var player = document.getElementById("player");
+    player.volume = event.target.value / 100;
+};
+
+//function to grab the last volume input selected on the volume slider
+var lastClickedVolume = exports.lastClickedVolume = function lastClickedVolume(event) {
+    var volumeSliderValue = document.getElementById("vol-control");
+    console.log("in lastClicked function", volumeSliderValue.value);
+    this.volume = volumeSliderValue.value;
+    console.log("This.volume", this.volume);
+};
+
+// Function to toggle mute
+var muteAudio = exports.muteAudio = function muteAudio(event) {
+    // stopImmediatePropogation();
+    console.log("in muteAudio before if:", this.volume);
+    // let volumeSliderValue =[];
+    // volumeSliderValue.push(this.lastClickedVolume());
+    // let lastVolume = this.lastClickedVolume();
+    console.log(this.volume);
+    console.log("last clicked volume =", this.lastClickedVolume());
+    var volumeSlider = document.getElementById("vol-control");
+    if (mute.className === "fa fa-volume-off fa-2x") {
+        mute.className = "";
+        mute.className = "fa fa-volume-up fa-2x";
+        player.volume = 0;
+        volumeSlider.value = 0;
+    } else {
+        console.log('Value in else:', this.volume);
+        // player.volume = this.lastClickedVolume() / 100);
+        volumeSlider.value = this.volume;
+        mute.className = "";
+        mute.className = "fa fa-volume-off fa-2x";
+    }
+};
+
+//sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser
+var setStateSelectedStation = exports.setStateSelectedStation = function setStateSelectedStation() {
+    if (JSON.parse(localStorage.getItem('key'))) {
+        this.setState({
+            selectedStation: JSON.parse(localStorage.getItem('key'))
+        });
+    }
+};
+
+// Function for play button triggers.
+var makeItPlay = exports.makeItPlay = function makeItPlay() {
+    var player = document.getElementById("player");
+
+    if (this.props.stationFeed.name == '') {
+        this.props.seekStation();
+    } else if (player.paused) {
+        player.play();
+        pButton.className = "";
+        pButton.className = "fa fa-pause fa-2x";
+    } else {
+        player.pause();
+        pButton.className = "";
+        pButton.className = "fa fa-play fa-2x";
+    }
+};
+
+var shuffle = exports.shuffle = function shuffle(sourceArray) {
+    for (var i = 0; i < sourceArray.length - 1; i++) {
+        var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+        var temp = sourceArray[j];
+        sourceArray[j] = sourceArray[i];
+        sourceArray[i] = temp;
+    }
+    return sourceArray;
+};
+
+var loadStations = exports.loadStations = function loadStations() {
+    var _this = this;
+
+    fetch('/api/stations', { mode: 'no-cors' }).then(function (response) {
+        return response.json();
+    }).then(function (json) {
+        _this.setState({ stations: shuffle(json) });
+        console.log('parsed json', json);
+    }).catch(function (ex) {
+        console.log('parsing failed', ex);
+    });
+};
+
+var findColor = exports.findColor = function findColor() {
+    var colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
+    return this.colors[colorIndex];
+};
+
+var scrollListener = exports.scrollListener = function scrollListener() {
+    var _this2 = this;
+
+    var scrollListen = window.addEventListener('scroll', function () {
+        var percent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        _this2.setState({ scrollPercent: percent });
+    });
+};
 
 /***/ }),
 /* 8 */
