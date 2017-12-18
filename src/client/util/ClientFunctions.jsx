@@ -88,14 +88,18 @@ export const setVolume = function(event) {
 export const lastClickedVolume = function(event) {
     const volumeSliderValue = document.getElementById("vol-control");
     console.log("in lastClicked function", volumeSliderValue.value);
-    return volumeSliderValue.value;
+    this.volume = volumeSliderValue.value;
+    console.log("This.volume", this.volume);
 }
 
 // Function to toggle mute
 export const muteAudio = function(event) {
+  // stopImmediatePropogation();
+  console.log("in muteAudio before if:", this.volume);
   // let volumeSliderValue =[];
   // volumeSliderValue.push(this.lastClickedVolume());
-  let lastVolume = this.lastClickedVolume();
+  // let lastVolume = this.lastClickedVolume();
+  console.log(this.volume);
   console.log("last clicked volume =", this.lastClickedVolume());
   let volumeSlider = document.getElementById("vol-control");
   if (mute.className === "fa fa-volume-off fa-2x" ){
@@ -104,9 +108,9 @@ export const muteAudio = function(event) {
     player.volume = 0;
     volumeSlider.value = 0;
   } else {
-    console.log('Value in else:', lastVolume);
+    console.log('Value in else:', this.volume);
     // player.volume = this.lastClickedVolume() / 100);
-    volumeSlider.value = this.lastClickedVolume();
+    volumeSlider.value = this.volume;
     mute.className = "";
     mute.className = "fa fa-volume-off fa-2x";
   }

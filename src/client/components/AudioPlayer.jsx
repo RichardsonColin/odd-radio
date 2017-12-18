@@ -4,6 +4,7 @@ import { setVolume, makeItPlay, muteAudio, lastClickedVolume} from '../util/Clie
 class AudioPlayer extends Component {
   constructor(props) {
     super(props);
+    this.volume = 10;
     this.makeItPlay = makeItPlay.bind(this);
     this.setVolume = setVolume.bind(this);
     this.muteAudio = muteAudio.bind(this);
