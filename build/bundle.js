@@ -8113,12 +8113,36 @@ var AudioPlayer = function (_Component) {
             this.props.stationFeed.name,
             ' '
           ),
-          _react2.default.createElement('i', { id: 'pButton', className: 'fa fa-play fa-2x', onClick: this.makeItPlay }),
-          _react2.default.createElement('input', { id: 'vol-control', type: 'range', min: 0, max: 100, step: 1, onClick: this.lastClickedVolume, onInput: this.setVolume, onChange: this.setVolume }),
-          _react2.default.createElement('i', { className: 'fa fa-random fa-2x seek-button', onClick: this.props.seekStation }),
-          _react2.default.createElement('i', { id: 'loader', className: 'fa fa-spinner fa-pulse fa-2x fa-fw' })
-        ),
-        _react2.default.createElement('i', { id: 'mute', className: 'fa fa-volume-off fa-2x', onClick: this.muteAudio })
+          _react2.default.createElement(
+            'div',
+            { className: 'container player-container' },
+            _react2.default.createElement(
+              'div',
+              { className: 'row player-row border' },
+              _react2.default.createElement(
+                'div',
+                { className: 'three columns' },
+                _react2.default.createElement('i', { id: 'pButton', className: 'fa fa-play fa-2x', onClick: this.makeItPlay })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'three columns' },
+                _react2.default.createElement('input', { id: 'vol-control', type: 'range', min: 0, max: 100, step: 1, onClick: this.lastClickedVolume, onInput: this.setVolume, onChange: this.setVolume })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'three columns' },
+                _react2.default.createElement('i', { className: 'fa fa-random fa-2x seek-button', onClick: this.props.seekStation }),
+                _react2.default.createElement('i', { id: 'loader', className: 'fa fa-spinner fa-pulse fa-2x fa-fw' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'three columns' },
+                _react2.default.createElement('i', { id: 'mute', className: 'fa fa-volume-off fa-2x', onClick: this.muteAudio })
+              )
+            )
+          )
+        )
       );
     }
   }]);
