@@ -47,11 +47,21 @@ class App extends Component {
     return (
       <div className="app-container" style={{ backgroundColor: this.findColor() }}>
         <header>
-          <h1>oddrad.io</h1>
-          <h3>A curated collection of the </h3>
-          <h3>odd sounds </h3>
-          <h3>of Canadian college </h3>
-          <h3>radio.</h3>
+        <div className="container title-container">
+            <div className="row title-row border">
+              <div className="three columns description">
+                <h3>A curated collection of the </h3>
+                <h3>odd sounds </h3>
+                <h3>of Canadian college </h3>
+                <h3>radio.</h3>
+              </div>
+              <div className="three columns"> </div>
+              <div className="three columns brand-name">
+                <h1>oddrad.io</h1>
+              </div>
+            </div>
+          </div>
+
 
         </header>
           <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations }/>
