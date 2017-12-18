@@ -84,6 +84,40 @@ export const setVolume = function(event) {
     player.volume = event.target.value / 100
 }
 
+//function to grab the last volume input selected on the volume slider
+export const lastClickedVolume = function(event) {
+    const volumeSliderValue = document.getElementById("vol-control");
+    console.log("in lastClicked function", volumeSliderValue.value);
+    this.volume = volumeSliderValue.value;
+    console.log("This.volume", this.volume);
+}
+
+// Function to toggle mute
+export const muteAudio = function(event) {
+  // stopImmediatePropogation();
+  console.log("in muteAudio before if:", this.volume);
+  // let volumeSliderValue =[];
+  // volumeSliderValue.push(this.lastClickedVolume());
+  // let lastVolume = this.lastClickedVolume();
+  console.log(this.volume);
+  console.log("last clicked volume =", this.lastClickedVolume());
+  let volumeSlider = document.getElementById("vol-control");
+  if (mute.className === "fa fa-volume-off fa-2x" ){
+    mute.className = "";
+    mute.className = "fa fa-volume-up fa-2x";
+    player.volume = 0;
+    volumeSlider.value = 0;
+  } else {
+    console.log('Value in else:', this.volume);
+    // player.volume = this.lastClickedVolume() / 100);
+    volumeSlider.value = this.volume;
+    mute.className = "";
+    mute.className = "fa fa-volume-off fa-2x";
+  }
+
+}
+
+
 //sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser
 export const setStateSelectedStation = function() {
     if (JSON.parse(localStorage.getItem('key'))){
