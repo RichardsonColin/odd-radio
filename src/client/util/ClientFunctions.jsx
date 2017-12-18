@@ -68,14 +68,19 @@ export const onInfoSelect = function(event) {
     let infoId = this.props.name
     let info = document.getElementById(infoId);
     let station = document.getElementById(infoId).previousSibling;
+    let chevron = event.target;
     if (info.className === "container info-container hide-class") {
         info.className = "";
         info.className = "container info-container";
         station.className += " test";
+        chevron.className = "";
+        chevron.className = "fa fa-chevron-up card-chevron";
     } else {
         info.className = "";
         info.className = "container info-container hide-class";
         station.className = `container station-container${this.props.stationType}`;
+        chevron.className = "";
+        chevron.className = "fa fa-chevron-down card-chevron";
     }
 }
 
