@@ -7,16 +7,70 @@ class AudioPlayer extends Component {
     this.state = {
       volume: ''
     },
-    this.makeItPlay = makeItPlay.bind(this);
-    this.setVolume = setVolume.bind(this);
-    this.muteAudio = muteAudio.bind(this);
+    this.makeItPlay = this.makeItPlay.bind(this);
+    this.setVolume = this.setVolume.bind(this);
+    this.muteAudio = this.muteAudio.bind(this);
+  }
+
+  makeItPlay() {
+    let player = document.getElementById("player");
+
+    if (this.props.stationFeed.name == '') {
+      this.props.seekStation();
+    } else if (player.paused) {
+      player.play();
+      pButton.className = "";
+      pButton.className = "fa fa-pause fa-2x";
+    } else {
+      player.pause();
+      pButton.className = "";
+      pButton.className = "fa fa-play fa-2x";
+    }
+  }
+
+  // Sets volume according to range input.
+  setVolume(event) {
+    let player = document.getElementById("player");
+    player.volume = event.target.value / 100;
+
+    console.log('inside setVolume');
+
+    if (player.volume === 0) {
+      mute.className = 'fa fa-volume-up fa-2x';
+
+    } else {
+      mute.className = 'fa fa-volume-off fa-2x';
+
+    }
+  }
+
+  // Function to toggle mute
+  muteAudio(event) {
+    let slider = document.getElementById('vol-control');
+    let player = document.getElementById('player');
+
+    if (player.volume > 0) {
+      console.log(player.volume);
+      this.setState({
+        volume: player.volume
+      })
+
+      mute.className = 'fa fa-volume-up fa-2x';
+      player.volume = 0;
+      slider.value = 0;
+    } else {
+      mute.className = 'fa fa-volume-off fa-2x';
+      player.volume = this.state.volume;
+      slider.value = this.state.volume * 100;
+    }
   }
 
   render() {
+    console.log(this.props.stationFeed.audioFeed, this.props.stationFeed.streamType)
     return (
       <div>
         <audio id="player" >
-          <source src={ this.props.stationFeed.stream } type={ this.props.stationFeed.type } />
+          <source src={ this.props.stationFeed.audioFeed } type={ this.props.stationFeed.streamType } />
         </audio>
         <div>
           <div className="player-station-name"> Current Station: { this.props.stationFeed.name } </div>
