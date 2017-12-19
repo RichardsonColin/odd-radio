@@ -5,6 +5,7 @@ import { shuffle } from '../util/ClientFunctions.jsx';
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +20,7 @@ class App extends Component {
         audioFeed: "",
         streamType: ""
       },
-      player: {
+      playState: {
         volume: 1,
         isPlaying: false,
         isPaused: true,
@@ -35,6 +36,7 @@ class App extends Component {
     this.scrollListener = this.scrollListener.bind(this);
     this.findColor = this.findColor.bind(this);
     this.setStateSelectedStation = this.setStateSelectedStation.bind(this);
+    this.playPause = this.playPause.bind(this);
   }
 
   // Initial API request to build up station collection object.
@@ -63,7 +65,36 @@ class App extends Component {
     this.setState({
       selectedStation: station
     });
-    this.handlePlayState();
+    document.getElementById("player").load();
+    this.playPause();
+  }
+
+  playPause() {
+    console.log("You hit the button.")
+    let player = document.getElementById("player");
+    if (this.state.playState.isPaused) {
+      player.play();
+      console.log("We're playing now.")
+      this.setState({
+        playState: {
+          isPlaying: true,
+          isPaused: false,
+        }
+      })
+
+    } else if (this.state.playState.isPlaying) {
+      player.pause();
+      console.log("We're paused now.")
+      this.setState({
+        playState: {
+          isPlaying: false,
+          isPaused: true,
+        }
+      })
+    }
+
+
+
   }
 
   handlePlayState() {
@@ -73,17 +104,41 @@ class App extends Component {
     // Displays the loading icon while the media is loading.
     player.addEventListener("loadstart", function () {
       pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";
+
+      // this.setState({
+      //   playState: {
+      //     isPlaying: false;
+      //     isPaused: false;
+      //     isLoading: true;
+      //   };
+
     });
 
     // Plays the audio when it is ready.
     player.addEventListener("canplaythrough", function () {
       document.getElementById("player").play();
+
+      // this.setState({
+      //   playState: {
+      //     isPlaying: true;
+      //     isPaused: false;
+      //     isLoading: false;
+      //   };
+
+      // })
     });
 
     // Changes the loading icon to a pause icon.
     player.addEventListener("playing", function () {
-      pButton.className = "";
-      pButton.className = "fa fa-pause fa-2x";
+      // pButton.className = "";
+      // pButton.className = "fa fa-pause fa-2x";
+
+      // this.setState({
+      //   playState: {
+      //     isPlaying: true;
+      //     isPaused: false;
+      //     isLoading: false;
+          // };
     });
   }
 
@@ -164,12 +219,12 @@ class App extends Component {
               </div>
             </div>
           </div>
-
-
         </header>
-          <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations }/>
+          <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations }
+            activeStation={ this.state.selectedStation.id } playState={ this.state.playState } />
         <footer>
-           <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation } />
+           <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
+           playPause={ this.playPause } playState={ this.state.playState } />
         </footer>
       </div>
     );
