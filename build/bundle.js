@@ -566,228 +566,6 @@ module.exports = warning;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.scrollListener = exports.findColor = exports.loadStations = exports.shuffle = exports.makeItPlay = exports.setStateSelectedStation = exports.muteAudio = exports.setVolume = exports.onInfoSelect = exports.onStationSelect = exports.handlePlayState = exports.seekStation = exports.generateRandomStationId = exports.handleSelectedStation = undefined;
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var handleSelectedStation = exports.handleSelectedStation = function handleSelectedStation(id, name, stream, type) {
-    var station = {
-        id: id,
-        name: name,
-        stream: stream,
-        type: type
-    };
-    var test = { key: 'value', tester: 'test' };
-    localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
-    this.setState({
-        selectedStation: station
-    });
-    this.handlePlayState();
-};
-
-var generateRandomStationId = exports.generateRandomStationId = function generateRandomStationId() {
-    var seekLength = this.state.stations.length - 1;
-    return Math.floor(Math.random() * seekLength);
-};
-
-var seekStation = exports.seekStation = function seekStation() {
-    var randomStationId = this.generateRandomStationId();
-
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-        for (var _iterator = this.state.stations[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var station = _step.value;
-
-
-            // Checks to see if the seek matches the currently playing station.
-            if (randomStationId === this.state.selectedStation.id) {
-                this.seekStation();
-                return;
-
-                // Plays the seeked station.
-            } else if (randomStationId === station.id) {
-                this.handleSelectedStation(station.id, station.name, station.audio_feed, station.stream_type);
-            }
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-};
-
-var handlePlayState = exports.handlePlayState = function handlePlayState() {
-    var player = document.getElementById("player");
-    document.getElementById("player").load();
-
-    // Displays the loading icon while the media is loading.
-    player.addEventListener("loadstart", function () {
-        pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";
-    });
-
-    // Plays the audio when it is ready.
-    player.addEventListener("canplaythrough", function () {
-        document.getElementById("player").play();
-    });
-
-    // Changes the loading icon to a pause icon.
-    player.addEventListener("playing", function () {
-        pButton.className = "";
-        pButton.className = "fa fa-pause fa-2x";
-    });
-};
-
-// Function to take a station div selection and pass it to the app level as current player.
-var onStationSelect = exports.onStationSelect = function onStationSelect(event) {
-    this.props.handleSelectedStation(this.state.id, this.state.name, this.state.stream, this.state.type);
-};
-
-// Function to show more info for statios.
-var onInfoSelect = exports.onInfoSelect = function onInfoSelect(event) {
-    var infoId = this.props.name;
-    var info = document.getElementById(infoId);
-    var station = document.getElementById(infoId).previousSibling;
-    var chevron = event.target;
-    if (info.className === "container info-container hide-class") {
-        info.className = "";
-        info.className = "container info-container";
-        station.className += " no-opacity";
-        chevron.className = "";
-        chevron.className = "fa fa-chevron-up card-chevron";
-    } else {
-        info.className = "";
-        info.className = "container info-container hide-class";
-        station.className = 'container station-container' + this.props.stationType;
-        chevron.className = "";
-        chevron.className = "fa fa-chevron-down card-chevron";
-    }
-};
-
-// Function for volume control.
-var setVolume = exports.setVolume = function setVolume(event) {
-    var player = document.getElementById("player");
-    player.volume = event.target.value / 100;
-
-    console.log('inside setVolume');
-
-    if (player.volume === 0) {
-        mute.className = 'fa fa-volume-up fa-2x';
-    } else {
-        mute.className = 'fa fa-volume-off fa-2x';
-    }
-};
-
-// Function to toggle mute
-var muteAudio = exports.muteAudio = function muteAudio(event) {
-    var slider = document.getElementById('vol-control');
-    var player = document.getElementById('player');
-
-    if (player.volume > 0) {
-        console.log(player.volume);
-        this.setState({
-            volume: player.volume
-        });
-
-        mute.className = 'fa fa-volume-up fa-2x';
-        player.volume = 0;
-        slider.value = 0;
-    } else {
-        mute.className = 'fa fa-volume-off fa-2x';
-        player.volume = this.state.volume;
-        slider.value = this.state.volume * 100;
-    }
-};
-
-//sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser
-var setStateSelectedStation = exports.setStateSelectedStation = function setStateSelectedStation() {
-    if (JSON.parse(localStorage.getItem('key'))) {
-        this.setState({
-            selectedStation: JSON.parse(localStorage.getItem('key'))
-        });
-    }
-};
-
-// Function for play button triggers.
-var makeItPlay = exports.makeItPlay = function makeItPlay() {
-    var player = document.getElementById("player");
-
-    if (this.props.stationFeed.name == '') {
-        this.props.seekStation();
-    } else if (player.paused) {
-        player.play();
-        pButton.className = "";
-        pButton.className = "fa fa-pause fa-2x";
-    } else {
-        player.pause();
-        pButton.className = "";
-        pButton.className = "fa fa-play fa-2x";
-    }
-};
-
-var shuffle = exports.shuffle = function shuffle(sourceArray) {
-    for (var i = 0; i < sourceArray.length - 1; i++) {
-        var j = i + Math.floor(Math.random() * (sourceArray.length - i));
-
-        var temp = sourceArray[j];
-        sourceArray[j] = sourceArray[i];
-        sourceArray[i] = temp;
-    }
-    return sourceArray;
-};
-
-var loadStations = exports.loadStations = function loadStations() {
-    var _this = this;
-
-    fetch('/api/stations', { mode: 'no-cors' }).then(function (response) {
-        return response.json();
-    }).then(function (json) {
-        _this.setState({ stations: shuffle(json) });
-        console.log('parsed json', json);
-    }).catch(function (ex) {
-        console.log('parsing failed', ex);
-    });
-};
-
-var findColor = exports.findColor = function findColor() {
-    var colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
-    return this.colors[colorIndex];
-};
-
-var scrollListener = exports.scrollListener = function scrollListener() {
-    var _this2 = this;
-
-    var scrollListen = window.addEventListener('scroll', function () {
-        var percent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-        _this2.setState({ scrollPercent: percent });
-    });
-};
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -852,7 +630,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -891,7 +669,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -972,7 +750,7 @@ module.exports = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1015,7 +793,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1088,7 +866,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1131,7 +909,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1159,6 +937,208 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.onInfoSelect = exports.shuffle = undefined;
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var shuffle = exports.shuffle = function shuffle(sourceArray) {
+    console.log('i was called.');
+    for (var i = 0; i < sourceArray.length - 1; i++) {
+        var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+        var temp = sourceArray[j];
+        sourceArray[j] = sourceArray[i];
+        sourceArray[i] = temp;
+    }
+    return sourceArray;
+};
+
+// export const handleSelectedStation = function(id, name, stream, type) {
+//     let station = {
+//             id: id,
+//             name: name,
+//             stream: stream,
+//             type: type
+//         };
+//     let test = { key: 'value', tester: 'test'};
+//     localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
+//     this.setState({
+//         selectedStation: station
+//     });
+//     this.handlePlayState();
+// }
+
+// export const generateRandomStationId = function() {
+//     const seekLength = this.state.stations.length - 1;
+//     return Math.floor(Math.random() * seekLength);
+// }
+
+// export const seekStation = function() {
+//     const randomStationId = this.generateRandomStationId();
+
+//     for (const station of this.state.stations) {
+
+//         // Checks to see if the seek matches the currently playing station.
+//         if (randomStationId === this.state.selectedStation.id) {
+//             this.seekStation();
+//             return;
+
+//             // Plays the seeked station.
+//         } else if (randomStationId === station.id) {
+//             this.handleSelectedStation(station.id, station.name, station.audio_feed, station.stream_type);
+//         }
+//     }
+// }
+
+// export const handlePlayState = function() {
+//     let player = document.getElementById("player");
+//     document.getElementById("player").load();
+
+//     // Displays the loading icon while the media is loading.
+//     player.addEventListener("loadstart", function () {
+//         pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";
+//     });
+
+//     // Plays the audio when it is ready.
+//     player.addEventListener("canplaythrough", function () {
+//         document.getElementById("player").play();
+//     });
+
+//     // Changes the loading icon to a pause icon.
+//     player.addEventListener("playing", function () {
+//         pButton.className = "";
+//         pButton.className = "fa fa-pause fa-2x";
+//     });
+// }
+
+// Function to take a station div selection and pass it to the app level as current player.
+// export const onStationSelect = function(event) {
+//     this.props.handleSelectedStation(this.state.id, this.state.name, this.state.stream, this.state.type);
+// }
+
+// Function to show more info for statios.
+var onInfoSelect = exports.onInfoSelect = function onInfoSelect(event) {
+    var infoId = this.props.name;
+    var info = document.getElementById(infoId);
+    var station = document.getElementById(infoId).previousSibling;
+    var chevron = event.target;
+    if (info.className === "container info-container hide-class") {
+        info.className = "";
+        info.className = "container info-container";
+        station.className += " no-opacity";
+        chevron.className = "";
+        chevron.className = "fa fa-chevron-up card-chevron";
+    } else {
+        info.className = "";
+        info.className = "container info-container hide-class";
+        station.className = 'container station-container' + this.props.stationType;
+        chevron.className = "";
+        chevron.className = "fa fa-chevron-down card-chevron";
+    }
+};
+
+// // Function for volume control.
+// export const setVolume = function(event) {
+//     let player = document.getElementById("player");
+//     player.volume = event.target.value / 100;
+
+//     console.log('inside setVolume');
+
+//     if(player.volume === 0) {
+//       mute.className = 'fa fa-volume-up fa-2x';
+
+//     } else {
+//       mute.className = 'fa fa-volume-off fa-2x';
+
+//     }
+// }
+
+// // Function to toggle mute
+// export const muteAudio = function(event) {
+//   let slider = document.getElementById('vol-control');
+//   let player = document.getElementById('player');
+
+//   if(player.volume > 0) {
+//     console.log(player.volume);
+//     this.setState({
+//       volume: player.volume
+//     })
+
+//     mute.className = 'fa fa-volume-up fa-2x';
+//     player.volume = 0;
+//     slider.value = 0;
+//   } else {
+//       mute.className = 'fa fa-volume-off fa-2x';
+//       player.volume = this.state.volume;
+//       slider.value = this.state.volume * 100;
+//   }
+// }
+
+//sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser
+// export const setStateSelectedStation = function() {
+//     if (JSON.parse(localStorage.getItem('key'))){
+//         this.setState({
+//             selectedStation: JSON.parse(localStorage.getItem('key'))
+//         });
+//     }
+// }
+
+// Function for play button triggers.
+// export const makeItPlay = function() {
+//     let player = document.getElementById("player");
+
+//     if (this.props.stationFeed.name == '') {
+//         this.props.seekStation();
+//     } else if (player.paused) {
+//         player.play();
+//         pButton.className = "";
+//         pButton.className = "fa fa-pause fa-2x";
+//     } else {
+//         player.pause();
+//         pButton.className = "";
+//         pButton.className = "fa fa-play fa-2x";
+//     }
+// }
+
+// export const loadStations = function() {
+//     fetch('/api/stations', { mode: 'no-cors' })
+//         .then((response) => {
+//             return response.json()
+//         }).then((json) => {
+//             this.setState({ stations: shuffle(json) })
+//             console.log('parsed json', json)
+//         }).catch((ex) => {
+//             console.log('parsing failed', ex)
+//         });
+// }
+
+
+// export const findColor = function() {
+//   const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
+//   return this.colors[colorIndex];
+// }
+
+// export const scrollListener = function() {
+//   const scrollListen = window.addEventListener('scroll', () => {
+//     const percent = window.scrollY / ( document.body.scrollHeight - window.innerHeight );
+//     this.setState({ scrollPercent: percent });
+//   });
+// }
 
 /***/ }),
 /* 15 */
@@ -1341,7 +1321,7 @@ if (process.env.NODE_ENV !== "production") {
     var invariant = __webpack_require__(5);
     var warning = __webpack_require__(6);
     var emptyFunction = __webpack_require__(2);
-    var checkPropTypes = __webpack_require__(8);
+    var checkPropTypes = __webpack_require__(7);
 
     // TODO: this is special because it gets imported during build.
 
@@ -2756,14 +2736,14 @@ if (process.env.NODE_ENV === 'production') {
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var aa = __webpack_require__(1),
-    l = __webpack_require__(9),
+    l = __webpack_require__(8),
     B = __webpack_require__(3),
     C = __webpack_require__(2),
-    ba = __webpack_require__(10),
-    da = __webpack_require__(11),
-    ea = __webpack_require__(12),
-    fa = __webpack_require__(13),
-    ia = __webpack_require__(14),
+    ba = __webpack_require__(9),
+    da = __webpack_require__(10),
+    ea = __webpack_require__(11),
+    fa = __webpack_require__(12),
+    ia = __webpack_require__(13),
     D = __webpack_require__(4);
 function E(a) {
   for (var b = arguments.length - 1, c = "Minified React error #" + a + "; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d" + a, d = 0; d < b; d++) {
@@ -4802,7 +4782,7 @@ module.exports = isNode;
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var React=__webpack_require__(1);var invariant=__webpack_require__(5);var warning=__webpack_require__(6);var ExecutionEnvironment=__webpack_require__(9);var _assign=__webpack_require__(3);var emptyFunction=__webpack_require__(2);var EventListener=__webpack_require__(10);var getActiveElement=__webpack_require__(11);var shallowEqual=__webpack_require__(12);var containsNode=__webpack_require__(13);var focusNode=__webpack_require__(14);var emptyObject=__webpack_require__(4);var checkPropTypes=__webpack_require__(8);var hyphenateStyleName=__webpack_require__(24);var camelizeStyleName=__webpack_require__(26);/**
+ */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var React=__webpack_require__(1);var invariant=__webpack_require__(5);var warning=__webpack_require__(6);var ExecutionEnvironment=__webpack_require__(8);var _assign=__webpack_require__(3);var emptyFunction=__webpack_require__(2);var EventListener=__webpack_require__(9);var getActiveElement=__webpack_require__(10);var shallowEqual=__webpack_require__(11);var containsNode=__webpack_require__(12);var focusNode=__webpack_require__(13);var emptyObject=__webpack_require__(4);var checkPropTypes=__webpack_require__(7);var hyphenateStyleName=__webpack_require__(24);var camelizeStyleName=__webpack_require__(26);/**
  * WARNING: DO NOT manually require this module.
  * This is a replacement for `invariant(...)` used by the error code system
  * and will _only_ be required by the corresponding babel pass.
@@ -7947,7 +7927,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ClientFunctions = __webpack_require__(7);
+var _ClientFunctions = __webpack_require__(14);
 
 var _AudioPlayer = __webpack_require__(29);
 
@@ -7983,19 +7963,163 @@ var App = function (_Component) {
         name: "",
         stream: "",
         type: ""
+      },
+      player: {
+        volume: 1,
+        isPlaying: false,
+        isPaused: true,
+        isLoading: false
       }
-    }, _this.handlePlayState = _ClientFunctions.handlePlayState.bind(_this);
-    _this.handleSelectedStation = _ClientFunctions.handleSelectedStation.bind(_this);
-    _this.seekStation = _ClientFunctions.seekStation.bind(_this);
-    _this.generateRandomStationId = _ClientFunctions.generateRandomStationId.bind(_this);
-    _this.loadStations = _ClientFunctions.loadStations.bind(_this);
-    _this.scrollListener = _ClientFunctions.scrollListener.bind(_this);
-    _this.findColor = _ClientFunctions.findColor.bind(_this);
-    _this.setStateSelectedStation = _ClientFunctions.setStateSelectedStation.bind(_this);
+    }, _this.handlePlayState = _this.handlePlayState.bind(_this);
+    _this.handleSelectedStation = _this.handleSelectedStation.bind(_this);
+    _this.seekStation = _this.seekStation.bind(_this);
+    _this.generateRandomStationId = _this.generateRandomStationId.bind(_this);
+    _this.loadStations = _this.loadStations.bind(_this);
+    _this.scrollListener = _this.scrollListener.bind(_this);
+    _this.findColor = _this.findColor.bind(_this);
+    _this.setStateSelectedStation = _this.setStateSelectedStation.bind(_this);
     return _this;
   }
 
+  // Initial API request to build up station collection object.
+
+
   _createClass(App, [{
+    key: 'loadStations',
+    value: function loadStations() {
+      var _this2 = this;
+
+      fetch('/api/stations', { mode: 'no-cors' }).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        _this2.setState({ stations: (0, _ClientFunctions.shuffle)(json) });
+        console.log('parsed json', json);
+      }).catch(function (ex) {
+        console.log('parsing failed', ex);
+      });
+    }
+
+    // Takes a selected station and sets it in app level state, plays it.
+
+  }, {
+    key: 'handleSelectedStation',
+    value: function handleSelectedStation(details) {
+      var station = {
+        id: details.id,
+        name: details.name,
+        stream: details.audio_feed,
+        type: details.stream_type
+      };
+      var test = { key: 'value', tester: 'test' };
+      localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
+      this.setState({
+        selectedStation: station
+      });
+      this.handlePlayState();
+    }
+  }, {
+    key: 'handlePlayState',
+    value: function handlePlayState() {
+      var player = document.getElementById("player");
+      document.getElementById("player").load();
+
+      // Displays the loading icon while the media is loading.
+      player.addEventListener("loadstart", function () {
+        pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";
+      });
+
+      // Plays the audio when it is ready.
+      player.addEventListener("canplaythrough", function () {
+        document.getElementById("player").play();
+      });
+
+      // Changes the loading icon to a pause icon.
+      player.addEventListener("playing", function () {
+        pButton.className = "";
+        pButton.className = "fa fa-pause fa-2x";
+      });
+    }
+
+    // Helper function for seek functionality.
+
+  }, {
+    key: 'generateRandomStationId',
+    value: function generateRandomStationId() {
+      var seekLength = this.state.stations.length - 1;
+      return Math.floor(Math.random() * seekLength);
+    }
+
+    // Play random station.
+
+  }, {
+    key: 'seekStation',
+    value: function seekStation() {
+      var randomStationId = this.generateRandomStationId();
+
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = this.state.stations[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var station = _step.value;
+
+          console.log(station);
+
+          // Checks to see if the seek matches the currently playing station.
+          if (randomStationId === this.state.selectedStation.id) {
+            this.seekStation();
+            return;
+
+            // Plays the seeked station.
+          } else if (randomStationId === station.id) {
+            this.handleSelectedStation(station);
+          }
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+    }
+  }, {
+    key: 'findColor',
+    value: function findColor() {
+      var colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
+      return this.colors[colorIndex];
+    }
+  }, {
+    key: 'scrollListener',
+    value: function scrollListener() {
+      var _this3 = this;
+
+      var scrollListen = window.addEventListener('scroll', function () {
+        var percent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        _this3.setState({ scrollPercent: percent });
+      });
+    }
+
+    // Detects last listened station from users local storage, sets it in app state.
+
+  }, {
+    key: 'setStateSelectedStation',
+    value: function setStateSelectedStation() {
+      if (JSON.parse(localStorage.getItem('key'))) {
+        this.setState({
+          selectedStation: JSON.parse(localStorage.getItem('key'))
+        });
+      }
+    }
+  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.loadStations();
@@ -8085,7 +8209,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ClientFunctions = __webpack_require__(7);
+var _ClientFunctions = __webpack_require__(14);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8105,13 +8229,71 @@ var AudioPlayer = function (_Component) {
 
     _this.state = {
       volume: ''
-    }, _this.makeItPlay = _ClientFunctions.makeItPlay.bind(_this);
-    _this.setVolume = _ClientFunctions.setVolume.bind(_this);
-    _this.muteAudio = _ClientFunctions.muteAudio.bind(_this);
+    }, _this.makeItPlay = _this.makeItPlay.bind(_this);
+    _this.setVolume = _this.setVolume.bind(_this);
+    _this.muteAudio = _this.muteAudio.bind(_this);
     return _this;
   }
 
   _createClass(AudioPlayer, [{
+    key: 'makeItPlay',
+    value: function makeItPlay() {
+      var player = document.getElementById("player");
+
+      if (this.props.stationFeed.name == '') {
+        this.props.seekStation();
+      } else if (player.paused) {
+        player.play();
+        pButton.className = "";
+        pButton.className = "fa fa-pause fa-2x";
+      } else {
+        player.pause();
+        pButton.className = "";
+        pButton.className = "fa fa-play fa-2x";
+      }
+    }
+
+    // Sets volume according to range input.
+
+  }, {
+    key: 'setVolume',
+    value: function setVolume(event) {
+      var player = document.getElementById("player");
+      player.volume = event.target.value / 100;
+
+      console.log('inside setVolume');
+
+      if (player.volume === 0) {
+        mute.className = 'fa fa-volume-up fa-2x';
+      } else {
+        mute.className = 'fa fa-volume-off fa-2x';
+      }
+    }
+
+    // Function to toggle mute
+
+  }, {
+    key: 'muteAudio',
+    value: function muteAudio(event) {
+      var slider = document.getElementById('vol-control');
+      var player = document.getElementById('player');
+
+      if (player.volume > 0) {
+        console.log(player.volume);
+        this.setState({
+          volume: player.volume
+        });
+
+        mute.className = 'fa fa-volume-up fa-2x';
+        player.volume = 0;
+        slider.value = 0;
+      } else {
+        mute.className = 'fa fa-volume-off fa-2x';
+        player.volume = this.state.volume;
+        slider.value = this.state.volume * 100;
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -8146,7 +8328,7 @@ var AudioPlayer = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'three columns' },
-                _react2.default.createElement('input', { id: 'vol-control', type: 'range', min: 0, max: 100, step: 1, onClick: this.lastClickedVolume, onInput: this.setVolume, onChange: this.setVolume })
+                _react2.default.createElement('input', { id: 'vol-control', type: 'range', min: 0, max: 100, step: 1, onInput: this.setVolume, onChange: this.setVolume })
               ),
               _react2.default.createElement(
                 'div',
@@ -8274,8 +8456,6 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ClientFunctions = __webpack_require__(7);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8293,93 +8473,122 @@ var Station = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Station.__proto__ || Object.getPrototypeOf(Station)).call(this, props));
 
     _this.state = {
-      id: _this.props.id,
-      name: _this.props.name,
-      stream: _this.props.audioFeed,
-      type: _this.props.type
+      details: {
+        id: _this.props.id,
+        name: _this.props.name,
+        audio_feed: _this.props.audioFeed,
+        stream_type: _this.props.type
+      }
     };
-    _this.onStationSelect = _ClientFunctions.onStationSelect.bind(_this);
-    _this.onInfoSelect = _ClientFunctions.onInfoSelect.bind(_this);
+    _this.onInfoSelect = _this.onInfoSelect.bind(_this);
     return _this;
   }
 
+  // Event handler for info expansion.
+
+
   _createClass(Station, [{
-    key: 'render',
+    key: "onInfoSelect",
+    value: function onInfoSelect(event) {
+      var infoId = this.props.name;
+      var info = document.getElementById(infoId);
+      var station = document.getElementById(infoId).previousSibling;
+      var chevron = event.target;
+      if (info.className === "container info-container hide-class") {
+        info.className = "";
+        info.className = "container info-container";
+        station.className += " no-opacity";
+        chevron.className = "";
+        chevron.className = "fa fa-chevron-up card-chevron";
+      } else {
+        info.className = "";
+        info.className = "container info-container hide-class";
+        station.className = "container station-container" + this.props.stationType;
+        chevron.className = "";
+        chevron.className = "fa fa-chevron-down card-chevron";
+      }
+    }
+  }, {
+    key: "render",
     value: function render() {
+      var _this2 = this;
+
       console.log('Rendering <Station>');
       return _react2.default.createElement(
-        'div',
+        "div",
         null,
         _react2.default.createElement(
-          'div',
-          { className: 'container station-container' + this.props.stationType },
+          "div",
+          { className: "container station-container" + this.props.stationType },
           _react2.default.createElement(
-            'div',
-            { className: 'row station-row border' },
+            "div",
+            { className: "row station-row border" },
             _react2.default.createElement(
-              'div',
-              { className: 'one-third column station-name center' },
-              ' ',
+              "div",
+              { className: "one-third column station-name center" },
+              " ",
               this.props.name,
-              ' '
+              " "
             ),
             _react2.default.createElement(
-              'div',
-              { className: 'one-third column station-play-button center' },
-              _react2.default.createElement('i', { className: 'fa fa-play card-play-button ', 'aria-hidden': 'true', onClick: this.onStationSelect })
+              "div",
+              { className: "one-third column station-play-button center" },
+              _react2.default.createElement("i", { className: "fa fa-play card-play-button ", "aria-hidden": "true", onClick: function onClick(e) {
+                  return _this2.props.handleSelectedStation(_this2.state.details);
+                } })
             ),
             _react2.default.createElement(
-              'div',
-              { className: 'one-third column station-info-button center' },
-              _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: this.onInfoSelect })
+              "div",
+              { className: "one-third column station-info-button center" },
+              _react2.default.createElement("i", { className: "fa fa-chevron-down card-chevron", "aria-hidden": "true", onClick: this.onInfoSelect })
             )
           )
         ),
         _react2.default.createElement(
-          'div',
-          { className: 'container info-container hide-class', id: this.props.name },
+          "div",
+          { className: "container info-container hide-class", id: this.props.name },
           _react2.default.createElement(
-            'div',
-            { className: 'row center-align' },
+            "div",
+            { className: "row center-align" },
             _react2.default.createElement(
-              'div',
-              { className: 'station-info center' },
+              "div",
+              { className: "station-info center" },
               _react2.default.createElement(
-                'div',
-                { className: 'station-branding one-third column' },
-                ' ',
+                "div",
+                { className: "station-branding one-third column" },
+                " ",
                 this.props.name,
-                ' '
+                " "
               ),
               _react2.default.createElement(
-                'div',
-                { className: 'two-thirds column info' },
+                "div",
+                { className: "two-thirds column info" },
                 _react2.default.createElement(
-                  'div',
+                  "div",
                   null,
-                  'Location: ',
+                  "Location: ",
                   this.props.city,
-                  ' '
+                  " "
                 ),
                 _react2.default.createElement(
-                  'div',
+                  "div",
                   null,
-                  'Description: ',
+                  "Description: ",
                   this.props.description,
-                  ' '
+                  " "
                 ),
                 _react2.default.createElement(
-                  'div',
+                  "div",
                   null,
-                  'Home Page: ',
+                  "Home Page: ",
                   _react2.default.createElement(
-                    'a',
-                    { href: this.props.homePage, target: '_blank' },
-                    ' ',
+                    "a",
+                    { href: this.props.homePage, target: "_blank" },
+                    " ",
                     this.props.homePage,
-                    ' '
+                    " "
                   ),
-                  ' '
+                  " "
                 )
               )
             )
