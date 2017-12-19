@@ -16,7 +16,7 @@ class Station extends Component {
   }
 
   // Event handler for info expansion.
-  onInfoSelect(event) {
+  onInfoSelect() {
     let infoId = this.props.name
     let info = document.getElementById(infoId);
     let station = document.getElementById(infoId).previousSibling;
@@ -48,7 +48,7 @@ class Station extends Component {
               <i className="fa fa-play card-play-button " aria-hidden="true" onClick={ (e) => this.props.handleSelectedStation(this.state.details) }></i>
             </div>
             <div className="one-third column station-info-button center">
-              <i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={ this.onInfoSelect }></i>
+              <i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={ (e) => this.onInfoSelect() }></i>
             </div>
           </div>
         </div>
