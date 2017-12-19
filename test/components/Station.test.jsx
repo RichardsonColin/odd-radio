@@ -28,25 +28,23 @@ describe('Station', () => {
     expect(renderer.create(subject)).toMatchSnapshot();
   });
 
-  describe('onClick', () => {
+  describe('chevron down onClick', () => {
     const wrapper = shallow(subject);
 
     it('calls a function', () => {
       const onInfoSelect = spyOn(wrapper.instance(), 'onInfoSelect');
+
       wrapper.find('.fa-chevron-down').simulate('click');
       expect(onInfoSelect).toHaveBeenCalled();
     });
-
-
-    // it('changes the chevron to fa-chevron-up which matches the snapshot', () => {
-    //   const onInfoSelect = spyOn(wrapper.instance(), 'onInfoSelect');
-    //   wrapper.find('.fa-chevron-down').simulate('click');
-
-    //   expect(renderer.create(subject)).toMatchSnapshot();
-    // });
   });
 
+  describe('playbutton onClick', () => {
+    const wrapper = shallow(subject);
 
-
-
+    it('calls a function', () => {
+      wrapper.find('.fa-play').simulate('click');
+      expect(props.handleSelectedStation).toHaveBeenCalled();
+    });
+  });
 });

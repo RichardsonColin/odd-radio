@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Enzyme, { shallow } from 'enzyme';
+import Enzyme, { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 // React 16 Enzyme adapter
@@ -19,17 +19,11 @@ describe('AudioPlayer', () => {
     seekStation: jest.fn()
   }
 
-  const subject = <AudioPlayer { ...props }/>;
+  const subject = <AudioPlayer { ...props } />;
 
   it('matches snapshot', () => {
     expect(renderer.create(subject)).toMatchSnapshot();
   });
 
-  describe('onClick', () => {
-    const wrapper = shallow(subject);
 
-    it('calls the function sent in by props', () => {
-      wrapper.find('#pButton').simulate('click');
-    });
-  });
 });

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1513716442013" clover="3.2.0">
-  <project timestamp="1513716442013" name="All files">
-    <metrics statements="140" coveredstatements="45" conditionals="20" coveredconditionals="3" methods="36" coveredmethods="14" elements="196" coveredelements="62" complexity="0" loc="140" ncloc="140" packages="2" files="6" classes="6">
+<coverage generated="1513721957099" clover="3.2.0">
+  <project timestamp="1513721957099" name="All files">
+    <metrics statements="140" coveredstatements="43" conditionals="20" coveredconditionals="2" methods="36" coveredmethods="14" elements="196" coveredelements="59" complexity="0" loc="140" ncloc="140" packages="2" files="6" classes="6">
       <package name="components">
-        <metrics statements="133" coveredstatements="38" conditionals="20" coveredconditionals="3" methods="35" coveredmethods="13"/>
+        <metrics statements="133" coveredstatements="36" conditionals="20" coveredconditionals="2" methods="35" coveredmethods="13"/>
         <file name="AudioPlayer.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/AudioPlayer.jsx">
-          <metrics statements="33" coveredstatements="9" conditionals="8" coveredconditionals="1" methods="5" coveredmethods="3"/>
-          <line num="6" count="5" type="stmt"/>
-          <line num="7" count="5" type="stmt"/>
-          <line num="11" count="5" type="stmt"/>
-          <line num="12" count="5" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="18" count="1" type="cond" truecount="1" falsecount="1"/>
+          <metrics statements="33" coveredstatements="6" conditionals="8" coveredconditionals="0" methods="5" coveredmethods="2"/>
+          <line num="6" count="3" type="stmt"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="11" count="3" type="stmt"/>
+          <line num="12" count="3" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="19" count="0" type="stmt"/>
-          <line num="20" count="1" type="cond" truecount="0" falsecount="2"/>
+          <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="21" count="0" type="stmt"/>
           <line num="22" count="0" type="stmt"/>
           <line num="23" count="0" type="stmt"/>
@@ -37,14 +37,14 @@
           <line num="62" count="0" type="stmt"/>
           <line num="63" count="0" type="stmt"/>
           <line num="64" count="0" type="stmt"/>
-          <line num="69" count="5" type="stmt"/>
-          <line num="70" count="5" type="stmt"/>
+          <line num="69" count="3" type="stmt"/>
+          <line num="70" count="3" type="stmt"/>
         </file>
         <file name="Station.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/Station.jsx">
-          <metrics statements="22" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="3"/>
-          <line num="6" count="4" type="stmt"/>
-          <line num="7" count="4" type="stmt"/>
-          <line num="15" count="4" type="stmt"/>
+          <metrics statements="22" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="4"/>
+          <line num="6" count="5" type="stmt"/>
+          <line num="7" count="5" type="stmt"/>
+          <line num="15" count="5" type="stmt"/>
           <line num="20" count="0" type="stmt"/>
           <line num="21" count="0" type="stmt"/>
           <line num="22" count="0" type="stmt"/>
@@ -60,9 +60,9 @@
           <line num="33" count="0" type="stmt"/>
           <line num="34" count="0" type="stmt"/>
           <line num="35" count="0" type="stmt"/>
-          <line num="40" count="4" type="stmt"/>
-          <line num="41" count="4" type="stmt"/>
-          <line num="48" count="0" type="stmt"/>
+          <line num="40" count="5" type="stmt"/>
+          <line num="41" count="5" type="stmt"/>
+          <line num="48" count="1" type="stmt"/>
           <line num="51" count="1" type="stmt"/>
         </file>
         <file name="StationList.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/StationList.jsx">
