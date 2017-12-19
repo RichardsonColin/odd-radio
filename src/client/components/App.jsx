@@ -148,10 +148,9 @@ class App extends Component {
         <div className="container title-container">
             <div className="row title-row border">
               <div className="six columns description">
-                <h3>A curated collection of the </h3>
-                <h3>odd sounds </h3>
-                <h3>of Canadian college </h3>
-                <h3>radio.</h3>
+                <div className="site-subtitle">
+                  <h3>Strange sounds from campus and community radio across Canada.</h3>
+                </div>
               </div>
               <div className="three columns brand-name">
                 <h1>oddrad.io</h1>
