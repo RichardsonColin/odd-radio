@@ -65,16 +65,22 @@ export const onStationSelect = function(event) {
 
 // Function to show more info for statios.
 export const onInfoSelect = function(event) {
-    console.log('---- onInfoSelect ----', this);
     let infoId = this.props.name
     let info = document.getElementById(infoId);
-    console.log('info.className', info.className);
-    if (info.className === "container info-container content") {
+    let station = document.getElementById(infoId).previousSibling;
+    let chevron = event.target;
+    if (info.className === "container info-container hide-class") {
         info.className = "";
         info.className = "container info-container";
+        station.className += " no-opacity";
+        chevron.className = "";
+        chevron.className = "fa fa-chevron-up card-chevron";
     } else {
         info.className = "";
-        info.className = "container info-container content";
+        info.className = "container info-container hide-class";
+        station.className = `container station-container${this.props.stationType}`;
+        chevron.className = "";
+        chevron.className = "fa fa-chevron-down card-chevron";
     }
 }
 

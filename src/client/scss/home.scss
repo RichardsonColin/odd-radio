@@ -12,7 +12,6 @@ h3 {
   transition: background-color 1000ms linear;
   position: absolute;
   width:100%;
-
 }
 
 .brand-name {
@@ -23,21 +22,29 @@ h3 {
   text-align: left;
 }
 
-.station-container {
+.station-container1 {
   display: flex;
   width: 100%;
   background-color: #fff;
   opacity: 0.75;
   height: 100px;
   margin-top: 10px;
-  transform: skew(-21deg) rotate(-21deg);
-  box-shadow: 1px 3px 30px rgba(0,0,0,0.4);
+  -webkit-clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);
+  clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);
   align-items: center;
 }
-.station-name {
-  transform: skew(21deg) rotate(21deg);
-}
 
+.station-container2 {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.75;
+  height: 100px;
+  margin-top: 10px;
+  -webkit-clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);
+  clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);
+  align-items: center;
+}
 
 .station-list-container {
   margin-bottom: 200px;
@@ -73,20 +80,14 @@ footer {
   display: flex;
   width: 100%;
   background-color: #fff;
-  opacity: 0.75;
-  transform: skew(-21deg) rotate(-21deg);
-  box-shadow: 1px 3px 30px rgba(0,0,0,0.4);
   align-items: center;
-  margin-top: -10px
 }
 
 .card-play-button  {
-  transform: skew(21deg) rotate(21deg);
   font-size: 35px;
 }
 
 .card-chevron {
-  transform: skew(21deg) rotate(21deg);
   font-size: 20px;
 }
 
@@ -101,7 +102,7 @@ footer {
   padding-top: 10;
 }
 
-.content {
+.hide-class {
   display: none;
 }
 
@@ -129,3 +130,10 @@ footer {
   width: 80%;
 }
 
+.fa:hover {
+  text-shadow: 2px 2px 2px rgb(100, 100, 100)
+}
+
+.no-opacity {
+  opacity: 1;
+}

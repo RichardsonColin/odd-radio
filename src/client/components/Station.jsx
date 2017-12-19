@@ -20,7 +20,7 @@ class Station extends Component {
     return (
 
       <div>
-        <div className="container station-container">
+        <div className={ `container station-container${this.props.stationType}` }>
           <div className="row station-row border">
             <div className="one-third column station-name center"> {this.props.name} </div>
             <div className="one-third column station-play-button center">
@@ -31,7 +31,7 @@ class Station extends Component {
             </div>
           </div>
         </div>
-        <div className="container info-container content" id={ this.props.name }>
+        <div className="container info-container hide-class" id={ this.props.name }>
           <div className="row center-align">
             <div className="station-info center">
               <div className="station-branding one-third column"> { this.props.name } </div>
