@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AudioPlayer matches snapshot 1`] = `
+<div>
+  <audio
+    id="player"
+  >
+    <source
+      src="www.streamlink.ca"
+      type="audio/mpeg"
+    />
+  </audio>
+  <div>
+    <div
+      className="player-station-name"
+    >
+       Current Station: 
+      Jest Test Stream
+       
+    </div>
+    <div
+      className="container player-container"
+    >
+      <div
+        className="row player-row border"
+      >
+        <div
+          className="three columns"
+        >
+          <i
+            className="fa fa-play fa-2x"
+            id="pButton"
+            onClick={[Function]}
+          />
+        </div>
+        <div
+          className="three columns"
+        >
+          <input
+            id="vol-control"
+            max={100}
+            min={0}
+            onChange={[Function]}
+            onInput={[Function]}
+            step={1}
+            type="range"
+          />
+        </div>
+        <div
+          className="three columns"
+        >
+          <i
+            className="fa fa-random fa-2x seek-button"
+            onClick={[Function]}
+          />
+          <i
+            className="fa fa-spinner fa-pulse fa-2x fa-fw"
+            id="loader"
+          />
+        </div>
+        <div
+          className="three columns"
+        >
+          <i
+            className="fa fa-volume-off fa-2x"
+            id="mute"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

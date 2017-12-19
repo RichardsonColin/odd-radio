@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StationList matches snapshot 1`] = `
+<section
+  className="station-list-container"
+>
+  <div>
+    <div
+      className="container station-container1"
+    >
+      <div
+        className="row station-row border"
+      >
+        <div
+          className="one-third column station-name center"
+        >
+           
+          CFCR
+           
+        </div>
+        <div
+          className="one-third column station-play-button center"
+        >
+          <i
+            aria-hidden="true"
+            className="fa fa-play card-play-button "
+            onClick={[Function]}
+          />
+        </div>
+        <div
+          className="one-third column station-info-button center"
+        >
+          <i
+            aria-hidden="true"
+            className="fa fa-chevron-down card-chevron"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="container info-container hide-class"
+      id="CFCR"
+    >
+      <div
+        className="row center-align"
+      >
+        <div
+          className="station-info center"
+        >
+          <div
+            className="station-branding one-third column"
+          >
+             
+            CFCR
+             
+          </div>
+          <div
+            className="two-thirds column info"
+          >
+            <div>
+              Location: 
+              Saskatoon
+               
+            </div>
+            <div>
+              Description: 
+              CFCR 90.5 FM Community Radio is a non-profit corporation owned by the Community Radio Society of Saskatoon. We are a volunteer powered, listener supported organization serving the alternative radio needs of Saskatoon and surrounding areas.
+               
+            </div>
+            <div>
+              Home Page: 
+              <a
+                href="http://cfcr.ca/"
+                target="_blank"
+              >
+                 
+                http://cfcr.ca/
+                 
+              </a>
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="container station-container2"
+    >
+      <div
+        className="row station-row border"
+      >
+        <div
+          className="one-third column station-name center"
+        >
+           
+          CFMU
+           
+        </div>
+        <div
+          className="one-third column station-play-button center"
+        >
+          <i
+            aria-hidden="true"
+            className="fa fa-play card-play-button "
+            onClick={[Function]}
+          />
+        </div>
+        <div
+          className="one-third column station-info-button center"
+        >
+          <i
+            aria-hidden="true"
+            className="fa fa-chevron-down card-chevron"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="container info-container hide-class"
+      id="CFMU"
+    >
+      <div
+        className="row center-align"
+      >
+        <div
+          className="station-info center"
+        >
+          <div
+            className="station-branding one-third column"
+          >
+             
+            CFMU
+             
+          </div>
+          <div
+            className="two-thirds column info"
+          >
+            <div>
+              Location: 
+              Hamilton
+               
+            </div>
+            <div>
+              Description: 
+              93.3 CFMU-FM, Canada’s third oldest campus / community radio station, has been redefining radio for over 25 years, delivering daily the most enlightening, innovative and entertaining programming in our broadcast area.
+               
+            </div>
+            <div>
+              Home Page: 
+              <a
+                href="http://cfmu.ca/"
+                target="_blank"
+              >
+                 
+                http://cfmu.ca/
+                 
+              </a>
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

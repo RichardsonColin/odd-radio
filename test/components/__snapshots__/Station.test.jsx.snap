@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Station matches snapshot 1`] = `
+<div>
+  <div
+    className="container station-container3"
+  >
+    <div
+      className="row station-row border"
+    >
+      <div
+        className="one-third column station-name center"
+      >
+         
+        QWER
+         
+      </div>
+      <div
+        className="one-third column station-play-button center"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-play card-play-button "
+          onClick={[Function]}
+        />
+      </div>
+      <div
+        className="one-third column station-info-button center"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-chevron-down card-chevron"
+          onClick={[Function]}
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="container info-container hide-class"
+    id="QWER"
+  >
+    <div
+      className="row center-align"
+    >
+      <div
+        className="station-info center"
+      >
+        <div
+          className="station-branding one-third column"
+        >
+           
+          QWER
+           
+        </div>
+        <div
+          className="two-thirds column info"
+        >
+          <div>
+            Location: 
+            Saskitoba
+             
+          </div>
+          <div>
+            Description: 
+            radio station is what we are
+             
+          </div>
+          <div>
+            Home Page: 
+            <a
+              href="www.example.com"
+              target="_blank"
+            >
+               
+              www.example.com
+               
+            </a>
+             
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
