@@ -72,7 +72,7 @@ export const onInfoSelect = function(event) {
     if (info.className === "container info-container hide-class") {
         info.className = "";
         info.className = "container info-container";
-        station.className += " test";
+        station.className += " no-opacity";
         chevron.className = "";
         chevron.className = "fa fa-chevron-up card-chevron";
     } else {
