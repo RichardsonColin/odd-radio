@@ -28,10 +28,10 @@ h3 {
   background-color: #fff;
   opacity: 0.75;
   height: 100px;
-  margin-top: 10px;
   -webkit-clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);
   clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);
   align-items: center;
+  margin-bottom: -10px;
 }
 
 .station-container2 {
@@ -40,16 +40,24 @@ h3 {
   background-color: #fff;
   opacity: 0.75;
   height: 100px;
-  margin-top: 10px;
   -webkit-clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);
   clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);
   align-items: center;
+  margin-bottom: -10px;
 }
 
 .station-list-container {
   margin-bottom: 200px;
 }
 
+.info-container {
+  transition: 500ms 0ms, opacity 500ms 500ms;
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  align-items: center;
+  margin-bottom: -10px;
+}
 
 @media (min-width: 400px){
 .station-list-container {
@@ -71,16 +79,6 @@ footer {
   width: 100%;
   margin-top: 0;
   height:120px;
-}
-
-
-
-.info-container {
-  transition: 500ms 0ms, opacity 500ms 500ms;
-  display: flex;
-  width: 100%;
-  background-color: #fff;
-  align-items: center;
 }
 
 .card-play-button  {

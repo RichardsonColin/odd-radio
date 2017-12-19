@@ -43,13 +43,12 @@ class App extends Component {
         <header>
         <div className="container title-container">
             <div className="row title-row border">
-              <div className="three columns description">
+              <div className="six columns description">
                 <h3>A curated collection of the </h3>
                 <h3>odd sounds </h3>
                 <h3>of Canadian college </h3>
                 <h3>radio.</h3>
               </div>
-              <div className="three columns"> </div>
               <div className="three columns brand-name">
                 <h1>oddrad.io</h1>
               </div>
