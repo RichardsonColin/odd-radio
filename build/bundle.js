@@ -684,18 +684,6 @@ var onInfoSelect = exports.onInfoSelect = function onInfoSelect(event) {
     }
 };
 
-// export const handleMuteState = function() {
-//   let slider = document.getElementById('vol-control');
-
-//   slider.addEventListener("volumechange", function () {
-//     if(slider.target.value > 0) {
-//        mute.className = 'fa fa-volume-up fa-2x';
-//     } else {
-//         mute.className = 'fa fa-volume-off fa-2x';
-//     }
-//   })
-// }
-
 // Function for volume control.
 var setVolume = exports.setVolume = function setVolume(event) {
     var player = document.getElementById("player");
@@ -710,37 +698,10 @@ var setVolume = exports.setVolume = function setVolume(event) {
     }
 };
 
-//   this.state.volume = player.volume;
-//   console.log(this.state.volume);
-
-
-// if(player.volume > 0) {
-//   mute.className = 'fa fa-volume-up fa-2x'
-//   // this.state.volume = player.volume;
-
-
-//   // player.volume = 0;
-//   // slider.value = 0;
-// } else {
-//   mute.className = 'fa fa-volume-off fa-2x'
-//   // player.volume = this.state.volume;
-//   // slider.value = this.state.volume * 100;
-// }
-// }
-
-//function to grab the last volume input selected on the volume slider
-// export const lastClickedVolume = function(event) {
-//     const volumeSliderValue = document.getElementById("vol-control");
-//     // console.log("in lastClicked function", volumeSliderValue.value);
-//     this.state.volume = volumeSliderValue.value;
-//     console.log("This.volume", this.state.volume);
-// }
-
 // Function to toggle mute
 var muteAudio = exports.muteAudio = function muteAudio(event) {
     var slider = document.getElementById('vol-control');
     var player = document.getElementById('player');
-    // let lastVolumeLevel = player.volume;
 
     if (player.volume > 0) {
         console.log(player.volume);
@@ -757,35 +718,6 @@ var muteAudio = exports.muteAudio = function muteAudio(event) {
         slider.value = this.state.volume * 100;
     }
 };
-
-// stopImmediatePropogation();
-// console.log("in muteAudio before if:", this.volume);
-// // let volumeSliderValue =[];
-// // volumeSliderValue.push(this.lastClickedVolume());
-// // let lastVolume = this.lastClickedVolume();
-// console.log(this.volume);
-// console.log("last clicked volume =", this.lastClickedVolume());
-// let volumeSlider = document.getElementById("vol-control");
-// if (mute.className === "fa fa-volume-off fa-2x"){
-//   // mute.className = "";
-//   mute.className = "fa fa-volume-up fa-2x";
-//   console.log('click');
-
-//   // this.volume = 0;
-
-//   // volumeSlider.value = this.state.volume;
-
-
-// // } else if(mute.className === "fa fa-volume-up fa-2x" ) {
-//   // console.log('Value in else:', this.volume);
-//   // // player.volume = this.lastClickedVolume() / 100);
-//   // volumeSlider.value = this.volume;
-//   // mute.className = "";
-//   // mute.className = "fa fa-volume-off fa-2x";
-// }
-
-// }
-
 
 //sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser
 var setStateSelectedStation = exports.setStateSelectedStation = function setStateSelectedStation() {
@@ -8181,8 +8113,6 @@ var AudioPlayer = function (_Component) {
     }, _this.makeItPlay = _ClientFunctions.makeItPlay.bind(_this);
     _this.setVolume = _ClientFunctions.setVolume.bind(_this);
     _this.muteAudio = _ClientFunctions.muteAudio.bind(_this);
-    // this.handleMuteState = handleMuteState.bind(this);
-    // this.lastClickedVolume = lastClickedVolume.bind(this);
     return _this;
   }
 
