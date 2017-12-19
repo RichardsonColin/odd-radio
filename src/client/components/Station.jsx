@@ -36,9 +36,9 @@ class Station extends Component {
             <div className="station-info center">
               <div className="station-branding one-third column"> { this.props.name } </div>
               <div className="two-thirds column info">
-                <div>Location: { this.props.city } </div>
-                <div>Description: { this.props.description } </div>
-                <div>Home Page: <a href={this.props.homePage} target='_blank'> { this.props.homePage } </a> </div>
+                <div><b>Location:</b> { this.props.city } </div>
+                <div><b>Description:</b> { this.props.description } </div>
+                <div><b>Home Page:</b> <a href={this.props.homePage} target='_blank'> { this.props.homePage } </a> </div>
               </div>
             </div>
           </div>
