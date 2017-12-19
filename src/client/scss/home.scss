@@ -1,6 +1,8 @@
 h1 {
-text-align: right;
-padding-right:10%;
+  text-align: right;
+  padding-right:10%;
+  text-shadow: 2px 2px #e4c4c4;
+  
 }
 
 h3 {
@@ -12,6 +14,11 @@ h3 {
   transition: background-color 1000ms linear;
   position: absolute;
   width:100%;
+  background : linear-gradient(63deg, #999 23%, transparent 23%) 7px 0,
+  linear-gradient(63deg, transparent 74%, #999 78%),
+  linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
+  #444;
+  background-size: 16px 48px;
 }
 
 .brand-name {
@@ -20,13 +27,14 @@ h3 {
 
 .description h3 {
   text-align: left;
+  text-shadow: 2px 2px #e4c4c4;
+  margin-top: 50px;
 }
 
 .station-container1 {
   display: flex;
   width: 100%;
   background-color: #fff;
-  opacity: 0.75;
   height: 100px;
   -webkit-clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);
   clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);
@@ -38,7 +46,6 @@ h3 {
   display: flex;
   width: 100%;
   background-color: #fff;
-  opacity: 0.75;
   height: 100px;
   -webkit-clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);
   clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);
@@ -78,7 +85,7 @@ footer {
   background-color: #b3e0da;
   width: 100%;
   margin-top: 0;
-  height:120px;
+  height: 75px;
 }
 
 .card-play-button  {
@@ -98,6 +105,7 @@ footer {
 
 .info {
   padding-top: 10;
+  text-align: left;
 }
 
 .hide-class {
@@ -134,4 +142,8 @@ footer {
 
 .no-opacity {
   opacity: 1;
+}
+
+.station-row {
+  padding-top: 25px;
 }
