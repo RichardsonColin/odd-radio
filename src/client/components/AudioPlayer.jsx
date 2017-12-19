@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { setVolume, makeItPlay, muteAudio, lastClickedVolume} from '../util/ClientFunctions.jsx';
+import { setVolume, makeItPlay, muteAudio} from '../util/ClientFunctions.jsx';
 
 class AudioPlayer extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class AudioPlayer extends Component {
                 <i id="pButton" className="fa fa-play fa-2x" onClick={ this.makeItPlay } ></i>
               </div>
               <div className="three columns">
-                <input id="vol-control" type="range" min={ 0 } max={ 100 } step={ 1 } onClick={this.lastClickedVolume} onInput={ this.setVolume } onChange={ this.setVolume }></input>
+                <input id="vol-control" type="range" min={ 0 } max={ 100 } step={ 1 } onInput={ this.setVolume } onChange={ this.setVolume }></input>
               </div>
               <div className="three columns">
                 <i className="fa fa-random fa-2x seek-button" onClick={this.props.seekStation} ></i>
