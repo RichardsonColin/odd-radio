@@ -7961,8 +7961,8 @@ var App = function (_Component) {
       selectedStation: {
         id: "",
         name: "",
-        stream: "",
-        type: ""
+        audioFeed: "",
+        streamType: ""
       },
       player: {
         volume: 1,
@@ -8007,8 +8007,8 @@ var App = function (_Component) {
       var station = {
         id: details.id,
         name: details.name,
-        stream: details.audio_feed,
-        type: details.stream_type
+        audioFeed: details.audioFeed,
+        streamType: details.streamType
       };
       var test = { key: 'value', tester: 'test' };
       localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
@@ -8073,7 +8073,14 @@ var App = function (_Component) {
 
             // Plays the seeked station.
           } else if (randomStationId === station.id) {
-            this.handleSelectedStation(station);
+            var seekedStation = {
+              id: station.id,
+              name: station.name,
+              audioFeed: station.audio_feed,
+              streamType: station.stream_type
+            };
+
+            this.handleSelectedStation(seekedStation);
           }
         }
       } catch (err) {
@@ -8285,13 +8292,14 @@ var AudioPlayer = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      console.log(this.props.stationFeed.audioFeed, this.props.stationFeed.streamType);
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
           'audio',
           { id: 'player' },
-          _react2.default.createElement('source', { src: this.props.stationFeed.stream, type: this.props.stationFeed.type })
+          _react2.default.createElement('source', { src: this.props.stationFeed.audioFeed, type: this.props.stationFeed.streamType })
         ),
         _react2.default.createElement(
           'div',
@@ -8393,7 +8401,7 @@ var StationList = function (_Component) {
             name: post.name,
             description: post.description,
             audioFeed: post.audio_feed,
-            type: post.stream_type,
+            streamType: post.stream_type,
             homePage: post.home_page,
             city: post.city,
             handleSelectedStation: _this2.props.handleSelectedStation,
@@ -8406,7 +8414,7 @@ var StationList = function (_Component) {
             name: post.name,
             description: post.description,
             audioFeed: post.audio_feed,
-            type: post.stream_type,
+            streamType: post.stream_type,
             homePage: post.home_page,
             city: post.city,
             handleSelectedStation: _this2.props.handleSelectedStation,
@@ -8465,8 +8473,8 @@ var Station = function (_Component) {
       details: {
         id: _this.props.id,
         name: _this.props.name,
-        audio_feed: _this.props.audioFeed,
-        stream_type: _this.props.type
+        audioFeed: _this.props.audioFeed,
+        streamType: _this.props.streamType
       }
     };
     _this.onInfoSelect = _this.onInfoSelect.bind(_this);

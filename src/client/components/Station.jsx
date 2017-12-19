@@ -8,8 +8,8 @@ class Station extends Component {
       details: {
         id: this.props.id,
         name: this.props.name,
-        audio_feed: this.props.audioFeed,
-        stream_type: this.props.type
+        audioFeed: this.props.audioFeed,
+        streamType: this.props.streamType
       }
     }
     this.onInfoSelect = this.onInfoSelect.bind(this);

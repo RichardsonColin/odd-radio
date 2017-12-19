@@ -16,8 +16,8 @@ class App extends Component {
       selectedStation: {
         id: "",
         name: "",
-        stream: "",
-        type: ""
+        audioFeed: "",
+        streamType: ""
       },
       player: {
         volume: 1,
@@ -55,8 +55,8 @@ class App extends Component {
     let station = {
       id: details.id,
       name: details.name,
-      stream: details.audio_feed,
-      type: details.stream_type
+      audioFeed: details.audioFeed,
+      streamType: details.streamType
     };
     let test = { key: 'value', tester: 'test' };
     localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
@@ -107,7 +107,14 @@ class App extends Component {
 
         // Plays the seeked station.
       } else if (randomStationId === station.id) {
-        this.handleSelectedStation(station);
+          const seekedStation = {
+            id: station.id,
+            name: station.name,
+            audioFeed: station.audio_feed,
+            streamType: station.stream_type
+          };
+
+          this.handleSelectedStation(seekedStation);
       }
     }
   }

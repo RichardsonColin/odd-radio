@@ -66,10 +66,11 @@ class AudioPlayer extends Component {
   }
 
   render() {
+    console.log(this.props.stationFeed.audioFeed, this.props.stationFeed.streamType)
     return (
       <div>
         <audio id="player" >
-          <source src={ this.props.stationFeed.stream } type={ this.props.stationFeed.type } />
+          <source src={ this.props.stationFeed.audioFeed } type={ this.props.stationFeed.streamType } />
         </audio>
         <div>
           <div className="player-station-name"> Current Station: { this.props.stationFeed.name } </div>
