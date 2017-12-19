@@ -18,6 +18,12 @@ class App extends Component {
         name: "",
         stream: "",
         type: ""
+      },
+      player: {
+        volume: 1,
+        isPlaying: false,
+        isPaused: true,
+        isLoading: false
       }
     },
 
