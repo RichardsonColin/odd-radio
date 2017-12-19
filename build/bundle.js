@@ -8485,12 +8485,13 @@ var Station = function (_Component) {
 
 
   _createClass(Station, [{
-    key: "onInfoSelect",
-    value: function onInfoSelect(event) {
+    key: 'onInfoSelect',
+    value: function onInfoSelect() {
       var infoId = this.props.name;
       var info = document.getElementById(infoId);
       var station = document.getElementById(infoId).previousSibling;
       var chevron = event.target;
+      console.log('event target: ', chevron);
       if (info.className === "container info-container hide-class") {
         info.className = "";
         info.className = "container info-container";
@@ -8500,107 +8501,109 @@ var Station = function (_Component) {
       } else {
         info.className = "";
         info.className = "container info-container hide-class";
-        station.className = "container station-container" + this.props.stationType;
+        station.className = 'container station-container' + this.props.stationType;
         chevron.className = "";
         chevron.className = "fa fa-chevron-down card-chevron";
       }
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       var _this2 = this;
 
       console.log('Rendering <Station>');
       return _react2.default.createElement(
-        "div",
+        'div',
         null,
         _react2.default.createElement(
-          "div",
-          { className: "container station-container" + this.props.stationType },
+          'div',
+          { className: 'container station-container' + this.props.stationType },
           _react2.default.createElement(
-            "div",
-            { className: "row station-row border" },
+            'div',
+            { className: 'row station-row border' },
             _react2.default.createElement(
-              "div",
-              { className: "one-third column station-name center" },
-              " ",
+              'div',
+              { className: 'one-third column station-name center' },
+              ' ',
               this.props.name,
-              " "
+              ' '
             ),
             _react2.default.createElement(
-              "div",
-              { className: "one-third column station-play-button center" },
-              _react2.default.createElement("i", { className: "fa fa-play card-play-button ", "aria-hidden": "true", onClick: function onClick(e) {
+              'div',
+              { className: 'one-third column station-play-button center' },
+              _react2.default.createElement('i', { className: 'fa fa-play card-play-button ', 'aria-hidden': 'true', onClick: function onClick(e) {
                   return _this2.props.handleSelectedStation(_this2.state.details);
                 } })
             ),
             _react2.default.createElement(
-              "div",
-              { className: "one-third column station-info-button center" },
-              _react2.default.createElement("i", { className: "fa fa-chevron-down card-chevron", "aria-hidden": "true", onClick: this.onInfoSelect })
+              'div',
+              { className: 'one-third column station-info-button center' },
+              _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
+                  return _this2.onInfoSelect();
+                } })
             )
           )
         ),
         _react2.default.createElement(
-          "div",
-          { className: "container info-container hide-class", id: this.props.name },
+          'div',
+          { className: 'container info-container hide-class', id: this.props.name },
           _react2.default.createElement(
-            "div",
-            { className: "row center-align" },
+            'div',
+            { className: 'row center-align' },
             _react2.default.createElement(
-              "div",
-              { className: "station-info center" },
+              'div',
+              { className: 'station-info center' },
               _react2.default.createElement(
-                "div",
-                { className: "station-branding one-third column" },
-                " ",
+                'div',
+                { className: 'station-branding one-third column' },
+                ' ',
                 this.props.name,
-                " "
+                ' '
               ),
               _react2.default.createElement(
-                "div",
-                { className: "two-thirds column info" },
+                'div',
+                { className: 'two-thirds column info' },
                 _react2.default.createElement(
-                  "div",
+                  'div',
                   null,
                   _react2.default.createElement(
-                    "b",
+                    'b',
                     null,
-                    "Location:"
+                    'Location:'
                   ),
-                  " ",
+                  ' ',
                   this.props.city,
-                  " "
+                  ' '
                 ),
                 _react2.default.createElement(
-                  "div",
+                  'div',
                   null,
                   _react2.default.createElement(
-                    "b",
+                    'b',
                     null,
-                    "Description:"
+                    'Description:'
                   ),
-                  " ",
+                  ' ',
                   this.props.description,
-                  " "
+                  ' '
                 ),
                 _react2.default.createElement(
-                  "div",
+                  'div',
                   null,
                   _react2.default.createElement(
-                    "b",
+                    'b',
                     null,
-                    "Home Page:"
+                    'Home Page:'
                   ),
-                  " ",
+                  ' ',
                   _react2.default.createElement(
-                    "a",
-                    { href: this.props.homePage, target: "_blank" },
-                    " ",
+                    'a',
+                    { href: this.props.homePage, target: '_blank' },
+                    ' ',
                     this.props.homePage,
-                    " "
+                    ' '
                   ),
-                  " "
+                  ' '
                 )
               )
             )

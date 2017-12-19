@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components/app.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">components</a> app.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25.49% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>13/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25.49% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>13/51</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, {Component} from 'react';
+&nbsp;
+import { shuffle } from '../util/ClientFunctions.jsx';
+&nbsp;
+import AudioPlayer from './AudioPlayer.jsx';
+import StationList from './StationList.jsx';
+&nbsp;
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.colors = ['FF81AB', 'A07BE8', '66CBFF', '5CE886', 'F6FF71'];
+    this.state = {
+      scrollPercent: 0,
+      color: '1',
+      stations: [],
+      selectedStation: {
+        id: "",
+        name: "",
+        audioFeed: "",
+        streamType: ""
+      },
+      player: {
+        volume: 1,
+        isPlaying: false,
+        isPaused: true,
+        isLoading: false
+      }
+    },
+&nbsp;
+    this.handlePlayState = this.handlePlayState.bind(this);
+    this.handleSelectedStation = this.handleSelectedStation.bind(this);
+    this.seekStation = this.seekStation.bind(this);
+    this.generateRandomStationId = this.generateRandomStationId.bind(this);
+    this.loadStations = this.loadStations.bind(this);
+    this.scrollListener = this.scrollListener.bind(this);
+    this.findColor = this.findColor.bind(this);
+    this.setStateSelectedStation = this.setStateSelectedStation.bind(this);
+  }
+&nbsp;
+  // Initial API request to build up station collection object.
+<span class="fstat-no" title="function not covered" >  lo</span>adStations() {
+<span class="cstat-no" title="statement not covered" >    fetch('/api/stations', { mode: 'no-cors' })</span>
+      .then(<span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; {
+<span class="cstat-no" title="statement not covered" >        return response.json()</span>
+      }).then(<span class="fstat-no" title="function not covered" >(j</span>son) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.setState({ stations: shuffle(json) })</span>
+<span class="cstat-no" title="statement not covered" >        console.log('parsed json', json)</span>
+      }).catch(<span class="fstat-no" title="function not covered" >(e</span>x) =&gt; {
+<span class="cstat-no" title="statement not covered" >        console.log('parsing failed', ex)</span>
+      });
+  }
+&nbsp;
+  // Takes a selected station and sets it in app level state, plays it.
+<span class="fstat-no" title="function not covered" >  ha</span>ndleSelectedStation(details) {
+    let station = <span class="cstat-no" title="statement not covered" >{</span>
+      id: details.id,
+      name: details.name,
+      audioFeed: details.audioFeed,
+      streamType: details.streamType
+    };
+    let test = <span class="cstat-no" title="statement not covered" >{ key: 'value', tester: 'test' };</span>
+<span class="cstat-no" title="statement not covered" >    localStorage.setItem('key', JSON.stringify(station)); </span>//sets the localStorage to the station before setting the this.State to the station
+<span class="cstat-no" title="statement not covered" >    this.setState({</span>
+      selectedStation: station
+    });
+<span class="cstat-no" title="statement not covered" >    this.handlePlayState();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ha</span>ndlePlayState() {
+    let player = <span class="cstat-no" title="statement not covered" >document.getElementById("player");</span>
+<span class="cstat-no" title="statement not covered" >    document.getElementById("player").load();</span>
+&nbsp;
+    // Displays the loading icon while the media is loading.
+<span class="cstat-no" title="statement not covered" >    player.addEventListener("loadstart", <span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
+<span class="cstat-no" title="statement not covered" >      pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";</span>
+    });
+&nbsp;
+    // Plays the audio when it is ready.
+<span class="cstat-no" title="statement not covered" >    player.addEventListener("canplaythrough", <span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
+<span class="cstat-no" title="statement not covered" >      document.getElementById("player").play();</span>
+    });
+&nbsp;
+    // Changes the loading icon to a pause icon.
+<span class="cstat-no" title="statement not covered" >    player.addEventListener("playing", <span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
+<span class="cstat-no" title="statement not covered" >      pButton.className = "";</span>
+<span class="cstat-no" title="statement not covered" >      pButton.className = "fa fa-pause fa-2x";</span>
+    });
+  }
+&nbsp;
+  // Helper function for seek functionality.
+<span class="fstat-no" title="function not covered" >  ge</span>nerateRandomStationId() {
+    const seekLength = <span class="cstat-no" title="statement not covered" >this.state.stations.length - 1;</span>
+<span class="cstat-no" title="statement not covered" >    return Math.floor(Math.random() * seekLength);</span>
+  }
+&nbsp;
+  // Play random station.
+<span class="fstat-no" title="function not covered" >  se</span>ekStation() {
+    const randomStationId = <span class="cstat-no" title="statement not covered" >this.generateRandomStationId();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    for (const station of this.state.stations) {</span>
+<span class="cstat-no" title="statement not covered" >      console.log(station);</span>
+&nbsp;
+      // Checks to see if the seek matches the currently playing station.
+<span class="cstat-no" title="statement not covered" >      if (randomStationId === this.state.selectedStation.id) {</span>
+<span class="cstat-no" title="statement not covered" >        this.seekStation();</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+&nbsp;
+        // Plays the seeked station.
+      } else <span class="cstat-no" title="statement not covered" >if (randomStationId === station.id) {</span>
+          const seekedStation = <span class="cstat-no" title="statement not covered" >{</span>
+            id: station.id,
+            name: station.name,
+            audioFeed: station.audio_feed,
+            streamType: station.stream_type
+          };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          this.handleSelectedStation(seekedStation);</span>
+      }
+    }
+  }
+&nbsp;
+&nbsp;
+&nbsp;
+  findColor() {
+    const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
+    return this.colors[colorIndex];
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  sc</span>rollListener() {
+    const scrollListen = <span class="cstat-no" title="statement not covered" >window.addEventListener('scroll', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+      const percent = <span class="cstat-no" title="statement not covered" >window.scrollY / (document.body.scrollHeight - window.innerHeight);</span>
+<span class="cstat-no" title="statement not covered" >      this.setState({ scrollPercent: percent });</span>
+    });
+  }
+&nbsp;
+  // Detects last listened station from users local storage, sets it in app state.
+<span class="fstat-no" title="function not covered" >  se</span>tStateSelectedStation() {
+<span class="cstat-no" title="statement not covered" >    if (JSON.parse(localStorage.getItem('key'))) {</span>
+<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+        selectedStation: JSON.parse(localStorage.getItem('key'))
+      });
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentDidMount() {
+<span class="cstat-no" title="statement not covered" >    this.loadStations();</span>
+<span class="cstat-no" title="statement not covered" >    this.scrollListener();</span>
+<span class="cstat-no" title="statement not covered" >    this.setStateSelectedStation();</span>
+  }
+&nbsp;
+  render() {
+    return (
+      &lt;div className="app-container" style={{ backgroundColor: this.findColor() }}&gt;
+        &lt;header&gt;
+        &lt;div className="container title-container"&gt;
+            &lt;div className="row title-row border"&gt;
+              &lt;div className="six columns description"&gt;
+                &lt;div className="site-subtitle"&gt;
+                  &lt;h3&gt;Strange sounds from campus and community radio across Canada.&lt;/h3&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div className="three columns brand-name"&gt;
+                &lt;h1&gt;oddrad.io&lt;/h1&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+&nbsp;
+&nbsp;
+        &lt;/header&gt;
+          &lt;StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations }/&gt;
+        &lt;footer&gt;
+           &lt;AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation } /&gt;
+        &lt;/footer&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+export default App;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Dec 19 2017 20:47:21 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

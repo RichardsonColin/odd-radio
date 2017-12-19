@@ -31,10 +31,22 @@ describe('Station', () => {
   describe('onClick', () => {
     const wrapper = shallow(subject);
 
-    it('calls the function sent in by props', () => {
+    it('calls a function', () => {
       const onInfoSelect = spyOn(wrapper.instance(), 'onInfoSelect');
       wrapper.find('.fa-chevron-down').simulate('click');
       expect(onInfoSelect).toHaveBeenCalled();
     });
+
+
+    // it('changes the chevron to fa-chevron-up which matches the snapshot', () => {
+    //   const onInfoSelect = spyOn(wrapper.instance(), 'onInfoSelect');
+    //   wrapper.find('.fa-chevron-down').simulate('click');
+
+    //   expect(renderer.create(subject)).toMatchSnapshot();
+    // });
   });
+
+
+
+
 });

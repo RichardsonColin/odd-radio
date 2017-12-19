@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { generateRandomStationId } from '../src/client/util/ClientFunctions.jsx';
+import { shuffle } from '../../src/client/util/ClientFunctions.jsx';
 
 describe('ClientFunctions', () => {
 
-  describe('generateRandomStationId', () => {
+  describe('shuffle', () => {
 
-    it('generates a random number between 0 and 2', () => {
+    it('when given an array returns an array', () => {
+      const testArray = [1,2,3,4,5,6,7,8,9];
 
-      expect(generateRandomStationId()).toBeGreaterThanOrEqual(0);
-      expect(generateRandomStationId()).toBeLessThanOrEqual(2);
+      expect(shuffle(testArray)).not.toBe([1,2,3,4,5,6,7,8,9]);
     });
   });
 });
