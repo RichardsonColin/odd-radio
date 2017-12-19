@@ -55,8 +55,8 @@ class App extends Component {
     let station = {
       id: details.id,
       name: details.name,
-      stream: details.stream,
-      type: details.type
+      stream: details.audio_feed,
+      type: details.stream_type
     };
     let test = { key: 'value', tester: 'test' };
     localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
@@ -89,17 +89,16 @@ class App extends Component {
 
   // Helper function for seek functionality.
   generateRandomStationId() {
-    console.log('gen random called');
     const seekLength = this.state.stations.length - 1;
     return Math.floor(Math.random() * seekLength);
   }
 
   // Play random station.
   seekStation() {
-    console.log('seekStation called');
     const randomStationId = this.generateRandomStationId();
 
     for (const station of this.state.stations) {
+      console.log(station);
 
       // Checks to see if the seek matches the currently playing station.
       if (randomStationId === this.state.selectedStation.id) {

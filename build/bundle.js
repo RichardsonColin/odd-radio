@@ -8007,8 +8007,8 @@ var App = function (_Component) {
       var station = {
         id: details.id,
         name: details.name,
-        stream: details.stream,
-        type: details.type
+        stream: details.audio_feed,
+        type: details.stream_type
       };
       var test = { key: 'value', tester: 'test' };
       localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
@@ -8045,7 +8045,6 @@ var App = function (_Component) {
   }, {
     key: 'generateRandomStationId',
     value: function generateRandomStationId() {
-      console.log('gen random called');
       var seekLength = this.state.stations.length - 1;
       return Math.floor(Math.random() * seekLength);
     }
@@ -8055,7 +8054,6 @@ var App = function (_Component) {
   }, {
     key: 'seekStation',
     value: function seekStation() {
-      console.log('seekStation called');
       var randomStationId = this.generateRandomStationId();
 
       var _iteratorNormalCompletion = true;
@@ -8066,6 +8064,7 @@ var App = function (_Component) {
         for (var _iterator = this.state.stations[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var station = _step.value;
 
+          console.log(station);
 
           // Checks to see if the seek matches the currently playing station.
           if (randomStationId === this.state.selectedStation.id) {
@@ -8477,8 +8476,8 @@ var Station = function (_Component) {
       details: {
         id: _this.props.id,
         name: _this.props.name,
-        stream: _this.props.audioFeed,
-        type: _this.props.type
+        audio_feed: _this.props.audioFeed,
+        stream_type: _this.props.type
       }
     };
     _this.onInfoSelect = _this.onInfoSelect.bind(_this);
