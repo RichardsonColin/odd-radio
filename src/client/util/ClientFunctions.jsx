@@ -87,42 +87,39 @@ export const onInfoSelect = function(event) {
 // Function for volume control.
 export const setVolume = function(event) {
     let player = document.getElementById("player");
-    player.volume = event.target.value / 100
-}
+    player.volume = event.target.value / 100;
 
-//function to grab the last volume input selected on the volume slider
-export const lastClickedVolume = function(event) {
-    const volumeSliderValue = document.getElementById("vol-control");
-    console.log("in lastClicked function", volumeSliderValue.value);
-    this.volume = volumeSliderValue.value;
-    console.log("This.volume", this.volume);
+    console.log('inside setVolume');
+
+    if(player.volume === 0) {
+      mute.className = 'fa fa-volume-up fa-2x';
+
+    } else {
+      mute.className = 'fa fa-volume-off fa-2x';
+
+    }
 }
 
 // Function to toggle mute
 export const muteAudio = function(event) {
-  // stopImmediatePropogation();
-  console.log("in muteAudio before if:", this.volume);
-  // let volumeSliderValue =[];
-  // volumeSliderValue.push(this.lastClickedVolume());
-  // let lastVolume = this.lastClickedVolume();
-  console.log(this.volume);
-  console.log("last clicked volume =", this.lastClickedVolume());
-  let volumeSlider = document.getElementById("vol-control");
-  if (mute.className === "fa fa-volume-off fa-2x" ){
-    mute.className = "";
-    mute.className = "fa fa-volume-up fa-2x";
+  let slider = document.getElementById('vol-control');
+  let player = document.getElementById('player');
+
+  if(player.volume > 0) {
+    console.log(player.volume);
+    this.setState({
+      volume: player.volume
+    })
+
+    mute.className = 'fa fa-volume-up fa-2x';
     player.volume = 0;
-    volumeSlider.value = 0;
+    slider.value = 0;
   } else {
-    console.log('Value in else:', this.volume);
-    // player.volume = this.lastClickedVolume() / 100);
-    volumeSlider.value = this.volume;
-    mute.className = "";
-    mute.className = "fa fa-volume-off fa-2x";
+      mute.className = 'fa fa-volume-off fa-2x';
+      player.volume = this.state.volume;
+      slider.value = this.state.volume * 100;
   }
-
 }
-
 
 //sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser
 export const setStateSelectedStation = function() {

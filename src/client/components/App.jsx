@@ -29,18 +29,12 @@ class App extends Component {
     this.scrollListener = scrollListener.bind(this);
     this.findColor = findColor.bind(this);
     this.setStateSelectedStation = setStateSelectedStation.bind(this);
-    this.lastClickedVolume = lastClickedVolume.bind(this);
-    this.muteAudio = muteAudio.bind(this);
-
   }
 
   componentDidMount() {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
-    this.lastClickedVolume();
-    this.muteAudio();
-
   }
 
   render() {

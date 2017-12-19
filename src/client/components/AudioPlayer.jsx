@@ -4,17 +4,18 @@ import { setVolume, makeItPlay, muteAudio, lastClickedVolume} from '../util/Clie
 class AudioPlayer extends Component {
   constructor(props) {
     super(props);
-    this.volume = 10;
+    this.state = {
+      volume: ''
+    },
     this.makeItPlay = makeItPlay.bind(this);
     this.setVolume = setVolume.bind(this);
     this.muteAudio = muteAudio.bind(this);
-    this.lastClickedVolume = lastClickedVolume.bind(this);
   }
 
   render() {
     return (
       <div>
-        <audio id="player">
+        <audio id="player" >
           <source src={ this.props.stationFeed.stream } type={ this.props.stationFeed.type } />
         </audio>
         <div>

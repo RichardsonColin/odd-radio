@@ -571,7 +571,7 @@ module.exports = warning;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.scrollListener = exports.findColor = exports.loadStations = exports.shuffle = exports.makeItPlay = exports.setStateSelectedStation = exports.muteAudio = exports.lastClickedVolume = exports.setVolume = exports.onInfoSelect = exports.onStationSelect = exports.handlePlayState = exports.seekStation = exports.generateRandomStationId = exports.handleSelectedStation = undefined;
+exports.scrollListener = exports.findColor = exports.loadStations = exports.shuffle = exports.makeItPlay = exports.setStateSelectedStation = exports.muteAudio = exports.setVolume = exports.onInfoSelect = exports.onStationSelect = exports.handlePlayState = exports.seekStation = exports.generateRandomStationId = exports.handleSelectedStation = undefined;
 
 var _react = __webpack_require__(1);
 
@@ -688,37 +688,34 @@ var onInfoSelect = exports.onInfoSelect = function onInfoSelect(event) {
 var setVolume = exports.setVolume = function setVolume(event) {
     var player = document.getElementById("player");
     player.volume = event.target.value / 100;
-};
 
-//function to grab the last volume input selected on the volume slider
-var lastClickedVolume = exports.lastClickedVolume = function lastClickedVolume(event) {
-    var volumeSliderValue = document.getElementById("vol-control");
-    console.log("in lastClicked function", volumeSliderValue.value);
-    this.volume = volumeSliderValue.value;
-    console.log("This.volume", this.volume);
+    console.log('inside setVolume');
+
+    if (player.volume === 0) {
+        mute.className = 'fa fa-volume-up fa-2x';
+    } else {
+        mute.className = 'fa fa-volume-off fa-2x';
+    }
 };
 
 // Function to toggle mute
 var muteAudio = exports.muteAudio = function muteAudio(event) {
-    // stopImmediatePropogation();
-    console.log("in muteAudio before if:", this.volume);
-    // let volumeSliderValue =[];
-    // volumeSliderValue.push(this.lastClickedVolume());
-    // let lastVolume = this.lastClickedVolume();
-    console.log(this.volume);
-    console.log("last clicked volume =", this.lastClickedVolume());
-    var volumeSlider = document.getElementById("vol-control");
-    if (mute.className === "fa fa-volume-off fa-2x") {
-        mute.className = "";
-        mute.className = "fa fa-volume-up fa-2x";
+    var slider = document.getElementById('vol-control');
+    var player = document.getElementById('player');
+
+    if (player.volume > 0) {
+        console.log(player.volume);
+        this.setState({
+            volume: player.volume
+        });
+
+        mute.className = 'fa fa-volume-up fa-2x';
         player.volume = 0;
-        volumeSlider.value = 0;
+        slider.value = 0;
     } else {
-        console.log('Value in else:', this.volume);
-        // player.volume = this.lastClickedVolume() / 100);
-        volumeSlider.value = this.volume;
-        mute.className = "";
-        mute.className = "fa fa-volume-off fa-2x";
+        mute.className = 'fa fa-volume-off fa-2x';
+        player.volume = this.state.volume;
+        slider.value = this.state.volume * 100;
     }
 };
 
@@ -7995,9 +7992,6 @@ var App = function (_Component) {
     _this.scrollListener = _ClientFunctions.scrollListener.bind(_this);
     _this.findColor = _ClientFunctions.findColor.bind(_this);
     _this.setStateSelectedStation = _ClientFunctions.setStateSelectedStation.bind(_this);
-    _this.lastClickedVolume = _ClientFunctions.lastClickedVolume.bind(_this);
-    _this.muteAudio = _ClientFunctions.muteAudio.bind(_this);
-
     return _this;
   }
 
@@ -8007,8 +8001,6 @@ var App = function (_Component) {
       this.loadStations();
       this.scrollListener();
       this.setStateSelectedStation();
-      this.lastClickedVolume();
-      this.muteAudio();
     }
   }, {
     key: 'render',
@@ -8111,11 +8103,11 @@ var AudioPlayer = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (AudioPlayer.__proto__ || Object.getPrototypeOf(AudioPlayer)).call(this, props));
 
-    _this.volume = 10;
-    _this.makeItPlay = _ClientFunctions.makeItPlay.bind(_this);
+    _this.state = {
+      volume: ''
+    }, _this.makeItPlay = _ClientFunctions.makeItPlay.bind(_this);
     _this.setVolume = _ClientFunctions.setVolume.bind(_this);
     _this.muteAudio = _ClientFunctions.muteAudio.bind(_this);
-    _this.lastClickedVolume = _ClientFunctions.lastClickedVolume.bind(_this);
     return _this;
   }
 
