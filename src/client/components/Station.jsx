@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
-import { onStationSelect, onInfoSelect } from '../util/ClientFunctions.jsx';
 
 class Station extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.id,
-      name: this.props.name,
-      stream: this.props.audioFeed,
-      type: this.props.type
+      details: {
+        id: this.props.id,
+        name: this.props.name,
+        stream: this.props.audioFeed,
+        type: this.props.type
+      }
     }
-    this.onStationSelect = onStationSelect.bind(this);
-    this.onInfoSelect = onInfoSelect.bind(this);
+    this.onInfoSelect = this.onInfoSelect.bind(this);
+  }
+
+  // Event handler for info expansion.
+  onInfoSelect(event) {
+    let infoId = this.props.name
+    let info = document.getElementById(infoId);
+    let station = document.getElementById(infoId).previousSibling;
+    let chevron = event.target;
+    if (info.className === "container info-container hide-class") {
+      info.className = "";
+      info.className = "container info-container";
+      station.className += " no-opacity";
+      chevron.className = "";
+      chevron.className = "fa fa-chevron-up card-chevron";
+    } else {
+      info.className = "";
+      info.className = "container info-container hide-class";
+      station.className = `container station-container${this.props.stationType}`;
+      chevron.className = "";
+      chevron.className = "fa fa-chevron-down card-chevron";
+    }
   }
 
   render() {
@@ -24,7 +45,7 @@ class Station extends Component {
           <div className="row station-row border">
             <div className="one-third column station-name center"> {this.props.name} </div>
             <div className="one-third column station-play-button center">
-              <i className="fa fa-play card-play-button " aria-hidden="true" onClick={ this.onStationSelect }></i>
+              <i className="fa fa-play card-play-button " aria-hidden="true" onClick={ (e) => this.props.handleSelectedStation(this.state.details) }></i>
             </div>
             <div className="one-third column station-info-button center">
               <i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={ this.onInfoSelect }></i>
