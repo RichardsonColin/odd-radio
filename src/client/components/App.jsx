@@ -64,16 +64,20 @@ class App extends Component {
     let test = { key: 'value', tester: 'test' };
     localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
 
-    this.setState({
-      playState: {
-        isPlaying: false,
-        isPaused: true
-      },
-      selectedStation: station
-      }, () => {
-        player.load();
-        this.playPause();
-    });
+    if(station.id === this.state.selectedStation.id) {
+      this.playPause();
+    } else {
+      this.setState({
+        playState: {
+          isPlaying: false,
+          isPaused: true
+        },
+        selectedStation: station
+        }, () => {
+          player.load();
+          this.playPause();
+      });
+    }
   }
 
   //function which sets the playState of play and pause and
