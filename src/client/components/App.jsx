@@ -53,6 +53,8 @@ class App extends Component {
 
   // Takes a selected station and sets it in app level state, plays it.
   handleSelectedStation(details) {
+    const player = document.getElementById("player");
+
     let station = {
       id: details.id,
       name: details.name,
@@ -61,29 +63,34 @@ class App extends Component {
     };
     let test = { key: 'value', tester: 'test' };
     localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
+
     this.setState({
+      playState: {
+        isPlaying: false,
+        isPaused: true
+      },
       selectedStation: station
+      }, () => {
+        player.load();
+
+        this.playPause();
     });
-    document.getElementById("player").load();
-    this.playPause();
   }
 
   playPause() {
-    console.log("You hit the button.")
-    let player = document.getElementById("player");
+    const player = document.getElementById("player");
     if (this.state.playState.isPaused) {
       player.play();
-      console.log("We're playing now.")
+
       this.setState({
         playState: {
           isPlaying: true,
           isPaused: false,
         }
       })
-
     } else if (this.state.playState.isPlaying) {
       player.pause();
-      console.log("We're paused now.")
+
       this.setState({
         playState: {
           isPlaying: false,
@@ -104,7 +111,6 @@ class App extends Component {
     const randomStationId = this.generateRandomStationId();
 
     for (const station of this.state.stations) {
-      console.log(station);
 
       // Checks to see if the seek matches the currently playing station.
       if (randomStationId === this.state.selectedStation.id) {
@@ -113,6 +119,8 @@ class App extends Component {
 
         // Plays the seeked station.
       } else if (randomStationId === station.id) {
+          console.log('inside seekstation - ',station);
+
           const seekedStation = {
             id: station.id,
             name: station.name,
