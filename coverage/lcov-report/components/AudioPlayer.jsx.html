@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20.69% </span>
+        <span class="strong">22.73% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/29</span>
+        <span class='fraction'>5/22</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20.69% </span>
+        <span class="strong">22.73% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/29</span>
+        <span class='fraction'>5/22</span>
       </div>
     </div>
   </div>
@@ -130,50 +130,20 @@
 85
 86
 87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+88</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -215,8 +185,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -258,26 +228,11 @@ class AudioPlayer extends Component {
     this.state = {
       volume: ''
     },
-    this.makeItPlay = this.makeItPlay.bind(this);
+&nbsp;
     this.setVolume = this.setVolume.bind(this);
     this.muteAudio = this.muteAudio.bind(this);
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  ma</span>keItPlay() {
-    let player = <span class="cstat-no" title="statement not covered" >document.getElementById("player");</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    if (this.props.stationFeed.name == '') {</span>
-<span class="cstat-no" title="statement not covered" >      this.props.seekStation();</span>
-    } else <span class="cstat-no" title="statement not covered" >if (player.paused) {</span>
-<span class="cstat-no" title="statement not covered" >      player.play();</span>
-      // pButton.className = "";
-      // pButton.className = "fa fa-pause fa-2x";
-    } else {
-<span class="cstat-no" title="statement not covered" >      player.pause();</span>
-      // pButton.className = "";
-      // pButton.className = "fa fa-play fa-2x";
-    }
-  }
 &nbsp;
   // Sets volume according to range input.
 <span class="fstat-no" title="function not covered" >  se</span>tVolume(event) {
@@ -355,7 +310,7 @@ export default AudioPlayer;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Dec 20 2017 01:27:25 GMT+0000 (UTC)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Dec 20 2017 02:11:56 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../prettify.js"></script>
