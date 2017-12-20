@@ -165,6 +165,8 @@ class App extends Component {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
+    window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
+
   }
 
   render() {
