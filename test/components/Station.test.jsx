@@ -28,15 +28,22 @@ describe('Station', () => {
     expect(renderer.create(subject)).toMatchSnapshot();
   });
 
-  describe('chevron down onClick', () => {
+  describe('fa-chevron-down onClick', () => {
     const wrapper = shallow(subject);
 
-    it('calls a function', () => {
+    it('calls onInfoSelect', () => {
       const onInfoSelect = spyOn(wrapper.instance(), 'onInfoSelect');
 
       wrapper.find('.fa-chevron-down').simulate('click');
       expect(onInfoSelect).toHaveBeenCalled();
     });
+
+    // describe('with info unhidden fa-chevron-up onClick', () => {
+    //   it('calls onInfoSelect', () => {
+    //      wrapper.find('.fa-chevron-up').simulate('click');
+    //      expect(onInfoSelect).toHaveBeenCalled();
+    //   });
+    // });
   });
 
   describe('playbutton onClick', () => {
@@ -47,4 +54,10 @@ describe('Station', () => {
       expect(props.handleSelectedStation).toHaveBeenCalled();
     });
   });
+
+  // it('should have a stationType', () => {
+  //   const wrapper = shallow(subject);
+
+  //   // expect(wrapper.find({ prop: 'stationType' })).to.have.length(1);
+  // });
 });
