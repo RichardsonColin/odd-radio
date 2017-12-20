@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import { setVolume, makeItPlay, muteAudio} from '../util/ClientFunctions.jsx';
 import PlayerButtons from './PlayerButtons.jsx';
+import MuteButton from './MuteButton.jsx';
 
 
 class AudioPlayer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      volume: ''
+      volume: 1
     },
 
     this.setVolume = this.setVolume.bind(this);
@@ -19,16 +20,11 @@ class AudioPlayer extends Component {
   setVolume(event) {
     let player = document.getElementById("player");
     player.volume = event.target.value / 100;
-
-    console.log('inside setVolume');
-
-    if (player.volume === 0) {
-      mute.className = 'fa fa-volume-up fa-2x';
-
-    } else {
-      mute.className = 'fa fa-volume-off fa-2x';
-
-    }
+    // if (player.volume === 0) {
+    //   mute.className = 'fa fa-volume-up fa-2x';
+    // } else {
+    //   mute.className = 'fa fa-volume-off fa-2x';
+    // }
   }
 
   // Function to toggle mute
@@ -74,7 +70,7 @@ class AudioPlayer extends Component {
                 <i id="loader" className="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
               </div>
               <div className="three columns">
-                <i id="mute" className="fa fa-volume-up fa-2x" onClick={ this.muteAudio }></i>
+                <MuteButton volume={ this.state.volume } clickFunction={ this.muteAudio } />
               </div>
             </div>
           </div>
