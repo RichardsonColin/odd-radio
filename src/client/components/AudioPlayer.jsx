@@ -1,17 +1,21 @@
 import React, {Component} from 'react';
 import { setVolume, makeItPlay, muteAudio} from '../util/ClientFunctions.jsx';
 import PlayerButtons from './PlayerButtons.jsx';
+import Loader from './Loader.jsx';
 
 
 class AudioPlayer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      volume: ''
+      volume: '',
+      audioLoad: false
     },
 
     this.setVolume = this.setVolume.bind(this);
     this.muteAudio = this.muteAudio.bind(this);
+    this.onLoad = this.onLoad.bind(this);
+    this.onCanPlay = this.onCanPlay.bind(this);
   }
 
 
@@ -52,11 +56,27 @@ class AudioPlayer extends Component {
     }
   }
 
+  onLoad(e) {
+    console.log('e', e);
+    console.log('in load event');
+    this.setState({
+      audioLoad: true
+    })
+  }
+
+  onCanPlay(e) {
+    console.log('e', e);
+    console.log('in play event');
+    this.setState({
+      audioLoad: false
+    })
+  }
+
   render() {
     console.log(this.props.stationFeed.audioFeed, this.props.stationFeed.streamType)
     return (
       <div>
-        <audio id="player" >
+        <audio id="player" onLoadStart={ (e) => this.onLoad(e) } onCanPlay={ (e) => this.onCanPlay(e) } >
           <source src={ this.props.stationFeed.audioFeed } type={ this.props.stationFeed.streamType } />
         </audio>
         <div>
@@ -71,11 +91,11 @@ class AudioPlayer extends Component {
               </div>
               <div className="three columns">
                 <i className="fa fa-random fa-2x seek-button" onClick={this.props.seekStation} ></i>
-                <i id="loader" className="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
               </div>
               <div className="three columns">
                 <i id="mute" className="fa fa-volume-up fa-2x" onClick={ this.muteAudio }></i>
               </div>
+              <Loader audioLoad={ this.state.audioLoad } />
             </div>
           </div>
         </div>
