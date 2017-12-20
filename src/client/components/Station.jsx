@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import PlayButton from './PlayButton.jsx';
-import PauseButton from './PlayButton.jsx';
-
+import PlayerButtons from './PlayerButtons.jsx';
 
 class Station extends Component {
 
@@ -48,7 +46,7 @@ class Station extends Component {
           <div className="row station-row border">
             <div className="one-third column station-name center"> {this.props.name} </div>
             <div className="one-third column station-play-button center">
-              <PlayButton clickFunction={ this.props.handleSelectedStation } params={ this.state.details }
+              <PlayerButtons clickFunction={ this.props.handleSelectedStation } params={ this.state.details }
               playState={ this.props.playState } activeStation={ this.props.activeStation } />
             </div>
             <div className= "one-third column station-info-button center">

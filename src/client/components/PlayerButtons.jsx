@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class PlayButton extends Component {
+class PlayerButtons extends Component {
   render(){
 
     if (this.props.activeStation && this.props.playState.isPlaying) {
@@ -23,4 +23,4 @@ class PlayButton extends Component {
   }
 }
 
-export default PlayButton;
+export default PlayerButtons;

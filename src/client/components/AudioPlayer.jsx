@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { setVolume, makeItPlay, muteAudio} from '../util/ClientFunctions.jsx';
-import PlayButton from './PlayButton.jsx';
+import PlayerButtons from './PlayerButtons.jsx';
 
 
 class AudioPlayer extends Component {
@@ -79,7 +79,7 @@ class AudioPlayer extends Component {
           <div className="container player-container">
             <div className="row player-row border">
               <div className="three columns">
-              <PlayButton activeStation={ true } playState={ this.props.playState } clickFunction={ this.props.playPause }/>
+              <PlayerButtons activeStation={ true } playState={ this.props.playState } clickFunction={ this.props.playPause }/>
               </div>
               <div className="three columns">
                 <input id="vol-control" type="range" min={ 0 } max={ 100 } step={ 1 } onInput={ this.setVolume } onChange={ this.setVolume }></input>

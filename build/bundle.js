@@ -1165,16 +1165,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var PlayButton = function (_Component) {
-  _inherits(PlayButton, _Component);
+var PlayerButtons = function (_Component) {
+  _inherits(PlayerButtons, _Component);
 
-  function PlayButton() {
-    _classCallCheck(this, PlayButton);
+  function PlayerButtons() {
+    _classCallCheck(this, PlayerButtons);
 
-    return _possibleConstructorReturn(this, (PlayButton.__proto__ || Object.getPrototypeOf(PlayButton)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (PlayerButtons.__proto__ || Object.getPrototypeOf(PlayerButtons)).apply(this, arguments));
   }
 
-  _createClass(PlayButton, [{
+  _createClass(PlayerButtons, [{
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -1199,10 +1199,10 @@ var PlayButton = function (_Component) {
     }
   }]);
 
-  return PlayButton;
+  return PlayerButtons;
 }(_react.Component);
 
-exports.default = PlayButton;
+exports.default = PlayerButtons;
 
 /***/ }),
 /* 16 */
@@ -8034,10 +8034,7 @@ var App = function (_Component) {
         isPaused: true,
         isLoading: false
       }
-    },
-
-    // this.handlePlayState = this.handlePlayState.bind(this);
-    _this.handleSelectedStation = _this.handleSelectedStation.bind(_this);
+    }, _this.handleSelectedStation = _this.handleSelectedStation.bind(_this);
     _this.seekStation = _this.seekStation.bind(_this);
     _this.generateRandomStationId = _this.generateRandomStationId.bind(_this);
     _this.loadStations = _this.loadStations.bind(_this);
@@ -8110,51 +8107,6 @@ var App = function (_Component) {
         });
       }
     }
-
-    // handlePlayState() {
-    //   let player = document.getElementById("player");
-    //   document.getElementById("player").load();
-
-    //   // Displays the loading icon while the media is loading.
-    //   player.addEventListener("loadstart", function () {
-    //     pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";
-
-    //     // this.setState({
-    //     //   playState: {
-    //     //     isPlaying: false;
-    //     //     isPaused: false;
-    //     //     isLoading: true;
-    //     //   };
-
-    //   });
-
-    //   // Plays the audio when it is ready.
-    //   player.addEventListener("canplaythrough", function () {
-    //     document.getElementById("player").play();
-
-    //     // this.setState({
-    //     //   playState: {
-    //     //     isPlaying: true;
-    //     //     isPaused: false;
-    //     //     isLoading: false;
-    //     //   };
-
-    //     // })
-    //   });
-
-    //   // Changes the loading icon to a pause icon.
-    //   player.addEventListener("playing", function () {
-    //     // pButton.className = "";
-    //     // pButton.className = "fa fa-pause fa-2x";
-
-    //     // this.setState({
-    //     //   playState: {
-    //     //     isPlaying: true;
-    //     //     isPaused: false;
-    //     //     isLoading: false;
-    //         // };
-    //   });
-    // }
 
     // Helper function for seek functionality.
 
@@ -8325,9 +8277,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _ClientFunctions = __webpack_require__(14);
 
-var _PlayButton = __webpack_require__(15);
+var _PlayerButtons = __webpack_require__(15);
 
-var _PlayButton2 = _interopRequireDefault(_PlayButton);
+var _PlayerButtons2 = _interopRequireDefault(_PlayerButtons);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8442,7 +8394,7 @@ var AudioPlayer = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'three columns' },
-                _react2.default.createElement(_PlayButton2.default, { activeStation: true, playState: this.props.playState, clickFunction: this.props.playPause })
+                _react2.default.createElement(_PlayerButtons2.default, { activeStation: true, playState: this.props.playState, clickFunction: this.props.playPause })
               ),
               _react2.default.createElement(
                 'div',
@@ -8586,9 +8538,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _PlayButton = __webpack_require__(15);
+var _PlayerButtons = __webpack_require__(15);
 
-var _PlayButton2 = _interopRequireDefault(_PlayButton);
+var _PlayerButtons2 = _interopRequireDefault(_PlayerButtons);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8665,7 +8617,7 @@ var Station = function (_Component) {
             _react2.default.createElement(
               'div',
               { className: 'one-third column station-play-button center' },
-              _react2.default.createElement(_PlayButton2.default, { clickFunction: this.props.handleSelectedStation, params: this.state.details,
+              _react2.default.createElement(_PlayerButtons2.default, { clickFunction: this.props.handleSelectedStation, params: this.state.details,
                 playState: this.props.playState, activeStation: this.props.activeStation })
             ),
             _react2.default.createElement(
