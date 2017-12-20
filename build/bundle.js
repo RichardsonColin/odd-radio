@@ -948,7 +948,7 @@ module.exports = focusNode;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.onInfoSelect = exports.shuffle = undefined;
+exports.shuffle = undefined;
 
 var _react = __webpack_require__(0);
 
@@ -957,7 +957,6 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var shuffle = exports.shuffle = function shuffle(sourceArray) {
-    console.log('i was called.');
     for (var i = 0; i < sourceArray.length - 1; i++) {
         var j = i + Math.floor(Math.random() * (sourceArray.length - i));
 
@@ -967,178 +966,6 @@ var shuffle = exports.shuffle = function shuffle(sourceArray) {
     }
     return sourceArray;
 };
-
-// export const handleSelectedStation = function(id, name, stream, type) {
-//     let station = {
-//             id: id,
-//             name: name,
-//             stream: stream,
-//             type: type
-//         };
-//     let test = { key: 'value', tester: 'test'};
-//     localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
-//     this.setState({
-//         selectedStation: station
-//     });
-//     this.handlePlayState();
-// }
-
-// export const generateRandomStationId = function() {
-//     const seekLength = this.state.stations.length - 1;
-//     return Math.floor(Math.random() * seekLength);
-// }
-
-// export const seekStation = function() {
-//     const randomStationId = this.generateRandomStationId();
-
-//     for (const station of this.state.stations) {
-
-//         // Checks to see if the seek matches the currently playing station.
-//         if (randomStationId === this.state.selectedStation.id) {
-//             this.seekStation();
-//             return;
-
-//             // Plays the seeked station.
-//         } else if (randomStationId === station.id) {
-//             this.handleSelectedStation(station.id, station.name, station.audio_feed, station.stream_type);
-//         }
-//     }
-// }
-
-// export const handlePlayState = function() {
-//     let player = document.getElementById("player");
-//     document.getElementById("player").load();
-
-//     // Displays the loading icon while the media is loading.
-//     player.addEventListener("loadstart", function () {
-//         pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";
-//     });
-
-//     // Plays the audio when it is ready.
-//     player.addEventListener("canplaythrough", function () {
-//         document.getElementById("player").play();
-//     });
-
-//     // Changes the loading icon to a pause icon.
-//     player.addEventListener("playing", function () {
-//         pButton.className = "";
-//         pButton.className = "fa fa-pause fa-2x";
-//     });
-// }
-
-// Function to take a station div selection and pass it to the app level as current player.
-// export const onStationSelect = function(event) {
-//     this.props.handleSelectedStation(this.state.id, this.state.name, this.state.stream, this.state.type);
-// }
-
-// Function to show more info for statios.
-var onInfoSelect = exports.onInfoSelect = function onInfoSelect(event) {
-    var infoId = this.props.name;
-    var info = document.getElementById(infoId);
-    var station = document.getElementById(infoId).previousSibling;
-    var chevron = event.target;
-    if (info.className === "container info-container hide-class") {
-        info.className = "";
-        info.className = "container info-container";
-        station.className += " no-opacity";
-        chevron.className = "";
-        chevron.className = "fa fa-chevron-up card-chevron";
-    } else {
-        info.className = "";
-        info.className = "container info-container hide-class";
-        station.className = 'container station-container' + this.props.stationType;
-        chevron.className = "";
-        chevron.className = "fa fa-chevron-down card-chevron";
-    }
-};
-
-// // Function for volume control.
-// export const setVolume = function(event) {
-//     let player = document.getElementById("player");
-//     player.volume = event.target.value / 100;
-
-//     console.log('inside setVolume');
-
-//     if(player.volume === 0) {
-//       mute.className = 'fa fa-volume-up fa-2x';
-
-//     } else {
-//       mute.className = 'fa fa-volume-off fa-2x';
-
-//     }
-// }
-
-// // Function to toggle mute
-// export const muteAudio = function(event) {
-//   let slider = document.getElementById('vol-control');
-//   let player = document.getElementById('player');
-
-//   if(player.volume > 0) {
-//     console.log(player.volume);
-//     this.setState({
-//       volume: player.volume
-//     })
-
-//     mute.className = 'fa fa-volume-up fa-2x';
-//     player.volume = 0;
-//     slider.value = 0;
-//   } else {
-//       mute.className = 'fa fa-volume-off fa-2x';
-//       player.volume = this.state.volume;
-//       slider.value = this.state.volume * 100;
-//   }
-// }
-
-//sets the app's selectedStation to the localStorage which is the last radio stream to be played in this browser
-// export const setStateSelectedStation = function() {
-//     if (JSON.parse(localStorage.getItem('key'))){
-//         this.setState({
-//             selectedStation: JSON.parse(localStorage.getItem('key'))
-//         });
-//     }
-// }
-
-// Function for play button triggers.
-// export const makeItPlay = function() {
-//     let player = document.getElementById("player");
-
-//     if (this.props.stationFeed.name == '') {
-//         this.props.seekStation();
-//     } else if (player.paused) {
-//         player.play();
-//         pButton.className = "";
-//         pButton.className = "fa fa-pause fa-2x";
-//     } else {
-//         player.pause();
-//         pButton.className = "";
-//         pButton.className = "fa fa-play fa-2x";
-//     }
-// }
-
-// export const loadStations = function() {
-//     fetch('/api/stations', { mode: 'no-cors' })
-//         .then((response) => {
-//             return response.json()
-//         }).then((json) => {
-//             this.setState({ stations: shuffle(json) })
-//             console.log('parsed json', json)
-//         }).catch((ex) => {
-//             console.log('parsing failed', ex)
-//         });
-// }
-
-
-// export const findColor = function() {
-//   const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
-//   return this.colors[colorIndex];
-// }
-
-// export const scrollListener = function() {
-//   const scrollListen = window.addEventListener('scroll', () => {
-//     const percent = window.scrollY / ( document.body.scrollHeight - window.innerHeight );
-//     this.setState({ scrollPercent: percent });
-//   });
-// }
 
 /***/ }),
 /* 15 */
@@ -8456,10 +8283,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var StationList = function (_Component) {
   _inherits(StationList, _Component);
 
-  function StationList() {
+  function StationList(props) {
     _classCallCheck(this, StationList);
 
-    return _possibleConstructorReturn(this, (StationList.__proto__ || Object.getPrototypeOf(StationList)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (StationList.__proto__ || Object.getPrototypeOf(StationList)).call(this, props));
   }
 
   _createClass(StationList, [{
@@ -8564,152 +8391,189 @@ var Station = function (_Component) {
         name: _this.props.name,
         audioFeed: _this.props.audioFeed,
         streamType: _this.props.streamType
-      }
-    };
-    _this.onInfoSelect = _this.onInfoSelect.bind(_this);
+      },
+      expanded: false
+      // this.onInfoSelect = this.onInfoSelect.bind(this);
+    };_this.toggleStationInfo = _this.toggleStationInfo.bind(_this);
     return _this;
   }
 
-  // Event handler for info expansion.
-
-
   _createClass(Station, [{
-    key: 'onInfoSelect',
-<<<<<<< HEAD
-    value: function onInfoSelect() {
-=======
-    value: function onInfoSelect(event) {
->>>>>>> 306e2c0815ceb232d63c51f4461f3a94472ab6df
-      var infoId = this.props.name;
-      var info = document.getElementById(infoId);
-      var station = document.getElementById(infoId).previousSibling;
-      var chevron = event.target;
-      console.log('event target: ', chevron);
-      if (info.className === "container info-container hide-class") {
-        info.className = "";
-        info.className = "container info-container";
-        station.className += " no-opacity";
-        chevron.className = "";
-        chevron.className = "fa fa-chevron-up card-chevron";
+    key: 'toggleStationInfo',
+    value: function toggleStationInfo() {
+      if (this.state.expanded) {
+        this.setState({
+          expanded: false
+        });
       } else {
-        info.className = "";
-        info.className = "container info-container hide-class";
-        station.className = 'container station-container' + this.props.stationType;
-        chevron.className = "";
-        chevron.className = "fa fa-chevron-down card-chevron";
+        this.setState({
+          expanded: true
+        });
       }
     }
+
+    // Event handler for info expansion.
+    // onInfoSelect() {
+    //   let infoId = this.props.name
+    //   let info = document.getElementById(infoId);
+    //   let station = document.getElementById(infoId).previousSibling;
+    //   let chevron = event.target;
+    //   if (info.className === "container info-container hide-class") {
+    //     info.className = "";
+    //     info.className = "container info-container";
+    //     station.className += " no-opacity";
+    //     chevron.className = "";
+    //     chevron.className = "fa fa-chevron-up card-chevron";
+    //   } else {
+    //     info.className = "";
+    //     info.className = "container info-container hide-class";
+    //     station.className = `container station-container${this.props.stationType}`;
+    //     chevron.className = "";
+    //     chevron.className = "fa fa-chevron-down card-chevron";
+    //   }
+    // }
+
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {}
   }, {
     key: 'render',
     value: function render() {
-      console.log('Rendering <Station>');
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
+      var _this2 = this;
+
+      if (!this.state.expanded) {
+        return _react2.default.createElement(
           'div',
-          { className: 'container station-container' + this.props.stationType },
+          null,
           _react2.default.createElement(
             'div',
-            { className: 'row station-row border' },
+            { className: 'container station-container' + this.props.stationType },
             _react2.default.createElement(
               'div',
-              { className: 'one-third column station-name center' },
-              ' ',
-              this.props.name,
-              ' '
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'one-third column station-play-button center' },
-<<<<<<< HEAD
-              _react2.default.createElement('i', { className: 'fa fa-play card-play-button ', 'aria-hidden': 'true', onClick: function onClick(e) {
-                  return _this2.props.handleSelectedStation(_this2.state.details);
-                } })
-=======
-              _react2.default.createElement(_PlayerButtons2.default, { clickFunction: this.props.handleSelectedStation, params: this.state.details,
-                playState: this.props.playState, activeStation: this.props.activeStation })
->>>>>>> 306e2c0815ceb232d63c51f4461f3a94472ab6df
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'one-third column station-info-button center' },
-<<<<<<< HEAD
-              _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
-                  return _this2.onInfoSelect();
-                } })
-=======
-              _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: this.onInfoSelect })
->>>>>>> 306e2c0815ceb232d63c51f4461f3a94472ab6df
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'container info-container hide-class', id: this.props.name },
-          _react2.default.createElement(
-            'div',
-            { className: 'row center-align' },
-            _react2.default.createElement(
-              'div',
-              { className: 'station-info center' },
+              { className: 'row station-row border' },
               _react2.default.createElement(
                 'div',
-                { className: 'station-branding one-third column' },
+                { className: 'one-third column station-name center' },
                 ' ',
                 this.props.name,
                 ' '
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'two-thirds column info' },
+                { className: 'one-third column station-play-button center' },
+                _react2.default.createElement(_PlayerButtons2.default, { clickFunction: this.props.handleSelectedStation, params: this.state.details,
+                  playState: this.props.playState, activeStation: this.props.activeStation })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'one-third column station-info-button center' },
+                _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
+                    return _this2.toggleStationInfo();
+                  } })
+              )
+            )
+          )
+        );
+      } else {
+
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'div',
+            { className: 'container station-container' + this.props.stationType },
+            _react2.default.createElement(
+              'div',
+              { className: 'row station-row border' },
+              _react2.default.createElement(
+                'div',
+                { className: 'one-third column station-name center' },
+                ' ',
+                this.props.name,
+                ' '
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'one-third column station-play-button center' },
+                _react2.default.createElement(_PlayerButtons2.default, { clickFunction: this.props.handleSelectedStation, params: this.state.details,
+                  playState: this.props.playState, activeStation: this.props.activeStation })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'one-third column station-info-button center' },
+                _react2.default.createElement('i', { className: 'fa fa-chevron-up card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
+                    return _this2.toggleStationInfo();
+                  } })
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'container info-container', id: this.props.name },
+            _react2.default.createElement(
+              'div',
+              { className: 'row center-align' },
+              _react2.default.createElement(
+                'div',
+                { className: 'station-info center' },
                 _react2.default.createElement(
                   'div',
-                  null,
-                  _react2.default.createElement(
-                    'b',
-                    null,
-                    'Location:'
-                  ),
+                  { className: 'station-branding one-third column' },
                   ' ',
-                  this.props.city,
+                  this.props.name,
                   ' '
                 ),
                 _react2.default.createElement(
                   'div',
-                  null,
+                  { className: 'two-thirds column info' },
                   _react2.default.createElement(
-                    'b',
+                    'div',
                     null,
-                    'Description:'
-                  ),
-                  ' ',
-                  this.props.description,
-                  ' '
-                ),
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  _react2.default.createElement(
-                    'b',
-                    null,
-                    'Home Page:'
-                  ),
-                  ' ',
-                  _react2.default.createElement(
-                    'a',
-                    { href: this.props.homePage, target: '_blank' },
+                    _react2.default.createElement(
+                      'b',
+                      null,
+                      'Location:'
+                    ),
                     ' ',
-                    this.props.homePage,
+                    this.props.city,
                     ' '
                   ),
-                  ' '
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                      'b',
+                      null,
+                      'Description:'
+                    ),
+                    ' ',
+                    this.props.description,
+                    ' '
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                      'b',
+                      null,
+                      'Home Page:'
+                    ),
+                    ' ',
+                    _react2.default.createElement(
+                      'a',
+                      { href: this.props.homePage, target: '_blank' },
+                      ' ',
+                      this.props.homePage,
+                      ' '
+                    ),
+                    ' '
+                  )
                 )
               )
             )
           )
-        )
-      );
+        );
+      }
     }
   }]);
 
