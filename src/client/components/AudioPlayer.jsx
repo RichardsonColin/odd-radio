@@ -9,26 +9,11 @@ class AudioPlayer extends Component {
     this.state = {
       volume: ''
     },
-    this.makeItPlay = this.makeItPlay.bind(this);
+
     this.setVolume = this.setVolume.bind(this);
     this.muteAudio = this.muteAudio.bind(this);
   }
 
-  makeItPlay() {
-    let player = document.getElementById("player");
-
-    if (this.props.stationFeed.name == '') {
-      this.props.seekStation();
-    } else if (player.paused) {
-      player.play();
-      // pButton.className = "";
-      // pButton.className = "fa fa-pause fa-2x";
-    } else {
-      player.pause();
-      // pButton.className = "";
-      // pButton.className = "fa fa-play fa-2x";
-    }
-  }
 
   // Sets volume according to range input.
   setVolume(event) {
