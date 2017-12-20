@@ -58,7 +58,7 @@ class Station extends Component {
         <div>
           <div className={ `container station-container${this.props.stationType}` }>
             <div className="row station-row border">
-              <div className="one-third column station-name center"> {this.props.name} </div>
+              <div className="one-third column station-name center"> </div>
               <div className="one-third column station-play-button center">
                 <PlayerButtons clickFunction={ this.props.handleSelectedStation } params={ this.state.details }
                 playState={ this.props.playState } activeStation={ this.props.activeStation } />
