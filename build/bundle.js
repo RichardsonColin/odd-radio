@@ -7908,10 +7908,6 @@ var App = function (_Component) {
       var test = { key: 'value', tester: 'test' };
       localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
 
-      this.setState({});
-
-      this.setState({});
-
       this.setState({
         playState: {
           isPlaying: false,
@@ -7920,27 +7916,30 @@ var App = function (_Component) {
         selectedStation: station
       }, function () {
         player.load();
+
         _this3.playPause();
       });
     }
+
+    //function which sets the playState of play and pause and
+    //turns the player on and off
+
   }, {
     key: 'playPause',
     value: function playPause() {
-      console.log("before if - ", this.state.playState);
       var player = document.getElementById("player");
       if (this.state.playState.isPaused) {
         player.play();
-        console.log("We're playing now.");
+
         this.setState({
           playState: {
             isPlaying: true,
             isPaused: false
           }
         });
-        console.log("in if - ", this.state.playState);
       } else if (this.state.playState.isPlaying) {
         player.pause();
-        console.log("We're paused now.");
+
         this.setState({
           playState: {
             isPlaying: false,
@@ -7948,7 +7947,6 @@ var App = function (_Component) {
           }
         });
       }
-      // console.log('outside ifs - ', this.state.playState);
     }
 
     // Helper function for seek functionality.
@@ -8143,33 +8141,15 @@ var AudioPlayer = function (_Component) {
 
     _this.state = {
       volume: ''
-    }, _this.makeItPlay = _this.makeItPlay.bind(_this);
-    _this.setVolume = _this.setVolume.bind(_this);
+    }, _this.setVolume = _this.setVolume.bind(_this);
     _this.muteAudio = _this.muteAudio.bind(_this);
     return _this;
   }
 
+  // Sets volume according to range input.
+
+
   _createClass(AudioPlayer, [{
-    key: 'makeItPlay',
-    value: function makeItPlay() {
-      var player = document.getElementById("player");
-
-      if (this.props.stationFeed.name == '') {
-        this.props.seekStation();
-      } else if (player.paused) {
-        player.play();
-        // pButton.className = "";
-        // pButton.className = "fa fa-pause fa-2x";
-      } else {
-        player.pause();
-        // pButton.className = "";
-        // pButton.className = "fa fa-play fa-2x";
-      }
-    }
-
-    // Sets volume according to range input.
-
-  }, {
     key: 'setVolume',
     value: function setVolume(event) {
       var player = document.getElementById("player");
@@ -8198,11 +8178,11 @@ var AudioPlayer = function (_Component) {
           volume: player.volume
         });
 
-        mute.className = 'fa fa-volume-up fa-2x';
+        mute.className = 'fa fa-volume-off fa-2x';
         player.volume = 0;
         slider.value = 0;
       } else {
-        mute.className = 'fa fa-volume-off fa-2x';
+        mute.className = 'fa fa-volume-up fa-2x';
         player.volume = this.state.volume;
         slider.value = this.state.volume * 100;
       }
@@ -8254,7 +8234,7 @@ var AudioPlayer = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'three columns' },
-                _react2.default.createElement('i', { id: 'mute', className: 'fa fa-volume-off fa-2x', onClick: this.muteAudio })
+                _react2.default.createElement('i', { id: 'mute', className: 'fa fa-volume-up fa-2x', onClick: this.muteAudio })
               )
             )
           )
@@ -8300,10 +8280,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var StationList = function (_Component) {
   _inherits(StationList, _Component);
 
-  function StationList() {
+  function StationList(props) {
     _classCallCheck(this, StationList);
 
-    return _possibleConstructorReturn(this, (StationList.__proto__ || Object.getPrototypeOf(StationList)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (StationList.__proto__ || Object.getPrototypeOf(StationList)).call(this, props));
   }
 
   _createClass(StationList, [{
@@ -8408,34 +8388,28 @@ var Station = function (_Component) {
         name: _this.props.name,
         audioFeed: _this.props.audioFeed,
         streamType: _this.props.streamType
-      }
+      },
+      expanded: false
     };
-    _this.onInfoSelect = _this.onInfoSelect.bind(_this);
+
+    _this.toggleStationInfo = _this.toggleStationInfo.bind(_this);
     return _this;
   }
 
-  // Event handler for info expansion.
+  // Switch between expanded true and false for showing info.
 
 
   _createClass(Station, [{
-    key: 'onInfoSelect',
-    value: function onInfoSelect() {
-      var infoId = this.props.name;
-      var info = document.getElementById(infoId);
-      var station = document.getElementById(infoId).previousSibling;
-      var chevron = event.target;
-      if (info.className === "container info-container hide-class") {
-        info.className = "";
-        info.className = "container info-container";
-        station.className += " no-opacity";
-        chevron.className = "";
-        chevron.className = "fa fa-chevron-up card-chevron";
+    key: 'toggleStationInfo',
+    value: function toggleStationInfo() {
+      if (this.state.expanded) {
+        this.setState({
+          expanded: false
+        });
       } else {
-        info.className = "";
-        info.className = "container info-container hide-class";
-        station.className = 'container station-container' + this.props.stationType;
-        chevron.className = "";
-        chevron.className = "fa fa-chevron-down card-chevron";
+        this.setState({
+          expanded: true
+        });
       }
     }
   }, {
@@ -8443,104 +8417,139 @@ var Station = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log('Rendering <Station>');
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
+      // If it is not expanded, render just some details.
+      if (!this.state.expanded) {
+        return _react2.default.createElement(
           'div',
-          { className: 'container station-container' + this.props.stationType },
+          null,
           _react2.default.createElement(
             'div',
-            { className: 'row station-row border' },
+            { className: 'container station-container' + this.props.stationType },
             _react2.default.createElement(
               'div',
-              { className: 'one-third column station-name center' },
-              ' ',
-              this.props.name,
-              ' '
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'one-third column station-play-button center' },
-              _react2.default.createElement(_PlayerButtons2.default, { clickFunction: this.props.handleSelectedStation, params: this.state.details,
-                playState: this.props.playState, activeStation: this.props.activeStation })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'one-third column station-info-button center' },
-              _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
-                  return _this2.onInfoSelect();
-                } })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'container info-container hide-class', id: this.props.name },
-          _react2.default.createElement(
-            'div',
-            { className: 'row center-align' },
-            _react2.default.createElement(
-              'div',
-              { className: 'station-info center' },
+              { className: 'row station-row border' },
               _react2.default.createElement(
                 'div',
-                { className: 'station-branding one-third column' },
+                { className: 'one-third column station-name center' },
                 ' ',
                 this.props.name,
                 ' '
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'two-thirds column info' },
+                { className: 'one-third column station-play-button center' },
+                _react2.default.createElement(_PlayerButtons2.default, { clickFunction: this.props.handleSelectedStation, params: this.state.details,
+                  playState: this.props.playState, activeStation: this.props.activeStation })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'one-third column station-info-button center' },
+                _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
+                    return _this2.toggleStationInfo();
+                  } })
+              )
+            )
+          )
+        );
+
+        // If it is expanded, render all the details.
+      } else {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'div',
+            { className: 'container station-container' + this.props.stationType },
+            _react2.default.createElement(
+              'div',
+              { className: 'row station-row border' },
+              _react2.default.createElement(
+                'div',
+                { className: 'one-third column station-name center' },
+                ' '
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'one-third column station-play-button center' },
+                _react2.default.createElement(_PlayerButtons2.default, { clickFunction: this.props.handleSelectedStation, params: this.state.details,
+                  playState: this.props.playState, activeStation: this.props.activeStation })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'one-third column station-info-button center' },
+                _react2.default.createElement('i', { className: 'fa fa-chevron-up card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
+                    return _this2.toggleStationInfo();
+                  } })
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'container info-container', id: this.props.name },
+            _react2.default.createElement(
+              'div',
+              { className: 'row center-align' },
+              _react2.default.createElement(
+                'div',
+                { className: 'station-info center' },
                 _react2.default.createElement(
                   'div',
-                  null,
-                  _react2.default.createElement(
-                    'b',
-                    null,
-                    'Location:'
-                  ),
+                  { className: 'station-branding one-third column' },
                   ' ',
-                  this.props.city,
+                  this.props.name,
                   ' '
                 ),
                 _react2.default.createElement(
                   'div',
-                  null,
+                  { className: 'two-thirds column info' },
                   _react2.default.createElement(
-                    'b',
+                    'div',
                     null,
-                    'Description:'
-                  ),
-                  ' ',
-                  this.props.description,
-                  ' '
-                ),
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  _react2.default.createElement(
-                    'b',
-                    null,
-                    'Home Page:'
-                  ),
-                  ' ',
-                  _react2.default.createElement(
-                    'a',
-                    { href: this.props.homePage, target: '_blank' },
+                    _react2.default.createElement(
+                      'b',
+                      null,
+                      'Location:'
+                    ),
                     ' ',
-                    this.props.homePage,
+                    this.props.city,
                     ' '
                   ),
-                  ' '
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                      'b',
+                      null,
+                      'Description:'
+                    ),
+                    ' ',
+                    this.props.description,
+                    ' '
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                      'b',
+                      null,
+                      'Home Page:'
+                    ),
+                    ' ',
+                    _react2.default.createElement(
+                      'a',
+                      { href: this.props.homePage, target: '_blank' },
+                      ' ',
+                      this.props.homePage,
+                      ' '
+                    ),
+                    ' '
+                  )
                 )
               )
             )
           )
-        )
-      );
+        );
+      }
     }
   }]);
 

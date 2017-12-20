@@ -77,6 +77,8 @@ class App extends Component {
     });
   }
 
+  //function which sets the playState of play and pause and
+  //turns the player on and off
   playPause() {
     const player = document.getElementById("player");
     if (this.state.playState.isPaused) {

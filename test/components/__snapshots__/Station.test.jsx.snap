@@ -18,11 +18,13 @@ exports[`Station matches snapshot 1`] = `
       <div
         className="one-third column station-play-button center"
       >
-        <i
-          aria-hidden="true"
-          className="fa fa-play card-play-button "
-          onClick={[Function]}
-        />
+        <div>
+          <i
+            className="fa fa-play fa-2x"
+            id="pButton"
+            onClick={[Function]}
+          />
+        </div>
       </div>
       <div
         className="one-third column station-info-button center"
@@ -32,61 +34,6 @@ exports[`Station matches snapshot 1`] = `
           className="fa fa-chevron-down card-chevron"
           onClick={[Function]}
         />
-      </div>
-    </div>
-  </div>
-  <div
-    className="container info-container hide-class"
-    id="QWER"
-  >
-    <div
-      className="row center-align"
-    >
-      <div
-        className="station-info center"
-      >
-        <div
-          className="station-branding one-third column"
-        >
-           
-          QWER
-           
-        </div>
-        <div
-          className="two-thirds column info"
-        >
-          <div>
-            <b>
-              Location:
-            </b>
-             
-            Saskitoba
-             
-          </div>
-          <div>
-            <b>
-              Description:
-            </b>
-             
-            radio station is what we are
-             
-          </div>
-          <div>
-            <b>
-              Home Page:
-            </b>
-             
-            <a
-              href="www.example.com"
-              target="_blank"
-            >
-               
-              www.example.com
-               
-            </a>
-             
-          </div>
-        </div>
       </div>
     </div>
   </div>

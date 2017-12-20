@@ -9,26 +9,11 @@ class AudioPlayer extends Component {
     this.state = {
       volume: ''
     },
-    this.makeItPlay = this.makeItPlay.bind(this);
+
     this.setVolume = this.setVolume.bind(this);
     this.muteAudio = this.muteAudio.bind(this);
   }
 
-  makeItPlay() {
-    let player = document.getElementById("player");
-
-    if (this.props.stationFeed.name == '') {
-      this.props.seekStation();
-    } else if (player.paused) {
-      player.play();
-      // pButton.className = "";
-      // pButton.className = "fa fa-pause fa-2x";
-    } else {
-      player.pause();
-      // pButton.className = "";
-      // pButton.className = "fa fa-play fa-2x";
-    }
-  }
 
   // Sets volume according to range input.
   setVolume(event) {
@@ -57,11 +42,11 @@ class AudioPlayer extends Component {
         volume: player.volume
       })
 
-      mute.className = 'fa fa-volume-up fa-2x';
+      mute.className = 'fa fa-volume-off fa-2x';
       player.volume = 0;
       slider.value = 0;
     } else {
-      mute.className = 'fa fa-volume-off fa-2x';
+      mute.className = 'fa fa-volume-up fa-2x';
       player.volume = this.state.volume;
       slider.value = this.state.volume * 100;
     }
@@ -89,7 +74,7 @@ class AudioPlayer extends Component {
                 <i id="loader" className="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
               </div>
               <div className="three columns">
-                <i id="mute" className="fa fa-volume-off fa-2x" onClick={ this.muteAudio }></i>
+                <i id="mute" className="fa fa-volume-up fa-2x" onClick={ this.muteAudio }></i>
               </div>
             </div>
           </div>

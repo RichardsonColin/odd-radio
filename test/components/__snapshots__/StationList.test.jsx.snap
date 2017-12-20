@@ -21,11 +21,13 @@ exports[`StationList matches snapshot 1`] = `
         <div
           className="one-third column station-play-button center"
         >
-          <i
-            aria-hidden="true"
-            className="fa fa-play card-play-button "
-            onClick={[Function]}
-          />
+          <div>
+            <i
+              className="fa fa-play fa-2x"
+              id="pButton"
+              onClick={[Function]}
+            />
+          </div>
         </div>
         <div
           className="one-third column station-info-button center"
@@ -35,61 +37,6 @@ exports[`StationList matches snapshot 1`] = `
             className="fa fa-chevron-down card-chevron"
             onClick={[Function]}
           />
-        </div>
-      </div>
-    </div>
-    <div
-      className="container info-container hide-class"
-      id="CFCR"
-    >
-      <div
-        className="row center-align"
-      >
-        <div
-          className="station-info center"
-        >
-          <div
-            className="station-branding one-third column"
-          >
-             
-            CFCR
-             
-          </div>
-          <div
-            className="two-thirds column info"
-          >
-            <div>
-              <b>
-                Location:
-              </b>
-               
-              Saskatoon
-               
-            </div>
-            <div>
-              <b>
-                Description:
-              </b>
-               
-              CFCR 90.5 FM Community Radio is a non-profit corporation owned by the Community Radio Society of Saskatoon. We are a volunteer powered, listener supported organization serving the alternative radio needs of Saskatoon and surrounding areas.
-               
-            </div>
-            <div>
-              <b>
-                Home Page:
-              </b>
-               
-              <a
-                href="http://cfcr.ca/"
-                target="_blank"
-              >
-                 
-                http://cfcr.ca/
-                 
-              </a>
-               
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -111,11 +58,13 @@ exports[`StationList matches snapshot 1`] = `
         <div
           className="one-third column station-play-button center"
         >
-          <i
-            aria-hidden="true"
-            className="fa fa-play card-play-button "
-            onClick={[Function]}
-          />
+          <div>
+            <i
+              className="fa fa-play fa-2x"
+              id="pButton"
+              onClick={[Function]}
+            />
+          </div>
         </div>
         <div
           className="one-third column station-info-button center"
@@ -125,61 +74,6 @@ exports[`StationList matches snapshot 1`] = `
             className="fa fa-chevron-down card-chevron"
             onClick={[Function]}
           />
-        </div>
-      </div>
-    </div>
-    <div
-      className="container info-container hide-class"
-      id="CFMU"
-    >
-      <div
-        className="row center-align"
-      >
-        <div
-          className="station-info center"
-        >
-          <div
-            className="station-branding one-third column"
-          >
-             
-            CFMU
-             
-          </div>
-          <div
-            className="two-thirds column info"
-          >
-            <div>
-              <b>
-                Location:
-              </b>
-               
-              Hamilton
-               
-            </div>
-            <div>
-              <b>
-                Description:
-              </b>
-               
-              93.3 CFMU-FM, Canada’s third oldest campus / community radio station, has been redefining radio for over 25 years, delivering daily the most enlightening, innovative and entertaining programming in our broadcast area.
-               
-            </div>
-            <div>
-              <b>
-                Home Page:
-              </b>
-               
-              <a
-                href="http://cfmu.ca/"
-                target="_blank"
-              >
-                 
-                http://cfmu.ca/
-                 
-              </a>
-               
-            </div>
-          </div>
         </div>
       </div>
     </div>
