@@ -7916,7 +7916,6 @@ var App = function (_Component) {
         selectedStation: station
       }, function () {
         player.load();
-
         _this3.playPause();
       });
     }
