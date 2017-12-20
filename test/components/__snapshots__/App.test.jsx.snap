@@ -104,7 +104,7 @@ exports[`App matches snapshot 1`] = `
               className="three columns"
             >
               <i
-                className="fa fa-volume-off fa-2x"
+                className="fa fa-volume-up fa-2x"
                 id="mute"
                 onClick={[Function]}
               />
