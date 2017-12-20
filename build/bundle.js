@@ -8575,11 +8575,16 @@ var Station = function (_Component) {
 
   _createClass(Station, [{
     key: 'onInfoSelect',
+<<<<<<< HEAD
+    value: function onInfoSelect() {
+=======
     value: function onInfoSelect(event) {
+>>>>>>> 306e2c0815ceb232d63c51f4461f3a94472ab6df
       var infoId = this.props.name;
       var info = document.getElementById(infoId);
       var station = document.getElementById(infoId).previousSibling;
       var chevron = event.target;
+      console.log('event target: ', chevron);
       if (info.className === "container info-container hide-class") {
         info.className = "";
         info.className = "container info-container";
@@ -8617,13 +8622,25 @@ var Station = function (_Component) {
             _react2.default.createElement(
               'div',
               { className: 'one-third column station-play-button center' },
+<<<<<<< HEAD
+              _react2.default.createElement('i', { className: 'fa fa-play card-play-button ', 'aria-hidden': 'true', onClick: function onClick(e) {
+                  return _this2.props.handleSelectedStation(_this2.state.details);
+                } })
+=======
               _react2.default.createElement(_PlayerButtons2.default, { clickFunction: this.props.handleSelectedStation, params: this.state.details,
                 playState: this.props.playState, activeStation: this.props.activeStation })
+>>>>>>> 306e2c0815ceb232d63c51f4461f3a94472ab6df
             ),
             _react2.default.createElement(
               'div',
               { className: 'one-third column station-info-button center' },
+<<<<<<< HEAD
+              _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
+                  return _this2.onInfoSelect();
+                } })
+=======
               _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: this.onInfoSelect })
+>>>>>>> 306e2c0815ceb232d63c51f4461f3a94472ab6df
             )
           )
         ),

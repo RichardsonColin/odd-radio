@@ -28,13 +28,23 @@ describe('Station', () => {
     expect(renderer.create(subject)).toMatchSnapshot();
   });
 
-  describe('onClick', () => {
+  describe('chevron down onClick', () => {
     const wrapper = shallow(subject);
 
-    it('calls the function sent in by props', () => {
+    it('calls a function', () => {
       const onInfoSelect = spyOn(wrapper.instance(), 'onInfoSelect');
+
       wrapper.find('.fa-chevron-down').simulate('click');
       expect(onInfoSelect).toHaveBeenCalled();
+    });
+  });
+
+  describe('playbutton onClick', () => {
+    const wrapper = shallow(subject);
+
+    it('calls a function', () => {
+      wrapper.find('.fa-play').simulate('click');
+      expect(props.handleSelectedStation).toHaveBeenCalled();
     });
   });
 });

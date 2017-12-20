@@ -56,17 +56,26 @@ exports[`Station matches snapshot 1`] = `
           className="two-thirds column info"
         >
           <div>
-            Location: 
+            <b>
+              Location:
+            </b>
+             
             Saskitoba
              
           </div>
           <div>
-            Description: 
+            <b>
+              Description:
+            </b>
+             
             radio station is what we are
              
           </div>
           <div>
-            Home Page: 
+            <b>
+              Home Page:
+            </b>
+             
             <a
               href="www.example.com"
               target="_blank"
