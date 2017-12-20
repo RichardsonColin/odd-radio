@@ -31,27 +31,43 @@ describe('Station', () => {
   describe('fa-chevron-down onClick', () => {
     const wrapper = shallow(subject);
 
-    it('calls onInfoSelect', () => {
-      const onInfoSelect = spyOn(wrapper.instance(), 'onInfoSelect');
+    it('calls toggleStationInfo', () => {
+      const toggleStationInfo = spyOn(wrapper.instance(), 'toggleStationInfo');
 
       wrapper.find('.fa-chevron-down').simulate('click');
-      expect(onInfoSelect).toHaveBeenCalled();
+      expect(toggleStationInfo).toHaveBeenCalled();
     });
 
-    describe('with info unhidden fa-chevron-up onClick', () => {
-      it('calls onInfoSelect', () => {
-         wrapper.find('.fa-chevron-up').simulate('click');
-         expect(onInfoSelect).toHaveBeenCalled();
-      });
+    it('toggleStationInfo should set the expanded state to true', () => {
+      wrapper.find('.fa-chevron-down').simulate('click');
+
+      expect(wrapper.state().expanded).toEqual(true);
     });
   });
 
-  // describe('playbutton onClick', () => {
-  //   const wrapper = shallow(subject);
+  describe('when the info is expanded', () => {
+    const wrapper = shallow(subject);
+    wrapper.setState({ expanded: true });
 
-  //   it('calls a function', () => {
-  //     wrapper.find('.fa-play').simulate('click');
-  //     expect(props.handleSelectedStation).toHaveBeenCalled();
-  //   });
-  // });
+    it('.info-container class should be rendered', () => {
+      expect(wrapper.find('.info-container').length).toBe(1);
+    });
+
+    describe('fa-chevron-up onClick', () => {
+
+      it('calls toggleStationInfo', () => {
+        const toggleStationInfo = spyOn(wrapper.instance(), 'toggleStationInfo');
+
+        wrapper.find('.fa-chevron-up').simulate('click');
+
+        expect(toggleStationInfo).toHaveBeenCalled();
+      });
+
+      it('info-container no longer be rendered', () => {
+        wrapper.find('.fa-chevron-up').simulate('click');
+
+        expect(wrapper.find('.info-container').length).toBe(0);
+      });
+    });
+  });
 });
