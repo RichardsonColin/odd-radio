@@ -6,8 +6,8 @@ exports[`AudioPlayer matches snapshot 1`] = `
     id="player"
   >
     <source
-      src="www.streamlink.ca"
-      type="audio/mpeg"
+      src={undefined}
+      type={undefined}
     />
   </audio>
   <div>
