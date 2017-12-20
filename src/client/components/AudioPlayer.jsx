@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { setVolume, makeItPlay, muteAudio} from '../util/ClientFunctions.jsx';
 import PlayerButtons from './PlayerButtons.jsx';
 import VolumeControls from './VolumeControls.jsx';
 
@@ -7,7 +6,8 @@ class AudioPlayer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      volume: 1
+      volume: 1,
+      beforeMuteVolume: 1
     },
     this.setVolume = this.setVolume.bind(this);
     this.muteAudio = this.muteAudio.bind(this);
@@ -16,6 +16,7 @@ class AudioPlayer extends Component {
   // Sets volume according to range input.
   setVolume(event) {
     let player = document.getElementById("player");
+    
     this.setState({
       volume: event.target.value / 100
     }, () => {
@@ -24,24 +25,22 @@ class AudioPlayer extends Component {
   }
 
   // Function to toggle mute
-  muteAudio(event) {
-    let slider = document.getElementById('vol-control');
-    let player = document.getElementById('player');
-
+  muteAudio() {
+    let player = document.getElementById("player");
+    
     if (this.state.volume > 0) {
-      // this.setState({
-      //   volume: 0
-      // }, () => {
-      //   play.volume = this.state.volume;
-      // })
-
-      // // mute.className = 'fa fa-volume-off fa-2x';
-      // player.volume = 0;
-      slider.value = 0;
+      this.setState({
+        volume: 0,
+        beforeMuteVolume: this.state.volume
+      }, () => {
+        player.volume = this.state.volume;
+      });
     } else {
-      // mute.className = 'fa fa-volume-up fa-2x';
-      player.volume = this.state.volume;
-      slider.value = this.state.volume * 100;
+      this.setState({
+        volume: this.state.beforeMuteVolume
+      }, () => {
+        player.volume = this.state.volume;
+      });
     }
   }
 
@@ -69,9 +68,7 @@ class AudioPlayer extends Component {
           </div>
         </div>
       </div>
-
     );
   }
 }
-
 export default AudioPlayer;
