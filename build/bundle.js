@@ -8034,7 +8034,9 @@ var App = function (_Component) {
         isPaused: true,
         isLoading: false
       }
-    }, _this.handlePlayState = _this.handlePlayState.bind(_this);
+    },
+
+    // this.handlePlayState = this.handlePlayState.bind(this);
     _this.handleSelectedStation = _this.handleSelectedStation.bind(_this);
     _this.seekStation = _this.seekStation.bind(_this);
     _this.generateRandomStationId = _this.generateRandomStationId.bind(_this);
@@ -8108,51 +8110,51 @@ var App = function (_Component) {
         });
       }
     }
-  }, {
-    key: 'handlePlayState',
-    value: function handlePlayState() {
-      var player = document.getElementById("player");
-      document.getElementById("player").load();
 
-      // Displays the loading icon while the media is loading.
-      player.addEventListener("loadstart", function () {
-        pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";
+    // handlePlayState() {
+    //   let player = document.getElementById("player");
+    //   document.getElementById("player").load();
 
-        // this.setState({
-        //   playState: {
-        //     isPlaying: false;
-        //     isPaused: false;
-        //     isLoading: true;
-        //   };
-      });
+    //   // Displays the loading icon while the media is loading.
+    //   player.addEventListener("loadstart", function () {
+    //     pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";
 
-      // Plays the audio when it is ready.
-      player.addEventListener("canplaythrough", function () {
-        document.getElementById("player").play();
+    //     // this.setState({
+    //     //   playState: {
+    //     //     isPlaying: false;
+    //     //     isPaused: false;
+    //     //     isLoading: true;
+    //     //   };
 
-        // this.setState({
-        //   playState: {
-        //     isPlaying: true;
-        //     isPaused: false;
-        //     isLoading: false;
-        //   };
+    //   });
 
-        // })
-      });
+    //   // Plays the audio when it is ready.
+    //   player.addEventListener("canplaythrough", function () {
+    //     document.getElementById("player").play();
 
-      // Changes the loading icon to a pause icon.
-      player.addEventListener("playing", function () {
-        // pButton.className = "";
-        // pButton.className = "fa fa-pause fa-2x";
+    //     // this.setState({
+    //     //   playState: {
+    //     //     isPlaying: true;
+    //     //     isPaused: false;
+    //     //     isLoading: false;
+    //     //   };
 
-        // this.setState({
-        //   playState: {
-        //     isPlaying: true;
-        //     isPaused: false;
-        //     isLoading: false;
-        // };
-      });
-    }
+    //     // })
+    //   });
+
+    //   // Changes the loading icon to a pause icon.
+    //   player.addEventListener("playing", function () {
+    //     // pButton.className = "";
+    //     // pButton.className = "fa fa-pause fa-2x";
+
+    //     // this.setState({
+    //     //   playState: {
+    //     //     isPlaying: true;
+    //     //     isPaused: false;
+    //     //     isLoading: false;
+    //         // };
+    //   });
+    // }
 
     // Helper function for seek functionality.
 

@@ -28,7 +28,6 @@ class App extends Component {
       }
     },
 
-    this.handlePlayState = this.handlePlayState.bind(this);
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
     this.seekStation = this.seekStation.bind(this);
     this.generateRandomStationId = this.generateRandomStationId.bind(this);
@@ -92,54 +91,6 @@ class App extends Component {
         }
       })
     }
-
-
-
-  }
-
-  handlePlayState() {
-    let player = document.getElementById("player");
-    document.getElementById("player").load();
-
-    // Displays the loading icon while the media is loading.
-    player.addEventListener("loadstart", function () {
-      pButton.className = "fa fa-spinner fa-pulse fa-2x fa-fw";
-
-      // this.setState({
-      //   playState: {
-      //     isPlaying: false;
-      //     isPaused: false;
-      //     isLoading: true;
-      //   };
-
-    });
-
-    // Plays the audio when it is ready.
-    player.addEventListener("canplaythrough", function () {
-      document.getElementById("player").play();
-
-      // this.setState({
-      //   playState: {
-      //     isPlaying: true;
-      //     isPaused: false;
-      //     isLoading: false;
-      //   };
-
-      // })
-    });
-
-    // Changes the loading icon to a pause icon.
-    player.addEventListener("playing", function () {
-      // pButton.className = "";
-      // pButton.className = "fa fa-pause fa-2x";
-
-      // this.setState({
-      //   playState: {
-      //     isPlaying: true;
-      //     isPaused: false;
-      //     isLoading: false;
-          // };
-    });
   }
 
   // Helper function for seek functionality.
