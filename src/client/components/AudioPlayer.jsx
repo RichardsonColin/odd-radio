@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { setVolume, makeItPlay, muteAudio} from '../util/ClientFunctions.jsx';
+import PlayerButtons from './PlayerButtons.jsx';
+
 
 class AudioPlayer extends Component {
   constructor(props) {
@@ -19,12 +21,12 @@ class AudioPlayer extends Component {
       this.props.seekStation();
     } else if (player.paused) {
       player.play();
-      pButton.className = "";
-      pButton.className = "fa fa-pause fa-2x";
+      // pButton.className = "";
+      // pButton.className = "fa fa-pause fa-2x";
     } else {
       player.pause();
-      pButton.className = "";
-      pButton.className = "fa fa-play fa-2x";
+      // pButton.className = "";
+      // pButton.className = "fa fa-play fa-2x";
     }
   }
 
@@ -77,7 +79,7 @@ class AudioPlayer extends Component {
           <div className="container player-container">
             <div className="row player-row border">
               <div className="three columns">
-                <i id="pButton" className="fa fa-play fa-2x" onClick={ this.makeItPlay } ></i>
+              <PlayerButtons activeStation={ true } playState={ this.props.playState } clickFunction={ this.props.playPause }/>
               </div>
               <div className="three columns">
                 <input id="vol-control" type="range" min={ 0 } max={ 100 } step={ 1 } onInput={ this.setVolume } onChange={ this.setVolume }></input>
