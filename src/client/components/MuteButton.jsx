@@ -8,19 +8,13 @@ class MuteButton extends Component {
           <i id="mute" className="fa fa-volume-up fa-2x" onClick={(e) => this.props.clickFunction() }></i>
         </div>
       )
-
     } else {
-
       return(
         <div>
           <i id="mute" className="fa fa-volume-off fa-2x" onClick={(e) => this.props.clickFunction()}></i>
         </div>
       )
-
     }
-
   }
-
 }
-
 export default MuteButton;

@@ -1048,7 +1048,7 @@ var _App = __webpack_require__(29);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _application = __webpack_require__(34);
+var _application = __webpack_require__(35);
 
 var _application2 = _interopRequireDefault(_application);
 
@@ -7824,7 +7824,7 @@ var _AudioPlayer = __webpack_require__(30);
 
 var _AudioPlayer2 = _interopRequireDefault(_AudioPlayer);
 
-var _StationList = __webpack_require__(32);
+var _StationList = __webpack_require__(33);
 
 var _StationList2 = _interopRequireDefault(_StationList);
 
@@ -8126,9 +8126,9 @@ var _PlayerButtons = __webpack_require__(15);
 
 var _PlayerButtons2 = _interopRequireDefault(_PlayerButtons);
 
-var _MuteButton = __webpack_require__(31);
+var _VolumeControls = __webpack_require__(31);
 
-var _MuteButton2 = _interopRequireDefault(_MuteButton);
+var _VolumeControls2 = _interopRequireDefault(_VolumeControls);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8159,13 +8159,14 @@ var AudioPlayer = function (_Component) {
   _createClass(AudioPlayer, [{
     key: 'setVolume',
     value: function setVolume(event) {
+      var _this2 = this;
+
       var player = document.getElementById("player");
-      player.volume = event.target.value / 100;
-      // if (player.volume === 0) {
-      //   mute.className = 'fa fa-volume-up fa-2x';
-      // } else {
-      //   mute.className = 'fa fa-volume-off fa-2x';
-      // }
+      this.setState({
+        volume: event.target.value / 100
+      }, function () {
+        player.volume = _this2.state.volume;
+      });
     }
 
     // Function to toggle mute
@@ -8176,17 +8177,18 @@ var AudioPlayer = function (_Component) {
       var slider = document.getElementById('vol-control');
       var player = document.getElementById('player');
 
-      if (player.volume > 0) {
-        console.log(player.volume);
-        this.setState({
-          volume: player.volume
-        });
+      if (this.state.volume > 0) {
+        // this.setState({
+        //   volume: 0
+        // }, () => {
+        //   play.volume = this.state.volume;
+        // })
 
-        mute.className = 'fa fa-volume-off fa-2x';
-        player.volume = 0;
+        // // mute.className = 'fa fa-volume-off fa-2x';
+        // player.volume = 0;
         slider.value = 0;
       } else {
-        mute.className = 'fa fa-volume-up fa-2x';
+        // mute.className = 'fa fa-volume-up fa-2x';
         player.volume = this.state.volume;
         slider.value = this.state.volume * 100;
       }
@@ -8194,7 +8196,6 @@ var AudioPlayer = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.props.stationFeed.audioFeed, this.props.stationFeed.streamType);
       return _react2.default.createElement(
         'div',
         null,
@@ -8227,18 +8228,13 @@ var AudioPlayer = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'three columns' },
-                _react2.default.createElement('input', { id: 'vol-control', type: 'range', min: 0, max: 100, step: 1, onInput: this.setVolume, onChange: this.setVolume })
+                _react2.default.createElement(_VolumeControls2.default, { volume: this.state.volume, setVolume: this.setVolume, muteAudio: this.muteAudio })
               ),
               _react2.default.createElement(
                 'div',
                 { className: 'three columns' },
                 _react2.default.createElement('i', { className: 'fa fa-random fa-2x seek-button', onClick: this.props.seekStation }),
                 _react2.default.createElement('i', { id: 'loader', className: 'fa fa-spinner fa-pulse fa-2x fa-fw' })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'three columns' },
-                _react2.default.createElement(_MuteButton2.default, { volume: this.state.volume, clickFunction: this.muteAudio })
               )
             )
           )
@@ -8254,6 +8250,61 @@ exports.default = AudioPlayer;
 
 /***/ }),
 /* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _MuteButton = __webpack_require__(32);
+
+var _MuteButton2 = _interopRequireDefault(_MuteButton);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var VolumeControls = function (_Component) {
+  _inherits(VolumeControls, _Component);
+
+  function VolumeControls() {
+    _classCallCheck(this, VolumeControls);
+
+    return _possibleConstructorReturn(this, (VolumeControls.__proto__ || Object.getPrototypeOf(VolumeControls)).apply(this, arguments));
+  }
+
+  _createClass(VolumeControls, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_MuteButton2.default, { volume: this.props.volume, clickFunction: this.props.muteAudio }),
+        _react2.default.createElement('input', { id: 'vol-control', type: 'range', min: 0, max: 100, step: 1, defaultValue: this.props.volume * 100, onInput: this.props.setVolume, onChange: this.props.setVolume })
+      );
+    }
+  }]);
+
+  return VolumeControls;
+}(_react.Component);
+
+exports.default = VolumeControls;
+
+/***/ }),
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8300,7 +8351,6 @@ var MuteButton = function (_Component) {
             } })
         );
       } else {
-
         return _react2.default.createElement(
           "div",
           null,
@@ -8318,7 +8368,7 @@ var MuteButton = function (_Component) {
 exports.default = MuteButton;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8334,7 +8384,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Station = __webpack_require__(33);
+var _Station = __webpack_require__(34);
 
 var _Station2 = _interopRequireDefault(_Station);
 
@@ -8415,7 +8465,7 @@ var StationList = function (_Component) {
 exports.default = StationList;
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8628,13 +8678,13 @@ var Station = function (_Component) {
 exports.default = Station;
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(35);
+var content = __webpack_require__(36);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -8642,7 +8692,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(37)(content, options);
+var update = __webpack_require__(38)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -8659,10 +8709,10 @@ if(false) {
 }
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(36)(undefined);
+exports = module.exports = __webpack_require__(37)(undefined);
 // imports
 
 
@@ -8673,7 +8723,7 @@ exports.push([module.i, "@charset \"UTF-8\";\n/*! normalize.css v3.0.2 | MIT Lic
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8755,7 +8805,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -8811,7 +8861,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(38);
+var	fixUrls = __webpack_require__(39);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -9127,7 +9177,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
