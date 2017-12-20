@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import Station from './Station.jsx';
 
 class StationList extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+
   render() {
     const station = this.props.stations.map((post, index) => {
       let isActive;
