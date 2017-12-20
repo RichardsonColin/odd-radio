@@ -54,10 +54,4 @@ describe('Station', () => {
   //     expect(props.handleSelectedStation).toHaveBeenCalled();
   //   });
   // });
-
-  // it('should have a stationType', () => {
-  //   const wrapper = shallow(subject);
-
-  //   // expect(wrapper.find({ prop: 'stationType' })).to.have.length(1);
-  // });
 });
