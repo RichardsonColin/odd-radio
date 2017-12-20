@@ -105,6 +105,16 @@ class App extends Component {
     }
   }
 
+  onSpaceBarPress(event) {
+      console.log("In space bar function");
+      if (event.key === ' '){
+        event.preventDefault();
+        console.log("SPACE PRESSED");
+        this.playPause();
+
+    }
+  }
+
   // Helper function for seek functionality.
   generateRandomStationId() {
     const seekLength = this.state.stations.length - 1;
@@ -165,6 +175,8 @@ class App extends Component {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
+    window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
+
   }
 
   render() {
