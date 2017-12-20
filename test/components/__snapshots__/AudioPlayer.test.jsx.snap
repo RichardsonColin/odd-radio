@@ -27,11 +27,13 @@ exports[`AudioPlayer matches snapshot 1`] = `
         <div
           className="three columns"
         >
-          <i
-            className="fa fa-play fa-2x"
-            id="pButton"
-            onClick={[Function]}
-          />
+          <div>
+            <i
+              className="fa fa-play fa-2x"
+              id="pButton"
+              onClick={[Function]}
+            />
+          </div>
         </div>
         <div
           className="three columns"
