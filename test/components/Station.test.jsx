@@ -38,12 +38,12 @@ describe('Station', () => {
       expect(onInfoSelect).toHaveBeenCalled();
     });
 
-    // describe('with info unhidden fa-chevron-up onClick', () => {
-    //   it('calls onInfoSelect', () => {
-    //      wrapper.find('.fa-chevron-up').simulate('click');
-    //      expect(onInfoSelect).toHaveBeenCalled();
-    //   });
-    // });
+    describe('with info unhidden fa-chevron-up onClick', () => {
+      it('calls onInfoSelect', () => {
+         wrapper.find('.fa-chevron-up').simulate('click');
+         expect(onInfoSelect).toHaveBeenCalled();
+      });
+    });
   });
 
   // describe('playbutton onClick', () => {

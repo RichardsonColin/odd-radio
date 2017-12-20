@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">23.81% </span>
+        <span class="strong">45.45% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/21</span>
+        <span class='fraction'>5/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">40% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/4</span>
+        <span class='fraction'>2/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">23.81% </span>
+        <span class="strong">45.45% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/21</span>
+        <span class='fraction'>5/11</span>
       </div>
     </div>
   </div>
@@ -116,7 +116,22 @@
 71
 72
 73
-74</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,6 +146,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,20 +155,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,8 +178,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -202,63 +232,78 @@ class Station extends Component {
         name: this.props.name,
         audioFeed: this.props.audioFeed,
         streamType: this.props.streamType
-      }
+      },
+      expanded: false
     }
-    this.onInfoSelect = this.onInfoSelect.bind(this);
+&nbsp;
+    this.toggleStationInfo = this.toggleStationInfo.bind(this);
   }
 &nbsp;
-  // Event handler for info expansion.
-<span class="fstat-no" title="function not covered" >  on</span>InfoSelect() {
-    let infoId = <span class="cstat-no" title="statement not covered" >this.props.name</span>
-    let info = <span class="cstat-no" title="statement not covered" >document.getElementById(infoId);</span>
-    let station = <span class="cstat-no" title="statement not covered" >document.getElementById(infoId).previousSibling;</span>
-    let chevron = <span class="cstat-no" title="statement not covered" >event.target;</span>
-<span class="cstat-no" title="statement not covered" >    if (info.className === "container info-container hide-class") {</span>
-<span class="cstat-no" title="statement not covered" >      info.className = "";</span>
-<span class="cstat-no" title="statement not covered" >      info.className = "container info-container";</span>
-<span class="cstat-no" title="statement not covered" >      station.className += " no-opacity";</span>
-<span class="cstat-no" title="statement not covered" >      chevron.className = "";</span>
-<span class="cstat-no" title="statement not covered" >      chevron.className = "fa fa-chevron-up card-chevron";</span>
+  // Switch between expanded true and false for showing info.
+<span class="fstat-no" title="function not covered" >  to</span>ggleStationInfo() {
+<span class="cstat-no" title="statement not covered" >    if (this.state.expanded) {</span>
+<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+        expanded: false
+      })
     } else {
-<span class="cstat-no" title="statement not covered" >      info.className = "";</span>
-<span class="cstat-no" title="statement not covered" >      info.className = "container info-container hide-class";</span>
-<span class="cstat-no" title="statement not covered" >      station.className = `container station-container${this.props.stationType}`;</span>
-<span class="cstat-no" title="statement not covered" >      chevron.className = "";</span>
-<span class="cstat-no" title="statement not covered" >      chevron.className = "fa fa-chevron-down card-chevron";</span>
+<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+        expanded: true
+      })
     }
   }
 &nbsp;
   render() {
-      console.log('Rendering &lt;Station&gt;')
-    return (
 &nbsp;
-      &lt;div&gt;
-        &lt;div className={ `container station-container${this.props.stationType}` }&gt;
-          &lt;div className="row station-row border"&gt;
-            &lt;div className="one-third column station-name center"&gt; {this.props.name} &lt;/div&gt;
-            &lt;div className="one-third column station-play-button center"&gt;
-              &lt;PlayerButtons clickFunction={ this.props.handleSelectedStation } params={ this.state.details }
-              playState={ this.props.playState } activeStation={ this.props.activeStation } /&gt;
-            &lt;/div&gt;
-            &lt;div className="one-third column station-info-button center"&gt;
-              &lt;i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={ <span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >this.onInfoSelect() </span>}&gt;&lt;/i&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div className="container info-container hide-class" id={ this.props.name }&gt;
-          &lt;div className="row center-align"&gt;
-            &lt;div className="station-info center"&gt;
-              &lt;div className="station-branding one-third column"&gt; { this.props.name } &lt;/div&gt;
-              &lt;div className="two-thirds column info"&gt;
-                &lt;div&gt;&lt;b&gt;Location:&lt;/b&gt; { this.props.city } &lt;/div&gt;
-                &lt;div&gt;&lt;b&gt;Description:&lt;/b&gt; { this.props.description } &lt;/div&gt;
-                &lt;div&gt;&lt;b&gt;Home Page:&lt;/b&gt; &lt;a href={this.props.homePage} target='_blank'&gt; { this.props.homePage } &lt;/a&gt; &lt;/div&gt;
+    // If it is not expanded, render just some details.
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.state.expanded) {
+      return (
+        &lt;div&gt;
+          &lt;div className={`container station-container${this.props.stationType}`}&gt;
+            &lt;div className="row station-row border"&gt;
+              &lt;div className="one-third column station-name center"&gt; {this.props.name} &lt;/div&gt;
+              &lt;div className="one-third column station-play-button center"&gt;
+                &lt;PlayerButtons clickFunction={this.props.handleSelectedStation} params={this.state.details}
+                  playState={this.props.playState} activeStation={this.props.activeStation} /&gt;
+              &lt;/div&gt;
+              &lt;div className="one-third column station-info-button center"&gt;
+                &lt;i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >this.toggleStationInfo() </span>}&gt;&lt;/i&gt;
               &lt;/div&gt;
             &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-      &lt;/div&gt;
-    );
+      )
+&nbsp;
+    // If it is expanded, render all the details.
+    } else {
+<span class="cstat-no" title="statement not covered" >      return (</span>
+        &lt;div&gt;
+          &lt;div className={ `container station-container${this.props.stationType}` }&gt;
+            &lt;div className="row station-row border"&gt;
+              &lt;div className="one-third column station-name center"&gt; {this.props.name} &lt;/div&gt;
+              &lt;div className="one-third column station-play-button center"&gt;
+                &lt;PlayerButtons clickFunction={ this.props.handleSelectedStation } params={ this.state.details }
+                playState={ this.props.playState } activeStation={ this.props.activeStation } /&gt;
+              &lt;/div&gt;
+              &lt;div className="one-third column station-info-button center"&gt;
+                &lt;i className="fa fa-chevron-up card-chevron" aria-hidden="true" onClick={ <span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >this.toggleStationInfo() </span>}&gt;&lt;/i&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div className="container info-container" id={ this.props.name }&gt;
+            &lt;div className="row center-align"&gt;
+              &lt;div className="station-info center"&gt;
+                &lt;div className="station-branding one-third column"&gt; { this.props.name } &lt;/div&gt;
+                &lt;div className="two-thirds column info"&gt;
+                  &lt;div&gt;&lt;b&gt;Location:&lt;/b&gt; { this.props.city } &lt;/div&gt;
+                  &lt;div&gt;&lt;b&gt;Description:&lt;/b&gt; { this.props.description } &lt;/div&gt;
+                  &lt;div&gt;&lt;b&gt;Home Page:&lt;/b&gt; &lt;a href={this.props.homePage} target='_blank'&gt; { this.props.homePage } &lt;/a&gt; &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      );
+    }
   }
 }
 &nbsp;
@@ -268,7 +313,7 @@ export default Station;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Dec 20 2017 01:27:25 GMT+0000 (UTC)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Dec 20 2017 01:36:36 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../prettify.js"></script>
