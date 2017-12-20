@@ -8082,6 +8082,10 @@ var App = function (_Component) {
       document.getElementById("player").load();
       this.playPause();
     }
+
+    //function which sets the playState of play and pause and
+    //turns the player on and off
+
   }, {
     key: 'playPause',
     value: function playPause() {

@@ -68,6 +68,8 @@ class App extends Component {
     this.playPause();
   }
 
+  //function which sets the playState of play and pause and
+  //turns the player on and off
   playPause() {
     console.log("You hit the button.")
     let player = document.getElementById("player");

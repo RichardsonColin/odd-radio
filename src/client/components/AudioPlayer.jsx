@@ -15,7 +15,6 @@ class AudioPlayer extends Component {
   }
 
 
-
   // Sets volume according to range input.
   setVolume(event) {
     let player = document.getElementById("player");
