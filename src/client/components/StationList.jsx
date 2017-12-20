@@ -4,6 +4,13 @@ import Station from './Station.jsx';
 class StationList extends Component {
   render() {
     const station = this.props.stations.map((post, index) => {
+      let isActive;
+      if (post.id === this.props.activeStation) {
+        isActive = true;
+      } else {
+        isActive = false;
+      }
+
       if (index % 2 === 0) {
         return <Station
           key={ post.id }
@@ -16,6 +23,8 @@ class StationList extends Component {
           city={ post.city }
           handleSelectedStation={ this.props.handleSelectedStation }
           stationType={1}
+          activeStation={ isActive }
+          playState={ this.props.playState }
            />
       } else {
         return <Station
@@ -29,6 +38,8 @@ class StationList extends Component {
           city={ post.city }
           handleSelectedStation={ this.props.handleSelectedStation }
           stationType={2}
+          activeStation={ isActive }
+          playState={ this.props.playState }
            />
       }
     });
