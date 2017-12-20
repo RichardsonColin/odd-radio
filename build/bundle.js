@@ -8379,10 +8379,14 @@ var Station = function (_Component) {
         streamType: _this.props.streamType
       },
       expanded: false
-      // this.onInfoSelect = this.onInfoSelect.bind(this);
-    };_this.toggleStationInfo = _this.toggleStationInfo.bind(_this);
+    };
+
+    _this.toggleStationInfo = _this.toggleStationInfo.bind(_this);
     return _this;
   }
+
+  // Switch between expanded true and false for showing info.
+
 
   _createClass(Station, [{
     key: 'toggleStationInfo',
@@ -8397,36 +8401,12 @@ var Station = function (_Component) {
         });
       }
     }
-
-    // Event handler for info expansion.
-    // onInfoSelect() {
-    //   let infoId = this.props.name
-    //   let info = document.getElementById(infoId);
-    //   let station = document.getElementById(infoId).previousSibling;
-    //   let chevron = event.target;
-    //   if (info.className === "container info-container hide-class") {
-    //     info.className = "";
-    //     info.className = "container info-container";
-    //     station.className += " no-opacity";
-    //     chevron.className = "";
-    //     chevron.className = "fa fa-chevron-up card-chevron";
-    //   } else {
-    //     info.className = "";
-    //     info.className = "container info-container hide-class";
-    //     station.className = `container station-container${this.props.stationType}`;
-    //     chevron.className = "";
-    //     chevron.className = "fa fa-chevron-down card-chevron";
-    //   }
-    // }
-
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {}
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
+      // If it is not expanded, render just some details.
       if (!this.state.expanded) {
         return _react2.default.createElement(
           'div',
@@ -8460,8 +8440,9 @@ var Station = function (_Component) {
             )
           )
         );
-      } else {
 
+        // If it is expanded, render all the details.
+      } else {
         return _react2.default.createElement(
           'div',
           null,
@@ -8474,8 +8455,6 @@ var Station = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'one-third column station-name center' },
-                ' ',
-                this.props.name,
                 ' '
               ),
               _react2.default.createElement(
