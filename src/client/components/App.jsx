@@ -74,8 +74,15 @@ class App extends Component {
         },
         selectedStation: station
         }, () => {
+
+
           player.load();
-          this.playPause();
+          // player.addEventListener("loadeddata", () => {  });
+          // onLoadedData(event) {
+          //   console.log('onlooooooooad');
+          // }
+          this.playPause()
+
       });
     }
   }
@@ -90,7 +97,7 @@ class App extends Component {
       this.setState({
         playState: {
           isPlaying: true,
-          isPaused: false,
+          isPaused: false
         }
       })
     } else if (this.state.playState.isPlaying) {
@@ -99,7 +106,7 @@ class App extends Component {
       this.setState({
         playState: {
           isPlaying: false,
-          isPaused: true,
+          isPaused: true
         }
       })
     }
