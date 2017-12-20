@@ -46,14 +46,14 @@ describe('Station', () => {
     // });
   });
 
-  describe('playbutton onClick', () => {
-    const wrapper = shallow(subject);
+  // describe('playbutton onClick', () => {
+  //   const wrapper = shallow(subject);
 
-    it('calls a function', () => {
-      wrapper.find('.fa-play').simulate('click');
-      expect(props.handleSelectedStation).toHaveBeenCalled();
-    });
-  });
+  //   it('calls a function', () => {
+  //     wrapper.find('.fa-play').simulate('click');
+  //     expect(props.handleSelectedStation).toHaveBeenCalled();
+  //   });
+  // });
 
   // it('should have a stationType', () => {
   //   const wrapper = shallow(subject);

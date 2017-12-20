@@ -18,11 +18,13 @@ exports[`Station matches snapshot 1`] = `
       <div
         className="one-third column station-play-button center"
       >
-        <i
-          aria-hidden="true"
-          className="fa fa-play card-play-button "
-          onClick={[Function]}
-        />
+        <div>
+          <i
+            className="fa fa-play fa-2x"
+            id="pButton"
+            onClick={[Function]}
+          />
+        </div>
       </div>
       <div
         className="one-third column station-info-button center"
