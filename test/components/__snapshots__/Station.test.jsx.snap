@@ -18,11 +18,13 @@ exports[`Station matches snapshot 1`] = `
       <div
         className="one-third column station-play-button center"
       >
-        <i
-          aria-hidden="true"
-          className="fa fa-play card-play-button "
-          onClick={[Function]}
-        />
+        <div>
+          <i
+            className="fa fa-play fa-2x"
+            id="pButton"
+            onClick={[Function]}
+          />
+        </div>
       </div>
       <div
         className="one-third column station-info-button center"
@@ -56,17 +58,26 @@ exports[`Station matches snapshot 1`] = `
           className="two-thirds column info"
         >
           <div>
-            Location: 
+            <b>
+              Location:
+            </b>
+             
             Saskitoba
              
           </div>
           <div>
-            Description: 
+            <b>
+              Description:
+            </b>
+             
             radio station is what we are
              
           </div>
           <div>
-            Home Page: 
+            <b>
+              Home Page:
+            </b>
+             
             <a
               href="www.example.com"
               target="_blank"

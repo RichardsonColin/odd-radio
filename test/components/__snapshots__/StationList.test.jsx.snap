@@ -21,11 +21,13 @@ exports[`StationList matches snapshot 1`] = `
         <div
           className="one-third column station-play-button center"
         >
-          <i
-            aria-hidden="true"
-            className="fa fa-play card-play-button "
-            onClick={[Function]}
-          />
+          <div>
+            <i
+              className="fa fa-play fa-2x"
+              id="pButton"
+              onClick={[Function]}
+            />
+          </div>
         </div>
         <div
           className="one-third column station-info-button center"
@@ -59,17 +61,26 @@ exports[`StationList matches snapshot 1`] = `
             className="two-thirds column info"
           >
             <div>
-              Location: 
+              <b>
+                Location:
+              </b>
+               
               Saskatoon
                
             </div>
             <div>
-              Description: 
+              <b>
+                Description:
+              </b>
+               
               CFCR 90.5 FM Community Radio is a non-profit corporation owned by the Community Radio Society of Saskatoon. We are a volunteer powered, listener supported organization serving the alternative radio needs of Saskatoon and surrounding areas.
                
             </div>
             <div>
-              Home Page: 
+              <b>
+                Home Page:
+              </b>
+               
               <a
                 href="http://cfcr.ca/"
                 target="_blank"
@@ -102,11 +113,13 @@ exports[`StationList matches snapshot 1`] = `
         <div
           className="one-third column station-play-button center"
         >
-          <i
-            aria-hidden="true"
-            className="fa fa-play card-play-button "
-            onClick={[Function]}
-          />
+          <div>
+            <i
+              className="fa fa-play fa-2x"
+              id="pButton"
+              onClick={[Function]}
+            />
+          </div>
         </div>
         <div
           className="one-third column station-info-button center"
@@ -140,17 +153,26 @@ exports[`StationList matches snapshot 1`] = `
             className="two-thirds column info"
           >
             <div>
-              Location: 
+              <b>
+                Location:
+              </b>
+               
               Hamilton
                
             </div>
             <div>
-              Description: 
+              <b>
+                Description:
+              </b>
+               
               93.3 CFMU-FM, Canada’s third oldest campus / community radio station, has been redefining radio for over 25 years, delivering daily the most enlightening, innovative and entertaining programming in our broadcast area.
                
             </div>
             <div>
-              Home Page: 
+              <b>
+                Home Page:
+              </b>
+               
               <a
                 href="http://cfmu.ca/"
                 target="_blank"
