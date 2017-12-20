@@ -8167,11 +8167,11 @@ var AudioPlayer = function (_Component) {
           volume: player.volume
         });
 
-        mute.className = 'fa fa-volume-up fa-2x';
+        mute.className = 'fa fa-volume-off fa-2x';
         player.volume = 0;
         slider.value = 0;
       } else {
-        mute.className = 'fa fa-volume-off fa-2x';
+        mute.className = 'fa fa-volume-up fa-2x';
         player.volume = this.state.volume;
         slider.value = this.state.volume * 100;
       }
@@ -8223,7 +8223,7 @@ var AudioPlayer = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'three columns' },
-                _react2.default.createElement('i', { id: 'mute', className: 'fa fa-volume-off fa-2x', onClick: this.muteAudio })
+                _react2.default.createElement('i', { id: 'mute', className: 'fa fa-volume-up fa-2x', onClick: this.muteAudio })
               )
             )
           )
