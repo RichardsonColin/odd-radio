@@ -72,7 +72,6 @@ class App extends Component {
       selectedStation: station
       }, () => {
         player.load();
-
         this.playPause();
     });
   }
