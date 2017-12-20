@@ -74,15 +74,8 @@ class App extends Component {
         },
         selectedStation: station
         }, () => {
-
-
           player.load();
-          // player.addEventListener("loadeddata", () => {  });
-          // onLoadedData(event) {
-          //   console.log('onlooooooooad');
-          // }
           this.playPause()
-
       });
     }
   }
