@@ -7895,6 +7895,10 @@ var App = function (_Component) {
   }, {
     key: 'handleSelectedStation',
     value: function handleSelectedStation(details) {
+      var _this3 = this;
+
+      var player = document.getElementById("player");
+
       var station = {
         id: details.id,
         name: details.name,
@@ -7903,11 +7907,18 @@ var App = function (_Component) {
       };
       var test = { key: 'value', tester: 'test' };
       localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
+
       this.setState({
+        playState: {
+          isPlaying: false,
+          isPaused: true
+        },
         selectedStation: station
+      }, function () {
+        player.load();
+
+        _this3.playPause();
       });
-      document.getElementById("player").load();
-      this.playPause();
     }
 
     //function which sets the playState of play and pause and
@@ -7916,11 +7927,10 @@ var App = function (_Component) {
   }, {
     key: 'playPause',
     value: function playPause() {
-      console.log("You hit the button.");
       var player = document.getElementById("player");
       if (this.state.playState.isPaused) {
         player.play();
-        console.log("We're playing now.");
+
         this.setState({
           playState: {
             isPlaying: true,
@@ -7929,7 +7939,7 @@ var App = function (_Component) {
         });
       } else if (this.state.playState.isPlaying) {
         player.pause();
-        console.log("We're paused now.");
+
         this.setState({
           playState: {
             isPlaying: false,
@@ -7963,7 +7973,6 @@ var App = function (_Component) {
         for (var _iterator = this.state.stations[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var station = _step.value;
 
-          console.log(station);
 
           // Checks to see if the seek matches the currently playing station.
           if (randomStationId === this.state.selectedStation.id) {
@@ -7972,6 +7981,8 @@ var App = function (_Component) {
 
             // Plays the seeked station.
           } else if (randomStationId === station.id) {
+            console.log('inside seekstation - ', station);
+
             var seekedStation = {
               id: station.id,
               name: station.name,
@@ -8006,11 +8017,11 @@ var App = function (_Component) {
   }, {
     key: 'scrollListener',
     value: function scrollListener() {
-      var _this3 = this;
+      var _this4 = this;
 
       var scrollListen = window.addEventListener('scroll', function () {
         var percent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-        _this3.setState({ scrollPercent: percent });
+        _this4.setState({ scrollPercent: percent });
       });
     }
 
