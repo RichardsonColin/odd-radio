@@ -25,7 +25,9 @@ class App extends Component {
         isPlaying: false,
         isPaused: true
       },
-      streamLoading: false
+      streamLoading: false,
+      expanded: false,
+      expandedName: ''
     },
 
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
@@ -39,6 +41,8 @@ class App extends Component {
     this.onLoadStart = this.onLoadStart.bind(this);
     this.onCanPlay = this.onCanPlay.bind(this);
     this.findColor = this.findColor.bind(this);
+    this.findStationExpandInfo = this.findStationExpandInfo.bind(this);
+    this.hideStationInfo = this.hideStationInfo.bind(this);
   }
 
   // Initial API request to build up station collection object.
@@ -186,12 +190,26 @@ class App extends Component {
     }
   }
 
+//finds the station container based on stationName and expands the info-container and scrolls to the station container
+findStationExpandInfo(stationName) {
+  const stationDiv = document.getElementById(stationName);
+
+  this.setState({ expanded: true, expandedName: stationName}, () => {
+    stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  });
+}
+
+hideStationInfo() { //hides the info-container
+  this.setState({
+    expanded: false
+  });
+}
+
   componentDidMount() {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
     window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
-
   }
 
   render() {
@@ -214,11 +232,14 @@ class App extends Component {
         </header>
           <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations }
             activeStation={ this.state.selectedStation.id } playState={ this.state.playState }
-            streamLoading={ this.state.streamLoading } />
+            streamLoading={ this.state.streamLoading }
+            findStationExpandInfo={this.findStationExpandInfo}
+            hideStationInfo={this.hideStationInfo}
+            expandedState={this.state.expanded} expandedName={this.state.expandedName}/>
         <footer>
            <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
            playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }
-           onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } />
+           onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } findStationExpandInfo={this.findStationExpandInfo}/>
         </footer>
       </div>
     );
