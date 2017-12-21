@@ -48,7 +48,6 @@ class App extends Component {
         return response.json()
       }).then((json) => {
         this.setState({ stations: shuffle(json) })
-        console.log('parsed json', json)
       }).catch((ex) => {
         console.log('parsing failed', ex)
       });
