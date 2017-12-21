@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PlayerButtons from './PlayerButtons.jsx';
+import StationName from './StationName.jsx';
 
 class Station extends Component {
 
@@ -39,7 +40,9 @@ class Station extends Component {
         <div>
           <div className={`container station-container${this.props.stationType}`}>
             <div className="row station-row border">
-              <div className="one-third column station-name center"> {this.props.name} </div>
+              <div className="one-third column station-name ">
+              <StationName Style="non-expanded-station-name" StationName={this.props.name} />
+              </div>
               <div className="one-third column station-play-button center">
                 <PlayerButtons clickFunction={this.props.handleSelectedStation} params={this.state.details}
                   playState={this.props.playState} activeStation={this.props.activeStation} />
@@ -71,7 +74,9 @@ class Station extends Component {
           <div className="container info-container" id={ this.props.name }>
             <div className="row center-align">
               <div className="station-info center">
-                <div className="station-branding one-third column"> { this.props.name } </div>
+                <div className="station-branding one-third column">
+                <StationName Style="expanded-station-name" StationName={this.props.name} />
+                </div>
                 <div className="two-thirds column info">
                   <div><b>Location:</b> { this.props.city } </div>
                   <div><b>Description:</b> { this.props.description } </div>
