@@ -1,6 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PlayerButtons matches snapshot 1`] = `
+exports[`PlayerButtons when activeStation and streamLoading are true matches snapshot 1`] = `
+<div>
+  <i
+    className="fa fa-spinner fa-pulse fa-2x fa-fw"
+  />
+</div>
+`;
+
+exports[`PlayerButtons when activeStation is false matches snapshot 1`] = `
+<div>
+  <i
+    className="fa fa-play fa-2x"
+    id="pButton"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`PlayerButtons when activeStation is true matches snapshot 1`] = `
 <div>
   <i
     className="fa fa-pause fa-2x"
