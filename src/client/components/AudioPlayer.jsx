@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PlayerButtons from './PlayerButtons.jsx';
 import VolumeControls from './VolumeControls.jsx';
+import { findStationExpandInfo } from '../util/ClientFunctions.jsx';
 
 
 class AudioPlayer extends Component {
@@ -64,7 +65,7 @@ class AudioPlayer extends Component {
           <source src={ this.props.stationFeed.audioFeed } type={ this.props.stationFeed.streamType } />
         </audio>
         <div>
-          <div className="player-station-name"> Current Station: { this.props.stationFeed.name } </div>
+          <div className="player-station-name" onClick={ (e) => findStationExpandInfo(this.props.stationFeed.name) }>Current Station: { this.props.stationFeed.name }</div>
           <div className="container player-container">
             <div className="row player-row border">
               <div className="three columns">
