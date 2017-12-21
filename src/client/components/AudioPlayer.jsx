@@ -8,10 +8,12 @@ class AudioPlayer extends Component {
     super(props);
     this.state = {
       volume: 1,
-      beforeMuteVolume: 1
+      beforeMuteVolume: 1,
+      width: window.innerWidth
     },
     this.setVolume = this.setVolume.bind(this);
     this.muteAudio = this.muteAudio.bind(this);
+    this.detectWidth = this.detectWidth.bind(this);
   }
 
   // Sets volume according to range input.
@@ -45,6 +47,16 @@ class AudioPlayer extends Component {
     }
   }
 
+  detectWidth() {
+    this.setState({
+      width: window.innerWidth
+    });
+  }
+
+  componentDidMount() {
+    this.detectWidth();
+  }
+
   render() {
     return (
       <div>
@@ -59,9 +71,11 @@ class AudioPlayer extends Component {
                 <PlayerButtons activeStation={ true } playState={ this.props.playState } streamLoading={ this.props.streamLoading }
                 clickFunction={ this.props.playPause } />
               </div>
-              <div className="three columns">
-                <VolumeControls volume={ this.state.volume } setVolume={ this.setVolume } muteAudio={ this.muteAudio }/>
-              </div>
+              { this.state.width > 768 &&
+                <div className="three columns">
+                  <VolumeControls volume={ this.state.volume } setVolume={ this.setVolume } muteAudio={ this.muteAudio }/>
+                </div>
+              }
               <div className="three columns">
                 <i className="fa fa-random fa-2x seek-button" onClick={this.props.seekStation} ></i>
               </div>
