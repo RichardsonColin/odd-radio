@@ -45,7 +45,8 @@ class Station extends Component {
               </div>
               <div className="one-third column station-play-button center">
                 <PlayerButtons clickFunction={this.props.handleSelectedStation} params={this.state.details}
-                  playState={this.props.playState} activeStation={this.props.activeStation} />
+                  streamLoading={this.props.streamLoading} playState={ this.props.playState }
+                  activeStation={this.props.activeStation} />
               </div>
               <div className="one-third column station-info-button center">
                 <i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={(e) => this.toggleStationInfo() }></i>
@@ -59,19 +60,20 @@ class Station extends Component {
     } else {
       return (
         <div>
-          <div className={ `container station-container${this.props.stationType}` }>
+          <div className={ `container station-container${this.props.stationType} info-expanded` }>
             <div className="row station-row border">
               <div className="one-third column station-name center"> </div>
               <div className="one-third column station-play-button center">
                 <PlayerButtons clickFunction={ this.props.handleSelectedStation } params={ this.state.details }
-                playState={ this.props.playState } activeStation={ this.props.activeStation } />
+                streamLoading={this.props.streamLoading} playState={ this.props.playState }
+                activeStation={ this.props.activeStation } />
               </div>
               <div className="one-third column station-info-button center">
                 <i className="fa fa-chevron-up card-chevron" aria-hidden="true" onClick={ (e) => this.toggleStationInfo() }></i>
               </div>
             </div>
           </div>
-          <div className="container info-container" id={ this.props.name }>
+          <div className="container info-container info-expanded" id={ this.props.name }>
             <div className="row center-align">
               <div className="station-info center">
                 <div className="station-branding one-third column">

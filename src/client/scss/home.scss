@@ -1,3 +1,7 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
 h1 {
   text-align: right;
   padding-right:10%;
@@ -65,6 +69,7 @@ h3 {
   font-size: 18px;
   height: 0px;
   text-align: justify;
+  display: inline-block;
 
 
   }
@@ -78,6 +83,7 @@ h3 {
   font-size: 18px;
   height: 0px;
   text-align: justify;
+  display: inline-block;
 }
 
 
@@ -178,8 +184,9 @@ footer {
 }
 
 
+
 .audio-player-station-name {
-font-weight: bold;
+  font-weight: bold;
   letter-spacing: 1em;
   word-break: break-all;
   max-width: 3.8em;
@@ -187,6 +194,7 @@ font-weight: bold;
   font-size: 18px;
   height: 0px;
   color:red;
+  display: inline-block;
 }
 
 .expanded-station-name {
@@ -195,9 +203,9 @@ font-weight: bold;
   word-break: break-all;
   max-width: 3.8em;
   overflow: wrap;
-  font-size: 18px;
+  font-size: 50px;
   height: 0px;
-  color:blue;
+
 }
 
 // .non-expanded-station-name {
@@ -215,7 +223,12 @@ font-weight: bold;
 // font-weight: bold;
 // }
 
-// .audio-station-name-container {
-// position: fixed;
-// max-width:50px;
-// }
+.audio-station-name-container {
+position: fixed;
+max-width:50px;
+}
+
+.info-expanded {
+  background-color: #89cff0;
+}
+

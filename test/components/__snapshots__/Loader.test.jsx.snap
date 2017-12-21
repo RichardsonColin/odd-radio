@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader matches snapshot 1`] = `
+<div>
+  <i
+    className="fa fa-spinner fa-pulse fa-2x fa-fw"
+  />
+</div>
+`;

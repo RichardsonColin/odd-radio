@@ -23,8 +23,7 @@ exports[`StationList matches snapshot 1`] = `
         >
           <div>
             <i
-              className="fa fa-play fa-2x"
-              id="pButton"
+              className="fa fa-pause fa-2x"
               onClick={[Function]}
             />
           </div>

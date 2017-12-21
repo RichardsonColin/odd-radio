@@ -22,11 +22,10 @@ class App extends Component {
         streamType: ""
       },
       playState: {
-        volume: 1,
         isPlaying: false,
-        isPaused: true,
-        isLoading: false
-      }
+        isPaused: true
+      },
+      streamLoading: false
     },
 
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
@@ -37,6 +36,8 @@ class App extends Component {
     this.findColor = this.findColor.bind(this);
     this.setStateSelectedStation = this.setStateSelectedStation.bind(this);
     this.playPause = this.playPause.bind(this);
+    this.onLoadStart = this.onLoadStart.bind(this);
+    this.onCanPlay = this.onCanPlay.bind(this);
     this.findColor = this.findColor.bind(this);
   }
 
@@ -77,7 +78,7 @@ class App extends Component {
         selectedStation: station
         }, () => {
           player.load();
-          this.playPause()
+          this.playPause();
       });
     }
   }
@@ -87,24 +88,39 @@ class App extends Component {
   playPause() {
     const player = document.getElementById("player");
     if (this.state.playState.isPaused) {
-      player.play();
+
 
       this.setState({
         playState: {
           isPlaying: true,
           isPaused: false
         }
-      })
+      }, () => { player.play(); });
     } else if (this.state.playState.isPlaying) {
-      player.pause();
 
       this.setState({
         playState: {
           isPlaying: false,
           isPaused: true
         }
-      })
+      }, () => { player.pause(); });
     }
+  }
+
+  onLoadStart(e) {
+    // console.log('e', e);
+    // console.log('in load event');
+    this.setState({
+      streamLoading: true
+    })
+  }
+
+  onCanPlay(e) {
+    // console.log('e', e);
+    // console.log('in play event');
+    this.setState({
+      streamLoading: false
+    })
   }
 
   onSpaceBarPress(event) {
@@ -198,10 +214,12 @@ class App extends Component {
           </div>
         </header>
           <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations }
-            activeStation={ this.state.selectedStation.id } playState={ this.state.playState } />
+            activeStation={ this.state.selectedStation.id } playState={ this.state.playState }
+            streamLoading={ this.state.streamLoading } />
         <footer>
            <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
-           playPause={ this.playPause } playState={ this.state.playState } />
+           playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }
+           onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } />
         </footer>
       </div>
     );
