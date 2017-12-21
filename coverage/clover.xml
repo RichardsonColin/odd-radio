@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<coverage generated="1513890339476" clover="3.2.0">
+  <project timestamp="1513890339477" name="All files">
+    <metrics statements="130" coveredstatements="80" conditionals="36" coveredconditionals="21" methods="52" coveredmethods="32" elements="218" coveredelements="133" complexity="0" loc="130" ncloc="130" packages="2" files="10" classes="10">
+      <package name="components">
+        <metrics statements="118" coveredstatements="68" conditionals="36" coveredconditionals="21" methods="50" coveredmethods="30"/>
+        <file name="App.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/App.jsx">
+          <metrics statements="64" coveredstatements="25" conditionals="14" coveredconditionals="1" methods="21" coveredmethods="9"/>
+=======
 <coverage generated="1513894431693" clover="3.2.0">
   <project timestamp="1513894431693" name="All files">
     <metrics statements="123" coveredstatements="75" conditionals="36" coveredconditionals="21" methods="50" coveredmethods="31" elements="209" coveredelements="127" complexity="0" loc="123" ncloc="123" packages="2" files="10" classes="10">
@@ -6,6 +15,7 @@
         <metrics statements="116" coveredstatements="68" conditionals="36" coveredconditionals="21" methods="49" coveredmethods="30"/>
         <file name="App.jsx" path="/vagrant/projects/odd-radio/src/client/components/App.jsx">
           <metrics statements="63" coveredstatements="25" conditionals="14" coveredconditionals="1" methods="21" coveredmethods="9"/>
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
           <line num="12" count="1" type="stmt"/>
           <line num="13" count="1" type="stmt"/>
           <line num="14" count="1" type="stmt"/>
@@ -70,12 +80,36 @@
           <line num="193" count="1" type="stmt"/>
           <line num="198" count="2" type="stmt"/>
         </file>
+<<<<<<< HEAD
+        <file name="AudioPlayer.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/AudioPlayer.jsx">
+          <metrics statements="18" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="12" coveredmethods="4"/>
+=======
         <file name="AudioPlayer.jsx" path="/vagrant/projects/odd-radio/src/client/components/AudioPlayer.jsx">
           <metrics statements="17" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="11" coveredmethods="4"/>
           <line num="8" count="2" type="stmt"/>
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
           <line num="9" count="2" type="stmt"/>
-          <line num="15" count="2" type="stmt"/>
+          <line num="10" count="2" type="stmt"/>
           <line num="16" count="2" type="stmt"/>
+<<<<<<< HEAD
+          <line num="17" count="2" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="52" count="2" type="stmt"/>
+          <line num="58" count="2" type="stmt"/>
+          <line num="62" count="4" type="stmt"/>
+          <line num="64" count="0" type="stmt"/>
+          <line num="68" count="0" type="stmt"/>
+        </file>
+        <file name="Background.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/Background.jsx">
+=======
           <line num="21" count="0" type="stmt"/>
           <line num="23" count="0" type="stmt"/>
           <line num="26" count="0" type="stmt"/>
@@ -91,14 +125,23 @@
           <line num="63" count="0" type="stmt"/>
         </file>
         <file name="Background.jsx" path="/vagrant/projects/odd-radio/src/client/components/Background.jsx">
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="5" count="2" type="stmt"/>
         </file>
+<<<<<<< HEAD
+        <file name="Loader.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/Loader.jsx">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="5" count="2" type="stmt"/>
+        </file>
+        <file name="MuteButton.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/MuteButton.jsx">
+=======
         <file name="Loader.jsx" path="/vagrant/projects/odd-radio/src/client/components/Loader.jsx">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="5" count="2" type="stmt"/>
         </file>
         <file name="MuteButton.jsx" path="/vagrant/projects/odd-radio/src/client/components/MuteButton.jsx">
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
           <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
           <line num="5" count="10" type="cond" truecount="2" falsecount="0"/>
           <line num="6" count="8" type="stmt"/>
@@ -106,7 +149,11 @@
           <line num="12" count="2" type="stmt"/>
           <line num="14" count="1" type="stmt"/>
         </file>
+<<<<<<< HEAD
+        <file name="PlayerButtons.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/PlayerButtons.jsx">
+=======
         <file name="PlayerButtons.jsx" path="/vagrant/projects/odd-radio/src/client/components/PlayerButtons.jsx">
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
           <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
           <line num="7" count="18" type="cond" truecount="4" falsecount="0"/>
           <line num="8" count="1" type="stmt"/>
@@ -116,6 +163,23 @@
           <line num="21" count="12" type="stmt"/>
           <line num="24" count="1" type="stmt"/>
         </file>
+<<<<<<< HEAD
+        <file name="Station.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/Station.jsx">
+          <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+          <line num="8" count="5" type="stmt"/>
+          <line num="9" count="5" type="stmt"/>
+          <line num="19" count="5" type="stmt"/>
+          <line num="24" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="25" count="1" type="stmt"/>
+          <line num="29" count="1" type="stmt"/>
+          <line num="38" count="8" type="cond" truecount="2" falsecount="0"/>
+          <line num="39" count="6" type="stmt"/>
+          <line num="50" count="2" type="stmt"/>
+          <line num="59" count="2" type="stmt"/>
+          <line num="70" count="2" type="stmt"/>
+        </file>
+        <file name="StationList.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/StationList.jsx">
+=======
         <file name="Station.jsx" path="/vagrant/projects/odd-radio/src/client/components/Station.jsx">
           <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
           <line num="7" count="7" type="stmt"/>
@@ -131,6 +195,7 @@
           <line num="69" count="2" type="stmt"/>
         </file>
         <file name="StationList.jsx" path="/vagrant/projects/odd-radio/src/client/components/StationList.jsx">
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
           <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
           <line num="6" count="2" type="stmt"/>
           <line num="11" count="3" type="stmt"/>
@@ -143,12 +208,33 @@
           <line num="23" count="4" type="stmt"/>
           <line num="40" count="3" type="stmt"/>
         </file>
+<<<<<<< HEAD
+        <file name="VolumeControls.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/VolumeControls.jsx">
+=======
         <file name="VolumeControls.jsx" path="/vagrant/projects/odd-radio/src/client/components/VolumeControls.jsx">
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="6" count="5" type="stmt"/>
         </file>
       </package>
       <package name="util">
+<<<<<<< HEAD
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="ClientFunctions.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/util/ClientFunctions.jsx">
+          <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="3" count="5" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="8" type="stmt"/>
+          <line num="7" count="8" type="stmt"/>
+          <line num="8" count="8" type="stmt"/>
+          <line num="9" count="8" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="14" count="5" type="stmt"/>
+          <line num="15" count="4" type="stmt"/>
+          <line num="16" count="4" type="stmt"/>
+          <line num="17" count="4" type="stmt"/>
+          <line num="18" count="4" type="stmt"/>
+=======
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <file name="ClientFunctions.jsx" path="/vagrant/projects/odd-radio/src/client/util/ClientFunctions.jsx">
           <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -159,6 +245,7 @@
           <line num="8" count="9" type="stmt"/>
           <line num="9" count="9" type="stmt"/>
           <line num="11" count="2" type="stmt"/>
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
         </file>
       </package>
     </metrics>

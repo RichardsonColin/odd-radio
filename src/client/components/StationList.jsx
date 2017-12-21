@@ -19,7 +19,7 @@ class StationList extends Component {
       if (index % 2 === 0) {
         divStyle = 1;
       }
-      
+
       return <Station
         key={ post.id }
         id={ post.id }
@@ -34,6 +34,10 @@ class StationList extends Component {
         playState={ this.props.playState }
         streamLoading={ this.props.streamLoading }
         stationType={ divStyle }
+        findStationExpandInfo={ this.props.findStationExpandInfo }
+        expandedState={ this.props.expandedState }
+        expandedName={ this.props.expandedName }
+        hideStationInfo={ this.props.hideStationInfo }
       />
     });
 

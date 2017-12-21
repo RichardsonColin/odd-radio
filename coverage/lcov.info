@@ -1,5 +1,9 @@
 TN:
+<<<<<<< HEAD
+SF:/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/App.jsx
+=======
 SF:/vagrant/projects/odd-radio/src/client/components/App.jsx
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 FN:11,(anonymous_0)
 FN:45,(anonymous_1)
 FN:47,(anonymous_2)
@@ -127,6 +131,22 @@ BRF:14
 BRH:1
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/AudioPlayer.jsx
+FN:8,(anonymous_0)
+FN:21,(anonymous_1)
+FN:26,(anonymous_2)
+FN:32,(anonymous_3)
+FN:39,(anonymous_4)
+FN:45,(anonymous_5)
+FN:51,(anonymous_6)
+FN:57,(anonymous_7)
+FN:61,(anonymous_8)
+FN:64,(anonymous_9)
+FN:64,(anonymous_10)
+FN:68,(anonymous_11)
+FNF:12
+=======
 SF:/vagrant/projects/odd-radio/src/client/components/AudioPlayer.jsx
 FN:7,(anonymous_0)
 FN:20,(anonymous_1)
@@ -140,6 +160,7 @@ FN:60,(anonymous_8)
 FN:63,(anonymous_9)
 FN:63,(anonymous_10)
 FNF:11
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 FNH:4
 FNDA:2,(anonymous_0)
 FNDA:0,(anonymous_1)
@@ -152,16 +173,33 @@ FNDA:2,(anonymous_7)
 FNDA:5,(anonymous_8)
 FNDA:0,(anonymous_9)
 FNDA:0,(anonymous_10)
-DA:8,2
+FNDA:0,(anonymous_11)
 DA:9,2
-DA:15,2
+DA:10,2
 DA:16,2
-DA:21,0
-DA:23,0
-DA:26,0
-DA:32,0
-DA:34,0
+DA:17,2
+DA:22,0
+DA:24,0
+DA:27,0
+DA:33,0
 DA:35,0
+<<<<<<< HEAD
+DA:36,0
+DA:40,0
+DA:43,0
+DA:46,0
+DA:52,2
+DA:58,2
+DA:62,4
+DA:64,0
+DA:68,0
+LF:18
+LH:7
+BRDA:35,0,0,0
+BRDA:35,0,1,0
+BRDA:75,1,0,4
+BRDA:75,1,1,4
+=======
 DA:39,0
 DA:42,0
 DA:45,0
@@ -175,11 +213,16 @@ BRDA:34,0,0,0
 BRDA:34,0,1,0
 BRDA:74,1,0,5
 BRDA:74,1,1,5
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 BRF:4
 BRH:2
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/Background.jsx
+=======
 SF:/vagrant/projects/odd-radio/src/client/components/Background.jsx
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 FN:4,(anonymous_0)
 FNF:1
 FNH:1
@@ -191,7 +234,11 @@ BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/Loader.jsx
+=======
 SF:/vagrant/projects/odd-radio/src/client/components/Loader.jsx
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 FN:4,(anonymous_0)
 FNF:1
 FNH:1
@@ -203,7 +250,11 @@ BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/MuteButton.jsx
+=======
 SF:/vagrant/projects/odd-radio/src/client/components/MuteButton.jsx
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 FN:4,(anonymous_0)
 FN:8,(anonymous_1)
 FN:14,(anonymous_2)
@@ -225,7 +276,11 @@ BRF:2
 BRH:2
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/PlayerButtons.jsx
+=======
 SF:/vagrant/projects/odd-radio/src/client/components/PlayerButtons.jsx
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 FN:5,(anonymous_0)
 FN:16,(anonymous_1)
 FN:24,(anonymous_2)
@@ -255,12 +310,21 @@ BRF:8
 BRH:8
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/Station.jsx
+FN:7,(anonymous_0)
+FN:23,(anonymous_1)
+FN:35,(anonymous_2)
+FN:50,(anonymous_3)
+FN:70,(anonymous_4)
+=======
 SF:/vagrant/projects/odd-radio/src/client/components/Station.jsx
 FN:6,(anonymous_0)
 FN:22,(anonymous_1)
 FN:34,(anonymous_2)
 FN:49,(anonymous_3)
 FN:69,(anonymous_4)
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 FNF:5
 FNH:5
 FNDA:7,(anonymous_0)
@@ -268,6 +332,25 @@ FNDA:2,(anonymous_1)
 FNDA:10,(anonymous_2)
 FNDA:2,(anonymous_3)
 FNDA:2,(anonymous_4)
+<<<<<<< HEAD
+DA:8,5
+DA:9,5
+DA:19,5
+DA:24,2
+DA:25,1
+DA:29,1
+DA:38,8
+DA:39,6
+DA:50,2
+DA:59,2
+DA:70,2
+LF:11
+LH:11
+BRDA:24,0,0,1
+BRDA:24,0,1,1
+BRDA:38,1,0,6
+BRDA:38,1,1,2
+=======
 DA:7,7
 DA:8,7
 DA:18,7
@@ -285,11 +368,16 @@ BRDA:23,0,0,1
 BRDA:23,0,1,1
 BRDA:37,1,0,8
 BRDA:37,1,1,2
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 BRF:4
 BRH:4
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/StationList.jsx
+=======
 SF:/vagrant/projects/odd-radio/src/client/components/StationList.jsx
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 FN:5,(anonymous_0)
 FN:10,(anonymous_1)
 FN:11,(anonymous_2)
@@ -318,7 +406,11 @@ BRF:4
 BRH:4
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/VolumeControls.jsx
+=======
 SF:/vagrant/projects/odd-radio/src/client/components/VolumeControls.jsx
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 FN:5,(anonymous_0)
 FNF:1
 FNH:1
@@ -330,6 +422,29 @@ BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/util/ClientFunctions.jsx
+FN:3,(anonymous_0)
+FN:14,(anonymous_1)
+FNF:2
+FNH:2
+FNDA:1,(anonymous_0)
+FNDA:4,(anonymous_1)
+DA:3,5
+DA:4,1
+DA:5,8
+DA:7,8
+DA:8,8
+DA:9,8
+DA:11,1
+DA:14,5
+DA:15,4
+DA:16,4
+DA:17,4
+DA:18,4
+LF:12
+LH:12
+=======
 SF:/vagrant/projects/odd-radio/src/client/util/ClientFunctions.jsx
 FN:3,(anonymous_0)
 FNF:1
@@ -344,6 +459,7 @@ DA:9,9
 DA:11,2
 LF:7
 LH:7
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 BRF:0
 BRH:0
 end_of_record
