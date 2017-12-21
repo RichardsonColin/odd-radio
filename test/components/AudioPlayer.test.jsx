@@ -30,6 +30,4 @@ describe('AudioPlayer', () => {
   it('matches snapshot', () => {
     expect(renderer.create(subject)).toMatchSnapshot();
   });
-
-
 });

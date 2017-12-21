@@ -30,6 +30,7 @@ class StationList extends Component {
           stationType={1}
           activeStation={ isActive }
           playState={ this.props.playState }
+          streamLoading={ this.props.streamLoading }
            />
       } else {
         return <Station
@@ -45,6 +46,7 @@ class StationList extends Component {
           stationType={2}
           activeStation={ isActive }
           playState={ this.props.playState }
+          streamLoading={ this.props.streamLoading }
            />
       }
     });
