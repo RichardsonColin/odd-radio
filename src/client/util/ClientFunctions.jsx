@@ -12,9 +12,7 @@ export const shuffle = function (sourceArray) {
 }
 
 export const findStationExpandInfo = function (stationName) {
-  console.log('stationName:', stationName);
   const stationDiv = document.getElementById(stationName);
-  console.log('stationDiv:', stationDiv);
   stationDiv.scrollIntoView(true);
 
 }
