@@ -4,6 +4,7 @@ import { shuffle } from '../util/ClientFunctions.jsx';
 
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
+import Background from './Background.jsx';
 
 
 class App extends Component {
@@ -21,11 +22,10 @@ class App extends Component {
         streamType: ""
       },
       playState: {
-        volume: 1,
         isPlaying: false,
-        isPaused: true,
-        isLoading: false
-      }
+        isPaused: true
+      },
+      streamLoading: false
     },
 
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
@@ -36,6 +36,9 @@ class App extends Component {
     this.findColor = this.findColor.bind(this);
     this.setStateSelectedStation = this.setStateSelectedStation.bind(this);
     this.playPause = this.playPause.bind(this);
+    this.onLoadStart = this.onLoadStart.bind(this);
+    this.onCanPlay = this.onCanPlay.bind(this);
+    this.findColor = this.findColor.bind(this);
   }
 
   // Initial API request to build up station collection object.
@@ -75,7 +78,7 @@ class App extends Component {
         selectedStation: station
         }, () => {
           player.load();
-          this.playPause()
+          this.playPause();
       });
     }
   }
@@ -85,24 +88,39 @@ class App extends Component {
   playPause() {
     const player = document.getElementById("player");
     if (this.state.playState.isPaused) {
-      player.play();
+
 
       this.setState({
         playState: {
           isPlaying: true,
           isPaused: false
         }
-      })
+      }, () => { player.play(); });
     } else if (this.state.playState.isPlaying) {
-      player.pause();
 
       this.setState({
         playState: {
           isPlaying: false,
           isPaused: true
         }
-      })
+      }, () => { player.pause(); });
     }
+  }
+
+  onLoadStart(e) {
+    // console.log('e', e);
+    // console.log('in load event');
+    this.setState({
+      streamLoading: true
+    })
+  }
+
+  onCanPlay(e) {
+    // console.log('e', e);
+    // console.log('in play event');
+    this.setState({
+      streamLoading: false
+    })
   }
 
   onSpaceBarPress(event) {
@@ -148,8 +166,6 @@ class App extends Component {
     }
   }
 
-
-
   findColor() {
     const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
     return this.colors[colorIndex];
@@ -181,7 +197,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app-container" style={{ backgroundColor: this.findColor() }}>
+      <div>
+        <Background findColor={ this.findColor } />
         <header>
         <div className="container title-container">
             <div className="row title-row border">
@@ -197,10 +214,12 @@ class App extends Component {
           </div>
         </header>
           <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations }
-            activeStation={ this.state.selectedStation.id } playState={ this.state.playState } />
+            activeStation={ this.state.selectedStation.id } playState={ this.state.playState }
+            streamLoading={ this.state.streamLoading } />
         <footer>
            <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
-           playPause={ this.playPause } playState={ this.state.playState } />
+           playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }
+           onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } />
         </footer>
       </div>
     );

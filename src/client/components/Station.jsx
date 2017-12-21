@@ -43,7 +43,8 @@ class Station extends Component {
               <div className="one-third column station-name center"> {this.props.name} </div>
               <div className="one-third column station-play-button center">
                 <PlayerButtons clickFunction={this.props.handleSelectedStation} params={this.state.details}
-                  playState={this.props.playState} activeStation={this.props.activeStation} />
+                  streamLoading={this.props.streamLoading} playState={ this.props.playState }
+                  activeStation={this.props.activeStation} />
               </div>
               <div className="one-third column station-info-button center">
                 <i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={(e) => {this.toggleStationInfo(); findStationExpandInfo(this.props.name)}}></i>
@@ -62,7 +63,8 @@ class Station extends Component {
               <div className="one-third column station-name center"> </div>
               <div className="one-third column station-play-button center">
                 <PlayerButtons clickFunction={ this.props.handleSelectedStation } params={ this.state.details }
-                playState={ this.props.playState } activeStation={ this.props.activeStation } />
+                streamLoading={this.props.streamLoading} playState={ this.props.playState }
+                activeStation={ this.props.activeStation } />
               </div>
               <div className="one-third column station-info-button center">
                 <i className="fa fa-chevron-up card-chevron" aria-hidden="true" onClick={ (e) => {this.toggleStationInfo(); findStationExpandInfo(this.props.name)}}></i>
