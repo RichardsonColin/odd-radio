@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PlayerButtons from './PlayerButtons.jsx';
-import Loader from './Loader.jsx';
 import VolumeControls from './VolumeControls.jsx';
 
 
@@ -8,14 +7,11 @@ class AudioPlayer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      audioLoad: false,
       volume: 1,
       beforeMuteVolume: 1
     },
     this.setVolume = this.setVolume.bind(this);
     this.muteAudio = this.muteAudio.bind(this);
-    this.onLoad = this.onLoad.bind(this);
-    this.onCanPlay = this.onCanPlay.bind(this);
   }
 
   // Sets volume according to range input.
@@ -49,26 +45,10 @@ class AudioPlayer extends Component {
     }
   }
 
-  onLoad(e) {
-    console.log('e', e);
-    console.log('in load event');
-    this.setState({
-      audioLoad: true
-    })
-  }
-
-  onCanPlay(e) {
-    console.log('e', e);
-    console.log('in play event');
-    this.setState({
-      audioLoad: false
-    })
-  }
-
   render() {
     return (
       <div>
-        <audio id="player" onLoadStart={ (e) => this.onLoad(e) } onCanPlay={ (e) => this.onCanPlay(e) } >
+        <audio id="player" onLoadStart={ (e) => this.props.onLoadStart(e) } onCanPlay={ (e) => this.props.onCanPlay(e) } >
           <source src={ this.props.stationFeed.audioFeed } type={ this.props.stationFeed.streamType } />
         </audio>
         <div>
@@ -76,7 +56,8 @@ class AudioPlayer extends Component {
           <div className="container player-container">
             <div className="row player-row border">
               <div className="three columns">
-                <PlayerButtons activeStation={ true } playState={ this.props.playState } clickFunction={ this.props.playPause }/>
+                <PlayerButtons activeStation={ true } playState={ this.props.playState } streamLoading={ this.props.streamLoading }
+                clickFunction={ this.props.playPause } />
               </div>
               <div className="three columns">
                 <VolumeControls volume={ this.state.volume } setVolume={ this.setVolume } muteAudio={ this.muteAudio }/>
@@ -84,7 +65,6 @@ class AudioPlayer extends Component {
               <div className="three columns">
                 <i className="fa fa-random fa-2x seek-button" onClick={this.props.seekStation} ></i>
               </div>
-              <Loader audioLoad={ this.state.audioLoad } />
             </div>
           </div>
         </div>

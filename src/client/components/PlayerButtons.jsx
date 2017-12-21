@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
+import Loader from './Loader.jsx';
 
 class PlayerButtons extends Component {
   render(){
 
-    if (this.props.activeStation && this.props.playState.isPlaying) {
+    if(this.props.activeStation && this.props.streamLoading) {
+      return(
+      <Loader />
+      );
+    }
+    else if (this.props.activeStation && this.props.playState.isPlaying) {
     return (
 
       <div>
