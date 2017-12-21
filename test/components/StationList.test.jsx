@@ -10,6 +10,7 @@ import StationList from '../../src/client/components/StationList';
 
 describe('StationList', () => {
   const props = {
+    activeStaion: 1,
     handleSelectedStation: jest.fn(),
     stations: [{
         id: 1,
