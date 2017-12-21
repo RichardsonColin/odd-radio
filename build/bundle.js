@@ -8192,9 +8192,11 @@ var AudioPlayer = function (_Component) {
 
     _this.state = {
       volume: 1,
-      beforeMuteVolume: 1
+      beforeMuteVolume: 1,
+      width: window.innerWidth
     }, _this.setVolume = _this.setVolume.bind(_this);
     _this.muteAudio = _this.muteAudio.bind(_this);
+    _this.detectWidth = _this.detectWidth.bind(_this);
     return _this;
   }
 
@@ -8240,6 +8242,18 @@ var AudioPlayer = function (_Component) {
       }
     }
   }, {
+    key: 'detectWidth',
+    value: function detectWidth() {
+      this.setState({
+        width: window.innerWidth
+      });
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.detectWidth();
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this4 = this;
@@ -8278,7 +8292,7 @@ var AudioPlayer = function (_Component) {
                 _react2.default.createElement(_PlayerButtons2.default, { activeStation: true, playState: this.props.playState, streamLoading: this.props.streamLoading,
                   clickFunction: this.props.playPause })
               ),
-              _react2.default.createElement(
+              this.state.width > 768 && _react2.default.createElement(
                 'div',
                 { className: 'three columns' },
                 _react2.default.createElement(_VolumeControls2.default, { volume: this.state.volume, setVolume: this.setVolume, muteAudio: this.muteAudio })
