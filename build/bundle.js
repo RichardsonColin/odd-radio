@@ -7871,7 +7871,6 @@ var App = function (_Component) {
         return response.json();
       }).then(function (json) {
         _this2.setState({ stations: (0, _ClientFunctions.shuffle)(json) });
-        console.log('parsed json', json);
       }).catch(function (ex) {
         console.log('parsing failed', ex);
       });
@@ -8056,16 +8055,15 @@ var App = function (_Component) {
         });
       }
     }
+
+    //finds the station container based on stationName and expands the info-container and scrolls to the station container
+
   }, {
     key: 'findStationExpandInfo',
     value: function findStationExpandInfo(stationName) {
-      var _this5 = this;
-
       var stationDiv = document.getElementById(stationName);
-      console.log('stationName: ', stationName);
-      console.log('this.state.expanded', this.state.expanded);
+
       this.setState({ expanded: true, expandedName: stationName }, function () {
-        console.log('this.state.expanded', _this5.state.expanded);
         stationDiv.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
       });
     }
