@@ -4,6 +4,7 @@ import { shuffle } from '../util/ClientFunctions.jsx';
 
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
+import Background from './Background.jsx';
 
 
 class App extends Component {
@@ -35,8 +36,12 @@ class App extends Component {
     this.findColor = this.findColor.bind(this);
     this.setStateSelectedStation = this.setStateSelectedStation.bind(this);
     this.playPause = this.playPause.bind(this);
+<<<<<<< HEAD
     this.onLoadStart = this.onLoadStart.bind(this);
     this.onCanPlay = this.onCanPlay.bind(this);
+=======
+    this.findColor = this.findColor.bind(this);
+>>>>>>> ed312d15aa2a42e13ad970554ca4b0316b889a24
   }
 
   // Initial API request to build up station collection object.
@@ -164,8 +169,6 @@ class App extends Component {
     }
   }
 
-
-
   findColor() {
     const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
     return this.colors[colorIndex];
@@ -197,7 +200,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app-container" style={{ backgroundColor: this.findColor() }}>
+      <div>
+        <Background findColor={ this.findColor } />
         <header>
         <div className="container title-container">
             <div className="row title-row border">

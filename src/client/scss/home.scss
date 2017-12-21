@@ -2,7 +2,7 @@ h1 {
   text-align: right;
   padding-right:10%;
   text-shadow: 2px 2px #e4c4c4;
-  
+
 }
 
 h3 {
@@ -12,13 +12,15 @@ h3 {
 
 .app-container {
   transition: background-color 1000ms linear;
-  position: absolute;
+  position: fixed;
+  height:100%;
   width:100%;
   background : linear-gradient(63deg, #999 23%, transparent 23%) 7px 0,
   linear-gradient(63deg, transparent 74%, #999 78%),
   linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
   #444;
   background-size: 16px 48px;
+
 }
 
 .brand-name {
@@ -146,4 +148,8 @@ footer {
 
 .station-row {
   padding-top: 25px;
+}
+
+.info-expanded {
+  background-color: #89cff0;
 }
