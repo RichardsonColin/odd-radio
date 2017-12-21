@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PlayerButtons from './PlayerButtons.jsx';
+import { findStationExpandInfo } from '../util/ClientFunctions.jsx';
 
 class Station extends Component {
 
@@ -36,7 +37,7 @@ class Station extends Component {
     // If it is not expanded, render just some details.
     if (!this.state.expanded) {
       return (
-        <div>
+        <div id={ this.props.name }>
           <div className={`container station-container${this.props.stationType}`}>
             <div className="row station-row border">
               <div className="one-third column station-name center"> {this.props.name} </div>
@@ -45,7 +46,7 @@ class Station extends Component {
                   playState={this.props.playState} activeStation={this.props.activeStation} />
               </div>
               <div className="one-third column station-info-button center">
-                <i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={(e) => this.toggleStationInfo() }></i>
+                <i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={(e) => {this.toggleStationInfo(); findStationExpandInfo(this.props.name)}}></i>
               </div>
             </div>
           </div>
@@ -55,7 +56,7 @@ class Station extends Component {
     // If it is expanded, render all the details.
     } else {
       return (
-        <div>
+        <div id={ this.props.name }>
           <div className={ `container station-container${this.props.stationType} info-expanded` }>
             <div className="row station-row border">
               <div className="one-third column station-name center"> </div>
@@ -64,11 +65,11 @@ class Station extends Component {
                 playState={ this.props.playState } activeStation={ this.props.activeStation } />
               </div>
               <div className="one-third column station-info-button center">
-                <i className="fa fa-chevron-up card-chevron" aria-hidden="true" onClick={ (e) => this.toggleStationInfo() }></i>
+                <i className="fa fa-chevron-up card-chevron" aria-hidden="true" onClick={ (e) => {this.toggleStationInfo(); findStationExpandInfo(this.props.name)}}></i>
               </div>
             </div>
           </div>
-          <div className="container info-container info-expanded" id={ this.props.name }>
+          <div className="container info-container info-expanded" >
             <div className="row center-align">
               <div className="station-info center">
                 <div className="station-branding one-third column"> { this.props.name } </div>
