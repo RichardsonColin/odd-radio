@@ -91,7 +91,7 @@ footer {
   background-color: #b3e0da;
   width: 100%;
   margin-top: 0;
-  height: 75px;
+  height: 120px;
 }
 
 .card-play-button  {
@@ -156,4 +156,13 @@ footer {
 
 .info-expanded {
   background-color: #89cff0;
+}
+
+.presets {
+  .presets-title{
+    font-weight: bold;
+  }
+  .presets-station:hover {
+    text-shadow: 2px 2px 2px rgb(100, 100, 100)
+  }
 }

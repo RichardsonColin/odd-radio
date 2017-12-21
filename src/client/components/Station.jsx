@@ -31,6 +31,10 @@ class Station extends Component {
     }
   }
 
+  componentDidMount() {
+    console.log(this.state.details);
+  }
+
   render() {
 
     // If it is not expanded, render just some details.

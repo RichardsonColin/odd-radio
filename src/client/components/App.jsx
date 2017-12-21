@@ -27,12 +27,12 @@ class App extends Component {
         isPaused: true
       },
       streamLoading: false,
-      faves: {
-        1: 'test',
-        2: 'test',
-        3: 'test',
-        4: 'test',
-        5: 'test'
+      presets: {
+        one: { id: 7, name: "CHMR", audioFeed: "http://mp3srv.munsu.mun.ca:8000/", streamType: "audio/mpeg" },
+        two: { id: 24, name: "CJLY", audioFeed: "http://stream.cjly.net/", streamType: "audio/mpeg" },
+        three: { id: 3, name: "CKUW", audioFeed: "http://shout.mtl.gameservers.com:9025/;stream.nsv&type=mp3", streamType: "audio/mp3" },
+        four: { id: 6, name: "CIVL", audioFeed: "http://198.162.116.249:8085/live.mp3", streamType: "audio/mp3" },
+        five: { id: 25, name: "CJMP", audioFeed: "http://usa2.fastcast4u.com:3264/CJMP90.1FM", streamType: "audio/mpeg" }
       }
     },
 
@@ -224,9 +224,9 @@ class App extends Component {
             activeStation={ this.state.selectedStation.id } playState={ this.state.playState }
             streamLoading={ this.state.streamLoading } />
         <footer>
-           <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
+          <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
            playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }
-           onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } />
+           onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } presets={ this.state.presets } handleSelectedStation={ this.handleSelectedStation } />
         </footer>
       </div>
     );
