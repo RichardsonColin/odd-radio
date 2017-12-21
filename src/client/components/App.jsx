@@ -5,6 +5,7 @@ import { shuffle } from '../util/ClientFunctions.jsx';
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
 import Background from './Background.jsx';
+import Presets from './Presets.jsx';
 
 
 class App extends Component {
@@ -25,7 +26,14 @@ class App extends Component {
         isPlaying: false,
         isPaused: true
       },
-      streamLoading: false
+      streamLoading: false,
+      faves: {
+        1: 'test',
+        2: 'test',
+        3: 'test',
+        4: 'test',
+        5: 'test'
+      }
     },
 
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
