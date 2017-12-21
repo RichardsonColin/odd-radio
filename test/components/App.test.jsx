@@ -15,7 +15,7 @@ describe('App', () => {
     setStateSelectedStation: jest.fn()
   }
 
-  global.fetch = jest.fn(() => new Promise(resolve => resolve()));
+  // global.fetch = jest.fn(() => new Promise(resolve => resolve()));
 
   global.fetch = jest.fn().mockImplementation(() => {
     var p = new Promise((resolve, reject) => {
