@@ -56,10 +56,10 @@ exports[`App matches snapshot 1`] = `
       <div>
         <div
           className="player-station-name"
+          onClick={[Function]}
         >
-           Current Station: 
+          Current Station: 
           
-           
         </div>
         <div
           className="container player-container"

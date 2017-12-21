@@ -7946,7 +7946,9 @@ var App = function (_Component) {
         three: { id: 3, name: "CKUW", audioFeed: "http://shout.mtl.gameservers.com:9025/;stream.nsv&type=mp3", streamType: "audio/mp3" },
         four: { id: 6, name: "CIVL", audioFeed: "http://198.162.116.249:8085/live.mp3", streamType: "audio/mp3" },
         five: { id: 25, name: "CJMP", audioFeed: "http://usa2.fastcast4u.com:3264/CJMP90.1FM", streamType: "audio/mpeg" }
-      }
+      },
+      expanded: false,
+      expandedName: ''
     }, _this.handleSelectedStation = _this.handleSelectedStation.bind(_this);
     _this.seekStation = _this.seekStation.bind(_this);
     _this.generateRandomStationId = _this.generateRandomStationId.bind(_this);
@@ -7958,6 +7960,8 @@ var App = function (_Component) {
     _this.onLoadStart = _this.onLoadStart.bind(_this);
     _this.onCanPlay = _this.onCanPlay.bind(_this);
     _this.findColor = _this.findColor.bind(_this);
+    _this.findStationExpandInfo = _this.findStationExpandInfo.bind(_this);
+    _this.hideStationInfo = _this.hideStationInfo.bind(_this);
     return _this;
   }
 
@@ -8157,6 +8161,26 @@ var App = function (_Component) {
         });
       }
     }
+
+    //finds the station container based on stationName and expands the info-container and scrolls to the station container
+
+  }, {
+    key: 'findStationExpandInfo',
+    value: function findStationExpandInfo(stationName) {
+      var stationDiv = document.getElementById(stationName);
+
+      this.setState({ expanded: true, expandedName: stationName }, function () {
+        stationDiv.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+      });
+    }
+  }, {
+    key: 'hideStationInfo',
+    value: function hideStationInfo() {
+      //hides the info-container
+      this.setState({
+        expanded: false
+      });
+    }
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
@@ -8208,13 +8232,17 @@ var App = function (_Component) {
         ),
         _react2.default.createElement(_StationList2.default, { handleSelectedStation: this.handleSelectedStation, stations: this.state.stations,
           activeStation: this.state.selectedStation.id, playState: this.state.playState,
-          streamLoading: this.state.streamLoading }),
+          streamLoading: this.state.streamLoading,
+          findStationExpandInfo: this.findStationExpandInfo,
+          hideStationInfo: this.hideStationInfo,
+          expandedState: this.state.expanded, expandedName: this.state.expandedName }),
         _react2.default.createElement(
           'footer',
           null,
           _react2.default.createElement(_AudioPlayer2.default, { stationFeed: this.state.selectedStation, seekStation: this.seekStation,
             playPause: this.playPause, streamLoading: this.state.streamLoading, playState: this.state.playState,
-            onLoadStart: this.onLoadStart, onCanPlay: this.onCanPlay, presets: this.state.presets, handleSelectedStation: this.handleSelectedStation })
+            onLoadStart: this.onLoadStart, onCanPlay: this.onCanPlay, findStationExpandInfo: this.findStationExpandInfo,
+            presets: this.state.presets, handleSelectedStation: this.handleSelectedStation })
         )
       );
     }
@@ -8384,10 +8412,11 @@ var AudioPlayer = function (_Component) {
           null,
           _react2.default.createElement(
             'div',
-            { className: 'player-station-name center' },
-            ' Current Station: ',
-            this.props.stationFeed.name,
-            ' '
+            { className: 'player-station-name', onClick: function onClick(e) {
+                return _this4.props.findStationExpandInfo(_this4.props.stationFeed.name);
+              } },
+            'Current Station: ',
+            this.props.stationFeed.name
           ),
           _react2.default.createElement(
             'div',
@@ -8664,7 +8693,11 @@ var StationList = function (_Component) {
           activeStation: isActive,
           playState: _this2.props.playState,
           streamLoading: _this2.props.streamLoading,
-          stationType: divStyle
+          stationType: divStyle,
+          findStationExpandInfo: _this2.props.findStationExpandInfo,
+          expandedState: _this2.props.expandedState,
+          expandedName: _this2.props.expandedName,
+          hideStationInfo: _this2.props.hideStationInfo
         });
       });
 
@@ -8725,80 +8758,33 @@ var Station = function (_Component) {
         audioFeed: _this.props.audioFeed,
         streamType: _this.props.streamType
       },
-      expanded: false
+      expandedStationName: _this.props.expandedName,
+      expandedStation: _this.props.expandedState
     };
-
-    _this.toggleStationInfo = _this.toggleStationInfo.bind(_this);
     return _this;
   }
 
-  // Switch between expanded true and false for showing info.
+  // Switch between expanded true and false for showing info
 
 
   _createClass(Station, [{
-    key: 'toggleStationInfo',
-    value: function toggleStationInfo() {
-      if (this.state.expanded) {
-        this.setState({
-          expanded: false
-        });
-      } else {
-        this.setState({
-          expanded: true
-        });
-      }
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      console.log(this.state.details);
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(props) {
+      this.setState({
+        expandedStationName: props.expandedName,
+        expandedStation: props.expandedState
+      });
     }
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      // If it is not expanded, render just some details.
-      if (!this.state.expanded) {
+      // If it is expanded, render all the details.
+      if (this.props.expandedName === this.state.details.name && this.state.expandedStation === true) {
         return _react2.default.createElement(
           'div',
-          null,
-          _react2.default.createElement(
-            'div',
-            { className: 'container station-container' + this.props.stationType },
-            _react2.default.createElement(
-              'div',
-              { className: 'row station-row border' },
-              _react2.default.createElement(
-                'div',
-                { className: 'one-third column station-name center' },
-                ' ',
-                this.props.name,
-                ' '
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'one-third column station-play-button center' },
-                _react2.default.createElement(_PlayerButtons2.default, { clickFunction: this.props.handleSelectedStation, params: this.state.details,
-                  streamLoading: this.props.streamLoading, playState: this.props.playState,
-                  activeStation: this.props.activeStation })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'one-third column station-info-button center' },
-                _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
-                    return _this2.toggleStationInfo();
-                  } })
-              )
-            )
-          )
-        );
-
-        // If it is expanded, render all the details.
-      } else {
-        return _react2.default.createElement(
-          'div',
-          null,
+          { id: this.props.name },
           _react2.default.createElement(
             'div',
             { className: 'container station-container' + this.props.stationType + ' info-expanded' },
@@ -8821,14 +8807,14 @@ var Station = function (_Component) {
                 'div',
                 { className: 'one-third column station-info-button center' },
                 _react2.default.createElement('i', { className: 'fa fa-chevron-up card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
-                    return _this2.toggleStationInfo();
+                    return _this2.props.hideStationInfo();
                   } })
               )
             )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'container info-container info-expanded', id: this.props.name },
+            { className: 'container info-container info-expanded' },
             _react2.default.createElement(
               'div',
               { className: 'row center-align' },
@@ -8888,6 +8874,41 @@ var Station = function (_Component) {
                     ' '
                   )
                 )
+              )
+            )
+          )
+        );
+      } else {
+        // If it is not expanded, render just some details.
+        return _react2.default.createElement(
+          'div',
+          { id: this.props.name },
+          _react2.default.createElement(
+            'div',
+            { className: 'container station-container' + this.props.stationType },
+            _react2.default.createElement(
+              'div',
+              { className: 'row station-row border' },
+              _react2.default.createElement(
+                'div',
+                { className: 'one-third column station-name center' },
+                ' ',
+                this.props.name,
+                ' '
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'one-third column station-play-button center' },
+                _react2.default.createElement(_PlayerButtons2.default, { clickFunction: this.props.handleSelectedStation, params: this.state.details,
+                  streamLoading: this.props.streamLoading, playState: this.props.playState,
+                  activeStation: this.props.activeStation })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'one-third column station-info-button center' },
+                _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
+                    return _this2.props.findStationExpandInfo(_this2.props.name);
+                  } })
               )
             )
           )

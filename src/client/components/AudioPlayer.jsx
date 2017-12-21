@@ -3,7 +3,6 @@ import PlayerButtons from './PlayerButtons.jsx';
 import VolumeControls from './VolumeControls.jsx';
 import Presets from './Presets.jsx';
 
-
 class AudioPlayer extends Component {
   constructor(props) {
     super(props);
@@ -65,7 +64,7 @@ class AudioPlayer extends Component {
           <source src={ this.props.stationFeed.audioFeed } type={ this.props.stationFeed.streamType } />
         </audio>
         <div>
-          <div className="player-station-name center"> Current Station: { this.props.stationFeed.name } </div>
+          <div className="player-station-name" onClick={(e) => this.props.findStationExpandInfo(this.props.stationFeed.name)} >Current Station: { this.props.stationFeed.name }</div>
           <div className="container player-container">
             <div className="row player-row border">
               <div className="three columns">
