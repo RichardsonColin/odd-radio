@@ -36,12 +36,9 @@ class App extends Component {
     this.findColor = this.findColor.bind(this);
     this.setStateSelectedStation = this.setStateSelectedStation.bind(this);
     this.playPause = this.playPause.bind(this);
-<<<<<<< HEAD
     this.onLoadStart = this.onLoadStart.bind(this);
     this.onCanPlay = this.onCanPlay.bind(this);
-=======
     this.findColor = this.findColor.bind(this);
->>>>>>> ed312d15aa2a42e13ad970554ca4b0316b889a24
   }
 
   // Initial API request to build up station collection object.
