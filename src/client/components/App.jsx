@@ -195,9 +195,9 @@ findStationExpandInfo(stationName, stationFeed) {
   console.log("before if: stationName:", stationName, "StationFeed: ", stationFeed);
   // StationName ? let station = StationName
   if (stationName == null) {
-    const station = stationFeed;
+    var station = stationFeed;
   } else {
-    const station = stationName;
+    var station = stationName;
   }
   const stationDiv = document.getElementById(station);
 

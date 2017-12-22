@@ -8155,10 +8155,8 @@ var App = function (_Component) {
       // StationName ? let station = StationName
       if (stationName == null) {
         var station = stationFeed;
-        console.log("in if statement", station);
       } else {
         var station = stationName;
-        console.log("in else statement", station);
       }
       var stationDiv = document.getElementById(station);
 
