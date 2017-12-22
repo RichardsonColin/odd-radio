@@ -5,6 +5,7 @@ import { shuffle } from '../util/ClientFunctions.jsx';
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
 import Background from './Background.jsx';
+import Presets from './Presets.jsx';
 
 
 class App extends Component {
@@ -26,6 +27,13 @@ class App extends Component {
         isPaused: true
       },
       streamLoading: false,
+      presets: {
+        one: { id: 7, name: "CHMR", audioFeed: "http://mp3srv.munsu.mun.ca:8000/", streamType: "audio/mpeg" },
+        two: { id: 24, name: "CJLY", audioFeed: "http://stream.cjly.net/", streamType: "audio/mpeg" },
+        three: { id: 3, name: "CKUW", audioFeed: "http://shout.mtl.gameservers.com:9025/;stream.nsv&type=mp3", streamType: "audio/mp3" },
+        four: { id: 6, name: "CIVL", audioFeed: "http://198.162.116.249:8085/live.mp3", streamType: "audio/mp3" },
+        five: {  }
+      },
       expanded: false,
       expandedName: ''
     },
@@ -43,6 +51,8 @@ class App extends Component {
     this.findColor = this.findColor.bind(this);
     this.findStationExpandInfo = this.findStationExpandInfo.bind(this);
     this.hideStationInfo = this.hideStationInfo.bind(this);
+    this.savePreset = this.savePreset.bind(this);
+    this.setStateFaveStations = this.setStateFaveStations.bind(this);
   }
 
   // Initial API request to build up station collection object.
@@ -68,7 +78,7 @@ class App extends Component {
       streamType: details.streamType
     };
     let test = { key: 'value', tester: 'test' };
-    localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
+    localStorage.setItem('last-listened', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
 
     if(station.id === this.state.selectedStation.id) {
       this.playPause();
@@ -136,6 +146,19 @@ class App extends Component {
     }
   }
 
+  savePreset(details, position) {
+    let presets = this.state.presets;
+    presets[position] = details
+
+    this.setState({
+      presets
+    }, () => {
+      localStorage.setItem('presets', JSON.stringify(this.state.presets)); //sets the localStorage to the station before setting the this.State to the station
+    });
+
+
+  }
+
   // Helper function for seek functionality.
   generateRandomStationId() {
     const seekLength = this.state.stations.length - 1;
@@ -183,32 +206,41 @@ class App extends Component {
 
   // Detects last listened station from users local storage, sets it in app state.
   setStateSelectedStation() {
-    if (JSON.parse(localStorage.getItem('key'))) {
+    if (JSON.parse(localStorage.getItem('last-listened'))) {
       this.setState({
-        selectedStation: JSON.parse(localStorage.getItem('key'))
+        selectedStation: JSON.parse(localStorage.getItem('last-listened'))
       });
     }
   }
 
-//finds the station container based on stationName and expands the info-container and scrolls to the station container
-findStationExpandInfo(stationName) {
-  const stationDiv = document.getElementById(stationName);
+  setStateFaveStations() {
+    if (JSON.parse(localStorage.getItem('presets'))) {
+      this.setState({
+        presets: JSON.parse(localStorage.getItem('presets'))
+      });
+    }
+  }
 
-  this.setState({ expanded: true, expandedName: stationName}, () => {
-    stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-  });
-}
+  //finds the station container based on stationName and expands the info-container and scrolls to the station container
+  findStationExpandInfo(stationName) {
+    const stationDiv = document.getElementById(stationName);
 
-hideStationInfo() { //hides the info-container
-  this.setState({
-    expanded: false
-  });
-}
+    this.setState({ expanded: true, expandedName: stationName}, () => {
+      stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    });
+  }
+
+  hideStationInfo() { //hides the info-container
+    this.setState({
+      expanded: false
+    });
+  }
 
   componentDidMount() {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
+    this.setStateFaveStations();
     window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
   }
 
@@ -235,11 +267,12 @@ hideStationInfo() { //hides the info-container
             streamLoading={ this.state.streamLoading }
             findStationExpandInfo={this.findStationExpandInfo}
             hideStationInfo={this.hideStationInfo}
-            expandedState={this.state.expanded} expandedName={this.state.expandedName}/>
+            expandedState={this.state.expanded} expandedName={this.state.expandedName} presets={this.state.presets} savePreset={this.savePreset} />
         <footer>
-           <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
-           playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }
-           onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } findStationExpandInfo={this.findStationExpandInfo}/>
+          <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
+          playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }
+          onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } findStationExpandInfo={this.findStationExpandInfo}
+          presets={this.state.presets} handleSelectedStation={this.handleSelectedStation} />
         </footer>
       </div>
     );
