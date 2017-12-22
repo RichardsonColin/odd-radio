@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PlayerButtons from './PlayerButtons.jsx';
 import VolumeControls from './VolumeControls.jsx';
+import Ticker from './Ticker.jsx';
+
 
 class AudioPlayer extends Component {
   constructor(props) {
@@ -59,6 +61,7 @@ class AudioPlayer extends Component {
   render() {
     return (
       <div>
+        <Ticker selectedStation={this.props.selectedStation} />
         <audio id="player" onLoadStart={ (e) => this.props.onLoadStart(e) } onCanPlay={ (e) => this.props.onCanPlay(e) } >
           <source src={ this.props.stationFeed.audioFeed } type={ this.props.stationFeed.streamType } />
         </audio>

@@ -10,7 +10,10 @@ class Station extends Component {
         id: this.props.id,
         name: this.props.name,
         audioFeed: this.props.audioFeed,
-        streamType: this.props.streamType
+        streamType: this.props.streamType,
+        frequency: this.props.frequency,
+        city: this.props.city,
+        province: this.props.province
       },
       expandedStationName: this.props.expandedName,
       expandedStation: this.props.expandedState

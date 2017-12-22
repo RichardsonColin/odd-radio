@@ -5,6 +5,7 @@ import { shuffle } from '../util/ClientFunctions.jsx';
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
 import Background from './Background.jsx';
+// import Ticker from './Ticker.jsx';
 
 
 class App extends Component {
@@ -19,7 +20,10 @@ class App extends Component {
         id: "",
         name: "",
         audioFeed: "",
-        streamType: ""
+        streamType: "",
+        frequency: "",
+        city: "",
+        province: ""
       },
       playState: {
         isPlaying: false,
@@ -65,7 +69,10 @@ class App extends Component {
       id: details.id,
       name: details.name,
       audioFeed: details.audioFeed,
-      streamType: details.streamType
+      streamType: details.streamType,
+      frequency: details.frequency,
+      city: details.city,
+      province: details.province
     };
     let test = { key: 'value', tester: 'test' };
     localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
@@ -111,16 +118,12 @@ class App extends Component {
   }
 
   onLoadStart(e) {
-    // console.log('e', e);
-    // console.log('in load event');
     this.setState({
       streamLoading: true
     })
   }
 
   onCanPlay(e) {
-    // console.log('e', e);
-    // console.log('in play event');
     this.setState({
       streamLoading: false
     })
@@ -155,13 +158,14 @@ class App extends Component {
 
         // Plays the seeked station.
       } else if (randomStationId === station.id) {
-          console.log('inside seekstation - ',station);
-
           const seekedStation = {
             id: station.id,
             name: station.name,
             audioFeed: station.audio_feed,
-            streamType: station.stream_type
+            streamType: station.stream_type,
+            frequency: station.frequency,
+            city: station.city,
+            province: station.province
           };
 
           this.handleSelectedStation(seekedStation);
@@ -225,7 +229,7 @@ hideStationInfo() { //hides the info-container
                 </div>
               </div>
               <div className="three columns brand-name">
-                <h1>oddrad.io</h1>
+                <h1 id="brand-name">oddrad.io</h1>
               </div>
             </div>
           </div>
@@ -237,9 +241,10 @@ hideStationInfo() { //hides the info-container
             hideStationInfo={this.hideStationInfo}
             expandedState={this.state.expanded} expandedName={this.state.expandedName}/>
         <footer>
-           <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
-           playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }
-           onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } findStationExpandInfo={this.findStationExpandInfo}/>
+           <AudioPlayer selectedStation={ this.state.selectedStation} stationFeed={ this.state.selectedStation }
+           seekStation={ this.seekStation } playPause={ this.playPause } streamLoading={ this.state.streamLoading }
+           playState={ this.state.playState } onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay }
+           findStationExpandInfo={this.findStationExpandInfo}/>
         </footer>
       </div>
     );

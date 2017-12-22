@@ -28,7 +28,9 @@ class StationList extends Component {
         audioFeed={ post.audio_feed }
         streamType={ post.stream_type }
         homePage={ post.home_page }
+        frequency={ post.frequency }
         city={ post.city }
+        province={ post.province }
         handleSelectedStation={ this.props.handleSelectedStation }
         activeStation={ isActive }
         playState={ this.props.playState }
