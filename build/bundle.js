@@ -1036,10 +1036,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Presets = function (_Component) {
   _inherits(Presets, _Component);
 
-  function Presets() {
+  function Presets(props) {
     _classCallCheck(this, Presets);
 
-    return _possibleConstructorReturn(this, (Presets.__proto__ || Object.getPrototypeOf(Presets)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Presets.__proto__ || Object.getPrototypeOf(Presets)).call(this, props));
   }
 
   _createClass(Presets, [{
@@ -8077,8 +8077,12 @@ var App = function (_Component) {
   }, {
     key: 'savePreset',
     value: function savePreset(details, position) {
-      console.log(details);
-      console.log(position);
+      var presets = this.state.presets;
+      presets[position] = details;
+
+      this.setState({
+        presets: presets
+      });
     }
 
     // Helper function for seek functionality.

@@ -146,8 +146,13 @@ class App extends Component {
   }
 
   savePreset(details, position) {
-    console.log(details);
-    console.log(position);
+    let presets = this.state.presets;
+    presets[position] = details
+
+    this.setState({
+      presets
+    });
+
 
   }
 
@@ -205,20 +210,20 @@ class App extends Component {
     }
   }
 
-//finds the station container based on stationName and expands the info-container and scrolls to the station container
-findStationExpandInfo(stationName) {
-  const stationDiv = document.getElementById(stationName);
+  //finds the station container based on stationName and expands the info-container and scrolls to the station container
+  findStationExpandInfo(stationName) {
+    const stationDiv = document.getElementById(stationName);
 
-  this.setState({ expanded: true, expandedName: stationName}, () => {
-    stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-  });
-}
+    this.setState({ expanded: true, expandedName: stationName}, () => {
+      stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    });
+  }
 
-hideStationInfo() { //hides the info-container
-  this.setState({
-    expanded: false
-  });
-}
+  hideStationInfo() { //hides the info-container
+    this.setState({
+      expanded: false
+    });
+  }
 
   componentDidMount() {
     this.loadStations();
