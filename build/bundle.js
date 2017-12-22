@@ -8907,7 +8907,7 @@ var Station = function (_Component) {
                   )
                 )
               ),
-              _react2.default.createElement(_SetPresets2.default, { presets: this.props.presets, title: 'Save Preset: ', clickFunction: this.props.savePreset, details: this.state.details })
+              _react2.default.createElement(_SetPresets2.default, { presets: this.props.presets, title: 'Save Station In Presets: ', clickFunction: this.props.savePreset, details: this.state.details })
             )
           )
         );
@@ -9010,35 +9010,40 @@ var SetPresets = function (_Component) {
             { className: "five columns presets-station", onClick: function onClick(e) {
                 return _this2.props.clickFunction(_this2.props.details, 'one');
               } },
-            this.props.presets.one.name ? this.props.presets.one.name : 'One'
+            "1: ",
+            this.props.presets.one.name ? this.props.presets.one.name : 'Empty'
           ),
           _react2.default.createElement(
             "div",
             { className: "five columns presets-station", onClick: function onClick(e) {
                 return _this2.props.clickFunction(_this2.props.details, 'two');
               } },
-            this.props.presets.two.name ? this.props.presets.two.name : 'Two'
+            "2: ",
+            this.props.presets.two.name ? this.props.presets.two.name : 'Empty'
           ),
           _react2.default.createElement(
             "div",
             { className: "five columns presets-station", onClick: function onClick(e) {
                 return _this2.props.clickFunction(_this2.props.details, 'three');
               } },
-            this.props.presets.three.name ? this.props.presets.three.name : 'Three'
+            "3: ",
+            this.props.presets.three.name ? this.props.presets.three.name : 'Empty'
           ),
           _react2.default.createElement(
             "div",
             { className: "five columns presets-station", onClick: function onClick(e) {
                 return _this2.props.clickFunction(_this2.props.details, 'four');
               } },
-            this.props.presets.four.name ? this.props.presets.four.name : 'Four'
+            "4: ",
+            this.props.presets.four.name ? this.props.presets.four.name : 'Empty'
           ),
           _react2.default.createElement(
             "div",
             { className: "five columns presets-station", onClick: function onClick(e) {
                 return _this2.props.clickFunction(_this2.props.details, 'five');
               } },
-            this.props.presets.five.name ? this.props.presets.five.name : 'Five'
+            "5: ",
+            this.props.presets.five.name ? this.props.presets.five.name : 'Empty'
           )
         )
       );
