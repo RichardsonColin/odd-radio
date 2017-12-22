@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,9 +71,9 @@
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(17);
-} else {
   module.exports = __webpack_require__(18);
+} else {
+  module.exports = __webpack_require__(19);
 }
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
@@ -580,7 +580,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(5);
   var warning = __webpack_require__(6);
-  var ReactPropTypesSecret = __webpack_require__(19);
+  var ReactPropTypesSecret = __webpack_require__(20);
   var loggedTypeFailures = {};
 }
 
@@ -881,7 +881,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(22);
+var isTextNode = __webpack_require__(23);
 
 /*eslint-disable no-bitwise */
 
@@ -955,7 +955,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Loader = __webpack_require__(32);
+var _Loader = __webpack_require__(33);
 
 var _Loader2 = _interopRequireDefault(_Loader);
 
@@ -1010,6 +1010,67 @@ exports.default = PlayerButtons;
 
 /***/ }),
 /* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var StationName = function (_Component) {
+  _inherits(StationName, _Component);
+
+  function StationName() {
+    _classCallCheck(this, StationName);
+
+    return _possibleConstructorReturn(this, (StationName.__proto__ || Object.getPrototypeOf(StationName)).apply(this, arguments));
+  }
+
+  _createClass(StationName, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        "div",
+        { className: "station-branding one-third column center" },
+        _react2.default.createElement(
+          "p",
+          { className: this.props.Style, onClick: function onClick(e) {
+              return _this2.props.findStationExpandInfo(_this2.props.StationName, _this2.props.StationFeed);
+            } },
+          " ",
+          this.props.StationFeed,
+          " ",
+          this.props.StationName
+        )
+      );
+    }
+  }]);
+
+  return StationName;
+}(_react.Component);
+
+exports.default = StationName;
+
+/***/ }),
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1129,7 +1190,7 @@ var Presets = function (_Component) {
 exports.default = Presets;
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1139,13 +1200,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(20);
+var _reactDom = __webpack_require__(21);
 
-var _App = __webpack_require__(29);
+var _App = __webpack_require__(30);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _application = __webpack_require__(40);
+var _application = __webpack_require__(41);
 
 var _application2 = _interopRequireDefault(_application);
 
@@ -1154,7 +1215,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _reactDom.render)(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1283,7 +1344,7 @@ var U = { Children: { map: function map(a, b, e) {
     W = V && U || V;module.exports = W["default"] ? W["default"] : W;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2643,7 +2704,7 @@ if (process.env.NODE_ENV !== "production") {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2661,7 +2722,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2696,14 +2757,14 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(21);
+  module.exports = __webpack_require__(22);
 } else {
-  module.exports = __webpack_require__(24);
+  module.exports = __webpack_require__(25);
 }
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4700,7 +4761,7 @@ Z.injectIntoDevTools({ findFiberByHostInstance: pb, bundleType: 0, version: "16.
     Ug = Tg && Sg || Tg;module.exports = Ug["default"] ? Ug["default"] : Ug;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4715,7 +4776,7 @@ Z.injectIntoDevTools({ findFiberByHostInstance: pb, bundleType: 0, version: "16.
  * @typechecks
  */
 
-var isNode = __webpack_require__(23);
+var isNode = __webpack_require__(24);
 
 /**
  * @param {*} object The object to check.
@@ -4728,7 +4789,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4759,7 +4820,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4770,7 +4831,7 @@ module.exports = isNode;
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var React=__webpack_require__(0);var invariant=__webpack_require__(5);var warning=__webpack_require__(6);var ExecutionEnvironment=__webpack_require__(8);var _assign=__webpack_require__(3);var emptyFunction=__webpack_require__(2);var EventListener=__webpack_require__(9);var getActiveElement=__webpack_require__(10);var shallowEqual=__webpack_require__(11);var containsNode=__webpack_require__(12);var focusNode=__webpack_require__(13);var emptyObject=__webpack_require__(4);var checkPropTypes=__webpack_require__(7);var hyphenateStyleName=__webpack_require__(25);var camelizeStyleName=__webpack_require__(27);/**
+ */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var React=__webpack_require__(0);var invariant=__webpack_require__(5);var warning=__webpack_require__(6);var ExecutionEnvironment=__webpack_require__(8);var _assign=__webpack_require__(3);var emptyFunction=__webpack_require__(2);var EventListener=__webpack_require__(9);var getActiveElement=__webpack_require__(10);var shallowEqual=__webpack_require__(11);var containsNode=__webpack_require__(12);var focusNode=__webpack_require__(13);var emptyObject=__webpack_require__(4);var checkPropTypes=__webpack_require__(7);var hyphenateStyleName=__webpack_require__(26);var camelizeStyleName=__webpack_require__(28);/**
  * WARNING: DO NOT manually require this module.
  * This is a replacement for `invariant(...)` used by the error code system
  * and will _only_ be required by the corresponding babel pass.
@@ -7743,7 +7804,7 @@ var reactDom=ReactDOM$3['default']?ReactDOM$3['default']:ReactDOM$3;module.expor
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7758,7 +7819,7 @@ var reactDom=ReactDOM$3['default']?ReactDOM$3['default']:ReactDOM$3;module.expor
 
 
 
-var hyphenate = __webpack_require__(26);
+var hyphenate = __webpack_require__(27);
 
 var msPattern = /^ms-/;
 
@@ -7785,7 +7846,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7821,7 +7882,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7836,7 +7897,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(28);
+var camelize = __webpack_require__(29);
 
 var msPattern = /^-ms-/;
 
@@ -7864,7 +7925,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7899,7 +7960,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7915,25 +7976,25 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ClientFunctions = __webpack_require__(30);
+var _ClientFunctions = __webpack_require__(31);
 
-var _AudioPlayer = __webpack_require__(31);
+var _AudioPlayer = __webpack_require__(32);
 
 var _AudioPlayer2 = _interopRequireDefault(_AudioPlayer);
 
-var _StationList = __webpack_require__(35);
+var _StationList = __webpack_require__(36);
 
 var _StationList2 = _interopRequireDefault(_StationList);
 
-var _Background = __webpack_require__(38);
+var _Background = __webpack_require__(39);
 
 var _Background2 = _interopRequireDefault(_Background);
 
-var _Ticker = __webpack_require__(39);
+var _Ticker = __webpack_require__(40);
 
 var _Ticker2 = _interopRequireDefault(_Ticker);
 
-var _Presets = __webpack_require__(15);
+var _Presets = __webpack_require__(16);
 
 var _Presets2 = _interopRequireDefault(_Presets);
 
@@ -8226,10 +8287,17 @@ var App = function (_Component) {
 
   }, {
     key: 'findStationExpandInfo',
-    value: function findStationExpandInfo(stationName) {
-      var stationDiv = document.getElementById(stationName);
+    value: function findStationExpandInfo(stationName, stationFeed) {
+      console.log("before if: stationName:", stationName, "StationFeed: ", stationFeed);
+      // StationName ? let station = StationName
+      if (stationName == null) {
+        var station = stationFeed;
+      } else {
+        var station = stationName;
+      }
+      var stationDiv = document.getElementById(station);
 
-      this.setState({ expanded: true, expandedName: stationName }, function () {
+      this.setState({ expanded: true, expandedName: station }, function () {
         stationDiv.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
       });
     }
@@ -8246,9 +8314,8 @@ var App = function (_Component) {
     value: function checkWindowLocation() {
       //checks the window.location.pathname and compares it to the database.  if match call handleSelectedStation
       var pathname = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
-      console.log('pathname', pathname);
       var stations = this.state.stations;
-      console.log('stations', stations);
+
       var _iteratorNormalCompletion2 = true;
       var _didIteratorError2 = false;
       var _iteratorError2 = undefined;
@@ -8257,12 +8324,9 @@ var App = function (_Component) {
         for (var _iterator2 = stations[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
           var station = _step2.value;
 
-          console.log('seb test1: ', station.name);
           if (pathname === station.name) {
-            console.log('seb test2: ', station.name);
             station['audioFeed'] = station.audio_feed;
             station['streamType'] = station.stream_type;
-            console.log(station);
             this.handleSelectedStation(station);
           }
         }
@@ -8359,7 +8423,7 @@ var App = function (_Component) {
 exports.default = App;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8388,7 +8452,7 @@ var shuffle = exports.shuffle = function shuffle(sourceArray) {
 };
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8408,11 +8472,15 @@ var _PlayerButtons = __webpack_require__(14);
 
 var _PlayerButtons2 = _interopRequireDefault(_PlayerButtons);
 
-var _VolumeControls = __webpack_require__(33);
+var _VolumeControls = __webpack_require__(34);
 
 var _VolumeControls2 = _interopRequireDefault(_VolumeControls);
 
-var _Presets = __webpack_require__(15);
+var _StationName = __webpack_require__(15);
+
+var _StationName2 = _interopRequireDefault(_StationName);
+
+var _Presets = __webpack_require__(16);
 
 var _Presets2 = _interopRequireDefault(_Presets);
 
@@ -8515,14 +8583,7 @@ var AudioPlayer = function (_Component) {
         _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(
-            'div',
-            { className: 'player-station-name center', onClick: function onClick(e) {
-                return _this4.props.findStationExpandInfo(_this4.props.stationFeed.name);
-              } },
-            'Current Station: ',
-            this.props.stationFeed.name
-          ),
+          _react2.default.createElement(_StationName2.default, { Style: 'audio-player-station-name', StationFeed: this.props.stationFeed.name, findStationExpandInfo: this.props.findStationExpandInfo }),
           _react2.default.createElement(
             'div',
             { className: 'container player-container' },
@@ -8559,7 +8620,7 @@ var AudioPlayer = function (_Component) {
 exports.default = AudioPlayer;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8609,7 +8670,7 @@ var Loader = function (_Component) {
 exports.default = Loader;
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8625,7 +8686,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _MuteButton = __webpack_require__(34);
+var _MuteButton = __webpack_require__(35);
 
 var _MuteButton2 = _interopRequireDefault(_MuteButton);
 
@@ -8667,7 +8728,7 @@ var VolumeControls = function (_Component) {
 exports.default = VolumeControls;
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8731,7 +8792,7 @@ var MuteButton = function (_Component) {
 exports.default = MuteButton;
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8747,7 +8808,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Station = __webpack_require__(36);
+var _Station = __webpack_require__(37);
 
 var _Station2 = _interopRequireDefault(_Station);
 
@@ -8824,7 +8885,7 @@ var StationList = function (_Component) {
 exports.default = StationList;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8844,7 +8905,11 @@ var _PlayerButtons = __webpack_require__(14);
 
 var _PlayerButtons2 = _interopRequireDefault(_PlayerButtons);
 
-var _SetPresets = __webpack_require__(37);
+var _StationName = __webpack_require__(15);
+
+var _StationName2 = _interopRequireDefault(_StationName);
+
+var _SetPresets = __webpack_require__(38);
 
 var _SetPresets2 = _interopRequireDefault(_SetPresets);
 
@@ -8907,11 +8972,7 @@ var Station = function (_Component) {
             _react2.default.createElement(
               'div',
               { className: 'row station-row border' },
-              _react2.default.createElement(
-                'div',
-                { className: 'one-third column station-name center' },
-                ' '
-              ),
+              _react2.default.createElement('div', { className: 'one-third column station-name center ' }),
               _react2.default.createElement(
                 'div',
                 { className: 'one-third column station-play-button center' },
@@ -8922,7 +8983,7 @@ var Station = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'one-third column station-info-button center' },
-                _react2.default.createElement('i', { className: 'fa fa-chevron-up card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
+                _react2.default.createElement('i', { className: 'fa fa-chevron-up card-chevron fa-2x', 'aria-hidden': 'true', onClick: function onClick(e) {
                     return _this2.props.hideStationInfo();
                   } })
               )
@@ -8937,13 +8998,7 @@ var Station = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'station-info center' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'station-branding one-third column' },
-                  ' ',
-                  this.props.name,
-                  ' '
-                ),
+                _react2.default.createElement(_StationName2.default, { Style: 'expanded-station-name center', StationName: this.props.name, findStationExpandInfo: this.props.findStationExpandInfo }),
                 _react2.default.createElement(
                   'div',
                   { className: 'two-thirds column info' },
@@ -8996,7 +9051,7 @@ var Station = function (_Component) {
           )
         );
       } else {
-        // If it is not expanded, render just some details.
+        // If it is not expanded, render the title card with option to expand.
         return _react2.default.createElement(
           'div',
           { id: this.props.name },
@@ -9008,10 +9063,8 @@ var Station = function (_Component) {
               { className: 'row station-row border' },
               _react2.default.createElement(
                 'div',
-                { className: 'one-third column station-name center' },
-                ' ',
-                this.props.name,
-                ' '
+                { className: 'station-branding one-third column center' },
+                _react2.default.createElement(_StationName2.default, { Style: 'non-expanded-station-name center', StationName: this.props.name, findStationExpandInfo: this.props.findStationExpandInfo })
               ),
               _react2.default.createElement(
                 'div',
@@ -9023,7 +9076,7 @@ var Station = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'one-third column station-info-button center' },
-                _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron', 'aria-hidden': 'true', onClick: function onClick(e) {
+                _react2.default.createElement('i', { className: 'fa fa-chevron-down card-chevron fa-2x', 'aria-hidden': 'true', onClick: function onClick(e) {
                     return _this2.props.findStationExpandInfo(_this2.props.name);
                   } })
               )
@@ -9040,7 +9093,7 @@ var Station = function (_Component) {
 exports.default = Station;
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9160,7 +9213,7 @@ var SetPresets = function (_Component) {
 exports.default = SetPresets;
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9206,7 +9259,7 @@ var Background = function (_Component) {
 exports.default = Background;
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9342,13 +9395,13 @@ var Ticker = function (_Component) {
 exports.default = Ticker;
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(41);
+var content = __webpack_require__(42);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -9356,7 +9409,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(43)(content, options);
+var update = __webpack_require__(44)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -9373,21 +9426,21 @@ if(false) {
 }
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(42)(undefined);
+exports = module.exports = __webpack_require__(43)(undefined);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Arimo|Lato|Nunito+Sans|PT+Sans|Raleway);", ""]);
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/*! normalize.css v3.0.2 | MIT License | git.io/normalize */\n/**\n * 1. Set default font family to sans-serif.\n * 2. Prevent iOS text size adjust after orientation change, without disabling\n *    user zoom.\n */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/**\n * Remove default margin.\n */\nbody {\n  margin: 0; }\n\n/* HTML5 display definitions\n   ========================================================================== */\n/**\n * Correct `block` display not defined for any HTML5 element in IE 8/9.\n * Correct `block` display not defined for `details` or `summary` in IE 10/11\n * and Firefox.\n * Correct `block` display not defined for `main` in IE 11.\n */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\n/**\n * 1. Correct `inline-block` display not defined in IE 8/9.\n * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.\n */\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n * Prevent modern browsers from displaying `audio` without controls.\n * Remove excess height in iOS 5 devices.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n * Address `[hidden]` styling not present in IE 8/9/10.\n * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.\n */\n[hidden],\ntemplate {\n  display: none; }\n\n/* Links\n   ========================================================================== */\n/**\n * Remove the gray background color from active links in IE 10.\n */\na {\n  background-color: transparent; }\n\n/**\n * Improve readability when focused and also mouse hovered in all browsers.\n */\na:active,\na:hover {\n  outline: 0; }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * Address styling not present in IE 8/9/10/11, Safari, and Chrome.\n */\nabbr[title] {\n  border-bottom: 1px dotted; }\n\n/**\n * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.\n */\nb,\nstrong {\n  font-weight: bold; }\n\n/**\n * Address styling not present in Safari and Chrome.\n */\ndfn {\n  font-style: italic; }\n\n/**\n * Address variable `h1` font-size and margin within `section` and `article`\n * contexts in Firefox 4+, Safari, and Chrome.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/**\n * Address styling not present in IE 8/9.\n */\nmark {\n  background: #ff0;\n  color: #000; }\n\n/**\n * Address inconsistent and variable font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` affecting `line-height` in all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsup {\n  top: -0.5em; }\n\nsub {\n  bottom: -0.25em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove border when inside `a` element in IE 8/9/10.\n */\nimg {\n  border: 0; }\n\n/**\n * Correct overflow not hidden in IE 9/10/11.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * Address margin not present in IE 8/9 and Safari.\n */\nfigure {\n  margin: 1em 40px; }\n\n/**\n * Address differences between Firefox and other browsers.\n */\nhr {\n  -moz-box-sizing: content-box;\n  box-sizing: content-box;\n  height: 0; }\n\n/**\n * Contain overflow in all browsers.\n */\npre {\n  overflow: auto; }\n\n/**\n * Address odd `em`-unit font size rendering in all browsers.\n */\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  font-size: 1em; }\n\n/* Forms\n   ========================================================================== */\n/**\n * Known limitation: by default, Chrome and Safari on OS X allow very limited\n * styling of `select`, unless a `border` property is set.\n */\n/**\n * 1. Correct color not being inherited.\n *    Known issue: affects color of disabled elements.\n * 2. Correct font properties not being inherited.\n * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  color: inherit;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n  margin: 0;\n  /* 3 */ }\n\n/**\n * Address `overflow` set to `hidden` in IE 8/9/10/11.\n */\nbutton {\n  overflow: visible; }\n\n/**\n * Address inconsistent `text-transform` inheritance for `button` and `select`.\n * All other form control elements do not inherit `text-transform` values.\n * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.\n * Correct `select` style inheritance in Firefox.\n */\nbutton,\nselect {\n  text-transform: none; }\n\n/**\n * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`\n *    and `video` controls.\n * 2. Correct inability to style clickable `input` types in iOS.\n * 3. Improve usability and consistency of cursor style between image-type\n *    `input` and others.\n */\nbutton,\nhtml input[type=\"button\"],\ninput[type=\"reset\"],\ninput[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n  cursor: pointer;\n  /* 3 */ }\n\n/**\n * Re-set default cursor for disabled elements.\n */\nbutton[disabled],\nhtml input[disabled] {\n  cursor: default; }\n\n/**\n * Remove inner padding and border in Firefox 4+.\n */\nbutton::-moz-focus-inner,\ninput::-moz-focus-inner {\n  border: 0;\n  padding: 0; }\n\n/**\n * Address Firefox 4+ setting `line-height` on `input` using `!important` in\n * the UA stylesheet.\n */\ninput {\n  line-height: normal; }\n\n/**\n * It's recommended that you don't attempt to style these elements.\n * Firefox's implementation doesn't respect box-sizing, padding, or width.\n *\n * 1. Address box sizing set to `content-box` in IE 8/9/10.\n * 2. Remove excess padding in IE 8/9/10.\n */\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Fix the cursor style for Chrome's increment/decrement buttons. For certain\n * `font-size` values of the `input`, it causes the cursor style of the\n * decrement button to change from `default` to `text`.\n */\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Address `appearance` set to `searchfield` in Safari and Chrome.\n * 2. Address `box-sizing` set to `border-box` in Safari and Chrome\n *    (include `-moz` to future-proof).\n */\ninput[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  -moz-box-sizing: content-box;\n  -webkit-box-sizing: content-box;\n  /* 2 */\n  box-sizing: content-box; }\n\n/**\n * Remove inner padding and search cancel button in Safari and Chrome on OS X.\n * Safari (but not Chrome) clips the cancel button when the search input has\n * padding (and `textfield` appearance).\n */\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * Define consistent border, margin, and padding.\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\n/**\n * 1. Correct `color` not being inherited in IE 8/9/10/11.\n * 2. Remove padding so people aren't caught out if they zero out fieldsets.\n */\nlegend {\n  border: 0;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Remove default vertical scrollbar in IE 8/9/10/11.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * Don't inherit the `font-weight` (applied by a rule above).\n * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.\n */\noptgroup {\n  font-weight: bold; }\n\n/* Tables\n   ========================================================================== */\n/**\n * Remove most spacing between table cells.\n */\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ntd,\nth {\n  padding: 0; }\n\n/*\n* Skeleton V2.0.4\n* Copyright 2014, Dave Gamache\n* www.getskeleton.com\n* Free to use under the MIT license.\n* http://www.opensource.org/licenses/mit-license.php\n* 12/29/2014\n*/\n/* Table of contents\n––––––––––––––––––––––––––––––––––––––––––––––––––\n- Grid\n- Base Styles\n- Typography\n- Links\n- Buttons\n- Forms\n- Lists\n- Code\n- Tables\n- Spacing\n- Utilities\n- Clearing\n- Media Queries\n*/\n/* Grid\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n.container {\n  position: relative;\n  width: 100%;\n  max-width: 960px;\n  margin: 0 auto;\n  padding: 0 20px;\n  box-sizing: border-box; }\n\n.column,\n.columns {\n  width: 100%;\n  float: left;\n  box-sizing: border-box; }\n\n/* For devices larger than 400px */\n@media (min-width: 400px) {\n  .container {\n    width: 85%;\n    padding: 0; } }\n\n/* For devices larger than 550px */\n@media (min-width: 550px) {\n  .container {\n    width: 80%; }\n  .column,\n  .columns {\n    margin-left: 4%; }\n  .column:first-child,\n  .columns:first-child {\n    margin-left: 0; }\n  .one.column,\n  .one.columns {\n    width: 4.66666666667%; }\n  .two.columns {\n    width: 13.3333333333%; }\n  .three.columns {\n    width: 22%; }\n  .four.columns {\n    width: 30.6666666667%; }\n  .five.columns {\n    width: 39.3333333333%; }\n  .six.columns {\n    width: 48%; }\n  .seven.columns {\n    width: 56.6666666667%; }\n  .eight.columns {\n    width: 65.3333333333%; }\n  .nine.columns {\n    width: 74.0%; }\n  .ten.columns {\n    width: 82.6666666667%; }\n  .eleven.columns {\n    width: 91.3333333333%; }\n  .twelve.columns {\n    width: 100%;\n    margin-left: 0; }\n  .one-third.column {\n    width: 30.6666666667%; }\n  .two-thirds.column {\n    width: 65.3333333333%; }\n  .one-half.column {\n    width: 48%; }\n  /* Offsets */\n  .offset-by-one.column,\n  .offset-by-one.columns {\n    margin-left: 8.66666666667%; }\n  .offset-by-two.column,\n  .offset-by-two.columns {\n    margin-left: 17.3333333333%; }\n  .offset-by-three.column,\n  .offset-by-three.columns {\n    margin-left: 26%; }\n  .offset-by-four.column,\n  .offset-by-four.columns {\n    margin-left: 34.6666666667%; }\n  .offset-by-five.column,\n  .offset-by-five.columns {\n    margin-left: 43.3333333333%; }\n  .offset-by-six.column,\n  .offset-by-six.columns {\n    margin-left: 52%; }\n  .offset-by-seven.column,\n  .offset-by-seven.columns {\n    margin-left: 60.6666666667%; }\n  .offset-by-eight.column,\n  .offset-by-eight.columns {\n    margin-left: 69.3333333333%; }\n  .offset-by-nine.column,\n  .offset-by-nine.columns {\n    margin-left: 78.0%; }\n  .offset-by-ten.column,\n  .offset-by-ten.columns {\n    margin-left: 86.6666666667%; }\n  .offset-by-eleven.column,\n  .offset-by-eleven.columns {\n    margin-left: 95.3333333333%; }\n  .offset-by-one-third.column,\n  .offset-by-one-third.columns {\n    margin-left: 34.6666666667%; }\n  .offset-by-two-thirds.column,\n  .offset-by-two-thirds.columns {\n    margin-left: 69.3333333333%; }\n  .offset-by-one-half.column,\n  .offset-by-one-half.columns {\n    margin-left: 52%; } }\n\n/* Base Styles\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n/* NOTE\nhtml is set to 62.5% so that all the REM measurements throughout Skeleton\nare based on 10px sizing. So basically 1.5rem = 15px :) */\nhtml {\n  font-size: 62.5%; }\n\nbody {\n  font-size: 1.5em;\n  /* currently ems cause chrome bug misinterpreting rems on body element */\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: \"Raleway\", \"HelveticaNeue\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  color: #222; }\n\n/* Typography\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nh1, h2, h3, h4, h5, h6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300; }\n\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -.1rem; }\n\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -.1rem; }\n\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -.1rem; }\n\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -.08rem; }\n\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -.05rem; }\n\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0; }\n\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem; }\n  h2 {\n    font-size: 4.2rem; }\n  h3 {\n    font-size: 3.6rem; }\n  h4 {\n    font-size: 3.0rem; }\n  h5 {\n    font-size: 2.4rem; }\n  h6 {\n    font-size: 1.5rem; } }\n\np {\n  margin-top: 0; }\n\n/* Links\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\na {\n  color: #1EAEDB; }\n\na:hover {\n  color: #0FA0CE; }\n\n/* Buttons\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border-radius: 4px;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box; }\n\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0; }\n\n.button.button-primary,\nbutton.button-primary,\ninput[type=\"submit\"].button-primary,\ninput[type=\"reset\"].button-primary,\ninput[type=\"button\"].button-primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0; }\n\n.button.button-primary:hover,\nbutton.button-primary:hover,\ninput[type=\"submit\"].button-primary:hover,\ninput[type=\"reset\"].button-primary:hover,\ninput[type=\"button\"].button-primary:hover,\n.button.button-primary:focus,\nbutton.button-primary:focus,\ninput[type=\"submit\"].button-primary:focus,\ninput[type=\"reset\"].button-primary:focus,\ninput[type=\"button\"].button-primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB; }\n\n/* Forms\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  border-radius: 4px;\n  box-shadow: none;\n  box-sizing: border-box; }\n\n/* Removes awkward default styles on some inputs for iOS */\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none; }\n\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px; }\n\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0; }\n\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600; }\n\nfieldset {\n  padding: 0;\n  border-width: 0; }\n\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline; }\n\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal; }\n\n/* Lists\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nul {\n  list-style: circle inside; }\n\nol {\n  list-style: decimal inside; }\n\nol, ul {\n  padding-left: 0;\n  margin-top: 0; }\n\nul ul,\nul ol,\nol ol,\nol ul {\n  margin: 1.5rem 0 1.5rem 3rem;\n  font-size: 90%; }\n\nli {\n  margin-bottom: 1rem; }\n\n/* Code\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\ncode {\n  padding: .2rem .5rem;\n  margin: 0 .2rem;\n  font-size: 90%;\n  white-space: nowrap;\n  background: #F1F1F1;\n  border: 1px solid #E1E1E1;\n  border-radius: 4px; }\n\npre > code {\n  display: block;\n  padding: 1rem 1.5rem;\n  white-space: pre; }\n\n/* Tables\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nth,\ntd {\n  padding: 12px 15px;\n  text-align: left;\n  border-bottom: 1px solid #E1E1E1; }\n\nth:first-child,\ntd:first-child {\n  padding-left: 0; }\n\nth:last-child,\ntd:last-child {\n  padding-right: 0; }\n\n/* Spacing\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nbutton,\n.button {\n  margin-bottom: 1rem; }\n\ninput,\ntextarea,\nselect,\nfieldset {\n  margin-bottom: 1.5rem; }\n\npre,\nblockquote,\ndl,\nfigure,\ntable,\np,\nul,\nol,\nform {\n  margin-bottom: 2.5rem; }\n\n/* Utilities\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n.u-full-width {\n  width: 100%;\n  box-sizing: border-box; }\n\n.u-max-full-width {\n  max-width: 100%;\n  box-sizing: border-box; }\n\n.u-pull-right {\n  float: right; }\n\n.u-pull-left {\n  float: left; }\n\n/* Misc\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nhr {\n  margin-top: 3rem;\n  margin-bottom: 3.5rem;\n  border-width: 0;\n  border-top: 1px solid #E1E1E1; }\n\n/* Clearing\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n/* Self Clearing Goodness */\n.container:after,\n.row:after,\n.u-cf {\n  /*content: \"\";*/\n  display: table;\n  clear: both; }\n\n/* Media Queries\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n/*\nNote: The best way to structure the use of media queries is to create the queries\nnear the relevant code. For example, if you wanted to change the styles for buttons\non small devices, paste the mobile query code up in the buttons section and style it\nthere.\n*/\n/* Larger than mobile */\n/* Larger than phablet (also point when grid becomes active) */\n/* Larger than tablet */\n/* Larger than desktop */\n/* Larger than Desktop HD */\nbody {\n  font-family: 'PT Sans', sans-serif; }\n\nh1 {\n  text-align: right;\n  padding-right: 10%;\n  text-shadow: 2px 2px #e4c4c4; }\n\n#brand-name {\n  margin-top: 40px; }\n\nh3 {\n  padding-left: 10%;\n  margin: 0; }\n\n.app-container {\n  transition: background-color 1000ms linear;\n  position: fixed;\n  height: 100%;\n  width: 100%;\n  background: linear-gradient(63deg, #999 23%, transparent 23%) 7px 0, linear-gradient(63deg, transparent 74%, #999 78%), linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%), #444;\n  background-size: 16px 48px; }\n\n.brand-name {\n  text-align: right; }\n\n.description h3 {\n  text-align: left;\n  text-shadow: 2px 2px #e4c4c4;\n  margin-top: 50px; }\n\n.station-container1 {\n  display: flex;\n  width: 100%;\n  background-color: #fff;\n  height: 100px;\n  -webkit-clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);\n  clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);\n  align-items: center;\n  margin-bottom: -10px; }\n\n.station-container2 {\n  display: flex;\n  width: 100%;\n  background-color: #fff;\n  height: 100px;\n  -webkit-clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);\n  clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);\n  align-items: center;\n  margin-bottom: -10px; }\n\n.station-list-container {\n  margin-bottom: 200px; }\n\n.info-container {\n  transition: 500ms 0ms, opacity 500ms 500ms;\n  display: flex;\n  width: 100%;\n  background-color: #fff;\n  align-items: center;\n  margin-bottom: -10px; }\n\n@media (min-width: 400px) {\n  .station-list-container {\n    margin-bottom: 250px; } }\n\n@media (min-width: 550px) {\n  .station-list-container {\n    margin-bottom: 350px; } }\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  background-color: #b3e0da;\n  width: 100%;\n  margin-top: 0;\n  height: 120px; }\n\n.card-play-button {\n  font-size: 35px; }\n\n.card-chevron {\n  font-size: 20px; }\n\n.station-branding {\n  font-size: 4em;\n  text-align: right; }\n\n.info {\n  padding-top: 10;\n  text-align: left; }\n\n.hide-class {\n  display: none; }\n\n.border {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  text-align: center; }\n\n#loader {\n  display: none; }\n\n.center {\n  text-align: center; }\n\n.center-align {\n  margin: 0 auto;\n  width: 80%; }\n\n.fa:hover {\n  text-shadow: 2px 2px 2px #646464; }\n\n.no-opacity {\n  opacity: 1; }\n\n.station-row {\n  padding-top: 25px; }\n\n.info-expanded {\n  background-color: #89cff0; }\n\n.presets {\n  margin-bottom: 10px; }\n  .presets p {\n    width: 60px;\n    cursor: pointer; }\n  .presets .presets-title {\n    font-weight: bold; }\n  .presets .presets-station:hover {\n    text-shadow: 2px 2px 2px #646464; }\n\n.player-container {\n  margin-bottom: -15px; }\n\n@-webkit-keyframes ticker {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n    visibility: visible; }\n  100% {\n    -webkit-transform: translate3d(-100%, 0, 0);\n    transform: translate3d(-100%, 0, 0); } }\n\n@keyframes ticker {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n    visibility: visible; }\n  100% {\n    -webkit-transform: translate3d(-100%, 0, 0);\n    transform: translate3d(-100%, 0, 0); } }\n\n.ticker-wrap {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  overflow: hidden;\n  height: 4rem;\n  background-color: rgba(0, 0, 0, 0.9);\n  padding-left: 100%;\n  z-index: 1; }\n\n.ticker {\n  display: inline-block;\n  height: 4rem;\n  line-height: 4rem;\n  white-space: nowrap;\n  padding-right: 100%;\n  -webkit-animation-iteration-count: infinite;\n  animation-iteration-count: infinite;\n  -webkit-animation-timing-function: linear;\n  animation-timing-function: linear;\n  -webkit-animation-name: ticker;\n  animation-name: ticker;\n  -webkit-animation-duration: 30s;\n  animation-duration: 30s; }\n  .ticker__item {\n    display: inline-block;\n    padding: 0 2rem;\n    font-size: 2rem;\n    color: #7FFF00; }\n\nbody {\n  padding-bottom: 5rem; }\n\nh1, h2, p {\n  padding: 0 5%; }\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/*! normalize.css v3.0.2 | MIT License | git.io/normalize */\n/**\n * 1. Set default font family to sans-serif.\n * 2. Prevent iOS text size adjust after orientation change, without disabling\n *    user zoom.\n */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/**\n * Remove default margin.\n */\nbody {\n  margin: 0; }\n\n/* HTML5 display definitions\n   ========================================================================== */\n/**\n * Correct `block` display not defined for any HTML5 element in IE 8/9.\n * Correct `block` display not defined for `details` or `summary` in IE 10/11\n * and Firefox.\n * Correct `block` display not defined for `main` in IE 11.\n */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\n/**\n * 1. Correct `inline-block` display not defined in IE 8/9.\n * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.\n */\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n * Prevent modern browsers from displaying `audio` without controls.\n * Remove excess height in iOS 5 devices.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n * Address `[hidden]` styling not present in IE 8/9/10.\n * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.\n */\n[hidden],\ntemplate {\n  display: none; }\n\n/* Links\n   ========================================================================== */\n/**\n * Remove the gray background color from active links in IE 10.\n */\na {\n  background-color: transparent; }\n\n/**\n * Improve readability when focused and also mouse hovered in all browsers.\n */\na:active,\na:hover {\n  outline: 0; }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * Address styling not present in IE 8/9/10/11, Safari, and Chrome.\n */\nabbr[title] {\n  border-bottom: 1px dotted; }\n\n/**\n * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.\n */\nb,\nstrong {\n  font-weight: bold; }\n\n/**\n * Address styling not present in Safari and Chrome.\n */\ndfn {\n  font-style: italic; }\n\n/**\n * Address variable `h1` font-size and margin within `section` and `article`\n * contexts in Firefox 4+, Safari, and Chrome.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/**\n * Address styling not present in IE 8/9.\n */\nmark {\n  background: #ff0;\n  color: #000; }\n\n/**\n * Address inconsistent and variable font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` affecting `line-height` in all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsup {\n  top: -0.5em; }\n\nsub {\n  bottom: -0.25em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove border when inside `a` element in IE 8/9/10.\n */\nimg {\n  border: 0; }\n\n/**\n * Correct overflow not hidden in IE 9/10/11.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * Address margin not present in IE 8/9 and Safari.\n */\nfigure {\n  margin: 1em 40px; }\n\n/**\n * Address differences between Firefox and other browsers.\n */\nhr {\n  -moz-box-sizing: content-box;\n  box-sizing: content-box;\n  height: 0; }\n\n/**\n * Contain overflow in all browsers.\n */\npre {\n  overflow: auto; }\n\n/**\n * Address odd `em`-unit font size rendering in all browsers.\n */\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  font-size: 1em; }\n\n/* Forms\n   ========================================================================== */\n/**\n * Known limitation: by default, Chrome and Safari on OS X allow very limited\n * styling of `select`, unless a `border` property is set.\n */\n/**\n * 1. Correct color not being inherited.\n *    Known issue: affects color of disabled elements.\n * 2. Correct font properties not being inherited.\n * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  color: inherit;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n  margin: 0;\n  /* 3 */ }\n\n/**\n * Address `overflow` set to `hidden` in IE 8/9/10/11.\n */\nbutton {\n  overflow: visible; }\n\n/**\n * Address inconsistent `text-transform` inheritance for `button` and `select`.\n * All other form control elements do not inherit `text-transform` values.\n * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.\n * Correct `select` style inheritance in Firefox.\n */\nbutton,\nselect {\n  text-transform: none; }\n\n/**\n * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`\n *    and `video` controls.\n * 2. Correct inability to style clickable `input` types in iOS.\n * 3. Improve usability and consistency of cursor style between image-type\n *    `input` and others.\n */\nbutton,\nhtml input[type=\"button\"],\ninput[type=\"reset\"],\ninput[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n  cursor: pointer;\n  /* 3 */ }\n\n/**\n * Re-set default cursor for disabled elements.\n */\nbutton[disabled],\nhtml input[disabled] {\n  cursor: default; }\n\n/**\n * Remove inner padding and border in Firefox 4+.\n */\nbutton::-moz-focus-inner,\ninput::-moz-focus-inner {\n  border: 0;\n  padding: 0; }\n\n/**\n * Address Firefox 4+ setting `line-height` on `input` using `!important` in\n * the UA stylesheet.\n */\ninput {\n  line-height: normal; }\n\n/**\n * It's recommended that you don't attempt to style these elements.\n * Firefox's implementation doesn't respect box-sizing, padding, or width.\n *\n * 1. Address box sizing set to `content-box` in IE 8/9/10.\n * 2. Remove excess padding in IE 8/9/10.\n */\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Fix the cursor style for Chrome's increment/decrement buttons. For certain\n * `font-size` values of the `input`, it causes the cursor style of the\n * decrement button to change from `default` to `text`.\n */\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Address `appearance` set to `searchfield` in Safari and Chrome.\n * 2. Address `box-sizing` set to `border-box` in Safari and Chrome\n *    (include `-moz` to future-proof).\n */\ninput[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  -moz-box-sizing: content-box;\n  -webkit-box-sizing: content-box;\n  /* 2 */\n  box-sizing: content-box; }\n\n/**\n * Remove inner padding and search cancel button in Safari and Chrome on OS X.\n * Safari (but not Chrome) clips the cancel button when the search input has\n * padding (and `textfield` appearance).\n */\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * Define consistent border, margin, and padding.\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\n/**\n * 1. Correct `color` not being inherited in IE 8/9/10/11.\n * 2. Remove padding so people aren't caught out if they zero out fieldsets.\n */\nlegend {\n  border: 0;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Remove default vertical scrollbar in IE 8/9/10/11.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * Don't inherit the `font-weight` (applied by a rule above).\n * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.\n */\noptgroup {\n  font-weight: bold; }\n\n/* Tables\n   ========================================================================== */\n/**\n * Remove most spacing between table cells.\n */\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ntd,\nth {\n  padding: 0; }\n\n/*\n* Skeleton V2.0.4\n* Copyright 2014, Dave Gamache\n* www.getskeleton.com\n* Free to use under the MIT license.\n* http://www.opensource.org/licenses/mit-license.php\n* 12/29/2014\n*/\n/* Table of contents\n––––––––––––––––––––––––––––––––––––––––––––––––––\n- Grid\n- Base Styles\n- Typography\n- Links\n- Buttons\n- Forms\n- Lists\n- Code\n- Tables\n- Spacing\n- Utilities\n- Clearing\n- Media Queries\n*/\n/* Grid\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n.container {\n  position: relative;\n  width: 100%;\n  max-width: 960px;\n  margin: 0 auto;\n  padding: 0 20px;\n  box-sizing: border-box; }\n\n.column,\n.columns {\n  width: 100%;\n  float: left;\n  box-sizing: border-box; }\n\n/* For devices larger than 400px */\n@media (min-width: 400px) {\n  .container {\n    width: 85%;\n    padding: 0; } }\n\n/* For devices larger than 550px */\n@media (min-width: 550px) {\n  .container {\n    width: 80%; }\n  .column,\n  .column:first-child,\n  .columns:first-child {\n    margin-left: 0; }\n  .one.column,\n  .one.columns {\n    width: 4.66666666667%; }\n  .two.columns {\n    width: 13.3333333333%; }\n  .three.columns {\n    width: 22%; }\n  .four.columns {\n    width: 30.6666666667%; }\n  .five.columns {\n    width: 39.3333333333%; }\n  .six.columns {\n    width: 48%; }\n  .seven.columns {\n    width: 56.6666666667%; }\n  .eight.columns {\n    width: 65.3333333333%; }\n  .nine.columns {\n    width: 74.0%; }\n  .ten.columns {\n    width: 82.6666666667%; }\n  .eleven.columns {\n    width: 91.3333333333%; }\n  .twelve.columns {\n    width: 100%;\n    margin-left: 0; }\n  .one-third.column {\n    width: 30.6666666667%; }\n  .two-thirds.column {\n    width: 65.3333333333%; }\n  .one-half.column {\n    width: 48%; }\n  /* Offsets */\n  .offset-by-one.column,\n  .offset-by-one.columns {\n    margin-left: 8.66666666667%; }\n  .offset-by-two.column,\n  .offset-by-two.columns {\n    margin-left: 17.3333333333%; }\n  .offset-by-three.column,\n  .offset-by-three.columns {\n    margin-left: 26%; }\n  .offset-by-four.column,\n  .offset-by-four.columns {\n    margin-left: 34.6666666667%; }\n  .offset-by-five.column,\n  .offset-by-five.columns {\n    margin-left: 43.3333333333%; }\n  .offset-by-six.column,\n  .offset-by-six.columns {\n    margin-left: 52%; }\n  .offset-by-seven.column,\n  .offset-by-seven.columns {\n    margin-left: 60.6666666667%; }\n  .offset-by-eight.column,\n  .offset-by-eight.columns {\n    margin-left: 69.3333333333%; }\n  .offset-by-nine.column,\n  .offset-by-nine.columns {\n    margin-left: 78.0%; }\n  .offset-by-ten.column,\n  .offset-by-ten.columns {\n    margin-left: 86.6666666667%; }\n  .offset-by-eleven.column,\n  .offset-by-eleven.columns {\n    margin-left: 95.3333333333%; }\n  .offset-by-one-third.column,\n  .offset-by-one-third.columns {\n    margin-left: 34.6666666667%; }\n  .offset-by-two-thirds.column,\n  .offset-by-two-thirds.columns {\n    margin-left: 69.3333333333%; }\n  .offset-by-one-half.column,\n  .offset-by-one-half.columns {\n    margin-left: 52%; } }\n\n/* Base Styles\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n/* NOTE\nhtml is set to 62.5% so that all the REM measurements throughout Skeleton\nare based on 10px sizing. So basically 1.5rem = 15px :) */\nhtml {\n  font-size: 62.5%; }\n\nbody {\n  font-size: 1.5em;\n  /* currently ems cause chrome bug misinterpreting rems on body element */\n  line-height: 1.6;\n  font-weight: 400;\n  font-family: \"Raleway\", \"HelveticaNeue\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  color: #222; }\n\n/* Typography\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nh1, h2, h3, h4, h5, h6 {\n  margin-top: 0;\n  margin-bottom: 2rem;\n  font-weight: 300; }\n\nh1 {\n  font-size: 4.0rem;\n  line-height: 1.2;\n  letter-spacing: -.1rem; }\n\nh2 {\n  font-size: 3.6rem;\n  line-height: 1.25;\n  letter-spacing: -.1rem; }\n\nh3 {\n  font-size: 3.0rem;\n  line-height: 1.3;\n  letter-spacing: -.1rem; }\n\nh4 {\n  font-size: 2.4rem;\n  line-height: 1.35;\n  letter-spacing: -.08rem; }\n\nh5 {\n  font-size: 1.8rem;\n  line-height: 1.5;\n  letter-spacing: -.05rem; }\n\nh6 {\n  font-size: 1.5rem;\n  line-height: 1.6;\n  letter-spacing: 0; }\n\n/* Larger than phablet */\n@media (min-width: 550px) {\n  h1 {\n    font-size: 5.0rem; }\n  h2 {\n    font-size: 4.2rem; }\n  h3 {\n    font-size: 3.6rem; }\n  h4 {\n    font-size: 3.0rem; }\n  h5 {\n    font-size: 2.4rem; }\n  h6 {\n    font-size: 1.5rem; } }\n\np {\n  margin-top: 0; }\n\n/* Links\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\na {\n  color: #1EAEDB; }\n\na:hover {\n  color: #0FA0CE; }\n\n/* Buttons\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n.button,\nbutton,\ninput[type=\"submit\"],\ninput[type=\"reset\"],\ninput[type=\"button\"] {\n  display: inline-block;\n  height: 38px;\n  padding: 0 30px;\n  color: #555;\n  text-align: center;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 38px;\n  letter-spacing: .1rem;\n  text-transform: uppercase;\n  text-decoration: none;\n  white-space: nowrap;\n  background-color: transparent;\n  border-radius: 4px;\n  border: 1px solid #bbb;\n  cursor: pointer;\n  box-sizing: border-box; }\n\n.button:hover,\nbutton:hover,\ninput[type=\"submit\"]:hover,\ninput[type=\"reset\"]:hover,\ninput[type=\"button\"]:hover,\n.button:focus,\nbutton:focus,\ninput[type=\"submit\"]:focus,\ninput[type=\"reset\"]:focus,\ninput[type=\"button\"]:focus {\n  color: #333;\n  border-color: #888;\n  outline: 0; }\n\n.button.button-primary,\nbutton.button-primary,\ninput[type=\"submit\"].button-primary,\ninput[type=\"reset\"].button-primary,\ninput[type=\"button\"].button-primary {\n  color: #FFF;\n  background-color: #33C3F0;\n  border-color: #33C3F0; }\n\n.button.button-primary:hover,\nbutton.button-primary:hover,\ninput[type=\"submit\"].button-primary:hover,\ninput[type=\"reset\"].button-primary:hover,\ninput[type=\"button\"].button-primary:hover,\n.button.button-primary:focus,\nbutton.button-primary:focus,\ninput[type=\"submit\"].button-primary:focus,\ninput[type=\"reset\"].button-primary:focus,\ninput[type=\"button\"].button-primary:focus {\n  color: #FFF;\n  background-color: #1EAEDB;\n  border-color: #1EAEDB; }\n\n/* Forms\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea,\nselect {\n  height: 38px;\n  padding: 6px 10px;\n  /* The 6px vertically centers text on FF, ignored by Webkit */\n  background-color: #fff;\n  border: 1px solid #D1D1D1;\n  border-radius: 4px;\n  box-shadow: none;\n  box-sizing: border-box; }\n\n/* Removes awkward default styles on some inputs for iOS */\ninput[type=\"email\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\ninput[type=\"text\"],\ninput[type=\"tel\"],\ninput[type=\"url\"],\ninput[type=\"password\"],\ntextarea {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none; }\n\ntextarea {\n  min-height: 65px;\n  padding-top: 6px;\n  padding-bottom: 6px; }\n\ninput[type=\"email\"]:focus,\ninput[type=\"number\"]:focus,\ninput[type=\"search\"]:focus,\ninput[type=\"text\"]:focus,\ninput[type=\"tel\"]:focus,\ninput[type=\"url\"]:focus,\ninput[type=\"password\"]:focus,\ntextarea:focus,\nselect:focus {\n  border: 1px solid #33C3F0;\n  outline: 0; }\n\nlabel,\nlegend {\n  display: block;\n  margin-bottom: .5rem;\n  font-weight: 600; }\n\nfieldset {\n  padding: 0;\n  border-width: 0; }\n\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  display: inline; }\n\nlabel > .label-body {\n  display: inline-block;\n  margin-left: .5rem;\n  font-weight: normal; }\n\n/* Lists\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nul {\n  list-style: circle inside; }\n\nol {\n  list-style: decimal inside; }\n\nol, ul {\n  padding-left: 0;\n  margin-top: 0; }\n\nul ul,\nul ol,\nol ol,\nol ul {\n  margin: 1.5rem 0 1.5rem 3rem;\n  font-size: 90%; }\n\nli {\n  margin-bottom: 1rem; }\n\n/* Code\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\ncode {\n  padding: .2rem .5rem;\n  margin: 0 .2rem;\n  font-size: 90%;\n  white-space: nowrap;\n  background: #F1F1F1;\n  border: 1px solid #E1E1E1;\n  border-radius: 4px; }\n\npre > code {\n  display: block;\n  padding: 1rem 1.5rem;\n  white-space: pre; }\n\n/* Tables\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nth,\ntd {\n  padding: 12px 15px;\n  text-align: left;\n  border-bottom: 1px solid #E1E1E1; }\n\nth:first-child,\ntd:first-child {\n  padding-left: 0; }\n\nth:last-child,\ntd:last-child {\n  padding-right: 0; }\n\n/* Spacing\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nbutton,\n.button {\n  margin-bottom: 1rem; }\n\ninput,\ntextarea,\nselect,\nfieldset {\n  margin-bottom: 1.5rem; }\n\npre,\nblockquote,\ndl,\nfigure,\ntable,\np,\nul,\nol,\nform {\n  margin-bottom: 2.5rem; }\n\n/* Utilities\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n.u-full-width {\n  width: 100%;\n  box-sizing: border-box; }\n\n.u-max-full-width {\n  max-width: 100%;\n  box-sizing: border-box; }\n\n.u-pull-right {\n  float: right; }\n\n.u-pull-left {\n  float: left; }\n\n/* Misc\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\nhr {\n  margin-top: 3rem;\n  margin-bottom: 3.5rem;\n  border-width: 0;\n  border-top: 1px solid #E1E1E1; }\n\n/* Clearing\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n/* Self Clearing Goodness */\n.container:after,\n.row:after,\n.u-cf {\n  content: \"\";\n  display: table;\n  clear: both; }\n\n/* Media Queries\n–––––––––––––––––––––––––––––––––––––––––––––––––– */\n/*\nNote: The best way to structure the use of media queries is to create the queries\nnear the relevant code. For example, if you wanted to change the styles for buttons\non small devices, paste the mobile query code up in the buttons section and style it\nthere.\n*/\n/* Larger than mobile */\n/* Larger than phablet (also point when grid becomes active) */\n/* Larger than tablet */\n/* Larger than desktop */\n/* Larger than Desktop HD */\n@-webkit-keyframes ticker {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n    visibility: visible; }\n  100% {\n    -webkit-transform: translate3d(-100%, 0, 0);\n    transform: translate3d(-100%, 0, 0); } }\n\n@keyframes ticker {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n    visibility: visible; }\n  100% {\n    -webkit-transform: translate3d(-100%, 0, 0);\n    transform: translate3d(-100%, 0, 0); } }\n\n.ticker-wrap {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  overflow: hidden;\n  height: 4rem;\n  background-color: rgba(0, 0, 0, 0.9);\n  padding-left: 100%;\n  z-index: 1; }\n\n.ticker {\n  display: inline-block;\n  height: 4rem;\n  line-height: 4rem;\n  white-space: nowrap;\n  padding-right: 100%;\n  -webkit-animation-iteration-count: infinite;\n  animation-iteration-count: infinite;\n  -webkit-animation-timing-function: linear;\n  animation-timing-function: linear;\n  -webkit-animation-name: ticker;\n  animation-name: ticker;\n  -webkit-animation-duration: 30s;\n  animation-duration: 30s; }\n  .ticker__item {\n    display: inline-block;\n    padding: 0 2rem;\n    font-size: 2rem;\n    color: #7FFF00; }\n\nbody {\n  padding-bottom: 5rem; }\n\nh1, h2, p {\n  padding: 0 5%; }\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  background-color: #b3e0da;\n  width: 100%;\n  margin-top: 0;\n  height: 130px; }\n\n@media (max-width: 700px) {\n  .audio-player-station-name {\n    font-weight: bold;\n    letter-spacing: 1em;\n    word-break: break-all;\n    max-width: 3.8em;\n    overflow: wrap;\n    font-size: 15px;\n    color: #fff;\n    text-decoration: overline;\n    display: inline-block;\n    margin-bottom: 0px;\n    margin-top: 5px; } }\n\n@media (min-width: 700px) {\n  .audio-player-station-name {\n    font-weight: bold;\n    letter-spacing: 1em;\n    word-break: break-all;\n    max-width: 3.8em;\n    overflow: wrap;\n    font-size: 40px;\n    height: 0px;\n    color: #fff;\n    text-decoration: overline;\n    display: inline-block;\n    padding-left: 10px;\n    text-align: justify;\n    float: left; } }\n\n.audio-player-station-name:hover {\n  text-shadow: 2px 2px 2px #646464;\n  cursor: default; }\n\n.presets {\n  margin-bottom: 10px; }\n  .presets .presets-title {\n    font-weight: bold; }\n  .presets .presets-station:hover {\n    text-shadow: 2px 2px 2px #646464;\n    cursor: default; }\n\nh1 {\n  margin-top: 100px;\n  text-align: right;\n  padding-right: 10%;\n  text-shadow: 2px 2px #e4c4c4; }\n\n.description h3 {\n  text-align: left;\n  text-shadow: 2px 2px #e4c4c4;\n  margin-top: 50px; }\n\n.app-container {\n  transition: background-color 1000ms linear;\n  position: fixed;\n  height: 100%;\n  width: 100%;\n  background: linear-gradient(63deg, #999 23%, transparent 23%) 7px 0, linear-gradient(63deg, transparent 74%, #999 78%), linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%), #fff;\n  background-size: 16px 48px; }\n\nbody {\n  font-family: 'PT Sans', sans-serif; }\n\n.border {\n  display: flex;\n  justify-content: space-between;\n  text-align: center;\n  width: 100%; }\n\n.fa:hover {\n  text-shadow: 2px 2px 2px #646464; }\n\nh3 {\n  padding-left: 10%;\n  margin: 0; }\n\n#loader {\n  display: none; }\n\n.center {\n  text-align: center; }\n\n.station-list-container {\n  margin-bottom: 100px; }\n\n@media (min-width: 400px) {\n  .station-list-container {\n    margin-bottom: 150px; } }\n\n@media (min-width: 550px) {\n  .station-list-container {\n    margin-bottom: 200px; } }\n\n.station-container1 {\n  display: flex;\n  width: 100%;\n  background-color: #fff;\n  height: 100px;\n  -webkit-clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);\n  clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);\n  align-items: center;\n  margin-bottom: -10px; }\n  .station-container1 .non-expanded-station-name {\n    font-weight: bold;\n    letter-spacing: 1em;\n    word-break: break-all;\n    max-width: 3.8em;\n    overflow: wrap;\n    font-size: 18px;\n    height: 0px;\n    text-align: justify;\n    display: inline-block; }\n  .station-container1 .non-expanded-station-name:hover {\n    text-shadow: 2px 2px 2px #646464;\n    cursor: default; }\n\n.station-container2 {\n  display: flex;\n  width: 100%;\n  background-color: #fff;\n  height: 100px;\n  -webkit-clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);\n  clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);\n  align-items: center;\n  margin-bottom: -10px; }\n  .station-container2 .non-expanded-station-name {\n    font-weight: bold;\n    letter-spacing: 1em;\n    word-break: break-all;\n    max-width: 3.8em;\n    overflow: wrap;\n    font-size: 18px;\n    height: 0px;\n    text-align: justify;\n    display: inline-block;\n    color: black; }\n  .station-container2 .non-expanded-station-name:hover {\n    text-shadow: 2px 2px 2px #646464;\n    cursor: default; }\n\n.expanded-station-name {\n  font-weight: bold;\n  letter-spacing: 1em;\n  word-break: break-all;\n  max-width: 3.8em;\n  overflow: wrap;\n  font-size: 40px;\n  height: 0px;\n  text-align: justify; }\n\n.expanded-station-name:hover {\n  text-shadow: 2px 2px 2px #646464;\n  cursor: default; }\n\n@media (max-width: 700px) {\n  .expanded-station-name {\n    font-weight: bold;\n    letter-spacing: 1em;\n    word-break: break-all;\n    max-width: 3.8em;\n    overflow: wrap;\n    font-size: 30px;\n    height: 0px;\n    text-align: justify;\n    margin-bottom: 90px; } }\n\n.info-container {\n  display: flex;\n  width: 100%;\n  background-color: #fff;\n  align-items: center;\n  margin-bottom: -10px; }\n\n.info-expanded {\n  background-color: #89cff0; }\n\n.station-branding {\n  font-size: 4em;\n  text-align: justify; }\n\n.station-row {\n  padding-top: 25px; }\n\n.info {\n  text-align: justify;\n  margin-bottom: 20px; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9469,7 +9522,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -9525,7 +9578,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(44);
+var	fixUrls = __webpack_require__(45);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -9841,7 +9894,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

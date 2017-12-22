@@ -229,14 +229,23 @@ class App extends Component {
     }
   }
 
-  //finds the station container based on stationName and expands the info-container and scrolls to the station container
-  findStationExpandInfo(stationName) {
-    const stationDiv = document.getElementById(stationName);
 
-    this.setState({ expanded: true, expandedName: stationName}, () => {
-      stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    });
+//finds the station container based on stationName and expands the info-container and scrolls to the station container
+findStationExpandInfo(stationName, stationFeed) {
+  console.log("before if: stationName:", stationName, "StationFeed: ", stationFeed);
+  // StationName ? let station = StationName
+  if (stationName == null) {
+    var station = stationFeed;
+  } else {
+    var station = stationName;
   }
+  const stationDiv = document.getElementById(station);
+
+  this.setState({ expanded: true, expandedName: station}, () => {
+    stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  });
+}
+
 
   hideStationInfo() { //hides the info-container
     this.setState({

@@ -1,0 +1,55 @@
+.app-container {
+  transition: background-color 1000ms linear;
+  position: fixed;
+  height:100%;
+  width:100%;
+  background : linear-gradient(63deg, #999 23%, transparent 23%) 7px 0,
+  linear-gradient(63deg, transparent 74%, #999 78%),
+  linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
+  #fff;
+  background-size: 16px 48px;
+
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+
+.border{
+
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+
+}
+
+
+.fa:hover {
+  text-shadow: 2px 2px 2px rgb(100, 100, 100)
+}
+
+
+
+h3 {
+  padding-left: 10%;
+  margin: 0;
+}
+
+
+
+
+
+
+#loader {
+  display: none;
+}
+
+
+.center {
+  text-align: center;
+}
+
+
+
