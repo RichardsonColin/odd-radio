@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 
 class Ticker extends Component {
   render(){
-    if(!this.props.selectedStation.frequency) {
+    if(!this.props.selectedStation.name) {
+      return(
+        <div></div>
+      );
+    } else if(!this.props.selectedStation.frequency) {
       return(
         <div>
           <div className="ticker-wrap">
