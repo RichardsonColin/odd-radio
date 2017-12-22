@@ -8803,7 +8803,7 @@ var Station = function (_Component) {
                   'div',
                   { className: 'station-branding one-third column' },
                   ' ',
-                  _react2.default.createElement(_StationName2.default, { Style: 'expanded-station-name', StationName: this.props.name }),
+                  _react2.default.createElement(_StationName2.default, { Style: 'expanded-station-name', StationName: this.props.name, findStationExpandInfo: this.props.findStationExpandInfo }),
                   ' '
                 ),
                 _react2.default.createElement(
@@ -8870,7 +8870,7 @@ var Station = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'station-branding one-third column' },
-                _react2.default.createElement(_StationName2.default, { Style: 'non-expanded-station-name', StationName: this.props.name })
+                _react2.default.createElement(_StationName2.default, { Style: 'non-expanded-station-name', StationName: this.props.name, findStationExpandInfo: this.props.findStationExpandInfo })
               ),
               _react2.default.createElement(
                 'div',

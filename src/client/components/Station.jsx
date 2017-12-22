@@ -50,7 +50,7 @@ componentWillReceiveProps(props) {
             <div className="container info-container info-expanded" >
               <div className="row center-align">
                 <div className="station-info center">
-                  <div className="station-branding one-third column"> <StationName Style="expanded-station-name" StationName={this.props.name} /> </div>
+                  <div className="station-branding one-third column"> <StationName Style="expanded-station-name" StationName={this.props.name} findStationExpandInfo={ this.props.findStationExpandInfo }/> </div>
                   <div className="two-thirds column info">
                     <div><b>Location:</b> { this.props.city } </div>
                     <div><b>Description:</b> { this.props.description } </div>
@@ -68,7 +68,7 @@ componentWillReceiveProps(props) {
           <div className={`container station-container${this.props.stationType}`}>
             <div className="row station-row border">
               <div className="station-branding one-third column">
-                <StationName Style="non-expanded-station-name" StationName={this.props.name} />
+                <StationName Style="non-expanded-station-name" StationName={this.props.name} findStationExpandInfo={ this.props.findStationExpandInfo }/>
                 </div>
               <div className="one-third column station-play-button center">
                 <PlayerButtons clickFunction={this.props.handleSelectedStation} params={this.state.details}
