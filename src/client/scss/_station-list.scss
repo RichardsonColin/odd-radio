@@ -1,0 +1,64 @@
+
+.station-list-container {
+  margin-bottom: 100px;
+}
+
+@media (min-width: 400px){
+.station-list-container {
+  margin-bottom: 150px;
+  }
+}
+
+@media (min-width: 550px) {
+  .station-list-container {
+  margin-bottom: 200px;
+  }
+}
+
+.station-container1 {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  height: 100px;
+  -webkit-clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);
+  clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);
+  align-items: center;
+  margin-bottom: -10px;
+
+  .non-expanded-station-name {
+    font-weight: bold;
+    letter-spacing: 1em;
+    word-break: break-all;
+    max-width: 3.8em;
+    overflow: wrap;
+    font-size: 18px;
+    height: 0px;
+    text-align: justify;
+    display: inline-block;
+  }
+}
+
+.station-container2 {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  height: 100px;
+  -webkit-clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);
+  clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);
+  align-items: center;
+  margin-bottom: -10px;
+
+  .non-expanded-station-name {
+  font-weight: bold;
+  letter-spacing: 1em;
+  word-break: break-all;
+  max-width: 3.8em;
+  overflow: wrap;
+  font-size: 18px;
+  height: 0px;
+  text-align: justify;
+  display: inline-block;
+  color:black;
+}
+
+  }

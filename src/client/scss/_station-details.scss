@@ -1,0 +1,33 @@
+.expanded-station-name {
+  font-weight: bold;
+  letter-spacing: 1em;
+  word-break: break-all;
+  max-width: 3.8em;
+  overflow: wrap;
+  font-size: 50px;
+  height: 0px;
+
+}
+.info-container {
+  // transition: 500ms 0ms, opacity 500ms 500ms;
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  align-items: center;
+  margin-bottom: -10px;
+}
+
+.info-expanded {
+  background-color: #89cff0;
+}
+
+
+
+.station-branding {
+  font-size: 4em;
+  text-align: right;
+}
+
+.station-row {
+  padding-top: 25px;
+}

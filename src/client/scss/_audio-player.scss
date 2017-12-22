@@ -1,0 +1,37 @@
+footer {
+  position: fixed;
+  bottom: 0px;
+  background-color: #b3e0da;
+  width: 100%;
+  margin-top: 0;
+  height: 75px;
+}
+
+
+@media (min-width: 400px) {
+  .audio-player-station-name {
+    font-weight: bold;
+    letter-spacing: 1em;
+    word-break: break-all;
+    max-width: 3.8em;
+    overflow: wrap;
+    font-size: 15px;
+    color:#fff;
+    text-decoration: overline;
+    display: inline-block;
+  }
+}
+
+.audio-player-station-name {
+  font-weight: bold;
+  letter-spacing: 1em;
+  word-break: break-all;
+  max-width: 3.8em;
+  overflow: wrap;
+  font-size: 25px;
+  height: 0px;
+  color:#fff;
+  text-decoration: overline;
+  display: inline-block;
+}
+
