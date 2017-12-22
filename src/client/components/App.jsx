@@ -5,7 +5,7 @@ import { shuffle } from '../util/ClientFunctions.jsx';
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
 import Background from './Background.jsx';
-// import Ticker from './Ticker.jsx';
+import Ticker from './Ticker.jsx';
 
 
 class App extends Component {
@@ -221,6 +221,7 @@ hideStationInfo() { //hides the info-container
       <div>
         <Background findColor={ this.findColor } />
         <header>
+        <Ticker selectedStation={this.state.selectedStation} />
         <div className="container title-container">
             <div className="row title-row border">
               <div className="six columns description">
