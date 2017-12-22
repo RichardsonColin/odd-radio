@@ -7963,6 +7963,7 @@ var App = function (_Component) {
     _this.findStationExpandInfo = _this.findStationExpandInfo.bind(_this);
     _this.hideStationInfo = _this.hideStationInfo.bind(_this);
     _this.savePreset = _this.savePreset.bind(_this);
+    _this.setStateFaveStations = _this.setStateFaveStations.bind(_this);
     return _this;
   }
 
@@ -7999,7 +8000,7 @@ var App = function (_Component) {
         streamType: details.streamType
       };
       var test = { key: 'value', tester: 'test' };
-      localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
+      localStorage.setItem('last-listened', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
 
       if (station.id === this.state.selectedStation.id) {
         this.playPause();
@@ -8077,11 +8078,15 @@ var App = function (_Component) {
   }, {
     key: 'savePreset',
     value: function savePreset(details, position) {
+      var _this4 = this;
+
       var presets = this.state.presets;
       presets[position] = details;
 
       this.setState({
         presets: presets
+      }, function () {
+        localStorage.setItem('presets', JSON.stringify(_this4.state.presets)); //sets the localStorage to the station before setting the this.State to the station
       });
     }
 
@@ -8153,11 +8158,11 @@ var App = function (_Component) {
   }, {
     key: 'scrollListener',
     value: function scrollListener() {
-      var _this4 = this;
+      var _this5 = this;
 
       var scrollListen = window.addEventListener('scroll', function () {
         var percent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-        _this4.setState({ scrollPercent: percent });
+        _this5.setState({ scrollPercent: percent });
       });
     }
 
@@ -8166,9 +8171,18 @@ var App = function (_Component) {
   }, {
     key: 'setStateSelectedStation',
     value: function setStateSelectedStation() {
-      if (JSON.parse(localStorage.getItem('key'))) {
+      if (JSON.parse(localStorage.getItem('last-listened'))) {
         this.setState({
-          selectedStation: JSON.parse(localStorage.getItem('key'))
+          selectedStation: JSON.parse(localStorage.getItem('last-listened'))
+        });
+      }
+    }
+  }, {
+    key: 'setStateFaveStations',
+    value: function setStateFaveStations() {
+      if (JSON.parse(localStorage.getItem('presets'))) {
+        this.setState({
+          presets: JSON.parse(localStorage.getItem('presets'))
         });
       }
     }
@@ -8198,6 +8212,7 @@ var App = function (_Component) {
       this.loadStations();
       this.scrollListener();
       this.setStateSelectedStation();
+      this.setStateFaveStations();
       window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
     }
   }, {

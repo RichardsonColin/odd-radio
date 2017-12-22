@@ -52,6 +52,7 @@ class App extends Component {
     this.findStationExpandInfo = this.findStationExpandInfo.bind(this);
     this.hideStationInfo = this.hideStationInfo.bind(this);
     this.savePreset = this.savePreset.bind(this);
+    this.setStateFaveStations = this.setStateFaveStations.bind(this);
   }
 
   // Initial API request to build up station collection object.
@@ -77,7 +78,7 @@ class App extends Component {
       streamType: details.streamType
     };
     let test = { key: 'value', tester: 'test' };
-    localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
+    localStorage.setItem('last-listened', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
 
     if(station.id === this.state.selectedStation.id) {
       this.playPause();
@@ -151,6 +152,8 @@ class App extends Component {
 
     this.setState({
       presets
+    }, () => {
+      localStorage.setItem('presets', JSON.stringify(this.state.presets)); //sets the localStorage to the station before setting the this.State to the station
     });
 
 
@@ -203,9 +206,17 @@ class App extends Component {
 
   // Detects last listened station from users local storage, sets it in app state.
   setStateSelectedStation() {
-    if (JSON.parse(localStorage.getItem('key'))) {
+    if (JSON.parse(localStorage.getItem('last-listened'))) {
       this.setState({
-        selectedStation: JSON.parse(localStorage.getItem('key'))
+        selectedStation: JSON.parse(localStorage.getItem('last-listened'))
+      });
+    }
+  }
+
+  setStateFaveStations() {
+    if (JSON.parse(localStorage.getItem('presets'))) {
+      this.setState({
+        presets: JSON.parse(localStorage.getItem('presets'))
       });
     }
   }
@@ -229,6 +240,7 @@ class App extends Component {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
+    this.setStateFaveStations();
     window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
   }
 
