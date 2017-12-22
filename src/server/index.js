@@ -18,10 +18,10 @@ var config = {
   idleTimeoutMillis: 30000,
 };
 
-
 const pool = new pg.Pool(config);
 
 app.use(express.static(__dirname +'./../../')); //serves the index.html
+app.use('/:id', express.static(__dirname + './../../')); //serves the index.html
 app.use(knexLogger(knex));
 
 app.get('/api/stations', (req, res) => {
@@ -35,7 +35,6 @@ app.get('/api/stations/:id', (req, res) => {
     res.json(station);
   });
 })
-
 
 app.listen(process.env.PORT || 3000) //listens on port 3000 -> http://localhost:3000/
 console.log('listening on port env.PORT or 3000');
