@@ -1,0 +1,64 @@
+.expanded-station-name {
+  font-weight: bold;
+  letter-spacing: 1em;
+  word-break: break-all;
+  max-width: 3.8em;
+  overflow: wrap;
+  font-size: 40px;
+  height: 0px;
+  text-align: justify;
+
+}
+.expanded-station-name:hover {
+
+  text-shadow: 2px 2px 2px rgb(100, 100, 100);
+  cursor: default;
+
+}
+
+@media (max-width: 700px) {
+  .expanded-station-name {
+    font-weight: bold;
+  letter-spacing: 1em;
+  word-break: break-all;
+  max-width: 3.8em;
+  overflow: wrap;
+  font-size: 30px;
+  height: 0px;
+  text-align: justify;
+  margin-bottom: 90px;
+
+
+  }
+}
+
+
+
+.info-container {
+  // transition: 500ms 0ms, opacity 500ms 500ms;
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  align-items: center;
+  margin-bottom: -10px;
+}
+
+.info-expanded {
+  background-color: #89cff0;
+}
+
+
+
+.station-branding {
+  font-size: 4em;
+  text-align: justify;
+}
+
+.station-row {
+  padding-top: 25px;
+}
+
+.info {
+text-align: justify;
+margin-bottom: 20px;
+}

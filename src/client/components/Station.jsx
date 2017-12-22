@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PlayerButtons from './PlayerButtons.jsx';
+import StationName from './StationName.jsx';
 import SetPresets from './SetPresets.jsx';
+
 
 class Station extends Component {
 
@@ -35,24 +37,25 @@ componentWillReceiveProps(props) {
      // If it is expanded, render all the details.
     if (this.props.expandedName === this.state.details.name && this.state.expandedStation === true) {
       return (
+
           <div id={ this.props.name }>
             <div className={ `container station-container${this.props.stationType} info-expanded` }>
               <div className="row station-row border">
-                <div className="one-third column station-name center"> </div>
+               <div className="one-third column station-name center "></div>
                 <div className="one-third column station-play-button center">
                   <PlayerButtons clickFunction={ this.props.handleSelectedStation } params={ this.state.details }
                   streamLoading={this.props.streamLoading} playState={ this.props.playState }
                   activeStation={ this.props.activeStation } />
                 </div>
                 <div className="one-third column station-info-button center">
-                  <i className="fa fa-chevron-up card-chevron" aria-hidden="true" onClick={(e) => this.props.hideStationInfo()}></i>
+                  <i className="fa fa-chevron-up card-chevron fa-2x" aria-hidden="true" onClick={(e) => this.props.hideStationInfo()}></i>
                 </div>
               </div>
             </div>
             <div className="container info-container info-expanded" >
               <div className="row center-align">
                 <div className="station-info center">
-                  <div className="station-branding one-third column"> { this.props.name } </div>
+                  <StationName Style="expanded-station-name center" StationName={this.props.name} findStationExpandInfo={ this.props.findStationExpandInfo }/>
                   <div className="two-thirds column info">
                     <div><b>Location:</b> { this.props.city } </div>
                     <div><b>Description:</b> { this.props.description } </div>
@@ -65,19 +68,21 @@ componentWillReceiveProps(props) {
           </div>
         )
     } else {
-    // If it is not expanded, render just some details.
+    // If it is not expanded, render the title card with option to expand.
       return (
         <div id={ this.props.name }>
           <div className={`container station-container${this.props.stationType}`}>
             <div className="row station-row border">
-              <div className="one-third column station-name center"> {this.props.name} </div>
+              <div className="station-branding one-third column center">
+                <StationName Style="non-expanded-station-name center" StationName={this.props.name} findStationExpandInfo={ this.props.findStationExpandInfo }/>
+                </div>
               <div className="one-third column station-play-button center">
                 <PlayerButtons clickFunction={this.props.handleSelectedStation} params={this.state.details}
                   streamLoading={this.props.streamLoading} playState={ this.props.playState }
                   activeStation={this.props.activeStation} />
               </div>
               <div className="one-third column station-info-button center">
-                <i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={(e) => this.props.findStationExpandInfo(this.props.name)}></i>
+                <i className="fa fa-chevron-down card-chevron fa-2x" aria-hidden="true" onClick={(e) => this.props.findStationExpandInfo(this.props.name)}></i>
               </div>
             </div>
           </div>
@@ -88,3 +93,7 @@ componentWillReceiveProps(props) {
 }
 
 export default Station;
+
+
+
+
