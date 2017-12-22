@@ -28,11 +28,11 @@ class App extends Component {
       },
       streamLoading: false,
       presets: {
-        one: { id: 7, name: "CHMR", audioFeed: "http://mp3srv.munsu.mun.ca:8000/", streamType: "audio/mpeg" },
-        two: { id: 24, name: "CJLY", audioFeed: "http://stream.cjly.net/", streamType: "audio/mpeg" },
-        three: { id: 3, name: "CKUW", audioFeed: "http://shout.mtl.gameservers.com:9025/;stream.nsv&type=mp3", streamType: "audio/mp3" },
-        four: { id: 6, name: "CIVL", audioFeed: "http://198.162.116.249:8085/live.mp3", streamType: "audio/mp3" },
-        five: {  }
+        one: {},
+        two: {},
+        three: {},
+        four: {},
+        five: {}
       },
       expanded: false,
       expandedName: ''
