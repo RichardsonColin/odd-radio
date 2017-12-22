@@ -4,6 +4,7 @@ import { shuffle } from '../util/ClientFunctions.jsx';
 
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
+import Background from './Background.jsx';
 
 
 class App extends Component {
@@ -21,11 +22,12 @@ class App extends Component {
         streamType: ""
       },
       playState: {
-        volume: 1,
         isPlaying: false,
-        isPaused: true,
-        isLoading: false
-      }
+        isPaused: true
+      },
+      streamLoading: false,
+      expanded: false,
+      expandedName: ''
     },
 
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
@@ -36,6 +38,11 @@ class App extends Component {
     this.findColor = this.findColor.bind(this);
     this.setStateSelectedStation = this.setStateSelectedStation.bind(this);
     this.playPause = this.playPause.bind(this);
+    this.onLoadStart = this.onLoadStart.bind(this);
+    this.onCanPlay = this.onCanPlay.bind(this);
+    this.findColor = this.findColor.bind(this);
+    this.findStationExpandInfo = this.findStationExpandInfo.bind(this);
+    this.hideStationInfo = this.hideStationInfo.bind(this);
   }
 
   // Initial API request to build up station collection object.
@@ -45,7 +52,6 @@ class App extends Component {
         return response.json()
       }).then((json) => {
         this.setState({ stations: shuffle(json) })
-        console.log('parsed json', json)
       }).catch((ex) => {
         console.log('parsing failed', ex)
       });
@@ -75,7 +81,7 @@ class App extends Component {
         selectedStation: station
         }, () => {
           player.load();
-          this.playPause()
+          this.playPause();
       });
     }
   }
@@ -85,24 +91,39 @@ class App extends Component {
   playPause() {
     const player = document.getElementById("player");
     if (this.state.playState.isPaused) {
-      player.play();
+
 
       this.setState({
         playState: {
           isPlaying: true,
           isPaused: false
         }
-      })
+      }, () => { player.play(); });
     } else if (this.state.playState.isPlaying) {
-      player.pause();
 
       this.setState({
         playState: {
           isPlaying: false,
           isPaused: true
         }
-      })
+      }, () => { player.pause(); });
     }
+  }
+
+  onLoadStart(e) {
+    // console.log('e', e);
+    // console.log('in load event');
+    this.setState({
+      streamLoading: true
+    })
+  }
+
+  onCanPlay(e) {
+    // console.log('e', e);
+    // console.log('in play event');
+    this.setState({
+      streamLoading: false
+    })
   }
 
   onSpaceBarPress(event) {
@@ -148,8 +169,6 @@ class App extends Component {
     }
   }
 
-
-
   findColor() {
     const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
     return this.colors[colorIndex];
@@ -171,17 +190,32 @@ class App extends Component {
     }
   }
 
+//finds the station container based on stationName and expands the info-container and scrolls to the station container
+findStationExpandInfo(stationName) {
+  const stationDiv = document.getElementById(stationName);
+
+  this.setState({ expanded: true, expandedName: stationName}, () => {
+    stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  });
+}
+
+hideStationInfo() { //hides the info-container
+  this.setState({
+    expanded: false
+  });
+}
+
   componentDidMount() {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
     window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
-
   }
 
   render() {
     return (
-      <div className="app-container" style={{ backgroundColor: this.findColor() }}>
+      <div>
+        <Background findColor={ this.findColor } />
         <header>
         <div className="container title-container">
             <div className="row title-row border">
@@ -197,10 +231,15 @@ class App extends Component {
           </div>
         </header>
           <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations }
-            activeStation={ this.state.selectedStation.id } playState={ this.state.playState } />
+            activeStation={ this.state.selectedStation.id } playState={ this.state.playState }
+            streamLoading={ this.state.streamLoading }
+            findStationExpandInfo={this.findStationExpandInfo}
+            hideStationInfo={this.hideStationInfo}
+            expandedState={this.state.expanded} expandedName={this.state.expandedName}/>
         <footer>
            <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
-           playPause={ this.playPause } playState={ this.state.playState } />
+           playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }
+           onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } findStationExpandInfo={this.findStationExpandInfo}/>
         </footer>
       </div>
     );
