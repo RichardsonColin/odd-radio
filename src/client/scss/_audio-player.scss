@@ -4,7 +4,7 @@ footer {
   background-color: #b3e0da;
   width: 100%;
   margin-top: 0;
-  height: 120px;
+  height: 130px;
 }
 
 
@@ -39,12 +39,13 @@ footer {
   padding-left: 10px;
   text-align: justify;
   float:left;
+
   }
 }
 
 .audio-player-station-name:hover {
     text-shadow: 2px 2px 2px rgb(100, 100, 100);
-    cursor: pointer;
+    cursor: default;
   }
 
 
@@ -54,11 +55,10 @@ footer {
     font-weight: bold;
   }
   .presets-station:hover {
-    text-shadow: 2px 2px 2px rgb(100, 100, 100)
+    text-shadow: 2px 2px 2px rgb(100, 100, 100);
+    cursor: default;
   }
   margin-bottom: 10px;
 }
 
-.player-container {
-  margin-bottom: -15px;
-}
+

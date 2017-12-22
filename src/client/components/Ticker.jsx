@@ -14,7 +14,7 @@ class Ticker extends Component {
               <div id="ticker-station" className="ticker__item"> {this.props.selectedStation.name} </div>
               <div id="ticker-city" className="ticker__item">Out of - {this.props.selectedStation.city}</div>
               <div id="ticker-dance" className="ticker__item">♪┏(・o･)┛♪┗ ( ･o･) ┓</div>
-              <div id="ticker-brand" className="ticker__item">ODDRAD</div>
+              <div id="ticker-brand" className="ticker__item">ODDRAD™</div>
               <div id="ticker-yeah" className="ticker__item">☜(ﾟヮﾟ☜)</div>
             </div>
           </div>
@@ -29,7 +29,7 @@ class Ticker extends Component {
               <div id="ticker-freq" className="ticker__item">@ {this.props.selectedStation.frequency}</div>
               <div id="ticker-city" className="ticker__item">Out of - {this.props.selectedStation.city}</div>
               <div id="ticker-dance" className="ticker__item">♪┏(・o･)┛♪┗ ( ･o･) ┓</div>
-              <div id="ticker-brand" className="ticker__item">ODDRAD</div>
+              <div id="ticker-brand" className="ticker__item">ODDRAD™</div>
               <div id="ticker-yeah" className="ticker__item">☜(ﾟヮﾟ☜)</div>
             </div>
           </div>
