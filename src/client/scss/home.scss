@@ -162,11 +162,16 @@ footer {
 }
 
 .presets {
-  .presets-title{
+  p {
+    width: 60px;
+    cursor: pointer;
+  }
+
+  .presets-title {
     font-weight: bold;
   }
   .presets-station:hover {
-    text-shadow: 2px 2px 2px rgb(100, 100, 100)
+    text-shadow: 2px 2px 2px rgb(100, 100, 100);
   }
   margin-bottom: 10px;
 }
@@ -174,3 +179,4 @@ footer {
 .player-container {
   margin-bottom: -15px;
 }
+
