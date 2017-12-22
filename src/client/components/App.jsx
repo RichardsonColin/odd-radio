@@ -5,6 +5,9 @@ import { shuffle } from '../util/ClientFunctions.jsx';
 import AudioPlayer from './AudioPlayer.jsx';
 import StationList from './StationList.jsx';
 import Background from './Background.jsx';
+import Ticker from './Ticker.jsx';
+import Presets from './Presets.jsx';
+
 
 
 class App extends Component {
@@ -19,13 +22,23 @@ class App extends Component {
         id: "",
         name: "",
         audioFeed: "",
-        streamType: ""
+        streamType: "",
+        frequency: "",
+        city: "",
+        province: ""
       },
       playState: {
         isPlaying: false,
         isPaused: true
       },
       streamLoading: false,
+      presets: {
+        one: {},
+        two: {},
+        three: {},
+        four: {},
+        five: {}
+      },
       expanded: false,
       expandedName: ''
     },
@@ -43,6 +56,8 @@ class App extends Component {
     this.findColor = this.findColor.bind(this);
     this.findStationExpandInfo = this.findStationExpandInfo.bind(this);
     this.hideStationInfo = this.hideStationInfo.bind(this);
+    this.savePreset = this.savePreset.bind(this);
+    this.setStateFaveStations = this.setStateFaveStations.bind(this);
   }
 
   // Initial API request to build up station collection object.
@@ -65,10 +80,13 @@ class App extends Component {
       id: details.id,
       name: details.name,
       audioFeed: details.audioFeed,
-      streamType: details.streamType
+      streamType: details.streamType,
+      frequency: details.frequency,
+      city: details.city,
+      province: details.province
     };
     let test = { key: 'value', tester: 'test' };
-    localStorage.setItem('key', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
+    localStorage.setItem('last-listened', JSON.stringify(station)); //sets the localStorage to the station before setting the this.State to the station
 
     if(station.id === this.state.selectedStation.id) {
       this.playPause();
@@ -111,16 +129,12 @@ class App extends Component {
   }
 
   onLoadStart(e) {
-    // console.log('e', e);
-    // console.log('in load event');
     this.setState({
       streamLoading: true
     })
   }
 
   onCanPlay(e) {
-    // console.log('e', e);
-    // console.log('in play event');
     this.setState({
       streamLoading: false
     })
@@ -134,6 +148,19 @@ class App extends Component {
         this.playPause();
 
     }
+  }
+
+  savePreset(details, position) {
+    let presets = this.state.presets;
+    presets[position] = details
+
+    this.setState({
+      presets
+    }, () => {
+      localStorage.setItem('presets', JSON.stringify(this.state.presets)); //sets the localStorage to the station before setting the this.State to the station
+    });
+
+
   }
 
   // Helper function for seek functionality.
@@ -155,13 +182,14 @@ class App extends Component {
 
         // Plays the seeked station.
       } else if (randomStationId === station.id) {
-          console.log('inside seekstation - ',station);
-
           const seekedStation = {
             id: station.id,
             name: station.name,
             audioFeed: station.audio_feed,
-            streamType: station.stream_type
+            streamType: station.stream_type,
+            frequency: station.frequency,
+            city: station.city,
+            province: station.province
           };
 
           this.handleSelectedStation(seekedStation);
@@ -183,12 +211,21 @@ class App extends Component {
 
   // Detects last listened station from users local storage, sets it in app state.
   setStateSelectedStation() {
-    if (JSON.parse(localStorage.getItem('key'))) {
+    if (JSON.parse(localStorage.getItem('last-listened'))) {
       this.setState({
-        selectedStation: JSON.parse(localStorage.getItem('key'))
+        selectedStation: JSON.parse(localStorage.getItem('last-listened'))
       });
     }
   }
+
+  setStateFaveStations() {
+    if (JSON.parse(localStorage.getItem('presets'))) {
+      this.setState({
+        presets: JSON.parse(localStorage.getItem('presets'))
+      });
+    }
+  }
+
 
 //finds the station container based on stationName and expands the info-container and scrolls to the station container
 findStationExpandInfo(stationName, stationFeed) {
@@ -206,16 +243,18 @@ findStationExpandInfo(stationName, stationFeed) {
   });
 }
 
-hideStationInfo() { //hides the info-container
-  this.setState({
-    expanded: false
-  });
-}
+
+  hideStationInfo() { //hides the info-container
+    this.setState({
+      expanded: false
+    });
+  }
 
   componentDidMount() {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
+    this.setStateFaveStations();
     window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
   }
 
@@ -224,6 +263,7 @@ hideStationInfo() { //hides the info-container
       <div>
         <Background findColor={ this.findColor } />
         <header>
+        <Ticker selectedStation={this.state.selectedStation} />
         <div className="container title-container">
             <div className="row title-row border">
               <div className="six columns description">
@@ -232,7 +272,7 @@ hideStationInfo() { //hides the info-container
                 </div>
               </div>
               <div className="three columns brand-name">
-                <h1>oddrad.io</h1>
+                <h1 id="brand-name">oddrad.io</h1>
               </div>
             </div>
           </div>
@@ -242,11 +282,12 @@ hideStationInfo() { //hides the info-container
             streamLoading={ this.state.streamLoading }
             findStationExpandInfo={this.findStationExpandInfo}
             hideStationInfo={this.hideStationInfo}
-            expandedState={this.state.expanded} expandedName={this.state.expandedName}/>
+            expandedState={this.state.expanded} expandedName={this.state.expandedName} presets={this.state.presets} savePreset={this.savePreset} />
         <footer>
-           <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
-           playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }
-           onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } findStationExpandInfo={this.findStationExpandInfo}/>
+          <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
+          playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }
+          onLoadStart={ this.onLoadStart } onCanPlay={ this.onCanPlay } findStationExpandInfo={this.findStationExpandInfo}
+          presets={this.state.presets} handleSelectedStation={this.handleSelectedStation} />
         </footer>
       </div>
     );

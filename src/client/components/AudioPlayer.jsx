@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PlayerButtons from './PlayerButtons.jsx';
 import VolumeControls from './VolumeControls.jsx';
 import StationName from './StationName.jsx';
+import Presets from './Presets.jsx';
+
 
 class AudioPlayer extends Component {
   constructor(props) {
@@ -63,8 +65,8 @@ class AudioPlayer extends Component {
         <audio id="player" onLoadStart={ (e) => this.props.onLoadStart(e) } onCanPlay={ (e) => this.props.onCanPlay(e) } >
           <source src={ this.props.stationFeed.audioFeed } type={ this.props.stationFeed.streamType } />
         </audio>
-
-         <StationName Style='audio-player-station-name' StationFeed={ this.props.stationFeed.name } findStationExpandInfo={this.props.findStationExpandInfo} />
+        <div>
+          <StationName Style='audio-player-station-name' StationFeed={ this.props.stationFeed.name } findStationExpandInfo={this.props.findStationExpandInfo} />
           <div className="container player-container">
             <div className="row player-row border">
               <div className="three columns">
@@ -81,7 +83,9 @@ class AudioPlayer extends Component {
               </div>
             </div>
           </div>
+          <Presets presets={this.props.presets} title="Presets: " clickFunction={this.props.handleSelectedStation} />
         </div>
+      </div>
 
     );
   }

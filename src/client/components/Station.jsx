@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PlayerButtons from './PlayerButtons.jsx';
 import StationName from './StationName.jsx';
+import SetPresets from './SetPresets.jsx';
+
 
 class Station extends Component {
 
@@ -11,7 +13,10 @@ class Station extends Component {
         id: this.props.id,
         name: this.props.name,
         audioFeed: this.props.audioFeed,
-        streamType: this.props.streamType
+        streamType: this.props.streamType,
+        frequency: this.props.frequency,
+        city: this.props.city,
+        province: this.props.province
       },
       expandedStationName: this.props.expandedName,
       expandedStation: this.props.expandedState
@@ -57,6 +62,7 @@ componentWillReceiveProps(props) {
                     <div><b>Home Page:</b> <a href={this.props.homePage} target='_blank'> { this.props.homePage } </a> </div>
                   </div>
                 </div>
+                <SetPresets presets={this.props.presets} title="Save Station In Presets: " clickFunction={ this.props.savePreset } details={ this.state.details }/>
               </div>
             </div>
           </div>

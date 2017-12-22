@@ -28,7 +28,9 @@ class StationList extends Component {
         audioFeed={ post.audio_feed }
         streamType={ post.stream_type }
         homePage={ post.home_page }
+        frequency={ post.frequency }
         city={ post.city }
+        province={ post.province }
         handleSelectedStation={ this.props.handleSelectedStation }
         activeStation={ isActive }
         playState={ this.props.playState }
@@ -38,6 +40,8 @@ class StationList extends Component {
         expandedState={ this.props.expandedState }
         expandedName={ this.props.expandedName }
         hideStationInfo={ this.props.hideStationInfo }
+        presets={ this.props.presets }
+        savePreset={ this.props.savePreset }
       />
     });
 
