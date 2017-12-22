@@ -8057,6 +8057,7 @@ var App = function (_Component) {
     _this.hideStationInfo = _this.hideStationInfo.bind(_this);
     _this.savePreset = _this.savePreset.bind(_this);
     _this.setStateFaveStations = _this.setStateFaveStations.bind(_this);
+    _this.checkWindowLocation = _this.checkWindowLocation.bind(_this);
     return _this;
   }
 
@@ -8072,6 +8073,8 @@ var App = function (_Component) {
         return response.json();
       }).then(function (json) {
         _this2.setState({ stations: (0, _ClientFunctions.shuffle)(json) });
+      }).then(function () {
+        _this2.checkWindowLocation();
       }).catch(function (ex) {
         console.log('parsing failed', ex);
       });
@@ -8306,6 +8309,45 @@ var App = function (_Component) {
         expanded: false
       });
     }
+  }, {
+    key: 'checkWindowLocation',
+    value: function checkWindowLocation() {
+      //checks the window.location.pathname and compares it to the database.  if match call handleSelectedStation
+      var pathname = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
+      var stations = this.state.stations;
+
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
+
+      try {
+        for (var _iterator2 = stations[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var station = _step2.value;
+
+          if (pathname === station.name) {
+            station['audioFeed'] = station.audio_feed;
+            station['streamType'] = station.stream_type;
+            this.handleSelectedStation(station);
+          }
+        }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2.return) {
+            _iterator2.return();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
+        }
+      }
+    }
+  }, {
+    key: 'componentWillMount',
+    value: function componentWillMount() {}
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
