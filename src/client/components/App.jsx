@@ -9,7 +9,6 @@ import Ticker from './Ticker.jsx';
 import Presets from './Presets.jsx';
 
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -58,6 +57,7 @@ class App extends Component {
     this.hideStationInfo = this.hideStationInfo.bind(this);
     this.savePreset = this.savePreset.bind(this);
     this.setStateFaveStations = this.setStateFaveStations.bind(this);
+    this.checkWindowLocation = this.checkWindowLocation.bind(this);
   }
 
   // Initial API request to build up station collection object.
@@ -67,9 +67,12 @@ class App extends Component {
         return response.json()
       }).then((json) => {
         this.setState({ stations: shuffle(json) })
+      }).then(() => {
+        this.checkWindowLocation();
       }).catch((ex) => {
         console.log('parsing failed', ex)
       });
+
   }
 
   // Takes a selected station and sets it in app level state, plays it.
@@ -239,6 +242,23 @@ class App extends Component {
     this.setState({
       expanded: false
     });
+  }
+
+  checkWindowLocation() { //checks the window.location.pathname and compares it to the database.  if match call handleSelectedStation
+    var pathname = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
+    const stations = this.state.stations;
+
+    for (let station of stations){
+      if (pathname === station.name) {
+        station['audioFeed'] = station.audio_feed;
+        station['streamType'] = station.stream_type;
+        this.handleSelectedStation(station);
+      }
+    }
+  }
+
+  componentWillMount() {
+
   }
 
   componentDidMount() {
