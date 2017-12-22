@@ -51,6 +51,7 @@ class App extends Component {
     this.findColor = this.findColor.bind(this);
     this.findStationExpandInfo = this.findStationExpandInfo.bind(this);
     this.hideStationInfo = this.hideStationInfo.bind(this);
+    this.savePreset = this.savePreset.bind(this);
   }
 
   // Initial API request to build up station collection object.
@@ -142,6 +143,12 @@ class App extends Component {
         this.playPause();
 
     }
+  }
+
+  savePreset(details, position) {
+    console.log(details);
+    console.log(position);
+
   }
 
   // Helper function for seek functionality.
@@ -243,7 +250,7 @@ hideStationInfo() { //hides the info-container
             streamLoading={ this.state.streamLoading }
             findStationExpandInfo={this.findStationExpandInfo}
             hideStationInfo={this.hideStationInfo}
-            expandedState={this.state.expanded} expandedName={this.state.expandedName} presets={this.state.presets}/>
+            expandedState={this.state.expanded} expandedName={this.state.expandedName} presets={this.state.presets} savePreset={this.savePreset} />
         <footer>
           <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
           playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }

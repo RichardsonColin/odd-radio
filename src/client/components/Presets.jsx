@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class Presets extends Component {
+
   render() {
     return (
       <div className="container presets">

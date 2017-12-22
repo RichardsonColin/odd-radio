@@ -39,6 +39,7 @@ class StationList extends Component {
         expandedName={ this.props.expandedName }
         hideStationInfo={ this.props.hideStationInfo }
         presets={ this.props.presets }
+        savePreset={ this.props.savePreset }
       />
     });
 

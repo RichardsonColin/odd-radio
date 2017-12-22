@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PlayerButtons from './PlayerButtons.jsx';
-import Presets from './Presets.jsx';
+import SetPresets from './SetPresets.jsx';
 
 class Station extends Component {
 
@@ -56,7 +56,7 @@ componentWillReceiveProps(props) {
                     <div><b>Home Page:</b> <a href={this.props.homePage} target='_blank'> { this.props.homePage } </a> </div>
                   </div>
                 </div>
-                <Presets presets={this.props.presets} title="Save Preset: " clickFunction={ (e) => console.log(e) } />
+                <SetPresets presets={this.props.presets} title="Save Preset: " clickFunction={ this.props.savePreset } details={ this.state.details }/>
               </div>
             </div>
           </div>
