@@ -53,8 +53,8 @@
   .container {
     width: 80%; }
   .column,
-  .columns {
-    margin-left: 4%; }
+  /*.columns {
+    margin-left: 4%; }*/
   .column:first-child,
   .columns:first-child {
     margin-left: 0; }
@@ -388,7 +388,7 @@ hr {
 .container:after,
 .row:after,
 .u-cf {
-  /*content: "";*/
+  content: "";
   display: table;
   clear: both; }
 
