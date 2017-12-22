@@ -1063,35 +1063,40 @@ var Presets = function (_Component) {
             { className: "five columns presets-station", onClick: function onClick(e) {
                 return _this2.props.clickFunction(_this2.props.presets.one);
               } },
-            this.props.presets.one.name ? this.props.presets.one.name : 'One'
+            "1: ",
+            this.props.presets.one.name ? this.props.presets.one.name : 'Empty'
           ),
           _react2.default.createElement(
             "div",
             { className: "five columns presets-station", onClick: function onClick(e) {
                 return _this2.props.clickFunction(_this2.props.presets.two);
               } },
-            this.props.presets.two.name ? this.props.presets.two.name : 'Two'
+            "2: ",
+            this.props.presets.two.name ? this.props.presets.two.name : 'Empty'
           ),
           _react2.default.createElement(
             "div",
             { className: "five columns presets-station", onClick: function onClick(e) {
                 return _this2.props.clickFunction(_this2.props.presets.three);
               } },
-            this.props.presets.three.name ? this.props.presets.three.name : 'Three'
+            "3: ",
+            this.props.presets.three.name ? this.props.presets.three.name : 'Empty'
           ),
           _react2.default.createElement(
             "div",
             { className: "five columns presets-station", onClick: function onClick(e) {
                 return _this2.props.clickFunction(_this2.props.presets.four);
               } },
-            this.props.presets.four.name ? this.props.presets.four.name : 'Four'
+            "4: ",
+            this.props.presets.four.name ? this.props.presets.four.name : 'Empty'
           ),
           _react2.default.createElement(
             "div",
             { className: "five columns presets-station", onClick: function onClick(e) {
                 return _this2.props.clickFunction(_this2.props.presets.five);
               } },
-            this.props.presets.five.name ? this.props.presets.five.name : 'Five'
+            "5: ",
+            this.props.presets.five.name ? this.props.presets.five.name : 'Empty'
           )
         )
       );
@@ -7941,10 +7946,10 @@ var App = function (_Component) {
       },
       streamLoading: false,
       presets: {
-        one: { id: 7, name: "CHMR", audioFeed: "http://mp3srv.munsu.mun.ca:8000/", streamType: "audio/mpeg" },
-        two: { id: 24, name: "CJLY", audioFeed: "http://stream.cjly.net/", streamType: "audio/mpeg" },
-        three: { id: 3, name: "CKUW", audioFeed: "http://shout.mtl.gameservers.com:9025/;stream.nsv&type=mp3", streamType: "audio/mp3" },
-        four: { id: 6, name: "CIVL", audioFeed: "http://198.162.116.249:8085/live.mp3", streamType: "audio/mp3" },
+        one: {},
+        two: {},
+        three: {},
+        four: {},
         five: {}
       },
       expanded: false,
