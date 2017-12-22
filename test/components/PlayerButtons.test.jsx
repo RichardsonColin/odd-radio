@@ -12,33 +12,42 @@ describe('PlayerButtons', () => {
   const props = {
     activeStation: true,
     playState: {
-        volume: 1,
-        isPlaying: true,
-        isPaused: false,
-        isLoading: false
-      },
+      isPlaying: true,
+      isPaused: false
+    },
+    streamLoading: false,
     clickFunction: jest.fn()
   }
 
   const props2 = {
     activeStation: false,
     playState: {
-        volume: 1,
-        isPlaying: false,
-        isPaused: true,
-        isLoading: false
-      },
+      isPlaying: false,
+      isPaused: true
+    },
+    streamLoading: false,
+    clickFunction: jest.fn()
+  }
+
+  const props3 = {
+    activeStation: true,
+    playState: {
+      isPlaying: false,
+      isPaused: false
+    },
+    streamLoading: true,
     clickFunction: jest.fn()
   }
 
   const subject = <PlayerButtons { ...props }/>;
   const subject2 = <PlayerButtons { ...props2 }/>;
-
-  it('matches snapshot', () => {
-    expect(renderer.create(subject)).toMatchSnapshot();
-  });
+  const subject3 = <PlayerButtons { ...props3 }/>;
 
   describe('when activeStation is true', () => {
+
+    it('matches snapshot', () => {
+      expect(renderer.create(subject)).toMatchSnapshot();
+    });
 
     it('it should have one <i> component', () => {
       const wrapper = shallow(subject);
@@ -65,6 +74,10 @@ describe('PlayerButtons', () => {
 
   describe('when activeStation is false', () => {
 
+    it('matches snapshot', () => {
+      expect(renderer.create(subject2)).toMatchSnapshot();
+    });
+
     it('it has an <i> with id pButton', () => {
       const wrapper = shallow(subject2);
 
@@ -79,6 +92,13 @@ describe('PlayerButtons', () => {
 
         expect(props2.clickFunction).toHaveBeenCalled();
       });
+    });
+  });
+
+  describe('when activeStation and streamLoading are true', () => {
+
+    it('matches snapshot', () => {
+      expect(renderer.create(subject3)).toMatchSnapshot();
     });
   });
 });
