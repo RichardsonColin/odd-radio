@@ -64,7 +64,7 @@ class AudioPlayer extends Component {
           <source src={ this.props.stationFeed.audioFeed } type={ this.props.stationFeed.streamType } />
         </audio>
         <div>
-          <div className="player-station-name" onClick={(e) => this.props.findStationExpandInfo(this.props.stationFeed.name)} >Current Station: { this.props.stationFeed.name }</div>
+          <div className="player-station-name center" onClick={(e) => this.props.findStationExpandInfo(this.props.stationFeed.name)} >Current Station: { this.props.stationFeed.name }</div>
           <div className="container player-container">
             <div className="row player-row border">
               <div className="three columns">
@@ -81,7 +81,7 @@ class AudioPlayer extends Component {
               </div>
             </div>
           </div>
-          <Presets presets={this.props.presets} handleSelectedStation={this.props.handleSelectedStation} />
+          <Presets presets={this.props.presets} title="Presets: " clickFunction={this.props.handleSelectedStation} />
         </div>
       </div>
     );

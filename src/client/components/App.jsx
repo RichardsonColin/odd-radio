@@ -32,7 +32,7 @@ class App extends Component {
         two: { id: 24, name: "CJLY", audioFeed: "http://stream.cjly.net/", streamType: "audio/mpeg" },
         three: { id: 3, name: "CKUW", audioFeed: "http://shout.mtl.gameservers.com:9025/;stream.nsv&type=mp3", streamType: "audio/mp3" },
         four: { id: 6, name: "CIVL", audioFeed: "http://198.162.116.249:8085/live.mp3", streamType: "audio/mp3" },
-        five: { id: 25, name: "CJMP", audioFeed: "http://usa2.fastcast4u.com:3264/CJMP90.1FM", streamType: "audio/mpeg" }
+        five: {  }
       },
       expanded: false,
       expandedName: ''
@@ -243,7 +243,7 @@ hideStationInfo() { //hides the info-container
             streamLoading={ this.state.streamLoading }
             findStationExpandInfo={this.findStationExpandInfo}
             hideStationInfo={this.hideStationInfo}
-            expandedState={this.state.expanded} expandedName={this.state.expandedName}/>
+            expandedState={this.state.expanded} expandedName={this.state.expandedName} presets={this.state.presets}/>
         <footer>
           <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
           playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }

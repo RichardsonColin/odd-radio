@@ -38,6 +38,7 @@ class StationList extends Component {
         expandedState={ this.props.expandedState }
         expandedName={ this.props.expandedName }
         hideStationInfo={ this.props.hideStationInfo }
+        presets={ this.props.presets }
       />
     });
 

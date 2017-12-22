@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PlayerButtons from './PlayerButtons.jsx';
+import Presets from './Presets.jsx';
 
 class Station extends Component {
 
@@ -55,6 +56,7 @@ componentWillReceiveProps(props) {
                     <div><b>Home Page:</b> <a href={this.props.homePage} target='_blank'> { this.props.homePage } </a> </div>
                   </div>
                 </div>
+                <Presets presets={this.props.presets} title="Save Preset: " clickFunction={ (e) => console.log(e) } />
               </div>
             </div>
           </div>
