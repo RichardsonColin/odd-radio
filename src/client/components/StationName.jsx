@@ -34,9 +34,9 @@ class StationName extends Component {
 
 
     return(
-
-        <p className={this.props.Style}> { this.props.StationFeed } {this.props.StationName} </p>
-
+      <div>
+        <p className={this.props.Style} onClick={(e) => this.props.findStationExpandInfo(this.props.StationName, this.props.StationFeed)}> { this.props.StationFeed } {this.props.StationName}</p>
+      </div>
       );
   }
 }

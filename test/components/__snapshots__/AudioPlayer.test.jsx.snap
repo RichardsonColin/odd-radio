@@ -15,10 +15,10 @@ exports[`AudioPlayer matches snapshot 1`] = `
   <div>
     <div
       className="player-station-name"
+      onClick={[Function]}
     >
-       Current Station: 
+      Current Station: 
       Jest Test Stream
-       
     </div>
     <div
       className="container player-container"

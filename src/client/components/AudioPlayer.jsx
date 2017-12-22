@@ -3,7 +3,6 @@ import PlayerButtons from './PlayerButtons.jsx';
 import VolumeControls from './VolumeControls.jsx';
 import StationName from './StationName.jsx';
 
-
 class AudioPlayer extends Component {
   constructor(props) {
     super(props);
@@ -65,7 +64,7 @@ class AudioPlayer extends Component {
           <source src={ this.props.stationFeed.audioFeed } type={ this.props.stationFeed.streamType } />
         </audio>
 
-          <StationName Style='audio-player-station-name' StationFeed={ this.props.stationFeed.name } />
+         <StationName Style='audio-player-station-name' StationFeed={ this.props.stationFeed.name } findStationExpandInfo={this.props.findStationExpandInfo} />
           <div className="container player-container">
             <div className="row player-row border">
               <div className="three columns">

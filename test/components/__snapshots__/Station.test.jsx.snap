@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Station matches snapshot 1`] = `
-<div>
+<div
+  id="QWER"
+>
   <div
     className="container station-container3"
   >

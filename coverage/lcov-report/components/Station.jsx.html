@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/11</span>
+        <span class='fraction'>13/13</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -133,24 +133,26 @@
 88
 89
 90
-91</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+91
+92</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,8 +171,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -225,6 +227,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react';
 import PlayerButtons from './PlayerButtons.jsx';
+import { findStationExpandInfo } from '../util/ClientFunctions.jsx';
 &nbsp;
 class Station extends Component {
 &nbsp;
@@ -261,7 +264,7 @@ class Station extends Component {
     // If it is not expanded, render just some details.
     if (!this.state.expanded) {
       return (
-        &lt;div&gt;
+        &lt;div id={ this.props.name }&gt;
           &lt;div className={`container station-container${this.props.stationType}`}&gt;
             &lt;div className="row station-row border"&gt;
               &lt;div className="one-third column station-name center"&gt; {this.props.name} &lt;/div&gt;
@@ -271,7 +274,7 @@ class Station extends Component {
                   activeStation={this.props.activeStation} /&gt;
               &lt;/div&gt;
               &lt;div className="one-third column station-info-button center"&gt;
-                &lt;i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={(e) =&gt; this.toggleStationInfo() }&gt;&lt;/i&gt;
+                &lt;i className="fa fa-chevron-down card-chevron" aria-hidden="true" onClick={(e) =&gt; {this.toggleStationInfo(); findStationExpandInfo(this.props.name)}}&gt;&lt;/i&gt;
               &lt;/div&gt;
             &lt;/div&gt;
           &lt;/div&gt;
@@ -281,7 +284,7 @@ class Station extends Component {
     // If it is expanded, render all the details.
     } else {
       return (
-        &lt;div&gt;
+        &lt;div id={ this.props.name }&gt;
           &lt;div className={ `container station-container${this.props.stationType} info-expanded` }&gt;
             &lt;div className="row station-row border"&gt;
               &lt;div className="one-third column station-name center"&gt; &lt;/div&gt;
@@ -291,11 +294,11 @@ class Station extends Component {
                 activeStation={ this.props.activeStation } /&gt;
               &lt;/div&gt;
               &lt;div className="one-third column station-info-button center"&gt;
-                &lt;i className="fa fa-chevron-up card-chevron" aria-hidden="true" onClick={ (e) =&gt; this.toggleStationInfo() }&gt;&lt;/i&gt;
+                &lt;i className="fa fa-chevron-up card-chevron" aria-hidden="true" onClick={ (e) =&gt; {this.toggleStationInfo(); findStationExpandInfo(this.props.name)}}&gt;&lt;/i&gt;
               &lt;/div&gt;
             &lt;/div&gt;
           &lt;/div&gt;
-          &lt;div className="container info-container info-expanded" id={ this.props.name }&gt;
+          &lt;div className="container info-container info-expanded" &gt;
             &lt;div className="row center-align"&gt;
               &lt;div className="station-info center"&gt;
                 &lt;div className="station-branding one-third column"&gt; { this.props.name } &lt;/div&gt;
@@ -319,7 +322,11 @@ export default Station;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 21 2017 21:00:25 GMT+0000 (UTC)
+<<<<<<< HEAD
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 21 2017 21:05:39 GMT+0000 (UTC)
+=======
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 21 2017 22:13:51 GMT+0000 (UTC)
+>>>>>>> eed2372fbcbb7a363c2e17d160abff5a1c2ef5f7
 </div>
 </div>
 <script src="../prettify.js"></script>
