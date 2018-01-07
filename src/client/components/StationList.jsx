@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Station from './Station.jsx';
+import Masthead from './Masthead.jsx';
 
 class StationList extends Component {
   constructor(props) {
@@ -48,6 +49,7 @@ class StationList extends Component {
     return (
       <section className="station-list-container">
         { station }
+        <Masthead />
       </section>
     )
   }
