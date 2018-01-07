@@ -9245,10 +9245,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Masthead = function (_Component) {
   _inherits(Masthead, _Component);
 
-  function Masthead() {
+  function Masthead(props) {
     _classCallCheck(this, Masthead);
 
-    return _possibleConstructorReturn(this, (Masthead.__proto__ || Object.getPrototypeOf(Masthead)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Masthead.__proto__ || Object.getPrototypeOf(Masthead)).call(this, props));
   }
 
   _createClass(Masthead, [{
@@ -9271,12 +9271,34 @@ var Masthead = function (_Component) {
             _react2.default.createElement(
               "div",
               { className: "one-third column center" },
-              "Team"
+              "Contact"
             ),
             _react2.default.createElement(
               "div",
               { className: "one-third column center" },
-              "Contact"
+              "Team"
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "row border" },
+            _react2.default.createElement(
+              "div",
+              { className: "column" },
+              _react2.default.createElement(
+                "div",
+                { className: "container" },
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "oddrad.io presents a curated collection of campus and community radio stations from across Canada. Each station here is an independent, volunteer-driven organization that focuses on supporting its local community."
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "oddrad.io collects these stations web streams in a single location so that you can listen and experience the sounds of different cities across the country."
+                )
+              )
             )
           )
         )
