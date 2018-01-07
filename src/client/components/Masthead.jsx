@@ -21,11 +21,10 @@ class Masthead extends Component {
           </div>
           <div className="row border">
             <div className="column">
-              <div className="container">
-                <p>oddrad.io presents a curated collection of campus and community radio stations 
-                  from across Canada. Each station here is an independent, volunteer-driven organization 
-                  that focuses on supporting its local community.</p>
-                <p>oddrad.io collects these stations web streams in a single location so that you can listen and experience the sounds of different cities across the country.</p>
+              <div className="container masthead-info">
+                <p>oddrad.io is a curated collection of some of the best independent radio stations that Canada has to offer. Each station listed here is powered by volunteers from their local community. DJs pick their own music and you really never know what you might hear.</p>
+                <p>The station streams are collected here in a single place where you can easily navigate from one to another, or save your favourites to the presets. You won't love what you hear on one station 100% of the time, but there's always another station to check out.</p>
+                <p>Unlike other internet radio aggregators, the selection on oddrad.io is kept intentionally small. With less than 30 stations to pick from, oddrad.io recreates a true radio dial experience online.</p>
               </div>
             </div>
           </div>
