@@ -11,6 +11,7 @@ exports[`App matches snapshot 1`] = `
     }
   />
   <header>
+    <div />
     <div
       className="container title-container"
     >
@@ -31,7 +32,9 @@ exports[`App matches snapshot 1`] = `
         <div
           className="three columns brand-name"
         >
-          <h1>
+          <h1
+            id="brand-name"
+          >
             oddrad.io
           </h1>
         </div>
@@ -40,7 +43,43 @@ exports[`App matches snapshot 1`] = `
   </header>
   <section
     className="station-list-container"
-  />
+  >
+    <div>
+      <div
+        className="container masthead"
+      >
+        <div
+          className="row station-row border"
+        >
+          <div
+            className="one-third column center"
+            onClick={[Function]}
+          >
+            About
+          </div>
+          <div
+            className="one-third column center"
+            onClick={[Function]}
+          >
+            Contact
+          </div>
+          <div
+            className="one-third column center"
+            onClick={[Function]}
+          >
+            Team
+          </div>
+        </div>
+        <div
+          className="row border"
+        >
+          <div
+            className="column"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
   <footer>
     <div>
       <audio
@@ -55,11 +94,12 @@ exports[`App matches snapshot 1`] = `
       </audio>
       <div>
         <div
-          className="player-station-name"
+          className="audio-player-station-name"
           onClick={[Function]}
         >
-          Current Station: 
+           
           
+           
         </div>
         <div
           className="container player-container"
@@ -72,8 +112,7 @@ exports[`App matches snapshot 1`] = `
             >
               <div>
                 <i
-                  className="fa fa-play fa-2x"
-                  id="pButton"
+                  className="fa fa-play fa-2x audio-player-play-button"
                   onClick={[Function]}
                 />
               </div>
@@ -108,6 +147,64 @@ exports[`App matches snapshot 1`] = `
                 className="fa fa-random fa-2x seek-button"
                 onClick={[Function]}
               />
+            </div>
+          </div>
+        </div>
+        <div
+          className="container presets"
+        >
+          <div
+            className="center presets-title"
+          >
+            Presets: 
+          </div>
+          <div
+            className="row border"
+          >
+            <div
+              className="five columns audio-player-presets"
+              onClick={[Function]}
+            >
+              <p>
+                1: 
+                Empty
+              </p>
+            </div>
+            <div
+              className="five columns audio-player-presets"
+              onClick={[Function]}
+            >
+              <p>
+                2: 
+                Empty
+              </p>
+            </div>
+            <div
+              className="five columns audio-player-presets"
+              onClick={[Function]}
+            >
+              <p>
+                3: 
+                Empty
+              </p>
+            </div>
+            <div
+              className="five columns audio-player-presets"
+              onClick={[Function]}
+            >
+              <p>
+                4: 
+                Empty
+              </p>
+            </div>
+            <div
+              className="five columns audio-player-presets"
+              onClick={[Function]}
+            >
+              <p>
+                5: 
+                Empty
+              </p>
             </div>
           </div>
         </div>

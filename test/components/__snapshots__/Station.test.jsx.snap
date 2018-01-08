@@ -11,29 +11,33 @@ exports[`Station matches snapshot 1`] = `
       className="row station-row border"
     >
       <div
-        className="one-third column station-name center"
+        className="three columns station-branding center"
       >
-         
-        QWER
-         
+        <div
+          className="non-expanded-station-name center"
+          onClick={[Function]}
+        >
+           
+           
+          QWER
+        </div>
       </div>
       <div
-        className="one-third column station-play-button center"
+        className="three columns station-play-button center"
       >
         <div>
           <i
-            className="fa fa-play fa-2x"
-            id="pButton"
+            className="fa fa-play fa-2x station-play-button"
             onClick={[Function]}
           />
         </div>
       </div>
       <div
-        className="one-third column station-info-button center"
+        className="three columns station-info-button center"
       >
         <i
           aria-hidden="true"
-          className="fa fa-chevron-down card-chevron"
+          className="fa fa-chevron-down card-chevron fa-2x"
           onClick={[Function]}
         />
       </div>

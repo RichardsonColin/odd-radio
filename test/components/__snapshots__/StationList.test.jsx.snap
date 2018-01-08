@@ -14,28 +14,33 @@ exports[`StationList matches snapshot 1`] = `
         className="row station-row border"
       >
         <div
-          className="one-third column station-name center"
+          className="three columns station-branding center"
         >
-           
-          CFCR
-           
+          <div
+            className="non-expanded-station-name center"
+            onClick={[Function]}
+          >
+             
+             
+            CFCR
+          </div>
         </div>
         <div
-          className="one-third column station-play-button center"
+          className="three columns station-play-button center"
         >
           <div>
             <i
-              className="fa fa-pause fa-2x"
+              className="fa fa-pause fa-2x station-play-button"
               onClick={[Function]}
             />
           </div>
         </div>
         <div
-          className="one-third column station-info-button center"
+          className="three columns station-info-button center"
         >
           <i
             aria-hidden="true"
-            className="fa fa-chevron-down card-chevron"
+            className="fa fa-chevron-down card-chevron fa-2x"
             onClick={[Function]}
           />
         </div>
@@ -52,32 +57,71 @@ exports[`StationList matches snapshot 1`] = `
         className="row station-row border"
       >
         <div
-          className="one-third column station-name center"
+          className="three columns station-branding center"
         >
-           
-          CFMU
-           
+          <div
+            className="non-expanded-station-name center"
+            onClick={[Function]}
+          >
+             
+             
+            CFMU
+          </div>
         </div>
         <div
-          className="one-third column station-play-button center"
+          className="three columns station-play-button center"
         >
           <div>
             <i
-              className="fa fa-play fa-2x"
-              id="pButton"
+              className="fa fa-play fa-2x station-play-button"
               onClick={[Function]}
             />
           </div>
         </div>
         <div
-          className="one-third column station-info-button center"
+          className="three columns station-info-button center"
         >
           <i
             aria-hidden="true"
-            className="fa fa-chevron-down card-chevron"
+            className="fa fa-chevron-down card-chevron fa-2x"
             onClick={[Function]}
           />
         </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="container masthead"
+    >
+      <div
+        className="row station-row border"
+      >
+        <div
+          className="one-third column center"
+          onClick={[Function]}
+        >
+          About
+        </div>
+        <div
+          className="one-third column center"
+          onClick={[Function]}
+        >
+          Contact
+        </div>
+        <div
+          className="one-third column center"
+          onClick={[Function]}
+        >
+          Team
+        </div>
+      </div>
+      <div
+        className="row border"
+      >
+        <div
+          className="column"
+        />
       </div>
     </div>
   </div>
