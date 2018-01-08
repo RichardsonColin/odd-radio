@@ -57,7 +57,7 @@ class App extends Component {
     this.hideStationInfo = this.hideStationInfo.bind(this);
     this.savePreset = this.savePreset.bind(this);
     this.setStateFaveStations = this.setStateFaveStations.bind(this);
-    this.checkWindowLocation = this.checkWindowLocation.bind(this);
+    this.directStationLoad = this.directStationLoad.bind(this);
   }
 
   // Initial API request to build up station collection object.
@@ -68,7 +68,7 @@ class App extends Component {
       }).then((json) => {
         this.setState({ stations: shuffle(json) })
       }).then(() => {
-        this.checkWindowLocation();
+        this.directStationLoad();
       }).catch((ex) => {
         console.log('parsing failed', ex)
       });
@@ -107,8 +107,7 @@ class App extends Component {
     }
   }
 
-  //function which sets the playState of play and pause and
-  //turns the player on and off
+  // Toggle player between play and pause state.
   playPause() {
     const player = document.getElementById("player");
     if (this.state.playState.isPaused) {
@@ -131,18 +130,21 @@ class App extends Component {
     }
   }
 
+  // Listener for stream loading.
   onLoadStart(e) {
     this.setState({
       streamLoading: true
     })
   }
 
+  // Listener for stream readiness.
   onCanPlay(e) {
     this.setState({
       streamLoading: false
     })
   }
 
+  // Play and pause on spacebar. 
   onSpaceBarPress(event) {
       console.log("In space bar function");
       if (event.key === ' '){
@@ -153,6 +155,7 @@ class App extends Component {
     }
   }
 
+  // Sets station into presets in local storage.
   savePreset(details, position) {
     let presets = this.state.presets;
     presets[position] = details
@@ -200,11 +203,13 @@ class App extends Component {
     }
   }
 
+  // Background change function.
   findColor() {
     const colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
     return this.colors[colorIndex];
   }
 
+  // Background change, detects scrolling.
   scrollListener() {
     const scrollListen = window.addEventListener('scroll', () => {
       const percent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
@@ -221,6 +226,7 @@ class App extends Component {
     }
   }
 
+  // Retrieve favourite stations from user local storage.
   setStateFaveStations() {
     if (JSON.parse(localStorage.getItem('presets'))) {
       this.setState({
@@ -229,31 +235,32 @@ class App extends Component {
     }
   }
 
+  // Finds the station container based on stationName and expands the info-container
+  //  and scrolls to the station container
+  findStationExpandInfo(stationName, stationFeed) {
+    // StationName ? let station = StationName
+    if (stationName == null) {
+      var station = stationFeed;
+    } else {
+      var station = stationName;
+    }
+    const stationDiv = document.getElementById(station);
 
-//finds the station container based on stationName and expands the info-container and scrolls to the station container
-findStationExpandInfo(stationName, stationFeed) {
-  console.log("before if: stationName:", stationName, "StationFeed: ", stationFeed);
-  // StationName ? let station = StationName
-  if (stationName == null) {
-    var station = stationFeed;
-  } else {
-    var station = stationName;
+    this.setState({ expanded: true, expandedName: station}, () => {
+      stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    });
   }
-  const stationDiv = document.getElementById(station);
 
-  this.setState({ expanded: true, expandedName: station}, () => {
-    stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-  });
-}
-
-
-  hideStationInfo() { //hides the info-container
+  // Hides the info-container
+  hideStationInfo() { 
     this.setState({
       expanded: false
     });
   }
 
-  checkWindowLocation() { //checks the window.location.pathname and compares it to the database.  if match call handleSelectedStation
+  // Checks the window.location.pathname and compares it to the database. 
+  // If it matches the station is pre-loaded on page render.
+  directStationLoad() { 
     var pathname = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
     const stations = this.state.stations;
 
@@ -264,10 +271,6 @@ findStationExpandInfo(stationName, stationFeed) {
         this.handleSelectedStation(station);
       }
     }
-  }
-
-  componentWillMount() {
-
   }
 
   componentDidMount() {
