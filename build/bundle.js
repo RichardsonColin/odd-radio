@@ -8083,6 +8083,10 @@ var App = function (_Component) {
     value: function handleSelectedStation(details) {
       var _this3 = this;
 
+      if (details.name == undefined) {
+        return;
+      }
+
       var player = document.getElementById("player");
 
       var station = {

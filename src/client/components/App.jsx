@@ -77,6 +77,11 @@ class App extends Component {
 
   // Takes a selected station and sets it in app level state, plays it.
   handleSelectedStation(details) {
+
+    if (details.name == undefined) {
+      return;
+    }
+
     const player = document.getElementById("player");
 
     let station = {
@@ -165,7 +170,6 @@ class App extends Component {
     }, () => {
       localStorage.setItem('presets', JSON.stringify(this.state.presets)); //sets the localStorage to the station before setting the this.State to the station
     });
-
 
   }
 
