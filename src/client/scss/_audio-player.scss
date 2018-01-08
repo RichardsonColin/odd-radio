@@ -1,7 +1,7 @@
 footer {
   position: fixed;
   bottom: 0px;
-  background-color: #b3e0da;
+  background-color: #000000;
   width: 100%;
   margin-top: 0;
   height: 130px;
@@ -48,11 +48,18 @@ footer {
     cursor: default;
   }
 
+.audio-player-play-button {
+color: #fff;
+}
 
-
+.audio-player-presets {
+  color: white;
+  cursor: default;
+}
 .presets {
   .presets-title{
     font-weight: bold;
+    color: white;
   }
   .presets-station:hover {
     text-shadow: 2px 2px 2px rgb(100, 100, 100);
@@ -60,5 +67,15 @@ footer {
   }
   margin-bottom: 10px;
 }
+
+.fa-volume-up {
+  color: #fff;
+}
+
+.seek-button {
+  color: #fff;
+}
+
+
 
 

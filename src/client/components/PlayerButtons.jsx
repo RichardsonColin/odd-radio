@@ -13,7 +13,7 @@ class PlayerButtons extends Component {
     return (
 
       <div>
-        <i className="fa fa-pause fa-2x" onClick={ (e) => this.props.clickFunction(this.props.params) } ></i>
+        <i className={"fa fa-pause fa-2x " + this.props.Style}  onClick={ (e) => this.props.clickFunction(this.props.params) } ></i>
       </div>
 
     );
@@ -21,7 +21,7 @@ class PlayerButtons extends Component {
       return (
 
       <div>
-        <i id="pButton" className="fa fa-play fa-2x" onClick={ (e) => this.props.clickFunction(this.props.params) } ></i>
+        <i className={"fa fa-play fa-2x " + this.props.Style} onClick={ (e) => this.props.clickFunction(this.props.params) } ></i>
       </div>
 
       );

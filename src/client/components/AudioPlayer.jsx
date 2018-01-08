@@ -70,7 +70,7 @@ class AudioPlayer extends Component {
           <div className="container player-container">
             <div className="row player-row border">
               <div className="three columns">
-                <PlayerButtons activeStation={ true } playState={ this.props.playState } streamLoading={ this.props.streamLoading }
+                <PlayerButtons Style='audio-player-play-button' activeStation={ true } playState={ this.props.playState } streamLoading={ this.props.streamLoading }
                 clickFunction={ this.props.playPause } />
               </div>
               { this.state.width > 768 &&
@@ -83,7 +83,7 @@ class AudioPlayer extends Component {
               </div>
             </div>
           </div>
-          <Presets presets={this.props.presets} title="Presets: " clickFunction={this.props.handleSelectedStation} />
+          <Presets Style="audio-player-presets" presets={this.props.presets} title="Presets: " clickFunction={this.props.handleSelectedStation} />
         </div>
       </div>
 

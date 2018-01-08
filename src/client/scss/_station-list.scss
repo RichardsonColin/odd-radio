@@ -15,6 +15,10 @@
   }
 }
 
+.station-branding {
+  text-align: center;
+}
+
 .station-container1 {
   display: flex;
   width: 100%;
@@ -25,14 +29,14 @@
   align-items: center;
   margin-bottom: -10px;
 
+
   .non-expanded-station-name {
     font-weight: bold;
     letter-spacing: 1em;
-    max-width: 3.8em;
     font-size: 18px;
     height: 0px;
-    text-align: justify;
     display: inline-block;
+    padding-top:4px;
   }
   .non-expanded-station-name:hover {
     text-shadow: 2px 2px 2px rgb(100, 100, 100);
@@ -53,10 +57,8 @@
   .non-expanded-station-name {
   font-weight: bold;
   letter-spacing: 1em;
-  max-width: 3.8em;
   font-size: 18px;
   height: 0px;
-  text-align: justify;
   display: inline-block;
   color:black;
 }
