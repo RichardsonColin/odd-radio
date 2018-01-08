@@ -8084,7 +8084,6 @@ var App = function (_Component) {
       var _this3 = this;
 
       if (details.name == undefined) {
-        console.log("Empty preset clicked.");
         return;
       }
 
