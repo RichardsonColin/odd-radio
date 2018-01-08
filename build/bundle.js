@@ -9289,19 +9289,106 @@ var Masthead = function (_Component) {
                 "div",
                 { className: "container masthead-info" },
                 _react2.default.createElement(
-                  "p",
-                  null,
-                  "oddrad.io is a curated collection of some of the best independent radio stations that Canada has to offer. Each station listed here is powered by volunteers from their local community. DJs pick their own music and you really never know what you might hear."
+                  "div",
+                  { className: "row center" },
+                  _react2.default.createElement(
+                    "h5",
+                    null,
+                    "About oddrad.io"
+                  )
                 ),
                 _react2.default.createElement(
-                  "p",
-                  null,
-                  "The station streams are collected here in a single place where you can easily navigate from one to another, or save your favourites to the presets. You won't love what you hear on one station 100% of the time, but there's always another station to check out."
+                  "div",
+                  { className: "row" },
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "oddrad.io is a curated collection of some of the best independent radio stations that Canada has to offer. Each station listed here is powered by volunteers from the station's local community. These DJs pick all their own music, be prepared to hear all kinds of weird stuff."
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "The purpose of this app is to collect these unique radio station streams in single place where you can easily navigate from one to another and save your favourites to the presets. You won't love what you hear on one station 100% of the time, but there's always another station to check out. Hit that seek button."
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "Unlike other internet radio aggregators, the selection on oddrad.io is kept intentionally small. With less than 30 stations to pick from, oddrad.io recreates a true radio dial experience online. Except all the stations have unique, human curated offerings."
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "container masthead-info" },
+                _react2.default.createElement(
+                  "div",
+                  { className: "row center" },
+                  _react2.default.createElement(
+                    "h5",
+                    null,
+                    "Contact Us"
+                  )
                 ),
                 _react2.default.createElement(
-                  "p",
-                  null,
-                  "Unlike other internet radio aggregators, the selection on oddrad.io is kept intentionally small. With less than 30 stations to pick from, oddrad.io recreates a true radio dial experience online."
+                  "div",
+                  { className: "row" },
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "Got a suggestion for a station to add? Want us to take your station down?"
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "Get in touch with us by email: oddradioapp@gmail.com"
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "container masthead-info" },
+                _react2.default.createElement(
+                  "div",
+                  { className: "row center" },
+                  _react2.default.createElement(
+                    "h5",
+                    null,
+                    "The Team"
+                  )
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "row" },
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "oddrad.io was developed as a final project for Lighthouse Labs web development bootcamp."
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "The team behind oddrad.io:"
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "Johnnie Regalado"
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "Colin Richardson"
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "Sebastian Bethell"
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "Yves Frepon"
+                  )
                 )
               )
             )
