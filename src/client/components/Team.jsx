@@ -10,12 +10,12 @@ class Team extends Component {
         <div className="row">
           <p>The team behind oddrad.io:</p>
           <div className="row">
-            <p>Johnnie Regalado</p>
-            <p>Yves Frepon</p>
-            <p>Colin Richardson</p>
-            <p>Sebastian Bethell</p>
+            <a href="https://github.com/johnniereg" target="blank"><p>Johnnie Regalado</p></a>
+            <a href="https://github.com/DevYves" target="blank"><p>Yves Frepon</p></a>
+            <a href="https://github.com/RyukyuColin" target="blank"><p>Colin Richardson</p></a>
+            <a href="https://github.com/SebastianBethell" target="blank"><p>Sebastian Bethell</p></a>
           </div>
-          <p>oddrad.io was developed as a final project for Lighthouse Labs web development bootcamp.</p>
+          <p>oddrad.io was developed by brand new programmers as a final project for the Lighthouse Labs web development bootcamp.</p>
         </div>
       </div>
     )

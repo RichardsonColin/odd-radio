@@ -9471,12 +9471,31 @@ var Contact = function (_Component) {
           _react2.default.createElement(
             "p",
             null,
-            "Got a suggestion for a station to add? Want us to take your station down?"
+            "Got a suggestion for a station to add?"
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "Want us to take your station down?"
           ),
           _react2.default.createElement(
             "p",
             null,
             "Get in touch with us by email: oddradioapp@gmail.com"
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "This is an open source project and we welcome additional contributions from the community."
+          ),
+          _react2.default.createElement(
+            "a",
+            { href: "https://github.com/johnniereg/odd-radio", target: "blank" },
+            _react2.default.createElement(
+              "p",
+              null,
+              "The code."
+            )
           )
         )
       );
@@ -9549,30 +9568,46 @@ var Team = function (_Component) {
             "div",
             { className: "row" },
             _react2.default.createElement(
-              "p",
-              null,
-              "Johnnie Regalado"
+              "a",
+              { href: "https://github.com/johnniereg", target: "blank" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Johnnie Regalado"
+              )
             ),
             _react2.default.createElement(
-              "p",
-              null,
-              "Yves Frepon"
+              "a",
+              { href: "https://github.com/DevYves", target: "blank" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Yves Frepon"
+              )
             ),
             _react2.default.createElement(
-              "p",
-              null,
-              "Colin Richardson"
+              "a",
+              { href: "https://github.com/RyukyuColin", target: "blank" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Colin Richardson"
+              )
             ),
             _react2.default.createElement(
-              "p",
-              null,
-              "Sebastian Bethell"
+              "a",
+              { href: "https://github.com/SebastianBethell", target: "blank" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Sebastian Bethell"
+              )
             )
           ),
           _react2.default.createElement(
             "p",
             null,
-            "oddrad.io was developed as a final project for Lighthouse Labs web development bootcamp."
+            "oddrad.io was developed by brand new programmers as a final project for the Lighthouse Labs web development bootcamp."
           )
         )
       );
