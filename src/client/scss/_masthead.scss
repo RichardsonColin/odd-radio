@@ -1,12 +1,25 @@
 .masthead {
     background-color: white;
     margin-top: 25px;
-    padding-bottom: 25px;
+    width: 100%;
+
+    h5 {
+        font-size: 1.25em;
+    }
+
+    h5:hover {
+        text-shadow: 2px 2px 2px rgb(100, 100, 100);
+        cursor: default;
+    }
 
 }
 
+.masthead-nav {
+    margin-bottom: -15px;
+    padding-top: 20px;
+}
+
+
 .masthead-info {
-    padding-top: 25px;
-    text-align: justify;
-    
+    text-align: justify;  
 }

@@ -27,17 +27,16 @@ class Masthead extends Component {
 
   render(){
     return(
-    <div>
       <div className="container masthead">
-        <div className="row station-row border">
-          <div className="one-third column center" onClick={ (e) => this.toggleInfo('about') } >
-            About
+        <div className="row border masthead-nav">
+          <div className="one-third column center" onClick={ (e) => this.toggleInfo('about') }>
+            <h5>About</h5>
           </div>
           <div className="one-third column center" onClick={ (e) => this.toggleInfo('contact') }>
-            Contact
+            <h5>Contact</h5>
           </div>
-          <div className="one-third column center" onClick={(e) => this.toggleInfo('team')} >
-            Team
+          <div className="one-third column center" onClick={ (e) => this.toggleInfo('team') }>
+            <h5>Team</h5>
           </div>
         </div>
         <div className="row border">
@@ -48,7 +47,6 @@ class Masthead extends Component {
           </div>
         </div>
       </div>
-    </div>
     );
   }
 }
