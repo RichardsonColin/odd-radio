@@ -8053,7 +8053,7 @@ var App = function (_Component) {
     _this.hideStationInfo = _this.hideStationInfo.bind(_this);
     _this.savePreset = _this.savePreset.bind(_this);
     _this.setStateFaveStations = _this.setStateFaveStations.bind(_this);
-    _this.checkWindowLocation = _this.checkWindowLocation.bind(_this);
+    _this.directStationLoad = _this.directStationLoad.bind(_this);
     return _this;
   }
 
@@ -8070,7 +8070,7 @@ var App = function (_Component) {
       }).then(function (json) {
         _this2.setState({ stations: (0, _ClientFunctions.shuffle)(json) });
       }).then(function () {
-        _this2.checkWindowLocation();
+        _this2.directStationLoad();
       }).catch(function (ex) {
         console.log('parsing failed', ex);
       });
@@ -8113,8 +8113,7 @@ var App = function (_Component) {
       }
     }
 
-    //function which sets the playState of play and pause and
-    //turns the player on and off
+    // Toggle player between play and pause state.
 
   }, {
     key: 'playPause',
@@ -8142,6 +8141,9 @@ var App = function (_Component) {
         });
       }
     }
+
+    // Listener for stream loading.
+
   }, {
     key: 'onLoadStart',
     value: function onLoadStart(e) {
@@ -8149,6 +8151,9 @@ var App = function (_Component) {
         streamLoading: true
       });
     }
+
+    // Listener for stream readiness.
+
   }, {
     key: 'onCanPlay',
     value: function onCanPlay(e) {
@@ -8156,6 +8161,9 @@ var App = function (_Component) {
         streamLoading: false
       });
     }
+
+    // Play and pause on spacebar. 
+
   }, {
     key: 'onSpaceBarPress',
     value: function onSpaceBarPress(event) {
@@ -8166,6 +8174,9 @@ var App = function (_Component) {
         this.playPause();
       }
     }
+
+    // Sets station into presets in local storage.
+
   }, {
     key: 'savePreset',
     value: function savePreset(details, position) {
@@ -8241,12 +8252,18 @@ var App = function (_Component) {
         }
       }
     }
+
+    // Background change function.
+
   }, {
     key: 'findColor',
     value: function findColor() {
       var colorIndex = Math.floor(this.state.scrollPercent * this.colors.length);
       return this.colors[colorIndex];
     }
+
+    // Background change, detects scrolling.
+
   }, {
     key: 'scrollListener',
     value: function scrollListener() {
@@ -8269,6 +8286,9 @@ var App = function (_Component) {
         });
       }
     }
+
+    // Retrieve favourite stations from user local storage.
+
   }, {
     key: 'setStateFaveStations',
     value: function setStateFaveStations() {
@@ -8279,12 +8299,12 @@ var App = function (_Component) {
       }
     }
 
-    //finds the station container based on stationName and expands the info-container and scrolls to the station container
+    // Finds the station container based on stationName and expands the info-container
+    //  and scrolls to the station container
 
   }, {
     key: 'findStationExpandInfo',
     value: function findStationExpandInfo(stationName, stationFeed) {
-      console.log("before if: stationName:", stationName, "StationFeed: ", stationFeed);
       // StationName ? let station = StationName
       if (stationName == null) {
         var station = stationFeed;
@@ -8297,18 +8317,23 @@ var App = function (_Component) {
         stationDiv.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
       });
     }
+
+    // Hides the info-container
+
   }, {
     key: 'hideStationInfo',
     value: function hideStationInfo() {
-      //hides the info-container
       this.setState({
         expanded: false
       });
     }
+
+    // Checks the window.location.pathname and compares it to the database. 
+    // If it matches the station is pre-loaded on page render.
+
   }, {
-    key: 'checkWindowLocation',
-    value: function checkWindowLocation() {
-      //checks the window.location.pathname and compares it to the database.  if match call handleSelectedStation
+    key: 'directStationLoad',
+    value: function directStationLoad() {
       var pathname = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
       var stations = this.state.stations;
 
@@ -8341,9 +8366,6 @@ var App = function (_Component) {
         }
       }
     }
-  }, {
-    key: 'componentWillMount',
-    value: function componentWillMount() {}
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
