@@ -346,7 +346,7 @@ exports.seed = function(knex, Promise) {
         home_page: 'https://thex.ca/',
         city:'Kamloops' ,
         province:'BC',
-        description: "The X – Campus & Community Radio serving Kamloops, BC",
+        description: "CFBX-FM, also known as 'The X' 92.5 FM, is the campus radio station at Thompson Rivers University. They went live April 2001.",
         frequency: '92.5 FM' ,
         language: 'English' ,
         stream_type: 'audio/mpeg'
