@@ -42,9 +42,9 @@ class Masthead extends Component {
         </div>
         <div className="row border">
           <div className="column">
-            <About />
-            <Contact />
-            <Team />
+            { this.state.expanded === 'about' && <About /> }
+            { this.state.expanded === 'contact' && <Contact /> }
+            { this.state.expanded === 'team' && <Team /> }
           </div>
         </div>
       </div>

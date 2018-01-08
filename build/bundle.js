@@ -9260,12 +9260,33 @@ var Masthead = function (_Component) {
   function Masthead(props) {
     _classCallCheck(this, Masthead);
 
-    return _possibleConstructorReturn(this, (Masthead.__proto__ || Object.getPrototypeOf(Masthead)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Masthead.__proto__ || Object.getPrototypeOf(Masthead)).call(this, props));
+
+    _this.state = {
+      expanded: 'none'
+    };
+    return _this;
   }
 
   _createClass(Masthead, [{
+    key: 'toggleInfo',
+    value: function toggleInfo(target) {
+      if (this.state.expanded === target) {
+        this.setState({
+          expanded: 'none'
+        });
+      }
+      if (this.state.expanded !== target) {
+        this.setState({
+          expanded: target
+        });
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'div',
         null,
@@ -9277,17 +9298,23 @@ var Masthead = function (_Component) {
             { className: 'row station-row border' },
             _react2.default.createElement(
               'div',
-              { className: 'one-third column center ' },
+              { className: 'one-third column center', onClick: function onClick(e) {
+                  return _this2.toggleInfo('about');
+                } },
               'About'
             ),
             _react2.default.createElement(
               'div',
-              { className: 'one-third column center' },
+              { className: 'one-third column center', onClick: function onClick(e) {
+                  return _this2.toggleInfo('contact');
+                } },
               'Contact'
             ),
             _react2.default.createElement(
               'div',
-              { className: 'one-third column center' },
+              { className: 'one-third column center', onClick: function onClick(e) {
+                  return _this2.toggleInfo('team');
+                } },
               'Team'
             )
           ),
@@ -9297,9 +9324,9 @@ var Masthead = function (_Component) {
             _react2.default.createElement(
               'div',
               { className: 'column' },
-              _react2.default.createElement(_About2.default, null),
-              _react2.default.createElement(_Contact2.default, null),
-              _react2.default.createElement(_Team2.default, null)
+              this.state.expanded === 'about' && _react2.default.createElement(_About2.default, null),
+              this.state.expanded === 'contact' && _react2.default.createElement(_Contact2.default, null),
+              this.state.expanded === 'team' && _react2.default.createElement(_Team2.default, null)
             )
           )
         )
