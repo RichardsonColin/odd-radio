@@ -10,19 +10,24 @@ class SetPresets extends Component {
         </div>
         <div className="row border">
           <div className="five columns presets-station" onClick={(e) => this.props.clickFunction(this.props.details, 'one')}>
-            <p>1: {this.props.presets.one.name ? this.props.presets.one.name : 'Empty'}</p>
+            <div>1:</div>
+            <p>{this.props.presets.one.name ? this.props.presets.one.name : 'Empty'}</p>
           </div>
           <div className="five columns presets-station" onClick={(e) => this.props.clickFunction(this.props.details, 'two')}>
-            <p>2: {this.props.presets.two.name ? this.props.presets.two.name : 'Empty'}</p>
+            <div>2:</div>
+            <p>{this.props.presets.two.name ? this.props.presets.two.name : 'Empty'}</p>
           </div>
           <div className="five columns presets-station" onClick={(e) => this.props.clickFunction(this.props.details, 'three')}>
-            <p>3: {this.props.presets.three.name ? this.props.presets.three.name : 'Empty'}</p>
+            <div>3:</div>
+            <p>{this.props.presets.three.name ? this.props.presets.three.name : 'Empty'}</p>
           </div>
           <div className="five columns presets-station" onClick={(e) => this.props.clickFunction(this.props.details, 'four')}>
-            <p>4: {this.props.presets.four.name ? this.props.presets.four.name : 'Empty'}</p>
+            <div>4:</div>
+            <p>{this.props.presets.four.name ? this.props.presets.four.name : 'Empty'}</p>
           </div>
           <div className="five columns presets-station" onClick={(e) => this.props.clickFunction(this.props.details, 'five')}>
-            <p>5: {this.props.presets.five.name ? this.props.presets.five.name : 'Empty'}</p>
+            <div>5:</div>
+            <p>{this.props.presets.five.name ? this.props.presets.five.name : 'Empty'}</p>
           </div>
         </div>
       </div>
