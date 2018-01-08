@@ -43,7 +43,7 @@ componentWillReceiveProps(props) {
               <div className="row station-row border">
                <div className="one-third column station-name center "></div>
                 <div className="one-third column station-play-button center">
-                  <PlayerButtons clickFunction={ this.props.handleSelectedStation } params={ this.state.details }
+                  <PlayerButtons Style="station-play-button " clickFunction={ this.props.handleSelectedStation } params={ this.state.details }
                   streamLoading={this.props.streamLoading} playState={ this.props.playState }
                   activeStation={ this.props.activeStation } />
                 </div>
@@ -77,7 +77,7 @@ componentWillReceiveProps(props) {
                 <StationName Style="non-expanded-station-name center" StationName={this.props.name} findStationExpandInfo={ this.props.findStationExpandInfo }/>
                 </div>
               <div className="one-third column station-play-button center">
-                <PlayerButtons clickFunction={this.props.handleSelectedStation} params={this.state.details}
+                <PlayerButtons Style="station-play-button" clickFunction={this.props.handleSelectedStation} params={this.state.details}
                   streamLoading={this.props.streamLoading} playState={ this.props.playState }
                   activeStation={this.props.activeStation} />
               </div>
