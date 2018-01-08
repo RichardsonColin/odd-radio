@@ -1206,7 +1206,7 @@ var _App = __webpack_require__(30);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _application = __webpack_require__(42);
+var _application = __webpack_require__(45);
 
 var _application2 = _interopRequireDefault(_application);
 
@@ -7986,11 +7986,11 @@ var _StationList = __webpack_require__(36);
 
 var _StationList2 = _interopRequireDefault(_StationList);
 
-var _Background = __webpack_require__(40);
+var _Background = __webpack_require__(43);
 
 var _Background2 = _interopRequireDefault(_Background);
 
-var _Ticker = __webpack_require__(41);
+var _Ticker = __webpack_require__(44);
 
 var _Ticker2 = _interopRequireDefault(_Ticker);
 
@@ -9234,6 +9234,18 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _About = __webpack_require__(40);
+
+var _About2 = _interopRequireDefault(_About);
+
+var _Contact = __webpack_require__(41);
+
+var _Contact2 = _interopRequireDefault(_Contact);
+
+var _Team = __webpack_require__(42);
+
+var _Team2 = _interopRequireDefault(_Team);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9252,145 +9264,42 @@ var Masthead = function (_Component) {
   }
 
   _createClass(Masthead, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
+        'div',
         null,
         _react2.default.createElement(
-          "div",
-          { className: "container masthead" },
+          'div',
+          { className: 'container masthead' },
           _react2.default.createElement(
-            "div",
-            { className: "row station-row border" },
+            'div',
+            { className: 'row station-row border' },
             _react2.default.createElement(
-              "div",
-              { className: "one-third column center " },
-              "About"
+              'div',
+              { className: 'one-third column center ' },
+              'About'
             ),
             _react2.default.createElement(
-              "div",
-              { className: "one-third column center" },
-              "Contact"
+              'div',
+              { className: 'one-third column center' },
+              'Contact'
             ),
             _react2.default.createElement(
-              "div",
-              { className: "one-third column center" },
-              "Team"
+              'div',
+              { className: 'one-third column center' },
+              'Team'
             )
           ),
           _react2.default.createElement(
-            "div",
-            { className: "row border" },
+            'div',
+            { className: 'row border' },
             _react2.default.createElement(
-              "div",
-              { className: "column" },
-              _react2.default.createElement(
-                "div",
-                { className: "container masthead-info" },
-                _react2.default.createElement(
-                  "div",
-                  { className: "row center" },
-                  _react2.default.createElement(
-                    "h5",
-                    null,
-                    "About oddrad.io"
-                  )
-                ),
-                _react2.default.createElement(
-                  "div",
-                  { className: "row" },
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "oddrad.io is a curated collection of some of the best independent radio stations that Canada has to offer. Each station listed here is powered by volunteers from the station's local community. These DJs pick all their own music, be prepared to hear all kinds of weird stuff."
-                  ),
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "The purpose of this app is to collect these unique radio station streams in single place where you can easily navigate from one to another and save your favourites to the presets. You won't love what you hear on one station 100% of the time, but there's always another station to check out. Hit that seek button."
-                  ),
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "Unlike other internet radio aggregators, the selection on oddrad.io is kept intentionally small. With less than 30 stations to pick from, oddrad.io recreates a true radio dial experience online. Except all the stations have unique, human curated offerings."
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "container masthead-info" },
-                _react2.default.createElement(
-                  "div",
-                  { className: "row center" },
-                  _react2.default.createElement(
-                    "h5",
-                    null,
-                    "Contact Us"
-                  )
-                ),
-                _react2.default.createElement(
-                  "div",
-                  { className: "row" },
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "Got a suggestion for a station to add? Want us to take your station down?"
-                  ),
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "Get in touch with us by email: oddradioapp@gmail.com"
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "container masthead-info" },
-                _react2.default.createElement(
-                  "div",
-                  { className: "row center" },
-                  _react2.default.createElement(
-                    "h5",
-                    null,
-                    "The Team"
-                  )
-                ),
-                _react2.default.createElement(
-                  "div",
-                  { className: "row" },
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "oddrad.io was developed as a final project for Lighthouse Labs web development bootcamp."
-                  ),
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "The team behind oddrad.io:"
-                  ),
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "Johnnie Regalado"
-                  ),
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "Colin Richardson"
-                  ),
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "Sebastian Bethell"
-                  ),
-                  _react2.default.createElement(
-                    "p",
-                    null,
-                    "Yves Frepon"
-                  )
-                )
-              )
+              'div',
+              { className: 'column' },
+              _react2.default.createElement(_About2.default, null),
+              _react2.default.createElement(_Contact2.default, null),
+              _react2.default.createElement(_Team2.default, null)
             )
           )
         )
@@ -9405,6 +9314,251 @@ exports.default = Masthead;
 
 /***/ }),
 /* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var About = function (_Component) {
+  _inherits(About, _Component);
+
+  function About() {
+    _classCallCheck(this, About);
+
+    return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+  }
+
+  _createClass(About, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "container masthead-info" },
+        _react2.default.createElement(
+          "div",
+          { className: "row center" },
+          _react2.default.createElement(
+            "h5",
+            null,
+            "About oddrad.io"
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "row" },
+          _react2.default.createElement(
+            "p",
+            null,
+            "oddrad.io is a curated collection of some of the best independent radio stations that Canada has to offer. Each station listed here is powered by volunteers from the station's local community. These DJs pick all their own music, be prepared to hear all kinds of weird stuff."
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "The purpose of this app is to collect these unique radio station streams in single place where you can easily navigate from one to another and save your favourites to the presets. You won't love what you hear on one station 100% of the time, but there's always another station to check out. Hit that seek button."
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "Unlike other internet radio aggregators, the selection on oddrad.io is kept intentionally small. With less than 30 stations to pick from, oddrad.io recreates a true radio dial experience online. Except all the stations have unique, human curated offerings."
+          )
+        )
+      );
+    }
+  }]);
+
+  return About;
+}(_react.Component);
+
+exports.default = About;
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Contact = function (_Component) {
+  _inherits(Contact, _Component);
+
+  function Contact() {
+    _classCallCheck(this, Contact);
+
+    return _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).apply(this, arguments));
+  }
+
+  _createClass(Contact, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "container masthead-info" },
+        _react2.default.createElement(
+          "div",
+          { className: "row center" },
+          _react2.default.createElement(
+            "h5",
+            null,
+            "Contact Us"
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "row" },
+          _react2.default.createElement(
+            "p",
+            null,
+            "Got a suggestion for a station to add? Want us to take your station down?"
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "Get in touch with us by email: oddradioapp@gmail.com"
+          )
+        )
+      );
+    }
+  }]);
+
+  return Contact;
+}(_react.Component);
+
+exports.default = Contact;
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Team = function (_Component) {
+  _inherits(Team, _Component);
+
+  function Team() {
+    _classCallCheck(this, Team);
+
+    return _possibleConstructorReturn(this, (Team.__proto__ || Object.getPrototypeOf(Team)).apply(this, arguments));
+  }
+
+  _createClass(Team, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "container masthead-info" },
+        _react2.default.createElement(
+          "div",
+          { className: "row center" },
+          _react2.default.createElement(
+            "h5",
+            null,
+            "The Team"
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "row" },
+          _react2.default.createElement(
+            "p",
+            null,
+            "The team behind oddrad.io:"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "row" },
+            _react2.default.createElement(
+              "p",
+              null,
+              "Johnnie Regalado"
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              "Yves Frepon"
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              "Colin Richardson"
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              "Sebastian Bethell"
+            )
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "oddrad.io was developed as a final project for Lighthouse Labs web development bootcamp."
+          )
+        )
+      );
+    }
+  }]);
+
+  return Team;
+}(_react.Component);
+
+exports.default = Team;
+
+/***/ }),
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9450,7 +9604,7 @@ var Background = function (_Component) {
 exports.default = Background;
 
 /***/ }),
-/* 41 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9586,13 +9740,13 @@ var Ticker = function (_Component) {
 exports.default = Ticker;
 
 /***/ }),
-/* 42 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(43);
+var content = __webpack_require__(46);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -9600,7 +9754,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(45)(content, options);
+var update = __webpack_require__(48)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -9617,10 +9771,10 @@ if(false) {
 }
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(44)(undefined);
+exports = module.exports = __webpack_require__(47)(undefined);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Arimo|Lato|Nunito+Sans|PT+Sans|Raleway);", ""]);
 
@@ -9631,7 +9785,7 @@ exports.push([module.i, "@charset \"UTF-8\";\n/*! normalize.css v3.0.2 | MIT Lic
 
 
 /***/ }),
-/* 44 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9713,7 +9867,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -9769,7 +9923,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(46);
+var	fixUrls = __webpack_require__(49);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -10085,7 +10239,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
