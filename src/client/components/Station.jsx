@@ -62,7 +62,7 @@ componentWillReceiveProps(props) {
                     <div><b>Home Page:</b> <a href={this.props.homePage} target='_blank'> { this.props.homePage } </a> </div>
                   </div>
                 </div>
-                <SetPresets presets={this.props.presets} title="Save Station In Presets: " clickFunction={ this.props.savePreset } details={ this.state.details }/>
+                <SetPresets Style="presets-station" presets={this.props.presets} title="Save Station In Presets: " clickFunction={ this.props.savePreset } details={ this.state.details }/>
               </div>
             </div>
           </div>
