@@ -366,7 +366,16 @@
 321
 322
 323
-324</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -411,6 +420,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -426,6 +436,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -610,7 +621,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -620,6 +630,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -646,11 +657,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -733,6 +751,7 @@ class App extends Component {
       expandedName: ''
     },
 &nbsp;
+&nbsp;
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
     this.seekStation = this.seekStation.bind(this);
     this.generateRandomStationId = this.generateRandomStationId.bind(this);
@@ -749,6 +768,7 @@ class App extends Component {
     this.savePreset = this.savePreset.bind(this);
     this.setStateFaveStations = this.setStateFaveStations.bind(this);
     this.directStationLoad = this.directStationLoad.bind(this);
+&nbsp;
   }
 &nbsp;
   // Initial API request to build up station collection object.
@@ -840,7 +860,7 @@ class App extends Component {
     })
   }
 &nbsp;
-  // Play and pause on spacebar. 
+  // Play and pause on spacebar.
 <span class="fstat-no" title="function not covered" >  on</span>SpaceBarPress(event) {
 <span class="cstat-no" title="statement not covered" >      console.log("In space bar function");</span>
 <span class="cstat-no" title="statement not covered" >      if (event.key === ' '){</span>
@@ -933,7 +953,6 @@ class App extends Component {
   // Finds the station container based on stationName and expands the info-container
   //  and scrolls to the station container
 <span class="fstat-no" title="function not covered" >  fi</span>ndStationExpandInfo(stationName, stationFeed) {
-    // StationName ? let station = StationName
 <span class="cstat-no" title="statement not covered" >    if (stationName == null) {</span>
       var station = <span class="cstat-no" title="statement not covered" >stationFeed;</span>
     } else {
@@ -942,20 +961,21 @@ class App extends Component {
     const stationDiv = <span class="cstat-no" title="statement not covered" >document.getElementById(station);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    this.setState({ expanded: true, expandedName: station}, <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});</span>
+<span class="cstat-no" title="statement not covered" >      stationDiv.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });</span>
+&nbsp;
     });
   }
 &nbsp;
   // Hides the info-container
-<span class="fstat-no" title="function not covered" >  hi</span>deStationInfo() { 
+<span class="fstat-no" title="function not covered" >  hi</span>deStationInfo() {
 <span class="cstat-no" title="statement not covered" >    this.setState({</span>
       expanded: false
     });
   }
 &nbsp;
-  // Checks the window.location.pathname and compares it to the database. 
+  // Checks the window.location.pathname and compares it to the database.
   // If it matches the station is pre-loaded on page render.
-  directStationLoad() { 
+  directStationLoad() {
     var pathname = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
     const stations = this.state.stations;
 &nbsp;
@@ -968,13 +988,20 @@ class App extends Component {
     }
   }
 &nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
   componentDidMount() {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
     this.setStateFaveStations();
     window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
+&nbsp;
   }
+&nbsp;
+&nbsp;
+&nbsp;
 &nbsp;
   render() {
     return (
@@ -1018,7 +1045,7 @@ export default App;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jan 09 2018 18:02:29 GMT+0000 (UTC)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jan 09 2018 23:18:21 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../prettify.js"></script>
