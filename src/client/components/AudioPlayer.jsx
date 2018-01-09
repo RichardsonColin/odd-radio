@@ -72,7 +72,7 @@ class AudioPlayer extends Component {
         </audio>
         <div>
         { this.state.width > 768 &&
-          <StationName Style='audio-player-station-name' StationFeed={ this.props.stationFeed.name } findStationExpandInfo={this.props.findStationExpandInfo} />
+          <StationName Style='audio-player-station-name' stationFeed={ this.props.stationFeed.name } findStationExpandInfo={this.props.findStationExpandInfo} />
           }
           <div className="container player-container">
             <div className="row player-row border">
@@ -96,7 +96,8 @@ class AudioPlayer extends Component {
               </div>
             </div>
           </div>
-          <Presets Style="audio-player-presets" presets={this.props.presets} title="Presets: " clickFunction={this.props.handleSelectedStation} />
+          <Presets Style="audio-player-presets" presets={this.props.presets} title="Presets: " stationFeed={ this.props.stationFeed.name }
+          clickFunction={this.props.handleSelectedStation} />
         </div>
       </div>
 
