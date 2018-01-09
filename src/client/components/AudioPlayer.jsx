@@ -66,7 +66,9 @@ class AudioPlayer extends Component {
           <source src={ this.props.stationFeed.audioFeed } type={ this.props.stationFeed.streamType } />
         </audio>
         <div>
+        { this.state.width > 768 &&
           <StationName Style='audio-player-station-name' StationFeed={ this.props.stationFeed.name } findStationExpandInfo={this.props.findStationExpandInfo} />
+          }
           <div className="container player-container">
             <div className="row player-row border">
               <div className="three columns">
@@ -76,6 +78,12 @@ class AudioPlayer extends Component {
               { this.state.width > 768 &&
                 <div className="three columns">
                   <VolumeControls volume={ this.state.volume } setVolume={ this.setVolume } muteAudio={ this.muteAudio }/>
+                </div>
+
+              }
+              {this.state.width < 768 &&
+                <div className="three columns">
+                <StationName Style='audio-player-station-mobile' StationFeed={ this.props.stationFeed.name } findStationExpandInfo={this.props.findStationExpandInfo} />
                 </div>
               }
               <div className="three columns">
