@@ -55,12 +55,10 @@ componentWillReceiveProps(props) {
               <div className="four columns center">
                 <StationName Style="expanded-station-name center" StationName={this.props.name} findStationExpandInfo={ this.props.findStationExpandInfo }/>
               </div>
-              <div className="six columns">
-                <div><b>Location:</b> { this.props.city } </div>
-                <div><b>Description:</b> { this.props.description } </div>
-                <div><b>Home Page:</b> <a href={this.props.homePage} target='_blank'> { this.props.homePage } </a> </div>
-              </div>
-              <div className="two columns center">
+              <div className="eight columns station-details">
+                <div className="location">{ this.props.city } </div>
+                <div className="description">{ this.props.description } </div>
+                <div className="homepage"><a href={this.props.homePage} target='_blank'> { this.props.homePage } </a> </div>
               </div>
             </div>
             <div className="row border center-align">
@@ -78,15 +76,15 @@ componentWillReceiveProps(props) {
         <div id={ this.props.name }>
           <div className={`container station-container${this.props.stationType}`}>
             <div className="row station-row border">
-              <div className="three columns station-branding center">
+              <div className="four columns station-branding center">
                 <StationName Style="non-expanded-station-name center" StationName={this.props.name} findStationExpandInfo={ this.props.findStationExpandInfo }/>
                 </div>
-              <div className="three columns station-play-button center">
+              <div className="four columns station-play-button center">
                 <PlayerButtons Style="station-play-button" clickFunction={this.props.handleSelectedStation} params={this.state.details}
                   streamLoading={this.props.streamLoading} playState={ this.props.playState }
                   activeStation={this.props.activeStation} />
               </div>
-              <div className="three columns station-info-button center">
+              <div className="four columns station-info-button center">
                 <i className="fa fa-chevron-down card-chevron fa-2x" aria-hidden="true" onClick={(e) => this.props.findStationExpandInfo(this.props.name)}></i>
               </div>
             </div>
