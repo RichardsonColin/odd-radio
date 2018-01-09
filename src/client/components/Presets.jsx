@@ -12,16 +12,16 @@ class Presets extends Component {
           { this.props.title }
         </div>
         <div className="row border">
-          <div className={"five columns " + this.props.Style} onClick={(e) => this.props.clickFunction(this.props.presets.one)}>
+          <div className={"five columns border-right "  + this.props.Style } onClick={(e) => this.props.clickFunction(this.props.presets.one)}>
             <p>1: { this.props.presets.one.name ? this.props.presets.one.name : 'Empty' }</p>
           </div>
-          <div className={"five columns " + this.props.Style} onClick={(e) => this.props.clickFunction(this.props.presets.two)}>
+          <div className={"five columns border-right " + this.props.Style + ""} onClick={(e) => this.props.clickFunction(this.props.presets.two)}>
             <p>2: { this.props.presets.two.name ? this.props.presets.two.name : 'Empty' }</p>
           </div>
-          <div className={"five columns " + this.props.Style} onClick={(e) => this.props.clickFunction(this.props.presets.three)}>
+          <div className={"five columns border-right " + this.props.Style} onClick={(e) => this.props.clickFunction(this.props.presets.three)}>
             <p>3: { this.props.presets.three.name ? this.props.presets.three.name : 'Empty'  }</p>
           </div>
-          <div className={"five columns " + this.props.Style} onClick={(e) => this.props.clickFunction(this.props.presets.four)}>
+          <div className={"five columns border-right " + this.props.Style} onClick={(e) => this.props.clickFunction(this.props.presets.four)}>
             <p>4: { this.props.presets.four.name ? this.props.presets.four.name : 'Empty' }</p>
           </div>
           <div className={"five columns " + this.props.Style} onClick={(e) => this.props.clickFunction(this.props.presets.five)}>
