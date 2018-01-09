@@ -7,7 +7,6 @@
   font-size: 40px;
   text-align: justify;
   margin-left: 100px;
-  margin-top: -15px;
 
 }
 .expanded-station-name:hover {
@@ -64,3 +63,8 @@
 .info {
   text-align: left;
 }
+
+.description, .location, .homepage {
+  margin-bottom: 10px;
+}
+
