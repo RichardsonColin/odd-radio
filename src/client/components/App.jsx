@@ -59,6 +59,7 @@ class App extends Component {
     this.savePreset = this.savePreset.bind(this);
     this.setStateFaveStations = this.setStateFaveStations.bind(this);
     this.directStationLoad = this.directStationLoad.bind(this);
+
   }
 
   // Initial API request to build up station collection object.
@@ -278,13 +279,20 @@ class App extends Component {
     }
   }
 
+
+
+
   componentDidMount() {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
     this.setStateFaveStations();
     window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
+
   }
+
+
+
 
   render() {
     return (

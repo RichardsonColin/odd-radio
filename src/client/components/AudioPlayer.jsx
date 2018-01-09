@@ -16,6 +16,7 @@ class AudioPlayer extends Component {
     this.setVolume = this.setVolume.bind(this);
     this.muteAudio = this.muteAudio.bind(this);
     this.detectWidth = this.detectWidth.bind(this);
+
   }
 
   // Sets volume according to range input.
@@ -53,10 +54,14 @@ class AudioPlayer extends Component {
     this.setState({
       width: window.innerWidth
     });
+
   }
 
+
+
   componentDidMount() {
-    this.detectWidth();
+  window.addEventListener('resize', this.detectWidth)
+
   }
 
   render() {
