@@ -72,7 +72,7 @@ class AudioPlayer extends Component {
         </audio>
         <div>
         { this.state.width > 768 &&
-          <StationName Style='audio-player-station-name' stationFeed={ this.props.stationFeed.name } findStationExpandInfo={this.props.findStationExpandInfo} />
+          <StationName Style='audio-player-station-name' StationFeed={ this.props.stationFeed.name } findStationExpandInfo={this.props.findStationExpandInfo} />
           }
           <div className="container player-container">
             <div className="row player-row border">
