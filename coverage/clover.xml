@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515540446192" clover="3.2.0">
-  <project timestamp="1515540446192" name="All files">
-    <metrics statements="181" coveredstatements="88" conditionals="82" coveredconditionals="33" methods="83" coveredmethods="37" elements="346" coveredelements="158" complexity="0" loc="181" ncloc="181" packages="2" files="18" classes="18">
+<coverage generated="1515541900176" clover="3.2.0">
+  <project timestamp="1515541900176" name="All files">
+    <metrics statements="181" coveredstatements="91" conditionals="82" coveredconditionals="36" methods="83" coveredmethods="37" elements="346" coveredelements="164" complexity="0" loc="181" ncloc="181" packages="2" files="18" classes="18">
       <package name="components">
-        <metrics statements="174" coveredstatements="81" conditionals="82" coveredconditionals="33" methods="82" coveredmethods="36"/>
+        <metrics statements="174" coveredstatements="84" conditionals="82" coveredconditionals="36" methods="82" coveredmethods="36"/>
         <file name="About.jsx" path="/vagrant/work/odd-radio/odd-radio/src/client/components/About.jsx">
           <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
           <line num="5" count="0" type="stmt"/>
@@ -218,12 +218,12 @@
           <line num="5" count="1" type="stmt"/>
         </file>
         <file name="Ticker.jsx" path="/vagrant/work/odd-radio/odd-radio/src/client/components/Ticker.jsx">
-          <metrics statements="5" coveredstatements="2" conditionals="4" coveredconditionals="1" methods="1" coveredmethods="1"/>
-          <line num="5" count="2" type="cond" truecount="1" falsecount="1"/>
+          <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+          <line num="5" count="4" type="cond" truecount="2" falsecount="0"/>
           <line num="6" count="2" type="stmt"/>
-          <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="10" count="0" type="stmt"/>
-          <line num="24" count="0" type="stmt"/>
+          <line num="9" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="24" count="1" type="stmt"/>
         </file>
         <file name="VolumeControls.jsx" path="/vagrant/work/odd-radio/odd-radio/src/client/components/VolumeControls.jsx">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
