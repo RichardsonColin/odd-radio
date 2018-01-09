@@ -5,7 +5,7 @@ class SetPresets extends Component {
   render() {
     return (
       <div className="container presets">
-        <div className="center presets-title">
+        <div className="center row presets-title">
           { this.props.title }
         </div>
         <div className="row border">

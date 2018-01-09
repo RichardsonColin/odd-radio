@@ -6,7 +6,8 @@
   overflow: wrap;
   font-size: 40px;
   text-align: justify;
-  margin-left: 20px
+  margin-left: 100px;
+  margin-top: -15px;
 
 }
 .expanded-station-name:hover {
@@ -32,22 +33,25 @@
   }
 }
 
-
-
-.info-container {
-  // transition: 500ms 0ms, opacity 500ms 500ms;
-  display: flex;
-  width: 100%;
-  background-color: #fff;
-  align-items: center;
-  margin-bottom: -10px;
+.station-details {
+  margin-right: 5%;
 }
 
 .info-expanded {
   background-color: #89cff0;
+  width: 100%;
+  align-items: center;
+  margin-top: 25px;
+
+  .presets {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
-
+.expanded-buttons {
+  margin-bottom: 25px;
+}
 
 .station-branding {
   font-size: 4em;
@@ -58,7 +62,7 @@
 }
 
 .info {
-text-align: justify;
-margin-bottom: 20px;
-min-height: 150px;
+  text-align: justify;
+  // margin-bottom: 20px;
+  // min-height: 150px;
 }

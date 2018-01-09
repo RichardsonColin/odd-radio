@@ -253,7 +253,8 @@ class App extends Component {
     const stationDiv = document.getElementById(station);
 
     this.setState({ expanded: true, expandedName: station}, () => {
-      stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      stationDiv.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+      
     });
   }
 
