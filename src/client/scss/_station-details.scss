@@ -33,10 +33,6 @@
   }
 }
 
-.station-details {
-  margin-right: 5%;
-}
-
 .info-expanded {
   background-color: #89cff0;
   width: 100%;
@@ -46,6 +42,10 @@
   .presets {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  .station-details {
+    margin-right: 10px;
   }
 }
 
@@ -62,7 +62,5 @@
 }
 
 .info {
-  text-align: justify;
-  // margin-bottom: 20px;
-  // min-height: 150px;
+  text-align: left;
 }
