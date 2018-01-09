@@ -3,18 +3,6 @@
   margin-bottom: 100px;
 }
 
-@media (min-width: 400px){
-.station-list-container {
-  margin-bottom: 150px;
-  }
-}
-
-@media (min-width: 550px) {
-  .station-list-container {
-  margin-bottom: 200px;
-  }
-}
-
 .station-branding {
   text-align: center;
 }
@@ -28,7 +16,7 @@
   clip-path: polygon(0 43%, 100% 14%, 100% 100%, 0 100%);
   align-items: center;
   margin-bottom: -10px;
-
+  box-shadow: 10px 10px 5px #aaaaaa;
 
   .non-expanded-station-name {
     font-weight: bold;
@@ -36,7 +24,7 @@
     font-size: 18px;
     height: 0px;
     display: inline-block;
-    padding-top:4px;
+    padding-top: 10px;
   }
   .non-expanded-station-name:hover {
     text-shadow: 2px 2px 2px rgb(100, 100, 100);
@@ -54,18 +42,20 @@
   clip-path: polygon(0 14%, 100% 43%, 100% 100%, 0 100%);
   align-items: center;
   margin-bottom: -10px;
+  box-shadow: 10px 10px 5px #aaaaaa;
 
   .non-expanded-station-name {
-  font-weight: bold;
-  letter-spacing: 1em;
-  font-size: 18px;
-  height: 0px;
-  display: inline-block;
-  color:black;
-}
-.non-expanded-station-name:hover {
+    font-weight: bold;
+    letter-spacing: 1em;
+    font-size: 18px;
+    height: 0px;
+    display: inline-block;
+    color:black;
+  }
+  
+  .non-expanded-station-name:hover {
     text-shadow: 2px 2px 2px rgb(100, 100, 100);
     cursor: default;
   }
 
-  }
+}
