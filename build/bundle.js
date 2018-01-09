@@ -8318,8 +8318,7 @@ var App = function (_Component) {
       var stationDiv = document.getElementById(station);
 
       this.setState({ expanded: true, expandedName: station }, function () {
-        // stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-        // window.scrollBy(0, 50);
+        stationDiv.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
       });
     }
 
