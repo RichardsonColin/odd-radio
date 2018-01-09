@@ -7,24 +7,26 @@ footer {
   height: 130px;
 }
 
+footer {
+  .presets .presets-title {
+    border-bottom: .04em solid white;
+    width: 40%;
+    margin: 0 auto;
+  }
 
-@media (max-width: 700px) {
-  .audio-player-station-name {
-    font-weight: bold;
-    letter-spacing: 1em;
-    word-break: break-all;
-    max-width: 3.8em;
-    overflow: wrap;
-    font-size: 15px;
-    color:#fff;
-    text-decoration: overline;
-    display: inline-block;
-    margin-bottom: 0px;
-    margin-top: 5px;
+  .border {
+    height: 1.5em;
+  }
+
+  .player-container {
+    width:100%;
+    height: 50%;
   }
 }
 
-@media (min-width: 700px) {
+
+
+@media (min-width: 1050px) {
 .audio-player-station-name {
   font-weight: bold;
   letter-spacing: 1em;
@@ -32,6 +34,25 @@ footer {
   max-width: 3.8em;
   overflow: wrap;
   font-size: 40px;
+  height: 0px;
+  color:#fff;
+  text-decoration: overline;
+  display: inline-block;
+  padding-left: 10px;
+  text-align: justify;
+  float:left;
+
+  }
+}
+
+@media (max-width: 1049px) {
+.audio-player-station-name {
+  font-weight: bold;
+  letter-spacing: 1em;
+  word-break: break-all;
+  max-width: 3.8em;
+  overflow: wrap;
+  font-size: 30px;
   height: 0px;
   color:#fff;
   text-decoration: overline;
@@ -56,6 +77,12 @@ color: #fff;
   color: white;
   cursor: default;
 }
+
+
+
+.presets .border-right {
+  border-right: 0.04em solid white;
+}
 .presets {
   .presets-title{
     font-weight: bold;
@@ -65,8 +92,7 @@ color: #fff;
     text-shadow: 2px 2px 2px rgb(100, 100, 100);
     cursor: default;
   }
-  margin-bottom: 10px;
-  bottom: 7px;
+
 }
 
 .fa-volume-up {
