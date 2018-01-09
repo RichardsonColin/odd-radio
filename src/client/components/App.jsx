@@ -42,6 +42,7 @@ class App extends Component {
       expandedName: ''
     },
 
+
     this.handleSelectedStation = this.handleSelectedStation.bind(this);
     this.seekStation = this.seekStation.bind(this);
     this.generateRandomStationId = this.generateRandomStationId.bind(this);
@@ -58,6 +59,7 @@ class App extends Component {
     this.savePreset = this.savePreset.bind(this);
     this.setStateFaveStations = this.setStateFaveStations.bind(this);
     this.directStationLoad = this.directStationLoad.bind(this);
+
   }
 
   // Initial API request to build up station collection object.
@@ -149,7 +151,7 @@ class App extends Component {
     })
   }
 
-  // Play and pause on spacebar. 
+  // Play and pause on spacebar.
   onSpaceBarPress(event) {
       console.log("In space bar function");
       if (event.key === ' '){
@@ -257,15 +259,15 @@ class App extends Component {
   }
 
   // Hides the info-container
-  hideStationInfo() { 
+  hideStationInfo() {
     this.setState({
       expanded: false
     });
   }
 
-  // Checks the window.location.pathname and compares it to the database. 
+  // Checks the window.location.pathname and compares it to the database.
   // If it matches the station is pre-loaded on page render.
-  directStationLoad() { 
+  directStationLoad() {
     var pathname = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
     const stations = this.state.stations;
 
@@ -278,13 +280,20 @@ class App extends Component {
     }
   }
 
+
+
+
   componentDidMount() {
     this.loadStations();
     this.scrollListener();
     this.setStateSelectedStation();
     this.setStateFaveStations();
     window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
+
   }
+
+
+
 
   render() {
     return (
