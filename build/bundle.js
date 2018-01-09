@@ -8310,7 +8310,6 @@ var App = function (_Component) {
   }, {
     key: 'findStationExpandInfo',
     value: function findStationExpandInfo(stationName, stationFeed) {
-      // StationName ? let station = StationName
       if (stationName == null) {
         var station = stationFeed;
       } else {
@@ -8616,23 +8615,23 @@ var AudioPlayer = function (_Component) {
               { className: 'row player-row border' },
               _react2.default.createElement(
                 'div',
-                { className: 'three columns' },
+                { className: 'four columns' },
                 _react2.default.createElement(_PlayerButtons2.default, { Style: 'audio-player-play-button', activeStation: true, playState: this.props.playState, streamLoading: this.props.streamLoading,
                   clickFunction: this.props.playPause })
               ),
               this.state.width > 768 && _react2.default.createElement(
                 'div',
-                { className: 'three columns' },
+                { className: 'four columns' },
                 _react2.default.createElement(_VolumeControls2.default, { volume: this.state.volume, setVolume: this.setVolume, muteAudio: this.muteAudio })
               ),
               this.state.width < 768 && _react2.default.createElement(
                 'div',
-                { className: 'three columns' },
+                { className: 'four columns' },
                 _react2.default.createElement(_StationName2.default, { Style: 'audio-player-station-mobile', StationFeed: this.props.stationFeed.name, findStationExpandInfo: this.props.findStationExpandInfo })
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'three columns' },
+                { className: 'four columns' },
                 _react2.default.createElement('i', { className: 'fa fa-random fa-2x seek-button', onClick: this.props.seekStation })
               )
             )
