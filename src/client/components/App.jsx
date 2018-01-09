@@ -244,7 +244,6 @@ class App extends Component {
   // Finds the station container based on stationName and expands the info-container
   //  and scrolls to the station container
   findStationExpandInfo(stationName, stationFeed) {
-    // StationName ? let station = StationName
     if (stationName == null) {
       var station = stationFeed;
     } else {
@@ -253,7 +252,8 @@ class App extends Component {
     const stationDiv = document.getElementById(station);
 
     this.setState({ expanded: true, expandedName: station}, () => {
-      stationDiv.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      stationDiv.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+
     });
   }
 

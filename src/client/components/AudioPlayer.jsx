@@ -76,22 +76,22 @@ class AudioPlayer extends Component {
           }
           <div className="container player-container">
             <div className="row player-row border">
-              <div className="three columns">
+              <div className="four columns">
                 <PlayerButtons Style='audio-player-play-button' activeStation={ true } playState={ this.props.playState } streamLoading={ this.props.streamLoading }
                 clickFunction={ this.props.playPause } />
               </div>
               { this.state.width > 768 &&
-                <div className="three columns">
+                <div className="four columns">
                   <VolumeControls volume={ this.state.volume } setVolume={ this.setVolume } muteAudio={ this.muteAudio }/>
                 </div>
 
               }
               {this.state.width < 768 &&
-                <div className="three columns">
+                <div className="four columns">
                 <StationName Style='audio-player-station-mobile' StationFeed={ this.props.stationFeed.name } findStationExpandInfo={this.props.findStationExpandInfo} />
                 </div>
               }
-              <div className="three columns">
+              <div className="four columns">
                 <i className="fa fa-random fa-2x seek-button" onClick={this.props.seekStation} ></i>
               </div>
             </div>
