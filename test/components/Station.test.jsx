@@ -19,11 +19,10 @@ describe('Station', () => {
     homePage: 'www.example.com',
     city: 'Saskitoba',
     handleSelectedStation: jest.fn(),
-    stationType: 1,
-    expandedName: 'QWER',
-    expandedStation: true
+    findStationExpandInfo: jest.fn(),
+    stationType: 3,
+    expandedName: 'QWER'
   }
-
 
   const subject = <Station { ...props }/>;
 
@@ -34,34 +33,30 @@ describe('Station', () => {
   describe('fa-chevron-down onClick', () => {
     const wrapper = shallow(subject);
 
+    it('calls findStationExpandInfo', () => {
+      wrapper.find('.fa-chevron-down').simulate('click');
 
-
-  });
-
-  describe('when the info is expanded', () => {
-    const wrapper = shallow(subject);
-    wrapper.setState({ expanded: true });
-
-    it('.info-container class should be rendered', () => {
-      expect(wrapper.find('.info-container').length).toBe(1);
-    });
-
-    describe('fa-chevron-up onClick', () => {
-
-      it('info-container no longer be rendered', () => {
-        wrapper.find('.fa-chevron-up').simulate('click');
-
-        expect(wrapper.find('.info-container').length).toBe(0);
-      });
+      expect(props.findStationExpandInfo).toHaveBeenCalled();
     });
   });
 
-  describe('info container expands when expandedName is equal to details.name', () => {
+  describe('if props.expandedName === state.details.name && props.expandedState === true, the info container should be expanded', () => {
     const wrapper = shallow(subject);
-    wrapper.setState({ details: { name: 'QWER'}});
-    // console.log(wrapper.find('.fa-chevron-up').at(0).text());
 
-    expect(wrapper.find('.station-container1').length).toBe(1);
+    wrapper.find('.fa-chevron-down').simulate('click');
 
-  })
+    console.log(wrapper.find('.fa-chevron-up').length);
+
+    expect(wrapper.state().expandedStation).toEqual(true);
+
+    // wrapper.setState({
+    //           details: {
+    //             name: 'QWER'
+    //           },
+    //           expandedState: true
+    //         }
+    // );
+
+    // expect(wrapper.find('.fa-chevron-down').length).toBe(1);
+  });
 });

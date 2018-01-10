@@ -78,13 +78,13 @@ describe('PlayerButtons', () => {
       expect(renderer.create(subject2)).toMatchSnapshot();
     });
 
-    it('it has an <i> with id pButton', () => {
+    it('it has an <i> with class fa-play', () => {
       const wrapper = shallow(subject2);
 
-      expect(wrapper.find('#pButton').length).toBe(1);
+      expect(wrapper.find('.fa-play').length).toBe(1);
     });
 
-    describe('onClick on #pButton', () => {
+    describe('onClick on .fa-play', () => {
     const wrapper = shallow(subject2);
 
       it('calls clickFunction', () => {
