@@ -11,7 +11,7 @@ class Team extends Component {
           <p>The team behind oddrad.io:</p>
           <div className="row">
             <a href="https://github.com/johnniereg" target="blank"><p>Johnnie Regalado</p></a>
-            <a href="https://github.com/DevYves" target="blank"><p>Yves Frepon</p></a>
+            <a href="https://github.com/DevYves" target="blank"><p>Yves Freypons</p></a>
             <a href="https://github.com/RyukyuColin" target="blank"><p>Colin Richardson</p></a>
             <a href="https://github.com/SebastianBethell" target="blank"><p>Sebastian Bethell</p></a>
           </div>
