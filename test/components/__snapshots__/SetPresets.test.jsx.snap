@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Set Presets Component matches snapshot 1`] = `
+<div
+  className="container presets"
+>
+  <div
+    className="center row presets-title"
+  >
+    Save Station in Presets
+  </div>
+  <div
+    className="row border"
+  >
+    <div
+      className="five columns presets-station"
+      onClick={[Function]}
+    >
+      <div>
+        1:
+      </div>
+      <p>
+        CMYK
+      </p>
+    </div>
+    <div
+      className="five columns presets-station"
+      onClick={[Function]}
+    >
+      <div>
+        2:
+      </div>
+      <p>
+        CMYK
+      </p>
+    </div>
+    <div
+      className="five columns presets-station"
+      onClick={[Function]}
+    >
+      <div>
+        3:
+      </div>
+      <p>
+        CMYK
+      </p>
+    </div>
+    <div
+      className="five columns presets-station"
+      onClick={[Function]}
+    >
+      <div>
+        4:
+      </div>
+      <p>
+        CMYK
+      </p>
+    </div>
+    <div
+      className="five columns presets-station"
+      onClick={[Function]}
+    >
+      <div>
+        5:
+      </div>
+      <p>
+        CMYK
+      </p>
+    </div>
+  </div>
+</div>
+`;

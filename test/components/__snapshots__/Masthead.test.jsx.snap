@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Masthead matches snapshot 1`] = `
+<div
+  className="container masthead"
+>
+  <div
+    className="row border masthead-nav"
+  >
+    <div
+      className="one-third column center"
+      onClick={[Function]}
+    >
+      <h5>
+        About
+      </h5>
+    </div>
+    <div
+      className="one-third column center"
+      onClick={[Function]}
+    >
+      <h5>
+        Contact
+      </h5>
+    </div>
+    <div
+      className="one-third column center"
+      onClick={[Function]}
+    >
+      <h5>
+        Team
+      </h5>
+    </div>
+  </div>
+  <div
+    className="row border"
+  >
+    <div
+      className="column"
+    />
+  </div>
+</div>
+`;

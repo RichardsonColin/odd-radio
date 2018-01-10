@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Presets Component matches snapshot 1`] = `
+<div
+  className="container presets"
+>
+  <div
+    className="center presets-title"
+  >
+    Presets
+  </div>
+  <div
+    className="row border"
+  >
+    <div
+      className="five columns border-right undefined "
+      onClick={[Function]}
+    >
+      <p>
+        1: 
+        CMYK
+      </p>
+    </div>
+    <div
+      className="five columns border-right undefined "
+      onClick={[Function]}
+    >
+      <p>
+        2: 
+        CMYK
+      </p>
+    </div>
+    <div
+      className="five columns border-right undefined "
+      onClick={[Function]}
+    >
+      <p>
+        3: 
+        CMYK
+      </p>
+    </div>
+    <div
+      className="five columns border-right undefined "
+      onClick={[Function]}
+    >
+      <p>
+        4: 
+        CMYK
+      </p>
+    </div>
+    <div
+      className="five columns undefined "
+      onClick={[Function]}
+    >
+      <p>
+        5: 
+        CMYK
+      </p>
+    </div>
+  </div>
+</div>
+`;
