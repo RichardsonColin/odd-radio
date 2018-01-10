@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <coverage generated="1515556238585" clover="3.2.0">
   <project timestamp="1515556238585" name="All files">
     <metrics statements="185" coveredstatements="115" conditionals="98" coveredconditionals="49" methods="83" coveredmethods="42" elements="366" coveredelements="206" complexity="0" loc="185" ncloc="185" packages="2" files="18" classes="18">
+=======
+<coverage generated="1515556938950" clover="3.2.0">
+  <project timestamp="1515556938950" name="All files">
+    <metrics statements="185" coveredstatements="138" conditionals="98" coveredconditionals="72" methods="83" coveredmethods="61" elements="366" coveredelements="271" complexity="0" loc="185" ncloc="185" packages="2" files="18" classes="18">
+>>>>>>> 8cca612e42954d8053b5c189bccc022677a425c2
       <package name="components">
         <metrics statements="178" coveredstatements="108" conditionals="98" coveredconditionals="49" methods="82" coveredmethods="41"/>
         <file name="About.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/About.jsx">
