@@ -18,11 +18,23 @@ describe('AudioPlayer', () => {
     },
     seekStation: jest.fn(),
     playState: {
-        volume: 1,
-        isPlaying: false,
-        isPaused: true,
-        isLoading: false
-      }
+      volume: 1,
+      isPlaying: false,
+      isPaused: true,
+      isLoading: false
+    },
+    mockPlayer: {
+      load: jest.fn(),
+      play: jest.fn(),
+      volume: jest.fn()
+    },
+    presets: {
+      one: {},
+      two: {},
+      three: {},
+      four: {},
+      five: {}
+    }
   }
 
   const subject = <AudioPlayer { ...props } />;
@@ -30,4 +42,17 @@ describe('AudioPlayer', () => {
   it('matches snapshot', () => {
     expect(renderer.create(subject)).toMatchSnapshot();
   });
+
+  // describe('if state.volume is equal to 0', () => {
+  //   const wrapper = shallow(subject);
+  //   // console.log('sebsebseb..... ', wrapper.state());
+
+  //   wrapper.setState({ volume: 0, beforeMuteVolume: .5 });
+
+  //   it('volume state set to state.beforeMuteVolume', () => {
+  //     // console.log('sebsebseb..... ', wrapper.state());
+  //     expect(wrapper.state().volume).toEqual(false);
+  //   })
+  // });
+
 });

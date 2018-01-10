@@ -19,7 +19,9 @@ describe('Station', () => {
     homePage: 'www.example.com',
     city: 'Saskitoba',
     handleSelectedStation: jest.fn(),
-    stationType: 3
+    findStationExpandInfo: jest.fn(),
+    stationType: 3,
+    expandedName: 'QWER'
   }
 
   const subject = <Station { ...props }/>;
@@ -31,43 +33,30 @@ describe('Station', () => {
   describe('fa-chevron-down onClick', () => {
     const wrapper = shallow(subject);
 
-    it('calls toggleStationInfo', () => {
-      const toggleStationInfo = spyOn(wrapper.instance(), 'toggleStationInfo');
-
-      wrapper.find('.fa-chevron-down').simulate('click');
-      expect(toggleStationInfo).toHaveBeenCalled();
-    });
-
-    it('toggleStationInfo should set the expanded state to true', () => {
+    it('calls findStationExpandInfo', () => {
       wrapper.find('.fa-chevron-down').simulate('click');
 
-      expect(wrapper.state().expanded).toEqual(true);
+      expect(props.findStationExpandInfo).toHaveBeenCalled();
     });
   });
 
-  describe('when the info is expanded', () => {
+  describe('if props.expandedName === state.details.name && props.expandedState === true, the info container should be expanded', () => {
     const wrapper = shallow(subject);
-    wrapper.setState({ expanded: true });
 
-    it('.info-container class should be rendered', () => {
-      expect(wrapper.find('.info-container').length).toBe(1);
-    });
+    wrapper.find('.fa-chevron-down').simulate('click');
 
-    describe('fa-chevron-up onClick', () => {
+    console.log(wrapper.find('.fa-chevron-up').length);
 
-      it('calls toggleStationInfo', () => {
-        const toggleStationInfo = spyOn(wrapper.instance(), 'toggleStationInfo');
+    expect(wrapper.state().expandedStation).toEqual(true);
 
-        wrapper.find('.fa-chevron-up').simulate('click');
+    // wrapper.setState({
+    //           details: {
+    //             name: 'QWER'
+    //           },
+    //           expandedState: true
+    //         }
+    // );
 
-        expect(toggleStationInfo).toHaveBeenCalled();
-      });
-
-      it('info-container no longer be rendered', () => {
-        wrapper.find('.fa-chevron-up').simulate('click');
-
-        expect(wrapper.find('.info-container').length).toBe(0);
-      });
-    });
+    // expect(wrapper.find('.fa-chevron-down').length).toBe(1);
   });
 });
