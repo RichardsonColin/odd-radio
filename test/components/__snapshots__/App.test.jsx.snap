@@ -166,7 +166,7 @@ exports[`App matches snapshot 1`] = `
             className="row border"
           >
             <div
-              className="five columns border-right audio-player-presets"
+              className="five columns border-right audio-player-presets "
               onClick={[Function]}
             >
               <p>
@@ -175,7 +175,7 @@ exports[`App matches snapshot 1`] = `
               </p>
             </div>
             <div
-              className="five columns border-right audio-player-presets"
+              className="five columns border-right audio-player-presets "
               onClick={[Function]}
             >
               <p>
@@ -184,7 +184,7 @@ exports[`App matches snapshot 1`] = `
               </p>
             </div>
             <div
-              className="five columns border-right audio-player-presets"
+              className="five columns border-right audio-player-presets "
               onClick={[Function]}
             >
               <p>
@@ -193,7 +193,7 @@ exports[`App matches snapshot 1`] = `
               </p>
             </div>
             <div
-              className="five columns border-right audio-player-presets"
+              className="five columns border-right audio-player-presets "
               onClick={[Function]}
             >
               <p>
@@ -202,7 +202,7 @@ exports[`App matches snapshot 1`] = `
               </p>
             </div>
             <div
-              className="five columns audio-player-presets"
+              className="five columns audio-player-presets "
               onClick={[Function]}
             >
               <p>
