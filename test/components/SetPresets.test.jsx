@@ -61,6 +61,7 @@ describe('Set Presets Component', () => {
 
   describe('when preset one is clicked', () => {
     const wrapper = shallow(subject);
+
     wrapper.find('.presets-station').at(0).simulate('click');
 
     expect(props.clickFunction).toHaveBeenCalled();
@@ -68,6 +69,7 @@ describe('Set Presets Component', () => {
 
   describe('when preset two is clicked', () => {
     const wrapper = shallow(subject);
+
     wrapper.find('.presets-station').at(1).simulate('click');
     expect(props.clickFunction).toHaveBeenCalled();
 
@@ -75,6 +77,7 @@ describe('Set Presets Component', () => {
 
   describe('when preset three is clicked', () => {
     const wrapper = shallow(subject);
+
     wrapper.find('.presets-station').at(2).simulate('click');
     expect(props.clickFunction).toHaveBeenCalled();
 
@@ -82,6 +85,7 @@ describe('Set Presets Component', () => {
 
   describe('when preset four is clicked', () => {
     const wrapper = shallow(subject);
+
     wrapper.find('.presets-station').at(3).simulate('click');
     expect(props.clickFunction).toHaveBeenCalled();
 
@@ -89,6 +93,7 @@ describe('Set Presets Component', () => {
 
   describe('when preset five is clicked', () => {
     const wrapper = shallow(subject);
+
     wrapper.find('.presets-station').at(4).simulate('click');
     expect(props.clickFunction).toHaveBeenCalled();
 
@@ -96,28 +101,31 @@ describe('Set Presets Component', () => {
 
   describe('on load has five <p> tags', () => {
     const wrapper = shallow(subject);
+
     expect(wrapper.find('p').length).toBe(5);
   })
 
   describe('when station 1 is saved to the preset should display that stations name', () => {
     const wrapper = shallow(subject);
-    console.log(wrapper.find('p').at(0).text());
+
     expect(wrapper.find('p').at(0).text()).toBe('CMYK');
   })
 
   describe('when a station 1 is not saved to the preset should display empty', () => {
     const wrapper = shallow(subject2);
+
     expect(wrapper.find('p').at(0).text()).toBe('Empty');
   })
 
   describe('when a station 2 is saved to the preset should display that stations name', () => {
     const wrapper = shallow(subject);
-    console.log(wrapper.find('p').at(1).text());
+
     expect(wrapper.find('p').at(1).text()).toBe('CMYK');
   })
 
     describe('when a station 2 is not saved to the preset should display empty', () => {
     const wrapper = shallow(subject2);
+
     expect(wrapper.find('p').at(1).text()).toBe('Empty');
   })
 

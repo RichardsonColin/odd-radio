@@ -99,7 +99,5 @@ describe('App', () => {
 
       expect(wrapper.state().expanded).toEqual(false);
     });
-
   });
-
 });
