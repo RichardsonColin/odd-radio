@@ -19,8 +19,11 @@ describe('Station', () => {
     homePage: 'www.example.com',
     city: 'Saskitoba',
     handleSelectedStation: jest.fn(),
-    stationType: 3
+    stationType: 1,
+    expandedName: 'QWER',
+    expandedStation: true
   }
+
 
   const subject = <Station { ...props }/>;
 
@@ -31,18 +34,8 @@ describe('Station', () => {
   describe('fa-chevron-down onClick', () => {
     const wrapper = shallow(subject);
 
-    it('calls toggleStationInfo', () => {
-      const toggleStationInfo = spyOn(wrapper.instance(), 'toggleStationInfo');
 
-      wrapper.find('.fa-chevron-down').simulate('click');
-      expect(toggleStationInfo).toHaveBeenCalled();
-    });
 
-    it('toggleStationInfo should set the expanded state to true', () => {
-      wrapper.find('.fa-chevron-down').simulate('click');
-
-      expect(wrapper.state().expanded).toEqual(true);
-    });
   });
 
   describe('when the info is expanded', () => {
@@ -55,14 +48,6 @@ describe('Station', () => {
 
     describe('fa-chevron-up onClick', () => {
 
-      it('calls toggleStationInfo', () => {
-        const toggleStationInfo = spyOn(wrapper.instance(), 'toggleStationInfo');
-
-        wrapper.find('.fa-chevron-up').simulate('click');
-
-        expect(toggleStationInfo).toHaveBeenCalled();
-      });
-
       it('info-container no longer be rendered', () => {
         wrapper.find('.fa-chevron-up').simulate('click');
 
@@ -70,4 +55,13 @@ describe('Station', () => {
       });
     });
   });
+
+  describe('info container expands when expandedName is equal to details.name', () => {
+    const wrapper = shallow(subject);
+    wrapper.setState({ details: { name: 'QWER'}});
+    // console.log(wrapper.find('.fa-chevron-up').at(0).text());
+
+    expect(wrapper.find('.station-container1').length).toBe(1);
+
+  })
 });

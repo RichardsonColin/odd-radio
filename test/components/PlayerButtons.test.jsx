@@ -88,7 +88,7 @@ describe('PlayerButtons', () => {
     const wrapper = shallow(subject2);
 
       it('calls clickFunction', () => {
-        wrapper.find('#pButton').simulate('click');
+        wrapper.find('.fa-play').simulate('click');
 
         expect(props2.clickFunction).toHaveBeenCalled();
       });

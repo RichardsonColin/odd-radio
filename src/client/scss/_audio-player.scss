@@ -81,7 +81,7 @@ footer {
 }
 
 .audio-player-station-name:hover {
-    text-shadow: 2px 2px 2px rgb(100, 100, 100);
+    text-shadow: 2px 2px 2px #00ff99;
     cursor: default;
   }
 
@@ -131,6 +131,19 @@ footer .fa-spinner {
   color: #00ff99;
 }
 
+footer .fa:hover {
+   text-shadow: 2px 2px 2px #00ff99;
+}
+
+
+footer p:hover{
+  text-shadow: 2px 2px 2px #00ff99;
+
+footer .playing-preset {
+  text-shadow: 2px 2px 2px rgb(100, 100, 100);
+}
+
+}
 
 
 
