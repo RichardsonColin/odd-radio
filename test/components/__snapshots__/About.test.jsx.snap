@@ -7,9 +7,9 @@ exports[`About matches snapshot 1`] = `
   <div
     className="row center"
   >
-    <h5>
+    <h4>
       About oddrad.io
-    </h5>
+    </h4>
   </div>
   <div
     className="row"

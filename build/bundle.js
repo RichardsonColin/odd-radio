@@ -8095,6 +8095,7 @@ var App = function (_Component) {
 
       var player = document.getElementById("player");
 
+      //used for testing
       if (this.props.mockPlayer) {
         player = this.props.mockPlayer;
       }
@@ -8134,6 +8135,7 @@ var App = function (_Component) {
     value: function playPause() {
       var player = document.getElementById("player");
 
+      //used for testing
       if (this.props.mockPlayer) {
         player = this.props.mockPlayer;
       }
@@ -8353,6 +8355,7 @@ var App = function (_Component) {
       var initialStation = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
       var stations = this.state.stations;
 
+      //used for testing
       if (this.props.initialStation) {
         initialStation = this.props.initialStation;
       }
@@ -8573,6 +8576,11 @@ var AudioPlayer = function (_Component) {
       var _this3 = this;
 
       var player = document.getElementById("player");
+
+      //used to replace player for testing
+      if (this.props.mockPlayer) {
+        player = this.props.mockPlayer;
+      }
 
       if (this.state.volume > 0) {
         this.setState({
@@ -9441,7 +9449,7 @@ var About = function (_Component) {
           "div",
           { className: "row center" },
           _react2.default.createElement(
-            "h5",
+            "h4",
             null,
             "About oddrad.io"
           )
@@ -9518,7 +9526,7 @@ var Contact = function (_Component) {
           "div",
           { className: "row center" },
           _react2.default.createElement(
-            "h5",
+            "h4",
             null,
             "Contact Us"
           )
@@ -9609,7 +9617,7 @@ var Team = function (_Component) {
           "div",
           { className: "row center" },
           _react2.default.createElement(
-            "h5",
+            "h4",
             null,
             "The Team"
           )

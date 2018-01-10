@@ -5,7 +5,7 @@ class Contact extends Component {
     return(
       <div className="container masthead-info">
         <div className="row center">
-          <h5>Contact Us</h5>
+          <h4>Contact Us</h4>
         </div>
         <div className="row">
           <p>Got a suggestion for a station to add?</p>

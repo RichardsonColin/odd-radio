@@ -5,7 +5,7 @@ class Team extends Component {
     return (
       <div className="container masthead-info">
         <div className="row center">
-          <h5>The Team</h5>
+          <h4>The Team</h4>
         </div>
         <div className="row">
           <p>The team behind oddrad.io:</p>
