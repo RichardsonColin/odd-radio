@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515555173138" clover="3.2.0">
-  <project timestamp="1515555173139" name="All files">
-    <metrics statements="185" coveredstatements="130" conditionals="98" coveredconditionals="65" methods="83" coveredmethods="56" elements="366" coveredelements="251" complexity="0" loc="185" ncloc="185" packages="2" files="18" classes="18">
+<coverage generated="1515555484602" clover="3.2.0">
+  <project timestamp="1515555484602" name="All files">
+    <metrics statements="185" coveredstatements="131" conditionals="98" coveredconditionals="65" methods="83" coveredmethods="57" elements="366" coveredelements="253" complexity="0" loc="185" ncloc="185" packages="2" files="18" classes="18">
       <package name="components">
-        <metrics statements="178" coveredstatements="123" conditionals="98" coveredconditionals="65" methods="82" coveredmethods="55"/>
+        <metrics statements="178" coveredstatements="124" conditionals="98" coveredconditionals="65" methods="82" coveredmethods="56"/>
         <file name="About.jsx" path="/vagrant/work/odd-radio/odd-radio/src/client/components/About.jsx">
-          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-          <line num="5" count="0" type="stmt"/>
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="5" count="1" type="stmt"/>
         </file>
         <file name="App.jsx" path="/vagrant/work/odd-radio/odd-radio/src/client/components/App.jsx">
           <metrics statements="95" coveredstatements="62" conditionals="28" coveredconditionals="12" methods="29" coveredmethods="17"/>
