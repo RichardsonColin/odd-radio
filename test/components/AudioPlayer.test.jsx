@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Enzyme, { shallow } from 'enzyme';
+import Enzyme, { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 // React 16 Enzyme adapter
@@ -34,7 +34,14 @@ describe('AudioPlayer', () => {
       three: {},
       four: {},
       five: {}
-    }
+    },
+    beforeMuteVolume: 1,
+    volume: 0,
+    detectWidth: jest.fn(),
+    setVolume: jest.fn(),
+    muteAudio: jest.fn(),
+    onLoadStart: jest.fn(),
+    onCanPlay: jest.fn()
   }
 
   const subject = <AudioPlayer { ...props } />;
@@ -43,16 +50,53 @@ describe('AudioPlayer', () => {
     expect(renderer.create(subject)).toMatchSnapshot();
   });
 
-  // describe('if state.volume is equal to 0', () => {
-  //   const wrapper = shallow(subject);
-  //   // console.log('sebsebseb..... ', wrapper.state());
+  describe('if detect width is called', () => {
+    const wrapper = shallow(subject);
 
-  //   wrapper.setState({ volume: 0, beforeMuteVolume: .5 });
+    // wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
+    it('calls the detectWidth function', () => {
+      wrapper.instance().detectWidth();
+    });
+  });
 
-  //   it('volume state set to state.beforeMuteVolume', () => {
-  //     // console.log('sebsebseb..... ', wrapper.state());
-  //     expect(wrapper.state().volume).toEqual(false);
-  //   })
-  // });
+  describe('if setVolume is called', () => {
+    const wrapper = shallow(subject);
 
+    // wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
+    it('calls the setVolume function', () => {
+      wrapper.instance().setVolume(50);
+    });
+  });
+
+  describe('if muteAudio is called', () => {
+    const wrapper = shallow(subject);
+
+    // wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
+    it('calls the muteAudio function', () => {
+      wrapper.instance().muteAudio();
+    });
+  });
+
+  describe('if state.volume is equal to 0', () => {
+    const wrapper = mount(subject);
+    // console.log('sebsebseb..... ', wrapper.state());
+
+    wrapper.setState({ volume: 0, beforeMuteVolume: 1 });
+
+    it('volume state set to state.beforeMuteVolume', () => {
+      console.log('state', wrapper.state());
+      expect(wrapper.state().volume).toEqual(0);
+    })
+  });
+
+  describe('if state.volume is equal to 1', () => {
+    const wrapper = mount(subject);
+
+    wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
+
+    it('volume state set to state.beforeMuteVolume', () => {
+      console.log('state', wrapper.state());
+      expect(wrapper.state().volume).toEqual(1);
+    })
+  });
 });
