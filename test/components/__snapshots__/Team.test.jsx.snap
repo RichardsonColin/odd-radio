@@ -7,9 +7,9 @@ exports[`TeamComponent matches snapshot 1`] = `
   <div
     className="row center"
   >
-    <h5>
+    <h4>
       The Team
-    </h5>
+    </h4>
   </div>
   <div
     className="row"
