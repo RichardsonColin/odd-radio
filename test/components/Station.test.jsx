@@ -27,6 +27,7 @@ describe('Station', () => {
     city: 'Saskitoba',
     handleSelectedStation: jest.fn(),
     findStationExpandInfo: jest.fn(),
+    hideStationInfo: jest.fn(),
     stationType: 3,
     expandedName: 'QWER',
     expandedStation: false,
@@ -43,9 +44,9 @@ describe('Station', () => {
     const wrapper = mount(subject);
 
     it('calls findStationExpandInfo', () => {
-
       wrapper.find('.fa-chevron-down').simulate('click');
-      expect(clickFunction).toHaveBeenCalled();
+
+      expect(props.findStationExpandInfo).toHaveBeenCalled();
     });
 
     it('findStationExpandInfo should set the expanded state to true', () => {
@@ -58,13 +59,11 @@ describe('Station', () => {
   describe('when the info is expanded', () => {
     const wrapper = mount(subject);
     wrapper.setState({ expandedStation: true });
+    wrapper.find('.fa-chevron-up').simulate('click');
 
-    wrapper.find('.fa-chevron-down').simulate('click');
-
-      it('calls toggleStationInfo', () => {
-
-        expect(wrapper.state().expandedStation).toEqual(true);
-        expect(clickFunction).toHaveBeenCalled();
-      });
+    it('shows an exapnded div', () => {
+      expect(props.hideStationInfo).toHaveBeenCalled();
+      expect(wrapper.state().expandedStation).toEqual(true);
+    });
   });
 });
