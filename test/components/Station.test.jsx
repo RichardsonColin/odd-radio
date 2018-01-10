@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Enzyme, { shallow } from 'enzyme';
+import Enzyme, { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 // React 16 Enzyme adapter
@@ -10,6 +10,13 @@ import Station from '../../src/client/components/Station';
 
 describe('Station', () => {
   const props = {
+    presets: {
+      one: {},
+      two: {},
+      three: {},
+      four: {},
+      five: {}
+    },
     key: '1',
     id: '1',
     name: 'QWER',
@@ -20,8 +27,11 @@ describe('Station', () => {
     city: 'Saskitoba',
     handleSelectedStation: jest.fn(),
     findStationExpandInfo: jest.fn(),
+    hideStationInfo: jest.fn(),
     stationType: 3,
-    expandedName: 'QWER'
+    expandedName: 'QWER',
+    expandedStation: false,
+    clickFunction: jest.fn()
   }
 
   const subject = <Station { ...props }/>;
@@ -31,32 +41,29 @@ describe('Station', () => {
   });
 
   describe('fa-chevron-down onClick', () => {
-    const wrapper = shallow(subject);
+    const wrapper = mount(subject);
 
     it('calls findStationExpandInfo', () => {
       wrapper.find('.fa-chevron-down').simulate('click');
 
       expect(props.findStationExpandInfo).toHaveBeenCalled();
     });
+
+    it('findStationExpandInfo should set the expanded state to true', () => {
+      wrapper.find('.fa-chevron-down').simulate('click');
+
+      expect(props.findStationExpandInfo).toHaveBeenCalled();
+    });
   });
 
-  describe('if props.expandedName === state.details.name && props.expandedState === true, the info container should be expanded', () => {
-    const wrapper = shallow(subject);
+  describe('when the info is expanded', () => {
+    const wrapper = mount(subject);
+    wrapper.setState({ expandedStation: true });
+    wrapper.find('.fa-chevron-up').simulate('click');
 
-    wrapper.find('.fa-chevron-down').simulate('click');
-
-    console.log(wrapper.find('.fa-chevron-up').length);
-
-    expect(wrapper.state().expandedStation).toEqual(true);
-
-    // wrapper.setState({
-    //           details: {
-    //             name: 'QWER'
-    //           },
-    //           expandedState: true
-    //         }
-    // );
-
-    // expect(wrapper.find('.fa-chevron-down').length).toBe(1);
+    it('shows an exapnded div', () => {
+      expect(props.hideStationInfo).toHaveBeenCalled();
+      expect(wrapper.state().expandedStation).toEqual(true);
+    });
   });
 });

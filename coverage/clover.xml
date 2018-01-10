@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515621514396" clover="3.2.0">
-  <project timestamp="1515621514396" name="All files">
-    <metrics statements="187" coveredstatements="139" conditionals="100" coveredconditionals="73" methods="83" coveredmethods="62" elements="370" coveredelements="274" complexity="0" loc="187" ncloc="187" packages="2" files="18" classes="18">
+<coverage generated="1515623276069" clover="3.2.0">
+  <project timestamp="1515623276069" name="All files">
+    <metrics statements="187" coveredstatements="141" conditionals="100" coveredconditionals="74" methods="83" coveredmethods="63" elements="370" coveredelements="278" complexity="0" loc="187" ncloc="187" packages="2" files="18" classes="18">
       <package name="components">
-        <metrics statements="180" coveredstatements="132" conditionals="100" coveredconditionals="73" methods="82" coveredmethods="61"/>
+        <metrics statements="180" coveredstatements="134" conditionals="100" coveredconditionals="74" methods="82" coveredmethods="62"/>
         <file name="About.jsx" path="/vagrant/projects/odd-radio/src/client/components/About.jsx">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="5" count="2" type="stmt"/>
@@ -163,12 +163,12 @@
         </file>
         <file name="PlayerButtons.jsx" path="/vagrant/projects/odd-radio/src/client/components/PlayerButtons.jsx">
           <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
-          <line num="7" count="20" type="cond" truecount="4" falsecount="0"/>
+          <line num="7" count="23" type="cond" truecount="4" falsecount="0"/>
           <line num="8" count="1" type="stmt"/>
-          <line num="12" count="19" type="cond" truecount="4" falsecount="0"/>
+          <line num="12" count="22" type="cond" truecount="4" falsecount="0"/>
           <line num="13" count="7" type="stmt"/>
           <line num="16" count="1" type="stmt"/>
-          <line num="21" count="12" type="stmt"/>
+          <line num="21" count="15" type="stmt"/>
           <line num="24" count="1" type="stmt"/>
         </file>
         <file name="Presets.jsx" path="/vagrant/projects/odd-radio/src/client/components/Presets.jsx">
@@ -183,7 +183,7 @@
         </file>
         <file name="SetPresets.jsx" path="/vagrant/projects/odd-radio/src/client/components/SetPresets.jsx">
           <metrics statements="6" coveredstatements="6" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="6"/>
-          <line num="6" count="11" type="stmt"/>
+          <line num="6" count="12" type="stmt"/>
           <line num="12" count="1" type="stmt"/>
           <line num="16" count="1" type="stmt"/>
           <line num="20" count="1" type="stmt"/>
@@ -191,13 +191,13 @@
           <line num="28" count="1" type="stmt"/>
         </file>
         <file name="Station.jsx" path="/vagrant/projects/odd-radio/src/client/components/Station.jsx">
-          <metrics statements="8" coveredstatements="6" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="4"/>
+          <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
           <line num="10" count="7" type="stmt"/>
           <line num="11" count="7" type="stmt"/>
           <line num="30" count="2" type="stmt"/>
-          <line num="38" count="9" type="cond" truecount="3" falsecount="1"/>
-          <line num="39" count="0" type="stmt"/>
-          <line num="51" count="0" type="stmt"/>
+          <line num="38" count="10" type="cond" truecount="4" falsecount="0"/>
+          <line num="39" count="1" type="stmt"/>
+          <line num="51" count="1" type="stmt"/>
           <line num="75" count="9" type="stmt"/>
           <line num="88" count="2" type="stmt"/>
         </file>
@@ -216,7 +216,7 @@
         </file>
         <file name="StationName.jsx" path="/vagrant/projects/odd-radio/src/client/components/StationName.jsx">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="7" count="15" type="stmt"/>
+          <line num="7" count="18" type="stmt"/>
           <line num="8" count="1" type="stmt"/>
         </file>
         <file name="Team.jsx" path="/vagrant/projects/odd-radio/src/client/components/Team.jsx">
