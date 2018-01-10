@@ -29,8 +29,10 @@ describe('StationName Component', () => {
 
   describe('When clicked on', () => {
     const wrapper = shallow(subject);
+
     wrapper.find('.test-style').simulate('click');
-    expect(findStationExpandInfo).toHaveBeenCalled();
+
+    expect(props.findStationExpandInfo).toHaveBeenCalled();
   })
 
 });

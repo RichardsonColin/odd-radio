@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515618033472" clover="3.2.0">
-  <project timestamp="1515618033473" name="All files">
+<coverage generated="1515618133520" clover="3.2.0">
+  <project timestamp="1515618133521" name="All files">
     <metrics statements="187" coveredstatements="139" conditionals="100" coveredconditionals="73" methods="83" coveredmethods="62" elements="370" coveredelements="274" complexity="0" loc="187" ncloc="187" packages="2" files="18" classes="18">
       <package name="components">
         <metrics statements="180" coveredstatements="132" conditionals="100" coveredconditionals="73" methods="82" coveredmethods="61"/>
@@ -216,8 +216,8 @@
         </file>
         <file name="StationName.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/StationName.jsx">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="8" count="15" type="stmt"/>
-          <line num="10" count="1" type="stmt"/>
+          <line num="7" count="15" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
         </file>
         <file name="Team.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/Team.jsx">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
