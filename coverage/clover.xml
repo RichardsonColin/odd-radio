@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515553900302" clover="3.2.0">
-  <project timestamp="1515553900302" name="All files">
-    <metrics statements="185" coveredstatements="124" conditionals="98" coveredconditionals="60" methods="83" coveredmethods="50" elements="366" coveredelements="234" complexity="0" loc="185" ncloc="185" packages="2" files="18" classes="18">
+<coverage generated="1515554974497" clover="3.2.0">
+  <project timestamp="1515554974497" name="All files">
+    <metrics statements="185" coveredstatements="129" conditionals="98" coveredconditionals="65" methods="83" coveredmethods="55" elements="366" coveredelements="249" complexity="0" loc="185" ncloc="185" packages="2" files="18" classes="18">
       <package name="components">
-        <metrics statements="178" coveredstatements="117" conditionals="98" coveredconditionals="60" methods="82" coveredmethods="49"/>
+        <metrics statements="178" coveredstatements="122" conditionals="98" coveredconditionals="65" methods="82" coveredmethods="54"/>
         <file name="About.jsx" path="/vagrant/work/odd-radio/odd-radio/src/client/components/About.jsx">
           <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
           <line num="5" count="0" type="stmt"/>
@@ -170,14 +170,14 @@
           <line num="24" count="0" type="stmt"/>
         </file>
         <file name="Presets.jsx" path="/vagrant/work/odd-radio/odd-radio/src/client/components/Presets.jsx">
-          <metrics statements="7" coveredstatements="2" conditionals="20" coveredconditionals="10" methods="7" coveredmethods="2"/>
-          <line num="5" count="2" type="stmt"/>
-          <line num="9" count="5" type="stmt"/>
-          <line num="16" count="0" type="stmt"/>
-          <line num="20" count="0" type="stmt"/>
-          <line num="24" count="0" type="stmt"/>
-          <line num="28" count="0" type="stmt"/>
-          <line num="32" count="0" type="stmt"/>
+          <metrics statements="7" coveredstatements="7" conditionals="20" coveredconditionals="15" methods="7" coveredmethods="7"/>
+          <line num="5" count="8" type="stmt"/>
+          <line num="9" count="11" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="20" count="1" type="stmt"/>
+          <line num="24" count="1" type="stmt"/>
+          <line num="28" count="1" type="stmt"/>
+          <line num="32" count="1" type="stmt"/>
         </file>
         <file name="SetPresets.jsx" path="/vagrant/work/odd-radio/odd-radio/src/client/components/SetPresets.jsx">
           <metrics statements="6" coveredstatements="6" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="6"/>
