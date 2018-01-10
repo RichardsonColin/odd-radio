@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515555484602" clover="3.2.0">
-  <project timestamp="1515555484602" name="All files">
+<coverage generated="1515555833920" clover="3.2.0">
+  <project timestamp="1515555833920" name="All files">
     <metrics statements="185" coveredstatements="131" conditionals="98" coveredconditionals="65" methods="83" coveredmethods="57" elements="366" coveredelements="253" complexity="0" loc="185" ncloc="185" packages="2" files="18" classes="18">
       <package name="components">
         <metrics statements="178" coveredstatements="124" conditionals="98" coveredconditionals="65" methods="82" coveredmethods="56"/>
@@ -104,7 +104,7 @@
           <line num="298" count="2" type="stmt"/>
           <line num="299" count="2" type="stmt"/>
           <line num="300" count="2" type="stmt"/>
-          <line num="308" count="9" type="stmt"/>
+          <line num="308" count="10" type="stmt"/>
         </file>
         <file name="AudioPlayer.jsx" path="/vagrant/work/odd-radio/odd-radio/src/client/components/AudioPlayer.jsx">
           <metrics statements="17" coveredstatements="6" conditionals="8" coveredconditionals="5" methods="11" coveredmethods="3"/>
