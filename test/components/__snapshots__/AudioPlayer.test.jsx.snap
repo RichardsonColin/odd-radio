@@ -14,11 +14,12 @@ exports[`AudioPlayer matches snapshot 1`] = `
   </audio>
   <div>
     <div
-      className="player-station-name"
+      className="audio-player-station-name"
       onClick={[Function]}
     >
-      Current Station: 
+       
       Jest Test Stream
+       
     </div>
     <div
       className="container player-container"
@@ -27,18 +28,17 @@ exports[`AudioPlayer matches snapshot 1`] = `
         className="row player-row border"
       >
         <div
-          className="three columns"
+          className="four columns"
         >
           <div>
             <i
-              className="fa fa-play fa-2x"
-              id="pButton"
+              className="fa fa-play fa-2x audio-player-play-button"
               onClick={[Function]}
             />
           </div>
         </div>
         <div
-          className="three columns"
+          className="four columns"
         >
           <div>
             <div>
@@ -61,12 +61,70 @@ exports[`AudioPlayer matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="three columns"
+          className="four columns"
         >
           <i
             className="fa fa-random fa-2x seek-button"
             onClick={[Function]}
           />
+        </div>
+      </div>
+    </div>
+    <div
+      className="container presets"
+    >
+      <div
+        className="center presets-title"
+      >
+        Presets: 
+      </div>
+      <div
+        className="row border"
+      >
+        <div
+          className="five columns border-right audio-player-presets "
+          onClick={[Function]}
+        >
+          <p>
+            1: 
+            Empty
+          </p>
+        </div>
+        <div
+          className="five columns border-right audio-player-presets "
+          onClick={[Function]}
+        >
+          <p>
+            2: 
+            Empty
+          </p>
+        </div>
+        <div
+          className="five columns border-right audio-player-presets "
+          onClick={[Function]}
+        >
+          <p>
+            3: 
+            Empty
+          </p>
+        </div>
+        <div
+          className="five columns border-right audio-player-presets "
+          onClick={[Function]}
+        >
+          <p>
+            4: 
+            Empty
+          </p>
+        </div>
+        <div
+          className="five columns audio-player-presets "
+          onClick={[Function]}
+        >
+          <p>
+            5: 
+            Empty
+          </p>
         </div>
       </div>
     </div>

@@ -34,6 +34,11 @@ class AudioPlayer extends Component {
   muteAudio() {
     let player = document.getElementById("player");
 
+    //used to replace player for testing
+    if (this.props.mockPlayer) {
+      player = this.props.mockPlayer;
+    }
+
     if (this.state.volume > 0) {
       this.setState({
         volume: 0,

@@ -86,6 +86,7 @@ class App extends Component {
 
     let player = document.getElementById("player");
 
+    //used for testing
     if (this.props.mockPlayer) {
       player = this.props.mockPlayer;
     }
@@ -122,6 +123,7 @@ class App extends Component {
   playPause() {
     let player = document.getElementById("player");
 
+    //used for testing
     if (this.props.mockPlayer) {
       player = this.props.mockPlayer;
     }
@@ -277,6 +279,7 @@ class App extends Component {
     var initialStation = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
     const stations = this.state.stations;
 
+    //used for testing
     if(this.props.initialStation){
       initialStation = this.props.initialStation;
     }
