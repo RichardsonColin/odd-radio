@@ -38,10 +38,6 @@
   align-items: center;
   margin-top: 25px;
 
-  .presets {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
 
   .station-details {
     margin-right: 25px;
@@ -68,3 +64,14 @@
   margin-bottom: 10px;
 }
 
+.location {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 18px;
+  text-shadow: 2px 2px #edededb7;
+
+}

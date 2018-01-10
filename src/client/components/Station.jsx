@@ -57,7 +57,7 @@ componentWillReceiveProps(props) {
               </div>
               <div className="eight columns station-details">
                 <div className="description">{ this.props.description } </div>
-                <div className="location">{ this.props.city } </div>
+                <div className="location">{ this.props.city }, {this.props.province} </div>
                 <div className="homepage"><a href={this.props.homePage} target='_blank'>Homepage</a> </div>
               </div>
             </div>
