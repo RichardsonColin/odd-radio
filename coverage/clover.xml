@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515545089614" clover="3.2.0">
-  <project timestamp="1515545089614" name="All files">
-    <metrics statements="181" coveredstatements="92" conditionals="92" coveredconditionals="41" methods="83" coveredmethods="38" elements="356" coveredelements="171" complexity="0" loc="181" ncloc="181" packages="2" files="18" classes="18">
+<coverage generated="1515551180064" clover="3.2.0">
+  <project timestamp="1515551180065" name="All files">
+    <metrics statements="181" coveredstatements="93" conditionals="92" coveredconditionals="46" methods="83" coveredmethods="39" elements="356" coveredelements="178" complexity="0" loc="181" ncloc="181" packages="2" files="18" classes="18">
       <package name="components">
-        <metrics statements="174" coveredstatements="85" conditionals="92" coveredconditionals="41" methods="82" coveredmethods="37"/>
+        <metrics statements="174" coveredstatements="86" conditionals="92" coveredconditionals="46" methods="82" coveredmethods="38"/>
         <file name="About.jsx" path="/vagrant/work/odd-radio/odd-radio/src/client/components/About.jsx">
           <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
           <line num="5" count="0" type="stmt"/>
@@ -176,8 +176,8 @@
           <line num="32" count="0" type="stmt"/>
         </file>
         <file name="SetPresets.jsx" path="/vagrant/work/odd-radio/odd-radio/src/client/components/SetPresets.jsx">
-          <metrics statements="6" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="6" coveredmethods="0"/>
-          <line num="6" count="0" type="stmt"/>
+          <metrics statements="6" coveredstatements="1" conditionals="10" coveredconditionals="5" methods="6" coveredmethods="1"/>
+          <line num="6" count="2" type="stmt"/>
           <line num="12" count="0" type="stmt"/>
           <line num="16" count="0" type="stmt"/>
           <line num="20" count="0" type="stmt"/>
