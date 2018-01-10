@@ -8095,6 +8095,10 @@ var App = function (_Component) {
 
       var player = document.getElementById("player");
 
+      if (this.props.mockPlayer) {
+        player = this.props.mockPlayer;
+      }
+
       var station = {
         id: details.id,
         name: details.name,
@@ -8129,6 +8133,11 @@ var App = function (_Component) {
     key: 'playPause',
     value: function playPause() {
       var player = document.getElementById("player");
+
+      if (this.props.mockPlayer) {
+        player = this.props.mockPlayer;
+      }
+
       if (this.state.playState.isPaused) {
 
         this.setState({
@@ -8177,10 +8186,8 @@ var App = function (_Component) {
   }, {
     key: 'onSpaceBarPress',
     value: function onSpaceBarPress(event) {
-      console.log("In space bar function");
       if (event.key === ' ') {
         event.preventDefault();
-        console.log("SPACE PRESSED");
         this.playPause();
       }
     }
@@ -8343,9 +8350,12 @@ var App = function (_Component) {
   }, {
     key: 'directStationLoad',
     value: function directStationLoad() {
-      var pathname = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
+      var initialStation = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
       var stations = this.state.stations;
 
+      if (this.props.initialStation) {
+        initialStation = this.props.initialStation;
+      }
       var _iteratorNormalCompletion2 = true;
       var _didIteratorError2 = false;
       var _iteratorError2 = undefined;
@@ -8354,7 +8364,7 @@ var App = function (_Component) {
         for (var _iterator2 = stations[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
           var station = _step2.value;
 
-          if (pathname === station.name) {
+          if (initialStation === station.name) {
             station['audioFeed'] = station.audio_feed;
             station['streamType'] = station.stream_type;
             this.handleSelectedStation(station);
