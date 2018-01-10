@@ -13,6 +13,22 @@ describe('App', () => {
     loadStations: jest.fn(),
     scrollListener: jest.fn(),
     setStateSelectedStation: jest.fn(),
+    handleSelectedStation: jest.fn(),
+    playPause: jest.fn(),
+    onLoadStart: jest.fn(),
+    onCanPlay: jest.fn(),
+    onSpaceBarPress: jest.fn(),
+    savePreset: jest.fn(),
+    generateRandomStationId: jest.fn(),
+    seekStation: jest.fn(),
+    findColor: jest.fn(),
+    scrollListener: jest.fn(),
+    setStateSelectedStation: jest.fn(),
+    setStateFaveStations: jest.fn(),
+    findStationExpandInfo: jest.fn(),
+    scrollIntoView: jest.fn(),
+    hideStationInfo: jest.fn(),
+    directStationLoad: jest.fn(),
     initialStation: 'CFCR',
     mockPlayer: {
       load: jest.fn(),
@@ -28,7 +44,8 @@ describe('App', () => {
         json: function () {
           return [
             {
-              id: 1, name: 'CFCR',
+              id: 1,
+              name: 'CFCR',
               audio_feed: 'http://onair.cfcr.ca/hifi.mp3',
               home_page: 'http://cfcr.ca/',
               city: 'Saskatoon',
@@ -98,6 +115,94 @@ describe('App', () => {
       wrapper.instance().hideStationInfo();
 
       expect(wrapper.state().expanded).toEqual(false);
+    });
+
+    it('calls loadStations', () => {
+      wrapper.instance().loadStations();
+    });
+
+    it('calls handleSelectedStation', () => {
+      const details = {
+              id: 1,
+              name: 'CFCR',
+              audio_feed: 'http://onair.cfcr.ca/hifi.mp3',
+              home_page: 'http://cfcr.ca/',
+              city: 'Saskatoon',
+              province: 'SK',
+              description: 'CFCR 90.5 FM Community Radio is a non-profit corporation owned by the Community Radio Society of Saskatoon. We are a volunteer powered, listener supported organization serving the alternative radio needs of Saskatoon and surrounding areas.',
+              frequency: '90.5 FM',
+              language: 'English',
+              stream_type: 'audio/mp3'
+            }
+      wrapper.instance().handleSelectedStation(details);
+    });
+
+    it('calls playPause', () => {
+      wrapper.instance().playPause();
+    });
+
+    it('calls onLoadStart', () => {
+      wrapper.instance().onLoadStart();
+    });
+
+    it('calls onCanPlay', () => {
+      wrapper.instance().onCanPlay();
+    });
+
+    it('calls onSpaceBarPress', () => {
+      wrapper.instance().onSpaceBarPress();
+    });
+
+    it('calls savePreset', () => {
+      const details = {
+              id: 1,
+              name: 'CFCR',
+              audio_feed: 'http://onair.cfcr.ca/hifi.mp3',
+              home_page: 'http://cfcr.ca/',
+              city: 'Saskatoon',
+              province: 'SK',
+              description: 'CFCR 90.5 FM Community Radio is a non-profit corporation owned by the Community Radio Society of Saskatoon. We are a volunteer powered, listener supported organization serving the alternative radio needs of Saskatoon and surrounding areas.',
+              frequency: '90.5 FM',
+              language: 'English',
+              stream_type: 'audio/mp3'
+            }
+      wrapper.instance().savePreset(details, '1');
+    });
+
+    it('calls generateRandomStationId', () => {
+      wrapper.instance().generateRandomStationId();
+    });
+
+    it('calls seekStation', () => {
+      wrapper.instance().seekStation();
+    });
+
+    it('calls findColor', () => {
+      wrapper.instance().findColor();
+    });
+
+    it('calls scrollListener', () => {
+      wrapper.instance().scrollListener();
+    });
+
+    it('calls setStateSelectedStation', () => {
+      wrapper.instance().setStateSelectedStation();
+    });
+
+    it('calls setStateFaveStations', () => {
+      wrapper.instance().setStateFaveStations();
+    });
+
+    it('calls findStationExpandInfo', () => {
+      wrapper.instance().findStationExpandInfo('CFCR', 'http://onair.cfcr.ca/hifi.mp3');
+    });
+
+    it('calls hideStationInfo', () => {
+      wrapper.instance().hideStationInfo();
+    });
+
+    it('calls directStationLoad', () => {
+      wrapper.instance().directStationLoad();
     });
   });
 });

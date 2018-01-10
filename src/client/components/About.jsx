@@ -5,7 +5,7 @@ class About extends Component {
     return (
       <div className="container masthead-info">
         <div className="row center">
-          <h5>About oddrad.io</h5>
+          <h4>About oddrad.io</h4>
         </div>
         <div className="row">
           <p>oddrad.io is a curated collection of some of the best independent radio stations that Canada has to offer. Each station listed here is powered by volunteers from the station's local community. These DJs pick all their own music, be prepared to hear all kinds of weird stuff.</p>
