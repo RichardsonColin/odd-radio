@@ -9329,7 +9329,6 @@ var Masthead = function (_Component) {
   _createClass(Masthead, [{
     key: 'toggleInfo',
     value: function toggleInfo(target) {
-      var stationDiv = document.getElementById('mast-head');
       if (this.state.expanded === target) {
         this.setState({
           expanded: 'none'
@@ -9338,9 +9337,6 @@ var Masthead = function (_Component) {
       if (this.state.expanded !== target) {
         this.setState({
           expanded: target
-        }, function () {
-          console.log('hey2');
-          window.scrollBy(0, 500);
         });
       }
     }
@@ -9351,7 +9347,7 @@ var Masthead = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { id: 'mast-head', className: 'container masthead' },
+        { className: 'container masthead' },
         _react2.default.createElement(
           'div',
           { className: 'row border masthead-nav' },
