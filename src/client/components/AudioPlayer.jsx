@@ -96,7 +96,8 @@ class AudioPlayer extends Component {
               </div>
             </div>
           </div>
-          <Presets Style="audio-player-presets" presets={this.props.presets} title="Presets: " clickFunction={this.props.handleSelectedStation} />
+          <Presets Style="audio-player-presets" presets={this.props.presets} title="Presets: " stationFeed={ this.props.stationFeed.name }
+          clickFunction={this.props.handleSelectedStation} />
         </div>
       </div>
 

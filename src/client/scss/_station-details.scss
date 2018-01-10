@@ -7,7 +7,6 @@
   font-size: 40px;
   text-align: justify;
   margin-left: 100px;
-  margin-top: -15px;
 
 }
 .expanded-station-name:hover {
@@ -33,10 +32,6 @@
   }
 }
 
-.station-details {
-  margin-right: 5%;
-}
-
 .info-expanded {
   background-color: #89cff0;
   width: 100%;
@@ -46,6 +41,10 @@
   .presets {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  .station-details {
+    margin-right: 25px;
   }
 }
 
@@ -62,7 +61,10 @@
 }
 
 .info {
-  text-align: justify;
-  // margin-bottom: 20px;
-  // min-height: 150px;
+  text-align: left;
 }
+
+.description, .location, .homepage {
+  margin-bottom: 10px;
+}
+
