@@ -8095,6 +8095,7 @@ var App = function (_Component) {
 
       var player = document.getElementById("player");
 
+      //used for testing
       if (this.props.mockPlayer) {
         player = this.props.mockPlayer;
       }
@@ -8134,6 +8135,7 @@ var App = function (_Component) {
     value: function playPause() {
       var player = document.getElementById("player");
 
+      //used for testing
       if (this.props.mockPlayer) {
         player = this.props.mockPlayer;
       }
@@ -8353,6 +8355,7 @@ var App = function (_Component) {
       var initialStation = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
       var stations = this.state.stations;
 
+      //used for testing
       if (this.props.initialStation) {
         initialStation = this.props.initialStation;
       }
@@ -8573,6 +8576,11 @@ var AudioPlayer = function (_Component) {
       var _this3 = this;
 
       var player = document.getElementById("player");
+
+      //used to replace player for testing
+      if (this.props.mockPlayer) {
+        player = this.props.mockPlayer;
+      }
 
       if (this.state.volume > 0) {
         this.setState({
@@ -9321,6 +9329,7 @@ var Masthead = function (_Component) {
   _createClass(Masthead, [{
     key: 'toggleInfo',
     value: function toggleInfo(target) {
+      var stationDiv = document.getElementById('mast-head');
       if (this.state.expanded === target) {
         this.setState({
           expanded: 'none'
@@ -9329,6 +9338,9 @@ var Masthead = function (_Component) {
       if (this.state.expanded !== target) {
         this.setState({
           expanded: target
+        }, function () {
+          console.log('hey2');
+          window.scrollBy(0, 500);
         });
       }
     }
@@ -9339,7 +9351,7 @@ var Masthead = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'container masthead' },
+        { id: 'mast-head', className: 'container masthead' },
         _react2.default.createElement(
           'div',
           { className: 'row border masthead-nav' },
