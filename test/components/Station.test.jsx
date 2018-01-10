@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Enzyme, { shallow } from 'enzyme';
+import Enzyme, { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 // React 16 Enzyme adapter
@@ -10,6 +10,13 @@ import Station from '../../src/client/components/Station';
 
 describe('Station', () => {
   const props = {
+    presets: {
+      one: {},
+      two: {},
+      three: {},
+      four: {},
+      five: {}
+    },
     key: '1',
     id: '1',
     name: 'QWER',
@@ -19,7 +26,10 @@ describe('Station', () => {
     homePage: 'www.example.com',
     city: 'Saskitoba',
     handleSelectedStation: jest.fn(),
-    stationType: 3
+    stationType: 3,
+    expandedName: 'QWER',
+    expandedStation: false,
+    clickFunction: jest.fn()
   }
 
   const subject = <Station { ...props }/>;
@@ -29,16 +39,15 @@ describe('Station', () => {
   });
 
   describe('fa-chevron-down onClick', () => {
-    const wrapper = shallow(subject);
+    const wrapper = mount(subject);
 
-    it('calls toggleStationInfo', () => {
-      const toggleStationInfo = spyOn(wrapper.instance(), 'toggleStationInfo');
+    it('calls findStationExpandInfo', () => {
 
       wrapper.find('.fa-chevron-down').simulate('click');
-      expect(toggleStationInfo).toHaveBeenCalled();
+      expect(clickFunction).toHaveBeenCalled();
     });
 
-    it('toggleStationInfo should set the expanded state to true', () => {
+    it('findStationExpandInfo should set the expanded state to true', () => {
       wrapper.find('.fa-chevron-down').simulate('click');
 
       expect(wrapper.state().expanded).toEqual(true);
@@ -46,8 +55,8 @@ describe('Station', () => {
   });
 
   describe('when the info is expanded', () => {
-    const wrapper = shallow(subject);
-    wrapper.setState({ expanded: true });
+    const wrapper = mount(subject);
+    wrapper.setState({ expandedStation: true });
 
     it('.info-container class should be rendered', () => {
       expect(wrapper.find('.info-container').length).toBe(1);
@@ -56,11 +65,10 @@ describe('Station', () => {
     describe('fa-chevron-up onClick', () => {
 
       it('calls toggleStationInfo', () => {
-        const toggleStationInfo = spyOn(wrapper.instance(), 'toggleStationInfo');
 
         wrapper.find('.fa-chevron-up').simulate('click');
 
-        expect(toggleStationInfo).toHaveBeenCalled();
+        expect(clickFunction).toHaveBeenCalled();
       });
 
       it('info-container no longer be rendered', () => {
