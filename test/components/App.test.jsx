@@ -12,7 +12,12 @@ describe('App', () => {
   const props = {
     loadStations: jest.fn(),
     scrollListener: jest.fn(),
-    setStateSelectedStation: jest.fn()
+    setStateSelectedStation: jest.fn(),
+    initialStation: 'CFCR',
+    mockPlayer: {
+      load: jest.fn(),
+      play: jest.fn()
+    }
   }
 
   // global.fetch = jest.fn(() => new Promise(resolve => resolve()));
@@ -53,7 +58,7 @@ describe('App', () => {
     return p;
   });
 
-  
+
 
   class LocalStorageMock {
     constructor() {
@@ -79,10 +84,25 @@ describe('App', () => {
 
   global.localStorage = new LocalStorageMock
 
-  const subject = <App />;
+  const subject = <App { ...props }/>;
 
   it('matches snapshot', () => {
     expect(renderer.create(subject)).toMatchSnapshot();
+  });
+
+  describe('when instantiated', () => {
+    const wrapper = shallow(subject);
+
+    it('when hideStationInfo is called the state expanded should be false', () => {
+      wrapper.instance().hideStationInfo();
+
+      expect(wrapper.state().expanded).toEqual(false);
+    })
+
+
+      //TODO: make sure state this works by setting state of wrapper ot true and using this expect
+      // expect(wrapper.state().expanded).toEqual(true);
+
   });
 
 })

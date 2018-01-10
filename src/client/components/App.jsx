@@ -84,7 +84,11 @@ class App extends Component {
       return;
     }
 
-    const player = document.getElementById("player");
+    let player = document.getElementById("player");
+
+    if (this.props.mockPlayer) {
+      player = this.props.mockPlayer;
+    }
 
     let station = {
       id: details.id,
@@ -116,7 +120,12 @@ class App extends Component {
 
   // Toggle player between play and pause state.
   playPause() {
-    const player = document.getElementById("player");
+    let player = document.getElementById("player");
+
+    if (this.props.mockPlayer) {
+      player = this.props.mockPlayer;
+    }
+
     if (this.state.playState.isPaused) {
 
 
@@ -153,10 +162,8 @@ class App extends Component {
 
   // Play and pause on spacebar.
   onSpaceBarPress(event) {
-      console.log("In space bar function");
       if (event.key === ' '){
         event.preventDefault();
-        console.log("SPACE PRESSED");
         this.playPause();
 
     }
@@ -267,11 +274,14 @@ class App extends Component {
   // Checks the window.location.pathname and compares it to the database.
   // If it matches the station is pre-loaded on page render.
   directStationLoad() {
-    var pathname = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
+    var initialStation = window.location.pathname.replace('/', '').replace('/', '').toUpperCase();
     const stations = this.state.stations;
 
+    if(this.props.initialStation){
+      initialStation = this.props.initialStation;
+    }
     for (let station of stations){
-      if (pathname === station.name) {
+      if (initialStation === station.name) {
         station['audioFeed'] = station.audio_feed;
         station['streamType'] = station.stream_type;
         this.handleSelectedStation(station);

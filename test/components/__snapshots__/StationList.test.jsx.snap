@@ -14,7 +14,7 @@ exports[`StationList matches snapshot 1`] = `
         className="row station-row border"
       >
         <div
-          className="three columns station-branding center"
+          className="four columns station-branding center"
         >
           <div
             className="non-expanded-station-name center"
@@ -26,7 +26,7 @@ exports[`StationList matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="three columns station-play-button center"
+          className="four columns station-play-button center"
         >
           <div>
             <i
@@ -36,7 +36,7 @@ exports[`StationList matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="three columns station-info-button center"
+          className="four columns station-info-button center"
         >
           <i
             aria-hidden="true"
@@ -57,7 +57,7 @@ exports[`StationList matches snapshot 1`] = `
         className="row station-row border"
       >
         <div
-          className="three columns station-branding center"
+          className="four columns station-branding center"
         >
           <div
             className="non-expanded-station-name center"
@@ -69,7 +69,7 @@ exports[`StationList matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="three columns station-play-button center"
+          className="four columns station-play-button center"
         >
           <div>
             <i
@@ -79,7 +79,7 @@ exports[`StationList matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="three columns station-info-button center"
+          className="four columns station-info-button center"
         >
           <i
             aria-hidden="true"
@@ -90,39 +90,43 @@ exports[`StationList matches snapshot 1`] = `
       </div>
     </div>
   </div>
-  <div>
+  <div
+    className="container masthead"
+  >
     <div
-      className="container masthead"
+      className="row border masthead-nav"
     >
       <div
-        className="row station-row border"
+        className="one-third column center"
+        onClick={[Function]}
       >
-        <div
-          className="one-third column center"
-          onClick={[Function]}
-        >
+        <h5>
           About
-        </div>
-        <div
-          className="one-third column center"
-          onClick={[Function]}
-        >
-          Contact
-        </div>
-        <div
-          className="one-third column center"
-          onClick={[Function]}
-        >
-          Team
-        </div>
+        </h5>
       </div>
       <div
-        className="row border"
+        className="one-third column center"
+        onClick={[Function]}
       >
-        <div
-          className="column"
-        />
+        <h5>
+          Contact
+        </h5>
       </div>
+      <div
+        className="one-third column center"
+        onClick={[Function]}
+      >
+        <h5>
+          Team
+        </h5>
+      </div>
+    </div>
+    <div
+      className="row border"
+    >
+      <div
+        className="column"
+      />
     </div>
   </div>
 </section>

@@ -11,7 +11,7 @@ exports[`Station matches snapshot 1`] = `
       className="row station-row border"
     >
       <div
-        className="three columns station-branding center"
+        className="four columns station-branding center"
       >
         <div
           className="non-expanded-station-name center"
@@ -23,7 +23,7 @@ exports[`Station matches snapshot 1`] = `
         </div>
       </div>
       <div
-        className="three columns station-play-button center"
+        className="four columns station-play-button center"
       >
         <div>
           <i
@@ -33,7 +33,7 @@ exports[`Station matches snapshot 1`] = `
         </div>
       </div>
       <div
-        className="three columns station-info-button center"
+        className="four columns station-info-button center"
       >
         <i
           aria-hidden="true"
