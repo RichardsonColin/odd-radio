@@ -11,7 +11,56 @@ exports[`App matches snapshot 1`] = `
     }
   />
   <header>
-    <div />
+    <div>
+      <div
+        className="ticker-wrap"
+      >
+        <div
+          className="ticker"
+        >
+          <div
+            className="ticker__item"
+            id="ticker-station"
+          >
+             
+            CFCR
+             
+          </div>
+          <div
+            className="ticker__item"
+            id="ticker-freq"
+          >
+            @ 
+            90.5 FM
+          </div>
+          <div
+            className="ticker__item"
+            id="ticker-city"
+          >
+            Out of - 
+            Saskatoon
+          </div>
+          <div
+            className="ticker__item"
+            id="ticker-dance"
+          >
+            ♪┏(・o･)┛♪┗ ( ･o･) ┓
+          </div>
+          <div
+            className="ticker__item"
+            id="ticker-brand"
+          >
+            ODDRAD™
+          </div>
+          <div
+            className="ticker__item"
+            id="ticker-yeah"
+          >
+            ☜(ﾟヮﾟ☜)
+          </div>
+        </div>
+      </div>
+    </div>
     <div
       className="container title-container"
     >
@@ -92,8 +141,8 @@ exports[`App matches snapshot 1`] = `
         onLoadStart={[Function]}
       >
         <source
-          src=""
-          type=""
+          src="http://onair.cfcr.ca/hifi.mp3"
+          type="audio/mp3"
         />
       </audio>
       <div>
@@ -102,7 +151,7 @@ exports[`App matches snapshot 1`] = `
           onClick={[Function]}
         >
            
-          
+          CFCR
            
         </div>
         <div
@@ -112,7 +161,7 @@ exports[`App matches snapshot 1`] = `
             className="row player-row border"
           >
             <div
-              className="three columns"
+              className="four columns"
             >
               <div>
                 <i
@@ -122,7 +171,7 @@ exports[`App matches snapshot 1`] = `
               </div>
             </div>
             <div
-              className="three columns"
+              className="four columns"
             >
               <div>
                 <div>
@@ -145,7 +194,7 @@ exports[`App matches snapshot 1`] = `
               </div>
             </div>
             <div
-              className="three columns"
+              className="four columns"
             >
               <i
                 className="fa fa-random fa-2x seek-button"
@@ -166,7 +215,7 @@ exports[`App matches snapshot 1`] = `
             className="row border"
           >
             <div
-              className="five columns border-right audio-player-presets"
+              className="five columns border-right audio-player-presets "
               onClick={[Function]}
             >
               <p>
@@ -175,7 +224,7 @@ exports[`App matches snapshot 1`] = `
               </p>
             </div>
             <div
-              className="five columns border-right audio-player-presets"
+              className="five columns border-right audio-player-presets "
               onClick={[Function]}
             >
               <p>
@@ -184,7 +233,7 @@ exports[`App matches snapshot 1`] = `
               </p>
             </div>
             <div
-              className="five columns border-right audio-player-presets"
+              className="five columns border-right audio-player-presets "
               onClick={[Function]}
             >
               <p>
@@ -193,7 +242,7 @@ exports[`App matches snapshot 1`] = `
               </p>
             </div>
             <div
-              className="five columns border-right audio-player-presets"
+              className="five columns border-right audio-player-presets "
               onClick={[Function]}
             >
               <p>
@@ -202,7 +251,7 @@ exports[`App matches snapshot 1`] = `
               </p>
             </div>
             <div
-              className="five columns audio-player-presets"
+              className="five columns audio-player-presets "
               onClick={[Function]}
             >
               <p>
