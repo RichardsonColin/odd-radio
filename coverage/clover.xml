@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515549516991" clover="3.2.0">
-  <project timestamp="1515549516991" name="All files">
+<coverage generated="1515554906003" clover="3.2.0">
+  <project timestamp="1515554906003" name="All files">
     <metrics statements="185" coveredstatements="115" conditionals="98" coveredconditionals="49" methods="83" coveredmethods="42" elements="366" coveredelements="206" complexity="0" loc="185" ncloc="185" packages="2" files="18" classes="18">
       <package name="components">
         <metrics statements="178" coveredstatements="108" conditionals="98" coveredconditionals="49" methods="82" coveredmethods="41"/>
@@ -89,7 +89,7 @@
           <line num="259" count="0" type="stmt"/>
           <line num="261" count="0" type="stmt"/>
           <line num="262" count="0" type="stmt"/>
-          <line num="269" count="1" type="stmt"/>
+          <line num="269" count="2" type="stmt"/>
           <line num="277" count="2" type="stmt"/>
           <line num="278" count="2" type="stmt"/>
           <line num="280" count="2" type="cond" truecount="1" falsecount="1"/>
@@ -104,7 +104,7 @@
           <line num="298" count="2" type="stmt"/>
           <line num="299" count="2" type="stmt"/>
           <line num="300" count="2" type="stmt"/>
-          <line num="308" count="9" type="stmt"/>
+          <line num="308" count="11" type="stmt"/>
         </file>
         <file name="AudioPlayer.jsx" path="/vagrant/Lighthouse-Labs-Projects/odd-radio-1/src/client/components/AudioPlayer.jsx">
           <metrics statements="17" coveredstatements="6" conditionals="8" coveredconditionals="5" methods="11" coveredmethods="3"/>

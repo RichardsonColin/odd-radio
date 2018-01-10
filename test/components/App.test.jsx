@@ -93,16 +93,11 @@ describe('App', () => {
   describe('when instantiated', () => {
     const wrapper = shallow(subject);
 
-    it('when hideStationInfo is called the state expanded should be false', () => {
+    it('if expanded state is set to true hideStationInfo sets it to false', () => {
+      wrapper.setState({ expanded: true });
       wrapper.instance().hideStationInfo();
 
       expect(wrapper.state().expanded).toEqual(false);
-    })
-
-
-      //TODO: make sure state this works by setting state of wrapper ot true and using this expect
-      // expect(wrapper.state().expanded).toEqual(true);
-
+    });
   });
-
-})
+});
