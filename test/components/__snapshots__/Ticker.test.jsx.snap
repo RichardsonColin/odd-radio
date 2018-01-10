@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ticker matches snapshot 1`] = `
+<div>
+  <div
+    className="ticker-wrap"
+  >
+    <div
+      className="ticker"
+    >
+      <div
+        className="ticker__item"
+        id="ticker-station"
+      >
+         
+        CFBU
+         
+      </div>
+      <div
+        className="ticker__item"
+        id="ticker-freq"
+      >
+        @ 
+        90.1 FM
+      </div>
+      <div
+        className="ticker__item"
+        id="ticker-city"
+      >
+        Out of - 
+        Hamilton
+      </div>
+      <div
+        className="ticker__item"
+        id="ticker-dance"
+      >
+        ♪┏(・o･)┛♪┗ ( ･o･) ┓
+      </div>
+      <div
+        className="ticker__item"
+        id="ticker-brand"
+      >
+        ODDRAD™
+      </div>
+      <div
+        className="ticker__item"
+        id="ticker-yeah"
+      >
+        ☜(ﾟヮﾟ☜)
+      </div>
+    </div>
+  </div>
+</div>
+`;

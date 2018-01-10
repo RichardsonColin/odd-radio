@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StationName Component matches snapshot 1`] = `
+<div
+  className="test-style"
+  onClick={[Function]}
+>
+   
+   
+</div>
+`;
