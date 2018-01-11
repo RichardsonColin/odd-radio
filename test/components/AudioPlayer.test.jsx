@@ -53,7 +53,6 @@ describe('AudioPlayer', () => {
   describe('if detect width is called', () => {
     const wrapper = shallow(subject);
 
-    // wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
     it('calls the detectWidth function', () => {
       wrapper.instance().detectWidth();
     });
@@ -62,7 +61,6 @@ describe('AudioPlayer', () => {
   describe('if setVolume is called', () => {
     const wrapper = shallow(subject);
 
-    // wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
     it('calls the setVolume function', () => {
       wrapper.instance().setVolume(50);
     });
