@@ -137,9 +137,9 @@ describe('App', () => {
       wrapper.instance().handleSelectedStation(details);
     });
 
-    it('calls playPause', () => {
-      wrapper.instance().playPause();
-    });
+    // it('calls playPause', () => {
+    //   wrapper.instance().playPause();
+    // });
 
     it('calls onLoadStart', () => {
       wrapper.instance().onLoadStart();
@@ -147,10 +147,6 @@ describe('App', () => {
 
     it('calls onCanPlay', () => {
       wrapper.instance().onCanPlay();
-    });
-
-    it('calls onSpaceBarPress', () => {
-      wrapper.instance().onSpaceBarPress();
     });
 
     it('calls savePreset', () => {
@@ -193,16 +189,8 @@ describe('App', () => {
       wrapper.instance().setStateFaveStations();
     });
 
-    it('calls findStationExpandInfo', () => {
-      wrapper.instance().findStationExpandInfo('CFCR', 'http://onair.cfcr.ca/hifi.mp3');
-    });
-
     it('calls hideStationInfo', () => {
       wrapper.instance().hideStationInfo();
-    });
-
-    it('calls directStationLoad', () => {
-      wrapper.instance().directStationLoad();
     });
   });
 });
