@@ -58,14 +58,6 @@ describe('AudioPlayer', () => {
     });
   });
 
-  describe('if setVolume is called', () => {
-    const wrapper = shallow(subject);
-
-    it('calls the setVolume function', () => {
-      wrapper.instance().setVolume(50);
-    });
-  });
-
   describe('if muteAudio is called', () => {
     const wrapper = shallow(subject);
 
