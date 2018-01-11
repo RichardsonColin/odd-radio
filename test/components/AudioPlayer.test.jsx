@@ -71,7 +71,6 @@ describe('AudioPlayer', () => {
   describe('if muteAudio is called', () => {
     const wrapper = shallow(subject);
 
-    // wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
     it('calls the muteAudio function', () => {
       wrapper.instance().muteAudio();
     });
@@ -79,7 +78,6 @@ describe('AudioPlayer', () => {
 
   describe('if state.volume is equal to 0', () => {
     const wrapper = mount(subject);
-    // console.log('sebsebseb..... ', wrapper.state());
 
     wrapper.setState({ volume: 0, beforeMuteVolume: 1 });
 
