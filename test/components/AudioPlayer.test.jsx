@@ -84,7 +84,6 @@ describe('AudioPlayer', () => {
     wrapper.setState({ volume: 0, beforeMuteVolume: 1 });
 
     it('volume state set to state.beforeMuteVolume', () => {
-      console.log('state', wrapper.state());
       expect(wrapper.state().volume).toEqual(0);
     })
   });
@@ -95,7 +94,6 @@ describe('AudioPlayer', () => {
     wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
 
     it('volume state set to state.beforeMuteVolume', () => {
-      console.log('state', wrapper.state());
       expect(wrapper.state().volume).toEqual(1);
     })
   });
