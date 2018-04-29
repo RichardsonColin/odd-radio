@@ -7,6 +7,8 @@ import StationList from './StationList.jsx';
 import Background from './Background.jsx';
 import Ticker from './Ticker.jsx';
 import Presets from './Presets.jsx';
+import Search from './Search.jsx';
+
 
 
 class App extends Component {
@@ -39,7 +41,9 @@ class App extends Component {
         five: {}
       },
       expanded: false,
-      expandedName: ''
+      expandedName: '',
+      searchFilter: ''
+
     },
 
 
@@ -59,6 +63,15 @@ class App extends Component {
     this.savePreset = this.savePreset.bind(this);
     this.setStateFaveStations = this.setStateFaveStations.bind(this);
     this.directStationLoad = this.directStationLoad.bind(this);
+
+  }
+
+  searchUpdate(value) {
+    console.log("in app searchUpdate value", value);
+    console.log("in app state", this.state.searchFilter);
+    this.setState({
+      searchFilter: value
+    })
 
   }
 
@@ -300,6 +313,7 @@ class App extends Component {
     this.scrollListener();
     this.setStateSelectedStation();
     this.setStateFaveStations();
+
     window.addEventListener("keydown", this.onSpaceBarPress.bind(this));
 
   }
@@ -308,6 +322,7 @@ class App extends Component {
 
 
   render() {
+    console.log(this.state.searchFilter, "state search filter");
     return (
       <div>
         <Background findColor={ this.findColor } />
@@ -325,13 +340,15 @@ class App extends Component {
               </div>
             </div>
           </div>
+          <Search searchUpdate={ this.searchUpdate.bind(this) } searchFilter={ this.state.searchFilter } />
         </header>
+
           <StationList handleSelectedStation={ this.handleSelectedStation } stations={ this.state.stations }
             activeStation={ this.state.selectedStation.id } playState={ this.state.playState }
             streamLoading={ this.state.streamLoading }
             findStationExpandInfo={this.findStationExpandInfo}
             hideStationInfo={this.hideStationInfo}
-            expandedState={this.state.expanded} expandedName={this.state.expandedName} presets={this.state.presets} savePreset={this.savePreset} />
+            expandedState={this.state.expanded} expandedName={this.state.expandedName} presets={this.state.presets} savePreset={this.savePreset} searchFilter={this.state.searchFilter} />
         <footer>
           <AudioPlayer stationFeed={ this.state.selectedStation } seekStation={ this.seekStation }
           playPause={ this.playPause } streamLoading={ this.state.streamLoading } playState={ this.state.playState }
