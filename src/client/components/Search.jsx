@@ -7,7 +7,6 @@ class Search extends Component {
   }
 
   render() {
-    console.log("search filter", this.props.searchFilter);
     return (
       <div className="search-container u-full-width">
         <form className="search-form u-full-width">
@@ -19,5 +18,3 @@ class Search extends Component {
 }
 
 export default Search;
-
-

@@ -67,8 +67,6 @@ class App extends Component {
   }
 
   searchUpdate(value) {
-    console.log("in app searchUpdate value", value);
-    console.log("in app state", this.state.searchFilter);
     this.setState({
       searchFilter: value
     })
@@ -305,9 +303,6 @@ class App extends Component {
     }
   }
 
-
-
-
   componentDidMount() {
     this.loadStations();
     this.scrollListener();
@@ -318,11 +313,7 @@ class App extends Component {
 
   }
 
-
-
-
   render() {
-    console.log(this.state.searchFilter, "state search filter");
     return (
       <div>
         <Background findColor={ this.findColor } />
