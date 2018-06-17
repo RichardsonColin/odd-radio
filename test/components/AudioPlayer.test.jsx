@@ -53,25 +53,14 @@ describe('AudioPlayer', () => {
   describe('if detect width is called', () => {
     const wrapper = shallow(subject);
 
-    // wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
     it('calls the detectWidth function', () => {
       wrapper.instance().detectWidth();
-    });
-  });
-
-  describe('if setVolume is called', () => {
-    const wrapper = shallow(subject);
-
-    // wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
-    it('calls the setVolume function', () => {
-      wrapper.instance().setVolume(50);
     });
   });
 
   describe('if muteAudio is called', () => {
     const wrapper = shallow(subject);
 
-    // wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
     it('calls the muteAudio function', () => {
       wrapper.instance().muteAudio();
     });
@@ -79,12 +68,10 @@ describe('AudioPlayer', () => {
 
   describe('if state.volume is equal to 0', () => {
     const wrapper = mount(subject);
-    // console.log('sebsebseb..... ', wrapper.state());
 
     wrapper.setState({ volume: 0, beforeMuteVolume: 1 });
 
     it('volume state set to state.beforeMuteVolume', () => {
-      console.log('state', wrapper.state());
       expect(wrapper.state().volume).toEqual(0);
     })
   });
@@ -95,7 +82,6 @@ describe('AudioPlayer', () => {
     wrapper.setState({ volume: 1, beforeMuteVolume: 1 });
 
     it('volume state set to state.beforeMuteVolume', () => {
-      console.log('state', wrapper.state());
       expect(wrapper.state().volume).toEqual(1);
     })
   });
